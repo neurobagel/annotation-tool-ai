@@ -1,6 +1,12 @@
 import os
-import tempfile
 import json
+from pathlib import Path
+
+from parsing.bin.llm_integration import (
+    IsAboutParticipant,
+    Annotations,
+    TSVAnnotations,
+)
 from parsing.bin.llm_integration import (
     convert_tsv_to_dict,
     process_parsed_output,
@@ -39,64 +45,86 @@ def test_convert_tsv_to_dict() -> None:
     os.remove(sample_tsv_file_path)
 
 
-def test_process_parsed_output():
-    # Define sample parsed outputs with different TermURL values
+def test_process_parsed_output() -> None:
+    # Test case 1: Valid ParticipantID
     parsed_output_1 = {"TermURL": "nb:ParticipantID"}
-    parsed_output_2 = {"TermURL": "nb:Sex"}
-    parsed_output_3 = {"TermURL": "nb:Age"}
-    parsed_output_4 = {"TermURL": "unknown"}
-
-    # Test with sample parsed outputs
     result_1 = process_parsed_output(parsed_output_1)
-    assert (
-        "Subject Unique Identifier" in result_1
-    )  # Check if label exists in result
-    assert "nb:ParticipantID" in result_1  # Check if TermURL exists in result
+    assert isinstance(result_1, TSVAnnotations)
+    assert result_1.Description == "A participant ID"
+    assert result_1.Annotations.Identifies == "participant"
 
+    # Test case 2: Valid Sex information with levels
+    parsed_output_2 = {"TermURL": "nb:Sex", "Levels": ["male", "female"]}
     result_2 = process_parsed_output(parsed_output_2)
-    assert "Sex" in result_2
-    assert "nb:Sex" in result_2
-
-    result_3 = process_parsed_output(parsed_output_3)
-    assert "Age" in result_3
-    assert "nb:Age" in result_3
-
-    result_4 = process_parsed_output(parsed_output_4)
-    assert "Error: No annotation model found" in result_4
-
-
-def test_update_json_file():
-    # Create a temporary file for testing
-    with tempfile.NamedTemporaryFile(mode="w+", delete=False) as temp_file:
-        filename = temp_file.name
-
-    # Define the initial content and the data to update
-    initial_content = {"age_annotation": ""}
-
-    data_to_update = {
-        "Annotations": {"IsAbout": {"Label": "Age", "TermURL": "nb:Age"}},
-        "additionalField1": "Some additional information",
-        "additionalField2": 123,
+    assert isinstance(result_2, TSVAnnotations)
+    assert result_2.Description == "Sex information"
+    assert result_2.Annotations.Levels == {
+        "male": {"TermURL": "snomed:248153007", "Label": "Male"},
+        "female": {"TermURL": "snomed:248152002", "Label": "Female"},
     }
-    target_key = "age_annotation"
 
-    # Write the initial content to the temporary file
-    with open(filename, "w") as file:
-        json.dump(initial_content, file, indent=2)
+    # Test case 3: Valid Age information with transformation
+    parsed_output_3 = {"TermURL": "nb:Age", "Format": "floatvalue"}
+    result_3 = process_parsed_output(parsed_output_3)
+    assert isinstance(result_3, TSVAnnotations)
+    assert result_3.Description == "Age information"
+    assert result_3.Annotations.Transformation == {
+        "TermURL": "nb:FromFloat",
+        "Label": "float value",
+    }
 
-    # Convert the data to update to a JSON string
-    data_to_update_json = json.dumps(data_to_update, indent=2)
+    # Test case 4: Valid Session information
+    parsed_output_4 = {"TermURL": "nb:Session"}
+    result_4 = process_parsed_output(parsed_output_4)
+    assert isinstance(result_4, TSVAnnotations)
+    assert result_4.Description == "A session ID"
+    assert result_4.Annotations.Identifies == "session"
 
-    # Call the function to update the data
-    update_json_file(data_to_update_json, filename, target_key)
+    # Test case 6: Invalid TermURL
+    parsed_output_6 = {"TermURL": "invalid:TermURL"}
+    result_6 = process_parsed_output(parsed_output_6)
+    assert (
+        result_6
+        == "Error: No annotation model found for TermURL: invalid:TermURL"
+    )
 
-    # Read the content of the file after updating
-    with open(filename, "r") as file:
-        updated_content = json.load(file)
 
-    # Assertions to check if the data was updated correctly
-    assert target_key in updated_content
-    assert updated_content[target_key] == data_to_update
+def test_update_json_file_with_valid_tsv_annotations(tmp_path: Path) -> None:
+    temp_file = tmp_path / "temp.json"
 
-    # Clean up the temporary file
-    tempfile.NamedTemporaryFile().close()
+    # Create a mock TSVAnnotations object
+    annotations = Annotations(
+        IsAbout=IsAboutParticipant(TermURL="nb:ParticipantID"),
+        Identifies="participant",
+    )
+    tsv_annotations = TSVAnnotations(
+        Description="A participant ID", Annotations=annotations
+    )
+
+    # Call update_json_file with valid TSVAnnotations data
+    update_json_file(tsv_annotations, str(temp_file), "participant_data")
+
+    # Read the JSON file and assert the content
+    with open(temp_file, "r") as file:
+        file_data = json.load(file)
+
+    expected_output = {
+        "participant_data": {
+            "Description": "A participant ID",
+            "Annotations": {
+                "IsAbout": {
+                    "TermURL": "nb:ParticipantID",
+                    "Label": "Subject Unique Identifier",
+                },
+                "Identifies": "participant",
+            },
+        }
+    }
+
+    assert "participant_data" in file_data
+    assert file_data["participant_data"]["Description"] == "A participant ID"
+    assert (
+        file_data["participant_data"]["Annotations"]["Identifies"]
+        == "participant"
+    )
+    assert file_data == expected_output
