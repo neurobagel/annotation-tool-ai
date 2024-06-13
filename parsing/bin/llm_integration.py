@@ -38,7 +38,7 @@ class Annotations(BaseModel):  # type: ignore
     Levels: Optional[Dict[str, Dict[str, str]]] = None
     Transformation: Optional[Dict[str, str]] = None
 
-    class Config:
+    class ConfigDict:
         # Allow extra fields
         extra = "allow"
         # Exclude fields with value None
@@ -50,7 +50,7 @@ class Annotations(BaseModel):  # type: ignore
         exclude_unset: bool = True,  # Exclude fields that have not been set
         **kwargs: Union[str, int, float, bool, None],
     ) -> Dict[str, Any]:
-        model_dict: Dict[str, Any] = super().dict(
+        model_dict: Dict[str, Any] = super().model_dump(
             exclude_unset=exclude_unset,
             **kwargs,
         )
@@ -197,7 +197,7 @@ def update_json_file(
     data: Union[str, TSVAnnotations], filename: str, target_key: str
 ) -> None:
     if isinstance(data, TSVAnnotations):
-        data_dict = data.dict(exclude_none=True)
+        data_dict = data.model_dump(exclude_none=True)
     else:
         data_dict = {"error": data}
 
@@ -224,8 +224,8 @@ if __name__ == "__main__":
         print(key, value)
         # parsed_output = chain.invoke({"column": key, "content": value})
         # print(parsed_output)
-        parsed_output = {"TermURL": "nb:Sex", "Levels": ["male", "female"]}
-        # parsed_output ={"TermURL": "nb:ParticipantID" }
+        # parsed_output = {"TermURL": "nb:Sex", "Levels": ["male", "female"]}
+        parsed_output = {"TermURL": "nb:ParticipantID"}
         # parsed_output = {"TermURL": "nb:Age", \
         #                   "Format":"europeanDecimalValue"}
         # parsed_output ={"TermURL": "nb:Session" }
