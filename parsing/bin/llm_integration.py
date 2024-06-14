@@ -1,4 +1,4 @@
-from typing import Dict, List, Optional, Union, Any
+from typing import Dict, Union, Optional, List, Any
 import pandas as pd
 import json
 from pydantic import BaseModel, Field
@@ -38,6 +38,7 @@ class Annotations(BaseModel):  # type: ignore
 
 class TSVAnnotations(BaseModel):  # type:ignore
     Description: str
+    Levels: Optional[Dict[str, str]] = None
     Annotations: Annotations
 
 
@@ -53,27 +54,46 @@ def convert_tsv_to_dict(tsv_file: str) -> Dict[str, str]:
 def tsv_to_json(tsv_file: str, json_file: str) -> None:
     df = pd.read_csv(tsv_file, delimiter="\t")
     columns: List[str] = df.columns.tolist()
-    data = {column: "" for column in columns}
+    data: Dict[str, str] = {column: "" for column in columns}
     with open(json_file, "w") as file:
         json.dump(data, file, indent=4)
 
 
-def process_parsed_output(
-    parsed_output: Dict[str, Union[str, Any]]
-) -> Union[str, TSVAnnotations]:
-    termurl_to_model: Dict[str, type[IsAboutBase]] = {
-        "nb:ParticipantID": IsAboutParticipant,
-        "nb:Sex": IsAboutSex,
-        "nb:Age": IsAboutAge,
-        "nb:Session": IsAboutSession,
-    }
+def handle_participant(parsed_output: Dict[str, Any]) -> TSVAnnotations:
+    annotation_instance = IsAboutParticipant(TermURL=parsed_output["TermURL"])
+    description = "A participant ID"
+    annotations = Annotations(
+        IsAbout=annotation_instance, Identifies="participant"
+    )
+    return TSVAnnotations(Description=description, Annotations=annotations)
 
+
+def handle_sex(parsed_output: Dict[str, Any]) -> TSVAnnotations:
+    annotation_instance = IsAboutSex(TermURL=parsed_output["TermURL"])
+    description = "Sex variable"
     levels_mapping = {
         "male": {"TermURL": "snomed:248153007", "Label": "Male"},
         "female": {"TermURL": "snomed:248152002", "Label": "Female"},
-        # Add mappings for other levels as needed
     }
+    levels = {
+        key: {
+            "TermURL": levels_mapping[value.strip().lower()]["TermURL"],
+            "Label": levels_mapping[value.strip().lower()]["Label"],
+        }
+        for key, value in parsed_output.get("Levels", {}).items()
+        if value.strip().lower() in levels_mapping
+    }
+    annotations = Annotations(IsAbout=annotation_instance, Levels=levels)
+    return TSVAnnotations(
+        Description=description,
+        Levels={k: v["Label"] for k, v in levels.items()},
+        Annotations=annotations,
+    )
 
+
+def handle_age(parsed_output: Dict[str, Any]) -> TSVAnnotations:
+    annotation_instance = IsAboutAge(TermURL=parsed_output["TermURL"])
+    description = "Age information"
     transformation_mapping = {
         "floatvalue": {"TermURL": "nb:FromFloat", "Label": "float value"},
         "integervalue": {"TermURL": "nb:FromInt", "Label": "integer value"},
@@ -90,85 +110,61 @@ def process_parsed_output(
             "Label": "period of time according to the ISO8601 standard",
         },
     }
+    transformation_key = parsed_output.get("Format", "").strip().lower()
+    transformation = transformation_mapping.get(transformation_key)
+    annotations = Annotations(
+        IsAbout=annotation_instance, Transformation=transformation
+    )
+    return TSVAnnotations(Description=description, Annotations=annotations)
 
-    term_url = parsed_output.get("TermURL")
-    if isinstance(term_url, str) and term_url in termurl_to_model:
-        annotation_model = termurl_to_model[term_url]
-        annotation_instance = annotation_model(TermURL=term_url)
 
-        description = ""
-        identifies = None
-        levels = None
-        transformation = None
+def handle_session(parsed_output: Dict[str, Any]) -> TSVAnnotations:
+    annotation_instance = IsAboutSession(TermURL=parsed_output["TermURL"])
+    description = "A session ID"
+    annotations = Annotations(
+        IsAbout=annotation_instance, Identifies="session"
+    )
+    return TSVAnnotations(Description=description, Annotations=annotations)
 
-        if isinstance(annotation_instance, IsAboutParticipant):
-            description = "A participant ID"
-            identifies = "participant"
-        elif isinstance(annotation_instance, IsAboutSex):
-            description = "Sex information"
-            levels_data = parsed_output.get("Levels")
-            if levels_data:
-                levels = {
-                    level.strip().lower(): {
-                        "TermURL": levels_mapping[level.strip().lower()][
-                            "TermURL"
-                        ],
-                        "Label": levels_mapping[level.strip().lower()][
-                            "Label"
-                        ],
-                    }
-                    for level in levels_data
-                    if level.strip().lower() in levels_mapping
-                }
-        elif isinstance(annotation_instance, IsAboutAge):
-            description = "Age information"
-            transformation_data = parsed_output.get("Format")
-            if transformation_data:
-                if isinstance(transformation_data, list):
-                    transformation_key = transformation_data[0].strip().lower()
-                else:
-                    transformation_key = transformation_data.strip().lower()
 
-                if transformation_key in transformation_mapping:
-                    transformation = transformation_mapping[transformation_key]
+def process_parsed_output(
+    parsed_output: Union[
+        str, Dict[str, Union[str, Dict[str, str], None]], None
+    ]
+) -> Union[str, TSVAnnotations]:
+    termurl_to_model = {
+        "nb:ParticipantID": handle_participant,
+        "nb:Sex": handle_sex,
+        "nb:Age": handle_age,
+        "nb:Session": handle_session,
+    }
 
-        elif isinstance(annotation_instance, IsAboutSession):
-            description = "A session ID"
-            identifies = "session"
-
-        annotations_data = {
-            "IsAbout": annotation_instance,
-            "Identifies": identifies,
-            "Levels": levels,
-            "Transformation": transformation,
-        }
-        annotations = Annotations(**annotations_data)
-
-        tsv_annotations = TSVAnnotations(
-            Description=description,
-            Annotations=annotations,
-        )
-
-        return tsv_annotations
+    if isinstance(parsed_output, dict):
+        term_url = parsed_output.get("TermURL")
+        if isinstance(term_url, str) and term_url in termurl_to_model:
+            handler_function = termurl_to_model[term_url]
+            return handler_function(parsed_output)
+        else:
+            return (
+                f"Error: No handler function found for TermURL: {term_url}"
+                if term_url
+                else "Error: TermURL is missing from the parsed output"
+            )
     else:
-        return (
-            f"Error: No annotation model found for TermURL: {term_url}"
-            if term_url
-            else "Error: TermURL is missing from the parsed output"
-        )
+        return "Error: parsed_output is not a dictionary"
 
 
 def update_json_file(
     data: Union[str, TSVAnnotations], filename: str, target_key: str
 ) -> None:
     if isinstance(data, TSVAnnotations):
-        data_dict = data.model_dump(exclude_none=True)
+        data_dict = data.dict(exclude_none=True)
     else:
         data_dict = {"error": data}
 
     try:
         with open(filename, "r") as file:
-            file_data = json.load(file)
+            file_data: Dict[str, Any] = json.load(file)
     except (FileNotFoundError, json.JSONDecodeError):
         file_data = {}
     file_data[target_key] = data_dict
@@ -189,11 +185,15 @@ if __name__ == "__main__":
         print(key, value)
         # parsed_output = chain.invoke({"column": key, "content": value})
         # print(parsed_output)
-        # parsed_output = {"TermURL": "nb:Sex", "Levels": ["male", "female"]}
+        parsed_output: Dict[str, Union[str, Dict[str, str], None]] = {
+            "TermURL": "nb:Sex",
+            "Levels": {"M": "male", "F": "female"},
+        }
         # parsed_output = {"TermURL": "nb:ParticipantID"}
         # parsed_output = {"TermURL": "nb:Age", \
         #                  "Format":"europeanDecimalValue"}
-        parsed_output = {"TermURL": "nb:Session"}
+        # parsed_output = {"TermURL": "nb:Session"}
+        print(type(parsed_output))
         result = process_parsed_output(parsed_output)
         print(result)
         print(type(result))
