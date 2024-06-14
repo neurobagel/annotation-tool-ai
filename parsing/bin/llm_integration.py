@@ -22,9 +22,6 @@ class IsAboutSession(IsAboutBase):
 class IsAboutSex(IsAboutBase):
     Label: str = Field(default="Sex")
     TermURL: str
-    Levels: Optional[Dict[str, str]] = Field(
-        default=None, description="Levels for the sex annotation"
-    )
 
 
 class IsAboutAge(IsAboutBase):
@@ -37,37 +34,6 @@ class Annotations(BaseModel):  # type: ignore
     Identifies: Optional[str] = None
     Levels: Optional[Dict[str, Dict[str, str]]] = None
     Transformation: Optional[Dict[str, str]] = None
-
-    class ConfigDict:
-        # Allow extra fields
-        extra = "allow"
-        # Exclude fields with value None
-        exclude_none = True
-
-    def dict(
-        self,
-        *,
-        exclude_unset: bool = True,  # Exclude fields that have not been set
-        **kwargs: Union[str, int, float, bool, None],
-    ) -> Dict[str, Any]:
-        model_dict: Dict[str, Any] = super().model_dump(
-            exclude_unset=exclude_unset,
-            **kwargs,
-        )
-
-        # Conditionally remove Levels if it's None
-        if model_dict.get("Levels") is None:
-            model_dict.pop("Levels", None)
-
-        # Conditionally remove Identifies if it's None
-        if model_dict.get("Identifies") is None:
-            model_dict.pop("Identifies", None)
-
-        # Conditionally remove Transformation if it's None
-        if model_dict.get("Transformation") is None:
-            model_dict.pop("Transformation", None)
-
-        return model_dict
 
 
 class TSVAnnotations(BaseModel):  # type:ignore
@@ -123,7 +89,6 @@ def process_parsed_output(
             "TermURL": "nb:FromISO8601",
             "Label": "period of time according to the ISO8601 standard",
         },
-        # Add mappings for other levels as needed
     }
 
     term_url = parsed_output.get("TermURL")
@@ -225,10 +190,10 @@ if __name__ == "__main__":
         # parsed_output = chain.invoke({"column": key, "content": value})
         # print(parsed_output)
         # parsed_output = {"TermURL": "nb:Sex", "Levels": ["male", "female"]}
-        parsed_output = {"TermURL": "nb:ParticipantID"}
+        # parsed_output = {"TermURL": "nb:ParticipantID"}
         # parsed_output = {"TermURL": "nb:Age", \
-        #                   "Format":"europeanDecimalValue"}
-        # parsed_output ={"TermURL": "nb:Session" }
+        #                  "Format":"europeanDecimalValue"}
+        parsed_output = {"TermURL": "nb:Session"}
         result = process_parsed_output(parsed_output)
         print(result)
         print(type(result))
