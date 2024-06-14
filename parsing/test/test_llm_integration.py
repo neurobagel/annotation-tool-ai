@@ -1,13 +1,18 @@
 import os
 import json
 from pathlib import Path
+import pytest
+from typing import Dict, Union
 
 from parsing.bin.llm_integration import (
+    IsAboutAge,
+    IsAboutGroup,
     IsAboutParticipant,
     Annotations,
+    IsAboutSession,
+    IsAboutSex,
     TSVAnnotations,
-)
-from parsing.bin.llm_integration import (
+    load_levels_mapping,
     convert_tsv_to_dict,
     process_parsed_output,
     update_json_file,
@@ -45,48 +50,118 @@ def test_convert_tsv_to_dict() -> None:
     os.remove(sample_tsv_file_path)
 
 
-def test_process_parsed_output() -> None:
-    # Test case 1: Valid ParticipantID
-    parsed_output_1 = {"TermURL": "nb:ParticipantID"}
-    result_1 = process_parsed_output(parsed_output_1)
-    assert isinstance(result_1, TSVAnnotations)
-    assert result_1.Description == "A participant ID"
-    assert result_1.Annotations.Identifies == "participant"
-
-    # Test case 2: Valid Sex information with levels
-    parsed_output_2 = {"TermURL": "nb:Sex", "Levels": ["male", "female"]}
-    result_2 = process_parsed_output(parsed_output_2)
-    assert isinstance(result_2, TSVAnnotations)
-    assert result_2.Description == "Sex information"
-    assert result_2.Annotations.Levels == {
-        "male": {"TermURL": "snomed:248153007", "Label": "Male"},
-        "female": {"TermURL": "snomed:248152002", "Label": "Female"},
-    }
-
-    # Test case 3: Valid Age information with transformation
-    parsed_output_3 = {"TermURL": "nb:Age", "Format": "floatvalue"}
-    result_3 = process_parsed_output(parsed_output_3)
-    assert isinstance(result_3, TSVAnnotations)
-    assert result_3.Description == "Age information"
-    assert result_3.Annotations.Transformation == {
-        "TermURL": "nb:FromFloat",
-        "Label": "float value",
-    }
-
-    # Test case 4: Valid Session information
-    parsed_output_4 = {"TermURL": "nb:Session"}
-    result_4 = process_parsed_output(parsed_output_4)
-    assert isinstance(result_4, TSVAnnotations)
-    assert result_4.Description == "A session ID"
-    assert result_4.Annotations.Identifies == "session"
-
-    # Test case 6: Invalid TermURL
-    parsed_output_6 = {"TermURL": "invalid:TermURL"}
-    result_6 = process_parsed_output(parsed_output_6)
-    assert (
-        result_6
-        == "Error: No annotation model found for TermURL: invalid:TermURL"
+@pytest.fixture  # type:ignore
+def levels_mapping_fixture() -> Dict[str, Dict[str, str]]:
+    # Load the levels mapping from the actual file or a mock file
+    mapping_file: str = "parsing/bin/diagnosisTerms.json"
+    levels_mapping: Dict[str, Dict[str, str]] = load_levels_mapping(
+        mapping_file
     )
+    return levels_mapping
+
+
+def test_participant_id(
+    levels_mapping_fixture: Dict[str, Dict[str, str]]
+) -> None:
+    parsed_output: Dict[str, Union[str, Dict[str, str], None]] = {
+        "TermURL": "nb:ParticipantID"
+    }
+    expected_result = TSVAnnotations(
+        Description="A participant ID",
+        Annotations=Annotations(
+            IsAbout=IsAboutParticipant(
+                Label="Subject Unique Identifier", TermURL="nb:ParticipantID"
+            ),
+            Identifies="participant",
+        ),
+    )
+    result = process_parsed_output(parsed_output, levels_mapping_fixture)
+    assert result == expected_result
+
+
+def test_diagnosis_variable(
+    levels_mapping_fixture: Dict[str, Dict[str, str]]
+) -> None:
+    parsed_output: Dict[str, Union[str, Dict[str, str], None]] = {
+        "TermURL": "nb:Diagnosis",
+        "Levels": {"PD": "Parkinson's Disease", "CTRL": "Healthy Control"},
+    }
+    expected_result = TSVAnnotations(
+        Description="Group variable",
+        Levels={"PD": "Parkinson's disease", "CTRL": "Healthy Control"},
+        Annotations=Annotations(
+            IsAbout=IsAboutGroup(Label="Diagnosis", TermURL="nb:Diagnosis"),
+            Levels={
+                "PD": {
+                    "TermURL": "snomed:49049000",
+                    "Label": "Parkinson's disease",
+                },
+                "CTRL": {"TermURL": "ncit:C94342", "Label": "Healthy Control"},
+            },
+        ),
+    )
+    result = process_parsed_output(parsed_output, levels_mapping_fixture)
+    assert result == expected_result
+
+
+def test_session_id(levels_mapping_fixture: Dict[str, Dict[str, str]]) -> None:
+    parsed_output: Dict[str, Union[str, Dict[str, str], None]] = {
+        "TermURL": "nb:Session"
+    }
+    expected_result = TSVAnnotations(
+        Description="A session ID",
+        Annotations=Annotations(
+            IsAbout=IsAboutSession(
+                Label="Run Identifier", TermURL="nb:Session"
+            ),
+            Identifies="session",
+        ),
+    )
+    result = process_parsed_output(parsed_output, levels_mapping_fixture)
+    assert result == expected_result
+
+
+def test_sex_variable(
+    levels_mapping_fixture: Dict[str, Dict[str, str]]
+) -> None:
+    parsed_output: Dict[str, Union[str, Dict[str, str], None]] = {
+        "TermURL": "nb:Sex",
+        "Levels": {"M": "male", "F": "female"},
+    }
+    expected_result = TSVAnnotations(
+        Description="Sex variable",
+        Levels={"M": "Male", "F": "Female"},
+        Annotations=Annotations(
+            IsAbout=IsAboutSex(Label="Sex", TermURL="nb:Sex"),
+            Levels={
+                "M": {"TermURL": "snomed:248153007", "Label": "Male"},
+                "F": {"TermURL": "snomed:248152002", "Label": "Female"},
+            },
+        ),
+    )
+    result = process_parsed_output(parsed_output, levels_mapping_fixture)
+    assert result == expected_result
+
+
+def test_age_variable(
+    levels_mapping_fixture: Dict[str, Dict[str, str]]
+) -> None:
+    parsed_output: Dict[str, Union[str, Dict[str, str], None]] = {
+        "TermURL": "nb:Age",
+        "Format": "europeandecimalvalue",
+    }
+    expected_result = TSVAnnotations(
+        Description="Age information",
+        Annotations=Annotations(
+            IsAbout=IsAboutAge(Label="Age variable", TermURL="nb:Age"),
+            Transformation={
+                "TermURL": "nb:FromEuro",
+                "Label": "European value decimals",
+            },
+        ),
+    )
+    result = process_parsed_output(parsed_output, levels_mapping_fixture)
+    assert result == expected_result
 
 
 def test_update_json_file_with_valid_tsv_annotations(tmp_path: Path) -> None:
