@@ -167,9 +167,6 @@ def handle_assessmentTool(
         ),
         None,
     )
-
-    print(ispartof_key)
-    print(ispartof)
     annotations = Annotations(IsAbout=annotation_instance, IsPartOf=ispartof)
     return TSVAnnotations(Description=description, Annotations=annotations)
 
