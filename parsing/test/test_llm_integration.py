@@ -12,6 +12,7 @@ from parsing.bin.llm_integration import (
     IsAboutSession,
     IsAboutSex,
     TSVAnnotations,
+    IsAboutAssessmentTool,
     load_levels_mapping,
     convert_tsv_to_dict,
     process_parsed_output,
@@ -58,6 +59,17 @@ def levels_mapping_fixture() -> Dict[str, Dict[str, str]]:
         mapping_file
     )
     return levels_mapping
+
+
+@pytest.fixture  # type:ignore
+def assessmenttool_mapping_fixture() -> Dict[str, Dict[str, str]]:
+    return {
+        "cogatlas:tsk_9ub5vndvakzyw": {
+            "TermURL": "cogatlas:tsk_9ub5vndvakzyw",
+            "Label": "alexia",
+        },
+        # Add more mappings as needed
+    }
 
 
 def test_participant_id(
@@ -161,6 +173,31 @@ def test_age_variable(
         ),
     )
     result = process_parsed_output(parsed_output, levels_mapping_fixture)
+    assert result == expected_result
+
+
+def test_assessmentTool_variable(
+    assessmenttool_mapping_fixture: Dict[str, Dict[str, str]]
+) -> None:
+    parsed_output: Dict[str, Union[str, Dict[str, str], None]] = {
+        "TermURL": "nb:AssessmentTool",
+        "AssessmentTool": "alexia",
+    }
+    expected_result = TSVAnnotations(
+        Description="Description of Assessment Tool conducted",
+        Annotations=Annotations(
+            IsAbout=IsAboutAssessmentTool(
+                Label="Assessment Tool", TermURL="nb:AssessmentTool"
+            ),
+            IsPartOf={
+                "TermURL": "cogatlas:tsk_9ub5vndvakzyw",
+                "Label": "alexia",
+            },
+        ),
+    )
+    result = process_parsed_output(
+        parsed_output, assessmenttool_mapping_fixture
+    )
     assert result == expected_result
 
 
