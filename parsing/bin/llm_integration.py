@@ -46,10 +46,12 @@ class Annotations(BaseModel):  # type:ignore
         IsAboutAge,
         IsAboutSession,
         IsAboutGroup,
+        IsAboutAssessmentTool,
     ]
     Identifies: Optional[str] = None
     Levels: Optional[Dict[str, Dict[str, str]]] = None
     Transformation: Optional[Dict[str, str]] = None
+    IsPartOf: Optional[Dict[str, str]] = None
 
 
 class TSVAnnotations(BaseModel):  # type:ignore
@@ -147,6 +149,31 @@ def handle_session(parsed_output: Dict[str, Any]) -> TSVAnnotations:
     return TSVAnnotations(Description=description, Annotations=annotations)
 
 
+def handle_assessmentTool(
+    parsed_output: Dict[str, str],
+    assessmenttool_mapping: Mapping[str, Dict[str, str]],
+) -> TSVAnnotations:
+
+    annotation_instance = IsAboutAssessmentTool(
+        TermURL=parsed_output["TermURL"]
+    )
+    description = "Description of Assessment Tool conducted"
+    ispartof_key = parsed_output.get("AssessmentTool", "").strip().lower()
+    ispartof = next(
+        (
+            item
+            for item in assessmenttool_mapping.values()
+            if item["Label"].strip().lower() == ispartof_key
+        ),
+        None,
+    )
+
+    print(ispartof_key)
+    print(ispartof)
+    annotations = Annotations(IsAbout=annotation_instance, IsPartOf=ispartof)
+    return TSVAnnotations(Description=description, Annotations=annotations)
+
+
 def load_levels_mapping(mapping_file: str) -> Dict[str, Dict[str, str]]:
     with open(mapping_file, "r") as file:
         mappings = json.load(file)
@@ -158,10 +185,25 @@ def load_levels_mapping(mapping_file: str) -> Dict[str, Dict[str, str]]:
     }
 
 
+def load_assessmenttool_mapping(
+    mapping_file: str,
+) -> Mapping[str, Dict[str, str]]:
+    with open(mapping_file, "r") as file:
+        mappings = json.load(file)
+    return {
+        term_url.strip().lower(): {
+            "TermURL": f"cogatlas:{term_url.strip().lower()}",
+            "Label": label.strip().lower(),
+        }
+        for term_url, label in mappings.items()
+    }
+
+
 def process_parsed_output(
     parsed_output: Dict[str, Union[str, Dict[str, str], None]],
     levels_mapping: Mapping[str, Dict[str, str]],
 ) -> Union[str, TSVAnnotations]:
+
     termurl_to_function: Dict[
         str, Callable[[Dict[str, Any]], TSVAnnotations]
     ] = {
@@ -178,6 +220,7 @@ def process_parsed_output(
     ] = {
         "nb:Sex": handle_categorical,
         "nb:Diagnosis": handle_categorical,
+        "nb:AssessmentTool": handle_assessmentTool,
     }
 
     if isinstance(parsed_output, dict):
@@ -207,7 +250,7 @@ def update_json_file(
     data: Union[str, TSVAnnotations], filename: str, target_key: str
 ) -> None:
     if isinstance(data, TSVAnnotations):
-        data_dict = data.dict(exclude_none=True)
+        data_dict = data.model_dump(exclude_none=True)
     else:
         data_dict = {"error": data}
 
@@ -227,18 +270,29 @@ if __name__ == "__main__":
     json_file = "output.json"
     tsv_to_json(file_path, json_file)
 
-    # Load the levels mapping from a JSON file
+    # Load the levels mapping from a JSON file for diagnosis
     levels_mapping_file = "parsing/bin/diagnosisTerms.json"
     levels_mapping = load_levels_mapping(levels_mapping_file)
+
+    # Load term-mapping from a JSON file for assessment tool
+    assessmenttool_mapping_file = "parsing/bin/toolTerms.json"
+    assessmenttool_mapping = load_assessmenttool_mapping(
+        assessmenttool_mapping_file
+    )
+    print(assessmenttool_mapping)
 
     # LLM-Categorization magic
 
     # Create output for each column
     for key, value in columns_dict.items():
         print(key, value)
+        # parsed_output: Dict[str, Union[str, Dict[str, str], None]] = {
+        #     "TermURL": "nb:Age",
+        #     "Format": "europeanDecimalValue",
+        # }
         parsed_output: Dict[str, Union[str, Dict[str, str], None]] = {
-            "TermURL": "nb:Age",
-            "Format": "europeanDecimalValue",
+            "TermURL": "nb:AssessmentTool",
+            "AssessmentTool": "future events structured interview",
         }
         # parsed_output: Dict[str, Union[str, Dict[str, str], None]] = {
         #    "TermURL": "nb:Sex",
@@ -253,6 +307,6 @@ if __name__ == "__main__":
         #        "CTRL": "healthy control",
         #    },
         # }
-        result = process_parsed_output(parsed_output, levels_mapping)
+        result = process_parsed_output(parsed_output, assessmenttool_mapping)
         print(result)
         update_json_file(result, "output.json", key)
