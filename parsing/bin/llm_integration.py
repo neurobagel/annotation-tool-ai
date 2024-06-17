@@ -34,6 +34,11 @@ class IsAboutGroup(IsAboutBase):
     TermURL: str
 
 
+class IsAboutAssessmentTool(IsAboutBase):
+    Label: str = Field(default="Assessment Tool")
+    TermURL: str
+
+
 class Annotations(BaseModel):  # type:ignore
     IsAbout: Union[
         IsAboutParticipant,
