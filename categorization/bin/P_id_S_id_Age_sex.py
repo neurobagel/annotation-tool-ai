@@ -1,22 +1,13 @@
+import json
 from typing import Dict
-
 from langchain_community.chat_models import ChatOllama
-from langchain_core.output_parsers import JsonOutputParser
 from langchain_core.prompts import PromptTemplate
-from langchain_core.pydantic_v1 import BaseModel, Field
 
 def Categorize1(result_dict: Dict[str, str]) -> None:
 
      # Initialize model
     llm = ChatOllama(model="gemma")
-
-    # # Create output structure
-    # class ColumnCategorization(BaseModel):
-    #     predictedColumn: str = Field(description="Column name predicted by the LLM within the NB data model entities")
-
-    # # Set up parser
-    # parser = JsonOutputParser(pydantic_object=ColumnCategorization)
-
+     
     # Create prompt template
     prompt = PromptTemplate(
         template='''Given the column data {column}: {content}, determine the category and give only the category name as output
@@ -55,7 +46,14 @@ Output= <category> " "  "
         try:
             # Invoke the chain with the input data
             response = chain.invoke({"column": key, "content": value})
-            print("Response:", response)
+            r = str(response)
+            if "Subject_IDs" in r:
+                output = {"TermURL": "nb:ParticipantID"}
+                print(f"{json.dumps(output)}")
+            elif "Session_IDs" in r:
+                output = {"TermURL": "nb:Session"}
+                print(f"{json.dumps(output)}")
+
 
         except Exception as e:
             print("Error processing column:", key)
