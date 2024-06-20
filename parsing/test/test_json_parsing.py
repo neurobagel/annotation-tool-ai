@@ -4,7 +4,7 @@ from pathlib import Path
 import pytest
 from typing import Dict, Union
 
-from parsing.bin.llm_integration import (
+from parsing.bin.json_parsing import (
     IsAboutAge,
     IsAboutGroup,
     IsAboutParticipant,
