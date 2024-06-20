@@ -4,7 +4,7 @@ from langchain_community.chat_models import ChatOllama
 from langchain_core.prompts import PromptTemplate
 
 
-def Categorize1(result_dict: Dict[str, str]) -> Dict[str, Any]:
+def llm_invocation(result_dict: Dict[str, str]) -> Dict[str, Any]:
 
     # Initialize model
     llm = ChatOllama(model="gemma")
