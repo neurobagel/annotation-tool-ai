@@ -1,5 +1,5 @@
-from categorization.bin.P_id_S_id_Age_sex import Categorize1
-from parsing.bin.llm_integration import (
+from categorization.bin.llm_categorization import llm_invocation
+from parsing.bin.json_parsing import (
     convert_tsv_to_dict,
     process_parsed_output,
     update_json_file,
@@ -24,7 +24,7 @@ if __name__ == "__main__":
             input_dict = {key: value}
             print(key)
             # Column information is inserted in prompt template
-            llm_response = Categorize1(input_dict)
+            llm_response = llm_invocation(input_dict)
 
         except Exception as e:
             print("Error processing column:", key)
