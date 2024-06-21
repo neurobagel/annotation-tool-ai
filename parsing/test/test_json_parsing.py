@@ -4,7 +4,7 @@ from pathlib import Path
 import pytest
 from typing import Dict, Union
 
-from parsing.bin.llm_integration import (
+from parsing.bin.json_parsing import (
     IsAboutAge,
     IsAboutGroup,
     IsAboutParticipant,
@@ -20,12 +20,13 @@ from parsing.bin.llm_integration import (
 )
 
 
+# Test for convert_tsv_to_dict function
 def test_convert_tsv_to_dict() -> None:
     # Example TSV content
     sample_tsv_content = """header1\theader2\theader3
-    value1_1\tvalue1_2\tvalue1_3
-    value2_1\tvalue2_2\tvalue2_3
-    """
+value1_1\tvalue1_2\tvalue1_3
+value2_1\tvalue2_2\tvalue2_3
+"""
 
     # Write the sample TSV content to a temporary file
     with open("sample_tsv_file.tsv", "w") as f:
@@ -51,9 +52,8 @@ def test_convert_tsv_to_dict() -> None:
     os.remove(sample_tsv_file_path)
 
 
-@pytest.fixture  # type:ignore
+@pytest.fixture  # type: ignore
 def levels_mapping_fixture() -> Dict[str, Dict[str, str]]:
-    # Load the levels mapping from the actual file or a mock file
     mapping_file: str = "parsing/bin/diagnosisTerms.json"
     levels_mapping: Dict[str, Dict[str, str]] = load_levels_mapping(
         mapping_file
@@ -61,14 +61,13 @@ def levels_mapping_fixture() -> Dict[str, Dict[str, str]]:
     return levels_mapping
 
 
-@pytest.fixture  # type:ignore
+@pytest.fixture  # type: ignore
 def assessmenttool_mapping_fixture() -> Dict[str, Dict[str, str]]:
     return {
-        "cogatlas:tsk_9ub5vndvakzyw": {
-            "TermURL": "cogatlas:tsk_9ub5vndvakzyw",
-            "Label": "alexia",
-        },
-        # Add more mappings as needed
+        "trm_4b86c55f3d5df": {
+            "TermURL": "cogatlas:trm_4b86c55f3d5df",
+            "Label": "WISC-R Mazes",
+        }
     }
 
 
@@ -87,7 +86,7 @@ def test_participant_id(
             Identifies="participant",
         ),
     )
-    result = process_parsed_output(parsed_output, levels_mapping_fixture)
+    result = process_parsed_output(parsed_output)
     assert result == expected_result
 
 
@@ -112,7 +111,7 @@ def test_diagnosis_variable(
             },
         ),
     )
-    result = process_parsed_output(parsed_output, levels_mapping_fixture)
+    result = process_parsed_output(parsed_output)
     assert result == expected_result
 
 
@@ -129,7 +128,7 @@ def test_session_id(levels_mapping_fixture: Dict[str, Dict[str, str]]) -> None:
             Identifies="session",
         ),
     )
-    result = process_parsed_output(parsed_output, levels_mapping_fixture)
+    result = process_parsed_output(parsed_output)
     assert result == expected_result
 
 
@@ -151,7 +150,7 @@ def test_sex_variable(
             },
         ),
     )
-    result = process_parsed_output(parsed_output, levels_mapping_fixture)
+    result = process_parsed_output(parsed_output)
     assert result == expected_result
 
 
@@ -172,7 +171,7 @@ def test_age_variable(
             },
         ),
     )
-    result = process_parsed_output(parsed_output, levels_mapping_fixture)
+    result = process_parsed_output(parsed_output)
     assert result == expected_result
 
 
@@ -181,7 +180,7 @@ def test_assessmentTool_variable(
 ) -> None:
     parsed_output: Dict[str, Union[str, Dict[str, str], None]] = {
         "TermURL": "nb:AssessmentTool",
-        "AssessmentTool": "alexia",
+        "AssessmentTool": "wisc-r mazes",
     }
     expected_result = TSVAnnotations(
         Description="Description of Assessment Tool conducted",
@@ -190,14 +189,12 @@ def test_assessmentTool_variable(
                 Label="Assessment Tool", TermURL="nb:AssessmentTool"
             ),
             IsPartOf={
-                "TermURL": "cogatlas:tsk_9ub5vndvakzyw",
-                "Label": "alexia",
+                "TermURL": "cogatlas:trm_4b86c55f3d5df",
+                "Label": "wisc-r mazes",
             },
         ),
     )
-    result = process_parsed_output(
-        parsed_output, assessmenttool_mapping_fixture
-    )
+    result = process_parsed_output(parsed_output)
     assert result == expected_result
 
 
