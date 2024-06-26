@@ -35,7 +35,7 @@ def SexLevel(result_dict: Dict[str, str], r: str, key: str) -> None:
         "TermURL": "nb:Sex",
         "Levels": {str(var1): "male", str(var2): "female"},
     }
-    print(json.dumps(output))
+    return output
 
 
 def is_integer(s: str) -> bool:
