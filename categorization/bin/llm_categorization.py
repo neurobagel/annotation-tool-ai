@@ -101,7 +101,7 @@ def AgeFormat(result_dict: Dict[str, str], r: str, key: str) -> None:
         "TermURL": "nb:Sex",
         "Format": Fvar,
     }
-    print(json.dumps(output))
+    return output
 
 
 def llm_invocation(result_dict: Dict[str, str]) -> Dict[str, Any]:
