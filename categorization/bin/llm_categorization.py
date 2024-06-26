@@ -98,7 +98,7 @@ def AgeFormat(result_dict: Dict[str, str], r: str, key: str) -> None:
         # 2 more conditions yet to be added
 
     output: Dict[str, str] = {
-        "TermURL": "nb:Sex",
+        "TermURL": "nb:Age",
         "Format": Fvar,
     }
     return output
