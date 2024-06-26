@@ -158,7 +158,7 @@ Output= <category>
     elif "Sex" in r:
         output = SexLevel(result_dict, r, key)
     elif "Age" in r:
-        AgeFormat(result_dict, r, key)
+        output = AgeFormat(result_dict, r, key)
     else:
         output = llm_response
 
