@@ -107,7 +107,7 @@ def AgeFormat(result_dict: Dict[str, str], r: str, key: str) -> Dict[str, Any]:
     return output
 
 
-def llm_invocation(result_dict: Dict[str, str]) -> Dict[str, Any]:
+def llm_invocation(result_dict: Dict[str, str]) -> None:
 
     # Initialize model
     llm = ChatOllama(model="gemma")
@@ -144,25 +144,39 @@ Output= <category>
     # Create chain
     chain = prompt | llm
 
-    key, value = list(result_dict.items())[0]
+    for key, value in result_dict.items():
+        llm_response = chain.invoke({"column": key, "content": value})
+
+        r = str(llm_response)
+        # check mapping of categorization
+        print(llm_response)
+        if "Participant_IDs" in r:
+
+            output = {"TermURL": "nb:ParticipantID"}
+            print(f"{json.dumps(output)}")
+        elif "Session_IDs" in r:
+            output = {"TermURL": "nb:Session"}
+            print(f"{json.dumps(output)}")
+        elif "Sex" in r:
+            output = SexLevel(result_dict, r, key)
+            print(f"{json.dumps(output)}")
+        elif "Age" in r:
+            output = AgeFormat(result_dict, r, key)
+            print(f"{json.dumps(output)}")
+        else:
+            output = llm_response
+
+    #  return output
 
     # Invoke LLM
-    llm_response = chain.invoke({"column": key, "content": value})
 
-    r = str(llm_response)
-    # check mapping of categorization
-    print(llm_response)
-    if "Participant_IDs" in r:
-        output = {"TermURL": "nb:ParticipantID"}
-        print(f"{json.dumps(output)}")
-    elif "Session_IDs" in r:
-        output = {"TermURL": "nb:Session"}
-        print(f"{json.dumps(output)}")
-    elif "Sex" in r:
-        output = SexLevel(result_dict, r, key)
-    elif "Age" in r:
-        output = AgeFormat(result_dict, r, key)
-    else:
-        output = llm_response
 
-    return output
+if __name__ == "__main__":
+    result_dict = {
+        "participant_id": "sub-01 sub-01 sub-02 sub-02 sub-03 sub-03 sub-04 sub-04 sub-05 sub-05",
+        "session_id": "ses-01 ses-02 ses-01 ses-02 ses-01 ses-02 ses-01 ses-02 ses-01 ses-02",
+        "sex_column": "1,2, 1, 2, missing",
+        "pheno_age": "34,1 35,3 nan 39,0 ",
+    }
+
+    llm_invocation(result_dict)
