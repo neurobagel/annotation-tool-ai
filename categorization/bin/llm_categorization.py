@@ -9,22 +9,28 @@ def SexLevel(result_dict: Dict[str, str], r: str, key: str) -> None:
     value = result_dict[key]
     var1: str = ""
     var2: str = ""
+    var3: str = ""
 
-    if "1" in value or "2" in value:
+    if "1" in value or "2" in value or "3" in value:
         var1 = "1"
         var2 = "2"
-    elif "0" in value or "1" in value:
+        var3 = "3"
+    elif "0" in value or "1" in value or "2" in value:
         var1 = "0"
         var2 = "1"
-    elif "M" in value or "F" in value:
+        var3 = "2"
+    elif "M" in value or "F" in value or "O" in value:
         var1 = "M"
         var2 = "F"
-    elif "m" in value or "f" in value:
+        var3 = "O"
+    elif "m" in value or "f" in value or "o" in value:
         var1 = "m"
         var2 = "f"
-    elif "male" in value or "female" in value:
+        var3 = "o"
+    elif "male" in value or "female" in value or "other" in value:
         var1 = "male"
         var2 = "female"
+        var3 = "other"
     else:
         output: Dict[str, Union[str, Dict[str, str]]] = (
             {}
