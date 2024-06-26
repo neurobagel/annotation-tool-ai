@@ -18,23 +18,26 @@ We are attempting to achieve this automation using LLMs (at present gemma) and v
 
 
 - clone the repo
+
 `git clone https://github.com/neurobagel/annotation-tool-ai`
 
 - create virtual environment
- `python3 -m venv venv`
 
- `source venv/bin/activate`
+ ```python3 -m venv venv```
+
+ ```source venv/bin/activate```
 
 - set up pre-commit ( flake8, black, mypy)
- `pre-commit install`
+
+ ```pre-commit install```
 
 - Install ollama (Currently the tool is supported only on linux ) 
 
-`curl -fsSL https://ollama.com/install.sh | sh`
+```curl -fsSL https://ollama.com/install.sh | sh```
 
 
 - complete installations 
- `pip install -r requirements.txt`
+ ```pip install -r requirements.txt```
 
 
 
