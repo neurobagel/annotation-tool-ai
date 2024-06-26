@@ -156,7 +156,7 @@ Output= <category>
         output = {"TermURL": "nb:Session"}
         print(f"{json.dumps(output)}")
     elif "Sex" in r:
-        SexLevel(result_dict, r, key)
+        output = SexLevel(result_dict, r, key)
     elif "Age" in r:
         AgeFormat(result_dict, r, key)
     else:
