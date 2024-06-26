@@ -5,26 +5,29 @@ from langchain_community.chat_models import ChatOllama
 from langchain_core.prompts import PromptTemplate
 
 
-def SexLevel(result_dict: Dict[str, str], r: str, key: str) -> None:
+def SexLevel(result_dict: Dict[str, str], r: str, key: str) -> Dict[str, Any]:
     value = result_dict[key]
+    value = value.lower()
     var1: str = ""
     var2: str = ""
+    var3: str = ""
 
-    if "1" in value or "2" in value:
+    if "1" in value or "2" in value or "3" in value:
         var1 = "1"
         var2 = "2"
-    elif "0" in value or "1" in value:
+        var3 = "3"
+    elif "0" in value or "1" in value or "2" in value:
         var1 = "0"
         var2 = "1"
-    elif "M" in value or "F" in value:
-        var1 = "M"
-        var2 = "F"
-    elif "m" in value or "f" in value:
+        var3 = "2"
+    elif "m" in value or "f" in value or "o" in value:
         var1 = "m"
         var2 = "f"
-    elif "male" in value or "female" in value:
+        var3 = "o"
+    elif "male" in value or "female" in value or "other" in value:
         var1 = "male"
         var2 = "female"
+        var3 = "other"
     else:
         output: Dict[str, Union[str, Dict[str, str]]] = (
             {}
@@ -35,7 +38,7 @@ def SexLevel(result_dict: Dict[str, str], r: str, key: str) -> None:
         "TermURL": "nb:Sex",
         "Levels": {str(var1): "male", str(var2): "female"},
     }
-    print(json.dumps(output))
+    return output
 
 
 def is_integer(s: str) -> bool:
@@ -76,7 +79,7 @@ def is_european_decimal(s: str) -> bool:
 # def is_years yet to be added
 
 
-def AgeFormat(result_dict: Dict[str, str], r: str, key: str) -> None:
+def AgeFormat(result_dict: Dict[str, str], r: str, key: str) -> Dict[str, Any]:
     value = result_dict[key].strip()  # Ensure no leading/trailing whitespace
     numbers_list_str = value.split()
     Age_l = [num_str.strip() for num_str in numbers_list_str]
@@ -84,24 +87,24 @@ def AgeFormat(result_dict: Dict[str, str], r: str, key: str) -> None:
 
     for num_str in Age_l:
         if is_integer(num_str):
-            Fvar = "IntValue"
+            Fvar = "integervalue"
             break
         elif is_float(num_str):
-            Fvar = "FloatVal"
+            Fvar = "floatvalue"
             break
         elif is_iso8601(num_str):
-            Fvar = "ISO"
+            Fvar = "iso8601"
             break
         elif is_european_decimal(num_str):
-            Fvar = "europeanDecimalValue"
+            Fvar = "europeandecimalvalue"
             break
         # 2 more conditions yet to be added
 
     output: Dict[str, str] = {
-        "TermURL": "nb:Sex",
+        "TermURL": "nb:Age",
         "Format": Fvar,
     }
-    print(json.dumps(output))
+    return output
 
 
 def llm_invocation(result_dict: Dict[str, str]) -> None:
@@ -145,23 +148,27 @@ Output= <category>
         llm_response = chain.invoke({"column": key, "content": value})
 
         r = str(llm_response)
+        # check mapping of categorization
+        print(llm_response)
         if "Participant_IDs" in r:
-            print("Processing column:", key)
+
             output = {"TermURL": "nb:ParticipantID"}
             print(f"{json.dumps(output)}")
         elif "Session_IDs" in r:
-            print("Processing column:", key)
             output = {"TermURL": "nb:Session"}
             print(f"{json.dumps(output)}")
         elif "Sex" in r:
-            print("Processing column:", key)
-            SexLevel(result_dict, r, key)
+            output = SexLevel(result_dict, r, key)
+            print(f"{json.dumps(output)}")
         elif "Age" in r:
-            print("Processing column:", key)
-            AgeFormat(result_dict, r, key)
+            output = AgeFormat(result_dict, r, key)
+            print(f"{json.dumps(output)}")
         else:
-            print(llm_response)
             output = llm_response
+
+    #  return output
+
+    # Invoke LLM
 
 
 if __name__ == "__main__":
