@@ -84,16 +84,16 @@ def AgeFormat(result_dict: Dict[str, str], r: str, key: str) -> None:
 
     for num_str in Age_l:
         if is_integer(num_str):
-            Fvar = "IntValue"
+            Fvar = "integervalue"
             break
         elif is_float(num_str):
-            Fvar = "FloatVal"
+            Fvar = "floatvalue"
             break
         elif is_iso8601(num_str):
-            Fvar = "ISO"
+            Fvar = "iso8601"
             break
         elif is_european_decimal(num_str):
-            Fvar = "europeanDecimalValue"
+            Fvar = "europeandecimalvalue"
             break
         # 2 more conditions yet to be added
 
