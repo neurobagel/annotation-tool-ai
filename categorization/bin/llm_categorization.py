@@ -5,8 +5,9 @@ from langchain_community.chat_models import ChatOllama
 from langchain_core.prompts import PromptTemplate
 
 
-def SexLevel(result_dict: Dict[str, str], r: str, key: str) -> None:
+def SexLevel(result_dict: Dict[str, str], r: str, key: str) -> Dict[str, Any]:
     value = result_dict[key]
+    value = value.lower()
     var1: str = ""
     var2: str = ""
     var3: str = ""
@@ -19,10 +20,6 @@ def SexLevel(result_dict: Dict[str, str], r: str, key: str) -> None:
         var1 = "0"
         var2 = "1"
         var3 = "2"
-    elif "M" in value or "F" in value or "O" in value:
-        var1 = "M"
-        var2 = "F"
-        var3 = "O"
     elif "m" in value or "f" in value or "o" in value:
         var1 = "m"
         var2 = "f"
@@ -82,7 +79,7 @@ def is_european_decimal(s: str) -> bool:
 # def is_years yet to be added
 
 
-def AgeFormat(result_dict: Dict[str, str], r: str, key: str) -> None:
+def AgeFormat(result_dict: Dict[str, str], r: str, key: str) -> Dict[str, Any]:
     value = result_dict[key].strip()  # Ensure no leading/trailing whitespace
     numbers_list_str = value.split()
     Age_l = [num_str.strip() for num_str in numbers_list_str]
