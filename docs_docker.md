@@ -9,7 +9,7 @@ For this instructions it is assumed that [docker](https://www.docker.com/) is in
 The container can be built from the dockerfile available in the repo
 
 ```bash
-docker build -t annotation-tool-ai
+docker build -t annotation-tool-ai .
 ```
 Let's break down the command:
 
