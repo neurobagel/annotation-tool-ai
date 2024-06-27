@@ -38,7 +38,7 @@ Let't break down the command:
 The following command runs the script for the annotation process:
 
 ```
-docker exec -it instance-name python3 full_annotation.py local/input/file local/output/file
+docker exec -it instance-name python3 full_annotation.py container/input/file container/output/file
 ```
 
 Let's break down this again:
