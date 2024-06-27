@@ -23,7 +23,7 @@ Let's break down the command:
 docker run -d \
 -v ollama:/root/.ollama \
 -v /path/to/some/local/folder/:/app/output/  \
---name instance-name annotation-tool-ai\
+--name instance-name annotation-tool-ai
 ```
 
 Let't break down the command:
