@@ -1,3 +1,4 @@
+import argparse
 from categorization.bin.llm_categorization import llm_invocation
 from parsing.bin.json_parsing import (
     convert_tsv_to_dict,
@@ -7,11 +8,7 @@ from parsing.bin.json_parsing import (
 )
 
 
-if __name__ == "__main__":
-
-    file_path = "participants.tsv"
-    json_file = "output.json"
-
+def main(file_path: str, json_file: str) -> None:
     columns_dict = convert_tsv_to_dict(file_path)
 
     tsv_to_json(file_path, json_file)
@@ -29,7 +26,22 @@ if __name__ == "__main__":
         except Exception as e:
             print("Error processing column:", key)
             print("Error message:", e)
+            continue
 
         result = process_parsed_output(llm_response)
         print(result)
-        update_json_file(result, "output.json", key)
+        update_json_file(result, json_file, key)
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(
+        description="Process TSV file and update JSON output."
+    )
+    parser.add_argument("file_path", type=str, help="Path to the TSV file")
+    parser.add_argument(
+        "json_file", type=str, help="Path to the output JSON file"
+    )
+
+    args = parser.parse_args()
+
+    main(args.file_path, args.json_file)
