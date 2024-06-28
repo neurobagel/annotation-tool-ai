@@ -1,6 +1,6 @@
 import argparse
-from categorization.bin.llm_categorization import llm_invocation
-from parsing.bin.json_parsing import (
+from app.categorization.llm_categorization import llm_invocation
+from app.parsing.json_parsing import (
     convert_tsv_to_dict,
     process_parsed_output,
     update_json_file,

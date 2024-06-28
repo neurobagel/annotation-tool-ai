@@ -4,7 +4,7 @@ from pathlib import Path
 import pytest
 from typing import Dict, Union
 
-from parsing.bin.json_parsing import (
+from app.parsing.json_parsing import (
     IsAboutAge,
     IsAboutGroup,
     IsAboutParticipant,
@@ -54,7 +54,7 @@ value2_1\tvalue2_2\tvalue2_3
 
 @pytest.fixture  # type: ignore
 def levels_mapping_fixture() -> Dict[str, Dict[str, str]]:
-    mapping_file: str = "parsing/bin/diagnosisTerms.json"
+    mapping_file: str = "app/parsing/diagnosisTerms.json"
     levels_mapping: Dict[str, Dict[str, str]] = load_levels_mapping(
         mapping_file
     )
