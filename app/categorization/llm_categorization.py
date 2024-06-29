@@ -36,7 +36,7 @@ def SexLevel(result_dict: Dict[str, str], r: str, key: str) -> Dict[str, Any]:
 
     output = {
         "TermURL": "nb:Sex",
-        "Levels": {str(var1): "male", str(var2): "female"},
+        "Levels": {str(var1): "male", str(var2): "female", str(var3): "other"},
     }
     return output
 
@@ -114,7 +114,8 @@ def llm_invocation(result_dict: Dict[str, str]) -> Dict[str, Any]:
 
     # Create prompt template
     prompt = PromptTemplate(
-        template="""Given the column data {column}: {content}, determine the category and give only the category name as output
+        template="""Given the column data {column}: {content},
+    determine the category and give only the category name as output
 
 Examples:
 1. Input: "participant_id: sub-01 sub-02 sub-03"
