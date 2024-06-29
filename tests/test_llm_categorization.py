@@ -4,177 +4,56 @@ from typing import Dict, Any, Union
 from langchain_community.chat_models import ChatOllama
 from langchain_core.prompts import PromptTemplate
 
-
-def SexLevel(result_dict: Dict[str, str], r: str, key: str) -> Dict[str, Any]:
-    value = result_dict[key]
-    value = value.lower()
-    var1: str = ""
-    var2: str = ""
-    var3: str = ""
-
-    if "1" in value or "2" in value or "3" in value:
-        var1 = "1"
-        var2 = "2"
-        var3 = "3"
-    elif "0" in value or "1" in value or "2" in value:
-        var1 = "0"
-        var2 = "1"
-        var3 = "2"
-    elif "m" in value or "f" in value or "o" in value:
-        var1 = "m"
-        var2 = "f"
-        var3 = "o"
-    elif "male" in value or "female" in value or "other" in value:
-        var1 = "male"
-        var2 = "female"
-        var3 = "other"
-    else:
-        output: Dict[str, Union[str, Dict[str, str]]] = (
-            {}
-        )  # Or any default output as per your requirement
-        print(json.dumps(output))
-
-    output = {
-        "TermURL": "nb:Sex",
-        "Levels": {str(var1): "male", str(var2): "female", str(var3): "other"},
-    }
-    return output
+from app.categorization.llm_categorization import llm_invocation
 
 
-def is_integer(s: str) -> bool:
-    try:
-        int(s)
-        return True
-    except ValueError:
-        return False
+def test_Pid(result_dict: Dict[str, str]) -> None:
+    op = json.dumps(llm_invocation(result_dict), separators=(",", ":"))
+    expected_op = """{"TermURL":"nb:ParticipantID"}"""
+    assert (
+        op == expected_op
+    ), f"Participant ID Not successfully categorized. Got {op}"
+    print("Participant ID successfully categorized")
 
 
-def is_float(s: str) -> bool:
-    try:
-        float(s)
-        return True
-    except ValueError:
-        return False
+def test_Sid(result_dict: Dict[str, str]) -> None:
+    op = json.dumps(llm_invocation(result_dict), separators=(",", ":"))
+    expected_op = """{"TermURL":"nb:Session"}"""
+    print(f"Actual Output: {op}")
+    print(f"Expected Output: {expected_op.strip()}")
+    assert (
+        op == expected_op
+    ), f"Session ID Not successfully categorized. Got {op}"
+    print("Session ID successfully categorized")
 
 
-def is_iso8601(s: str) -> bool:
-    try:
-        datetime.fromisoformat(s)
-        return True
-    except ValueError:
-        return False
+def test_Age(result_dict: Dict[str, str]) -> None:
+    op = json.dumps(llm_invocation(result_dict), separators=(",", ":"))
+    expected_op = """ {"TermURL":"nb:Age","Format":"europeandecimalvalue"} """
+    print(f"Actual Output: {op}")
+    print(f"Expected Output: {expected_op.strip()}")
+    assert (
+        op.strip() == expected_op.strip()
+    ), " Age Not successfully categorized"
+    print("Agesuccessfully categorized")
 
 
-def is_european_decimal(s: str) -> bool:
-    s = s.strip()  # Remove leading and trailing whitespace
+def test_Sex(result_dict: Dict[str, str]) -> None:
+    op = json.dumps(llm_invocation(result_dict), separators=(",", ":"))
+    expected_op = """{"TermURL":"nb:Sex","Levels":{"1":"male","2":"female","3":"other"}}"""
 
-    if s.count(",") == 1:
-        if s.index(",") > 0 and s.index(",") < len(s) - 1:
-            return True
+    # Debugging prints
+    print(f"Actual Output: {op}")
+    print(f"Expected Output: {expected_op.strip()}")
 
-    return False
-
-
-# def is_bounded(s:str)->bool: yet to be added
-# def is_years yet to be added
-
-
-def AgeFormat(result_dict: Dict[str, str], r: str, key: str) -> Dict[str, Any]:
-    value = result_dict[key].strip()  # Ensure no leading/trailing whitespace
-    numbers_list_str = value.split()
-    Age_l = [num_str.strip() for num_str in numbers_list_str]
-    Fvar: str = "Unknown"
-
-    for num_str in Age_l:
-        if is_integer(num_str):
-            Fvar = "integervalue"
-            break
-        elif is_float(num_str):
-            Fvar = "floatvalue"
-            break
-        elif is_iso8601(num_str):
-            Fvar = "iso8601"
-            break
-        elif is_european_decimal(num_str):
-            Fvar = "europeandecimalvalue"
-            break
-        # 2 more conditions yet to be added
-
-    output: Dict[str, str] = {
-        "TermURL": "nb:Age",
-        "Format": Fvar,
-    }
-    return output
-
-
-def llm_invocation(result_dict: Dict[str, str]) -> None:
-
-    # Initialize model
-    llm = ChatOllama(model="gemma")
-
-    # Create prompt template
-    prompt = PromptTemplate(
-        template="""Given the column data {column}: {content},
-        determine
-        the category and give only the category name as output
-
-Examples:
-1. Input: "participant_id: sub-01 sub-02 sub-03"
-Output: Participant_IDs
-
-2. Input: 'pheno_age: ["34,1", "35,3", "NA", "39,0", "22,1",
-"23,2", "21,1", "22,3", "42,5", "43,2"]'
-Output: Age
-
-3. Input: "session_id: ses-01 ses-02"
-Output: Session_IDs
-
-4. Input: "pheno_sex : ["F", "F", "M", "M", "missing",
-"missing", "F", "F", "M", "M"]"
-Output: Sex
-
-5. Input: "pheno_sex : ["1", "2", "1", "2", "missing", "missing"]"
-Output: Sex
-
-Do Not Give any explanation in the output.
-Input: "{column}: {content}"
-Output= <category>
-""",
-        input_variables=["column", "content"],
-    )
-
-    # Create chain
-    chain = prompt | llm
-
-    for key, value in result_dict.items():
-        llm_response = chain.invoke({"column": key, "content": value})
-
-        r = str(llm_response)
-        # check mapping of categorization
-        print(llm_response)
-        if "Participant_IDs" in r:
-
-            output = {"TermURL": "nb:ParticipantID"}
-            print(f"{json.dumps(output)}")
-        elif "Session_IDs" in r:
-            output = {"TermURL": "nb:Session"}
-            print(f"{json.dumps(output)}")
-        elif "Sex" in r:
-            output = SexLevel(result_dict, r, key)
-            print(f"{json.dumps(output)}")
-        elif "Age" in r:
-            output = AgeFormat(result_dict, r, key)
-            print(f"{json.dumps(output)}")
-        else:
-            output = llm_response
-
-    #  return output
-
-    # Invoke LLM
+    assert (
+        op.strip() == expected_op.strip()
+    ), "Sex Not successfully categorized"
+    print("Sex successfully categorized")  # Invoke LLM
 
 
 if __name__ == "__main__":
-    result_dict = {
+    result_dict1 = {
         "participant_id": "sub-01 sub-01 sub-02 sub-02 \
             sub-03 sub-03 sub-04 sub-04 sub-05 sub-05",
         "session_id": "ses-01 ses-02 ses-01 ses-02 ses-01 \
@@ -182,5 +61,31 @@ if __name__ == "__main__":
         "sex_column": "1,2, 1, 2, missing",
         "pheno_age": "34,1 35,3 nan 39,0 ",
     }
-
-    llm_invocation(result_dict)
+    result_dict2 = {
+        # "participant_id": "sub-01 sub-01 sub-02 sub-02 \
+        #     sub-03 sub-03 sub-04 sub-04 sub-05 sub-05",
+        "session_id": "ses-01 ses-02 ses-01 ses-02 ses-01 \
+              ses-02 ses-01 ses-02 ses-01 ses-02",
+        # "sex_column": "1,2, 1, 2, missing",
+        "pheno_age": "34,1 35,3 nan 39,0 ",
+    }
+    result_dict3 = {
+        # "participant_id": "sub-01 sub-01 sub-02 sub-02 \
+        #     sub-03 sub-03 sub-04 sub-04 sub-05 sub-05",
+        # "session_id": "ses-01 ses-02 ses-01 ses-02 ses-01 \
+        #       ses-02 ses-01 ses-02 ses-01 ses-02",
+        "sex_column": "1,2, 1, 2, missing",
+        "pheno_age": "34,1 35,3 nan 39,0 ",
+    }
+    result_dict4 = {
+        # "participant_id": "sub-01 sub-01 sub-02 sub-02 \
+        #     sub-03 sub-03 sub-04 sub-04 sub-05 sub-05",
+        # "session_id": "ses-01 ses-02 ses-01 ses-02 ses-01 \
+        #       ses-02 ses-01 ses-02 ses-01 ses-02",
+        # "sex_column": "1,2, 1, 2, missing",
+        "pheno_age": "34,1 35,3 nan 39,0 ",
+    }
+    test_Pid(result_dict1)
+    test_Sid(result_dict2)
+    test_Sex(result_dict3)
+    test_Age(result_dict4)
