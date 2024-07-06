@@ -1,3366 +1,3366 @@
-{
-    "trm_4fba85a597ca9": {
+[
+    {
         "TermURL": "cogatlas:trm_4fba85a597ca9",
         "Label": "delayed memory task"
     },
-    "trm_565a31fa6f444": {
+    {
         "TermURL": "cogatlas:trm_565a31fa6f444",
         "Label": "regulated heat stimulation"
     },
-    "trm_5667451917a34": {
+    {
         "TermURL": "cogatlas:trm_5667451917a34",
         "Label": "2-stage decision task"
     },
-    "trm_4a3fd79d09b6d": {
+    {
         "TermURL": "cogatlas:trm_4a3fd79d09b6d",
         "Label": "backward masking"
     },
-    "trm_4fbd2af083332": {
+    {
         "TermURL": "cogatlas:trm_4fbd2af083332",
         "Label": "size match task"
     },
-    "trm_56674133b666c": {
+    {
         "TermURL": "cogatlas:trm_56674133b666c",
         "Label": "adaptive n-back task"
     },
-    "trm_4fbd2c18e1dd9": {
+    {
         "TermURL": "cogatlas:trm_4fbd2c18e1dd9",
         "Label": "object decision task"
     },
-    "trm_565a2e79b22f2": {
+    {
         "TermURL": "cogatlas:trm_565a2e79b22f2",
         "Label": "incentive modulated antisaccade task"
     },
-    "trm_4fbd2b964d3ec": {
+    {
         "TermURL": "cogatlas:trm_4fbd2b964d3ec",
         "Label": "overlapping figures task"
     },
-    "trm_4fb4175126374": {
+    {
         "TermURL": "cogatlas:trm_4fb4175126374",
         "Label": "meditation task"
     },
-    "trm_4a3fd79d0b3d7": {
+    {
         "TermURL": "cogatlas:trm_4a3fd79d0b3d7",
         "Label": "trace conditioning"
     },
-    "trm_50b40bca8cf83": {
+    {
         "TermURL": "cogatlas:trm_50b40bca8cf83",
         "Label": "hungry donkey task"
     },
-    "trm_5667436296862": {
+    {
         "TermURL": "cogatlas:trm_5667436296862",
         "Label": "image monitoring"
     },
-    "trm_5667441c338a7": {
+    {
         "TermURL": "cogatlas:trm_5667441c338a7",
         "Label": "2nd-order rule acquisition"
     },
-    "trm_50b55d8a6da00": {
+    {
         "TermURL": "cogatlas:trm_50b55d8a6da00",
         "Label": "pebl perceptual vigilance task"
     },
-    "trm_4fbd2b4bb165c": {
+    {
         "TermURL": "cogatlas:trm_4fbd2b4bb165c",
         "Label": "orientation match task"
     },
-    "trm_4af89b3a925ca": {
+    {
         "TermURL": "cogatlas:trm_4af89b3a925ca",
         "Label": "vandenberg & kuse tasks"
     },
-    "trm_4b1968619b00b": {
+    {
         "TermURL": "cogatlas:trm_4b1968619b00b",
         "Label": "color-word stroop task"
     },
-    "trm_4b4a537644d76": {
+    {
         "TermURL": "cogatlas:trm_4b4a537644d76",
         "Label": "penn continuous performance task"
     },
-    "trm_4b65e5e2ab3ca": {
+    {
         "TermURL": "cogatlas:trm_4b65e5e2ab3ca",
         "Label": "word-picture verification task"
     },
-    "trm_4b7497a289534": {
+    {
         "TermURL": "cogatlas:trm_4b7497a289534",
         "Label": "block design test"
     },
-    "trm_4b749b8829eee": {
+    {
         "TermURL": "cogatlas:trm_4b749b8829eee",
         "Label": "embedded figures test"
     },
-    "trm_4b75ea4ddd896": {
+    {
         "TermURL": "cogatlas:trm_4b75ea4ddd896",
         "Label": "same-different task"
     },
-    "trm_4b843655d5d75": {
+    {
         "TermURL": "cogatlas:trm_4b843655d5d75",
         "Label": "chimeric animal stroop task"
     },
-    "trm_4b86c2e871b14": {
+    {
         "TermURL": "cogatlas:trm_4b86c2e871b14",
         "Label": "rapid automatized naming test"
     },
-    "trm_4b86c473a7166": {
+    {
         "TermURL": "cogatlas:trm_4b86c473a7166",
         "Label": "underlining test"
     },
-    "trm_4b86c55f3d5df": {
+    {
         "TermURL": "cogatlas:trm_4b86c55f3d5df",
         "Label": "wisc-r mazes"
     },
-    "trm_4b86dbcd8ff78": {
+    {
         "TermURL": "cogatlas:trm_4b86dbcd8ff78",
         "Label": "rapid serial object transformation"
     },
-    "trm_4b94affc43245": {
+    {
         "TermURL": "cogatlas:trm_4b94affc43245",
         "Label": "wechsler abbreviated scale of intelligence"
     },
-    "trm_4b94b12bf0eb2": {
+    {
         "TermURL": "cogatlas:trm_4b94b12bf0eb2",
         "Label": "wechsler memory scale fourth edition"
     },
-    "trm_4b9568b2865c2": {
+    {
         "TermURL": "cogatlas:trm_4b9568b2865c2",
         "Label": "microcog"
     },
-    "trm_4c3e0a9576c3b": {
+    {
         "TermURL": "cogatlas:trm_4c3e0a9576c3b",
         "Label": "letter number sequencing"
     },
-    "trm_4c3e0add96550": {
+    {
         "TermURL": "cogatlas:trm_4c3e0add96550",
         "Label": "oculomotor delayed response"
     },
-    "trm_4c40d10cd776e": {
+    {
         "TermURL": "cogatlas:trm_4c40d10cd776e",
         "Label": "operation span task"
     },
-    "trm_4c40d168898db": {
+    {
         "TermURL": "cogatlas:trm_4c40d168898db",
         "Label": "reading span task"
     },
-    "trm_4c40d1d16071e": {
+    {
         "TermURL": "cogatlas:trm_4c40d1d16071e",
         "Label": "listening span task"
     },
-    "trm_4c40d2a93ea15": {
+    {
         "TermURL": "cogatlas:trm_4c40d2a93ea15",
         "Label": "ax-cpt task"
     },
-    "trm_4c40d325977f0": {
+    {
         "TermURL": "cogatlas:trm_4c40d325977f0",
         "Label": "self ordered pointing task"
     },
-    "trm_4c40d4054f38b": {
+    {
         "TermURL": "cogatlas:trm_4c40d4054f38b",
         "Label": "keep-track task"
     },
-    "trm_4c8989e1f3df7": {
+    {
         "TermURL": "cogatlas:trm_4c8989e1f3df7",
         "Label": "acupuncture task"
     },
-    "trm_4c898a20eb254": {
+    {
         "TermURL": "cogatlas:trm_4c898a20eb254",
         "Label": "braille reading task"
     },
-    "trm_4c898a680e424": {
+    {
         "TermURL": "cogatlas:trm_4c898a680e424",
         "Label": "breath-holding"
     },
-    "trm_4c898a8fd3afb": {
+    {
         "TermURL": "cogatlas:trm_4c898a8fd3afb",
         "Label": "chewing/swallowing"
     },
-    "trm_4c898acd1f28e": {
+    {
         "TermURL": "cogatlas:trm_4c898acd1f28e",
         "Label": "pavlovian conditioning task"
     },
-    "trm_4c898b02722d2": {
+    {
         "TermURL": "cogatlas:trm_4c898b02722d2",
         "Label": "counting/calculation"
     },
-    "trm_4c898b29660b0": {
+    {
         "TermURL": "cogatlas:trm_4c898b29660b0",
         "Label": "cued explicit recognition"
     },
-    "trm_4c898b4b463aa": {
+    {
         "TermURL": "cogatlas:trm_4c898b4b463aa",
         "Label": "deception task"
     },
-    "trm_4c898b8c2d071": {
+    {
         "TermURL": "cogatlas:trm_4c898b8c2d071",
         "Label": "deductive reasoning task"
     },
-    "trm_4c898bbab4fd4": {
+    {
         "TermURL": "cogatlas:trm_4c898bbab4fd4",
         "Label": "divided auditory attention"
     },
-    "trm_4c898be57fcbc": {
+    {
         "TermURL": "cogatlas:trm_4c898be57fcbc",
         "Label": "drawing"
     },
-    "trm_4c898c0786246": {
+    {
         "TermURL": "cogatlas:trm_4c898c0786246",
         "Label": "eating/drinking"
     },
-    "trm_4c898c33ee5f8": {
+    {
         "TermURL": "cogatlas:trm_4c898c33ee5f8",
         "Label": "encoding task"
     },
-    "trm_4c898c8bf1b4f": {
+    {
         "TermURL": "cogatlas:trm_4c898c8bf1b4f",
         "Label": "episodic recall"
     },
-    "trm_4c898cb4ada49": {
+    {
         "TermURL": "cogatlas:trm_4c898cb4ada49",
         "Label": "face monitor/discrimination"
     },
-    "trm_4c898da401420": {
+    {
         "TermURL": "cogatlas:trm_4c898da401420",
         "Label": "film viewing"
     },
-    "trm_4c898f079d05e": {
+    {
         "TermURL": "cogatlas:trm_4c898f079d05e",
         "Label": "finger tapping task"
     },
-    "trm_4c898f72228f3": {
+    {
         "TermURL": "cogatlas:trm_4c898f72228f3",
         "Label": "fixation task"
     },
-    "trm_4c898f8f297ac": {
+    {
         "TermURL": "cogatlas:trm_4c898f8f297ac",
         "Label": "flashing checkerboard"
     },
-    "trm_4c898fad429ed": {
+    {
         "TermURL": "cogatlas:trm_4c898fad429ed",
         "Label": "flexion/extension"
     },
-    "trm_4c898fc6722f4": {
+    {
         "TermURL": "cogatlas:trm_4c898fc6722f4",
         "Label": "free word list recall"
     },
-    "trm_4c898ff0bea97": {
+    {
         "TermURL": "cogatlas:trm_4c898ff0bea97",
         "Label": "grasping task"
     },
-    "trm_4c899005b11d5": {
+    {
         "TermURL": "cogatlas:trm_4c899005b11d5",
         "Label": "imagined movement"
     },
-    "trm_4c89903149aeb": {
+    {
         "TermURL": "cogatlas:trm_4c89903149aeb",
         "Label": "imagined objects/scenes"
     },
-    "trm_4c8990480ad0f": {
+    {
         "TermURL": "cogatlas:trm_4c8990480ad0f",
         "Label": "isometric force"
     },
-    "trm_4c8990810541d": {
+    {
         "TermURL": "cogatlas:trm_4c8990810541d",
         "Label": "mental rotation task"
     },
-    "trm_4c89909cc1f33": {
+    {
         "TermURL": "cogatlas:trm_4c89909cc1f33",
         "Label": "micturition task"
     },
-    "trm_4c8990b07a037": {
+    {
         "TermURL": "cogatlas:trm_4c8990b07a037",
         "Label": "music comprehension/production"
     },
-    "trm_4c8990c87035d": {
+    {
         "TermURL": "cogatlas:trm_4c8990c87035d",
         "Label": "naming (covert)"
     },
-    "trm_4c8990e187dc7": {
+    {
         "TermURL": "cogatlas:trm_4c8990e187dc7",
         "Label": "naming (overt)"
     },
-    "trm_4c8990f59266f": {
+    {
         "TermURL": "cogatlas:trm_4c8990f59266f",
         "Label": "non-painful electrical stimulation"
     },
-    "trm_4c89910b7f8bc": {
+    {
         "TermURL": "cogatlas:trm_4c89910b7f8bc",
         "Label": "non-painful thermal stimulation"
     },
-    "trm_4c89912c79030": {
+    {
         "TermURL": "cogatlas:trm_4c89912c79030",
         "Label": "olfactory monitoring/discrimination"
     },
-    "trm_4c89913f80802": {
+    {
         "TermURL": "cogatlas:trm_4c89913f80802",
         "Label": "orthographic discrimination"
     },
-    "trm_4c8991c5beb0a": {
+    {
         "TermURL": "cogatlas:trm_4c8991c5beb0a",
         "Label": "pain monitor/discrimination task"
     },
-    "trm_4c8991e6e8597": {
+    {
         "TermURL": "cogatlas:trm_4c8991e6e8597",
         "Label": "paired associate recall"
     },
-    "trm_4c8991fadfe01": {
+    {
         "TermURL": "cogatlas:trm_4c8991fadfe01",
         "Label": "passive listening"
     },
-    "trm_4c899211a965c": {
+    {
         "TermURL": "cogatlas:trm_4c899211a965c",
         "Label": "passive viewing"
     },
-    "trm_4c89922cb6402": {
+    {
         "TermURL": "cogatlas:trm_4c89922cb6402",
         "Label": "phonological discrimination"
     },
-    "trm_4c89924414c69": {
+    {
         "TermURL": "cogatlas:trm_4c89924414c69",
         "Label": "pitch/monitor discrimination"
     },
-    "trm_4c89926767870": {
+    {
         "TermURL": "cogatlas:trm_4c89926767870",
         "Label": "pointing task"
     },
-    "trm_4c8a82ba8a538": {
+    {
         "TermURL": "cogatlas:trm_4c8a82ba8a538",
         "Label": "reading (covert)"
     },
-    "trm_4c8a82eeaa58f": {
+    {
         "TermURL": "cogatlas:trm_4c8a82eeaa58f",
         "Label": "reading (overt)"
     },
-    "trm_4c8a830dec136": {
+    {
         "TermURL": "cogatlas:trm_4c8a830dec136",
         "Label": "recitation/repetition (covert)"
     },
-    "trm_4c8a8329cb8ff": {
+    {
         "TermURL": "cogatlas:trm_4c8a8329cb8ff",
         "Label": "recitation/repetition (overt)"
     },
-    "trm_4c8a834779883": {
+    {
         "TermURL": "cogatlas:trm_4c8a834779883",
         "Label": "rest eyes open"
     },
-    "trm_50f72e93ea9e3": {
+    {
         "TermURL": "cogatlas:trm_50f72e93ea9e3",
         "Label": "motor screening task"
     },
-    "trm_4c8a83cac75f5": {
+    {
         "TermURL": "cogatlas:trm_4c8a83cac75f5",
         "Label": "sequence recall/learning"
     },
-    "trm_4c8a83f27ac55": {
+    {
         "TermURL": "cogatlas:trm_4c8a83f27ac55",
         "Label": "spatial location/discrimination"
     },
-    "trm_4c8a840d6f969": {
+    {
         "TermURL": "cogatlas:trm_4c8a840d6f969",
         "Label": "subjective emotional picture discrimination"
     },
-    "trm_4c8a842512a33": {
+    {
         "TermURL": "cogatlas:trm_4c8a842512a33",
         "Label": "syntactic discrimination"
     },
-    "trm_4c8a843d8d352": {
+    {
         "TermURL": "cogatlas:trm_4c8a843d8d352",
         "Label": "tactile monitor/discrimination"
     },
-    "trm_4c8a8467304e2": {
+    {
         "TermURL": "cogatlas:trm_4c8a8467304e2",
         "Label": "theory of mind task"
     },
-    "trm_4c8a84825c4e4": {
+    {
         "TermURL": "cogatlas:trm_4c8a84825c4e4",
         "Label": "tone monitor/discrimination"
     },
-    "trm_4c8a84afdd863": {
+    {
         "TermURL": "cogatlas:trm_4c8a84afdd863",
         "Label": "vibrotactile monitor/discrimination"
     },
-    "trm_4c8a84d4c4157": {
+    {
         "TermURL": "cogatlas:trm_4c8a84d4c4157",
         "Label": "video games"
     },
-    "trm_4c8a84f20dde2": {
+    {
         "TermURL": "cogatlas:trm_4c8a84f20dde2",
         "Label": "visual attention task"
     },
-    "trm_4c8a85534241d": {
+    {
         "TermURL": "cogatlas:trm_4c8a85534241d",
         "Label": "visual pursuit/tracking"
     },
-    "trm_4c8a8575d1e55": {
+    {
         "TermURL": "cogatlas:trm_4c8a8575d1e55",
         "Label": "whistling"
     },
-    "trm_4c8a858da803d": {
+    {
         "TermURL": "cogatlas:trm_4c8a858da803d",
         "Label": "word stem completion (covert)"
     },
-    "trm_4c8a85a4564b2": {
+    {
         "TermURL": "cogatlas:trm_4c8a85a4564b2",
         "Label": "word stem completion (overt)"
     },
-    "trm_4c8a85c5c75eb": {
+    {
         "TermURL": "cogatlas:trm_4c8a85c5c75eb",
         "Label": "writing task"
     },
-    "trm_4cacee4a1d875": {
+    {
         "TermURL": "cogatlas:trm_4cacee4a1d875",
         "Label": "mixed gambles task"
     },
-    "trm_4cacf22a22d80": {
+    {
         "TermURL": "cogatlas:trm_4cacf22a22d80",
         "Label": "probabilistic classification task"
     },
-    "trm_4cacf3fbc503b": {
+    {
         "TermURL": "cogatlas:trm_4cacf3fbc503b",
         "Label": "conditional stop signal task"
     },
-    "tsk_4a57abb94981d": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb94981d",
         "Label": "action imitation task"
     },
-    "tsk_4a57abb949846": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949846",
         "Label": "action observation task"
     },
-    "tsk_4a57abb949858": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949858",
         "Label": "adult attachment interview"
     },
-    "tsk_4a57abb949869": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949869",
         "Label": "antisaccade/prosaccade task"
     },
-    "tsk_4a57abb949879": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949879",
         "Label": "rapid serial visual presentation task"
     },
-    "tsk_4a57abb949889": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949889",
         "Label": "audio-visual target detection task"
     },
-    "tsk_4a57abb94989b": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb94989b",
         "Label": "backward digit span task"
     },
-    "tsk_4a57abb9498ab": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb9498ab",
         "Label": "behavioral rating inventory of executive function"
     },
-    "tsk_4a57abb9498bc": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb9498bc",
         "Label": "benton facial recognition test"
     },
-    "tsk_4a57abb9498ce": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb9498ce",
         "Label": "birmingham object recognition battery"
     },
-    "tsk_4a57abb9498df": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb9498df",
         "Label": "block tapping test"
     },
-    "tsk_4a57abb9498ef": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb9498ef",
         "Label": "boston naming test"
     },
-    "tsk_4a57abb949900": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949900",
         "Label": "california verbal learning test-ii"
     },
-    "tsk_4a57abb949912": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949912",
         "Label": "cambridge face memory test"
     },
-    "tsk_4a57abb949923": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949923",
         "Label": "category fluency test"
     },
-    "tsk_4a57abb949934": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949934",
         "Label": "choice reaction time task"
     },
-    "tsk_4a57abb9499a8": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb9499a8",
         "Label": "clinical evaluation of language fundamentals-3"
     },
-    "tsk_4a57abb9499b8": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb9499b8",
         "Label": "color-discrimination task"
     },
-    "tsk_4a57abb9499c7": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb9499c7",
         "Label": "continuous recognition paradigm"
     },
-    "tsk_4a57abb9499d5": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb9499d5",
         "Label": "cups task"
     },
-    "tsk_4a57abb9499e3": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb9499e3",
         "Label": "delayed match to sample task"
     },
-    "tsk_4a57abb9499f1": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb9499f1",
         "Label": "delayed nonmatch to sample task"
     },
-    "tsk_4a57abb9499ff": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb9499ff",
         "Label": "delayed recall test"
     },
-    "tsk_4a57abb949a0d": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949a0d",
         "Label": "digit span task"
     },
-    "tsk_4a57abb949a25": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949a25",
         "Label": "digit/symbol coding test"
     },
-    "tsk_4a57abb949a33": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949a33",
         "Label": "doors and people test"
     },
-    "tsk_4a57abb949a41": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949a41",
         "Label": "edinburgh handedness inventory"
     },
-    "tsk_4a57abb949a4f": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949a4f",
         "Label": "eriksen flanker task"
     },
-    "tsk_4a57abb949a5d": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949a5d",
         "Label": "extradimensional shift task"
     },
-    "tsk_4a57abb949a6a": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949a6a",
         "Label": "face n-back task"
     },
-    "tsk_4a57abb949a78": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949a78",
         "Label": "fagerstrom test for nicotine dependence"
     },
-    "tsk_4a57abb949a85": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949a85",
         "Label": "forward digit span task"
     },
-    "tsk_4a57abb949a93": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949a93",
         "Label": "go/no-go task"
     },
-    "tsk_4a57abb949aa1": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949aa1",
         "Label": "gray oral reading test - 4"
     },
-    "tsk_4a57abb949aae": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949aae",
         "Label": "hooper visual organization test"
     },
-    "tsk_4a57abb949abc": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949abc",
         "Label": "immediate recall test"
     },
-    "tsk_4a57abb949aca": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949aca",
         "Label": "international affective picture system"
     },
-    "tsk_4a57abb949ad7": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949ad7",
         "Label": "intradimensional shift task"
     },
-    "tsk_4a57abb949ae5": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949ae5",
         "Label": "iowa gambling task"
     },
-    "tsk_4a57abb949af3": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949af3",
         "Label": "ishihara plates for color blindness"
     },
-    "tsk_4a57abb949b00": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949b00",
         "Label": "kanizsa figures"
     },
-    "tsk_4a57abb949b0e": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949b0e",
         "Label": "letter fluency test"
     },
-    "tsk_4a57abb949b1c": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949b1c",
         "Label": "letter n-back task"
     },
-    "tsk_4a57abb949b2b": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949b2b",
         "Label": "letter naming task"
     },
-    "tsk_4a57abb949b38": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949b38",
         "Label": "lexical decision task"
     },
-    "tsk_4a57abb949b46": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949b46",
         "Label": "matching pennies game"
     },
-    "tsk_4a57abb949b54": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949b54",
         "Label": "maudsley obsessive compulsive inventory"
     },
-    "tsk_4a57abb949bb1": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949bb1",
         "Label": "mini mental state examination"
     },
-    "tsk_4a57abb949bbf": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949bbf",
         "Label": "motor sequencing task"
     },
-    "tsk_4a57abb949bcd": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949bcd",
         "Label": "n-back task"
     },
-    "tsk_4a57abb949bdb": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949bdb",
         "Label": "nine-hole peg test"
     },
-    "tsk_4a57abb949be9": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949be9",
         "Label": "object-discrimination task"
     },
-    "tsk_4a57abb949bf6": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949bf6",
         "Label": "oddball task"
     },
-    "tsk_4a57abb949c04": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949c04",
         "Label": "pantomime task"
     },
-    "tsk_4a57abb949ce9": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949ce9",
         "Label": "parrott scale"
     },
-    "tsk_4a57abb949cfb": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949cfb",
         "Label": "picture naming task"
     },
-    "tsk_4a57abb949d09": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949d09",
         "Label": "positive and negative affect scale"
     },
-    "tsk_4a57abb949d17": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949d17",
         "Label": "posner cueing task"
     },
-    "tsk_4a57abb949d25": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949d25",
         "Label": "pseudoword naming task"
     },
-    "tsk_4a57abb949d32": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949d32",
         "Label": "pyramids and palm trees task"
     },
-    "tsk_4a57abb949d40": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949d40",
         "Label": "recognition memory test"
     },
-    "tsk_4a57abb949d4e": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949d4e",
         "Label": "reversal learning task"
     },
-    "tsk_4a57abb949d5b": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949d5b",
         "Label": "risky gains task"
     },
-    "tsk_4a57abb949d69": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949d69",
         "Label": "salthouse and babcock listening span task"
     },
-    "tsk_4a57abb949d76": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949d76",
         "Label": "selective attention task"
     },
-    "tsk_4a57abb949d84": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949d84",
         "Label": "semantic anomaly judgement task"
     },
-    "tsk_4a57abb949d92": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949d92",
         "Label": "semantic association task"
     },
-    "tsk_4a57abb949d9f": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949d9f",
         "Label": "sentence completion test"
     },
-    "tsk_4a57abb949dad": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949dad",
         "Label": "set-shifting task"
     },
-    "tsk_4a57abb949dbb": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949dbb",
         "Label": "simon task"
     },
-    "tsk_4a57abb949dc8": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949dc8",
         "Label": "simple reaction time task"
     },
-    "tsk_4a57abb949dd6": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949dd6",
         "Label": "source memory test"
     },
-    "tsk_4a57abb949de3": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949de3",
         "Label": "span/supra-span test"
     },
-    "tsk_4a57abb949df1": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949df1",
         "Label": "spatial n-back task"
     },
-    "tsk_4a57abb949dfe": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949dfe",
         "Label": "spielberger's state-trait anxiety questionnaire"
     },
-    "tsk_4a57abb949e0c": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949e0c",
         "Label": "sternberg delayed recognition task"
     },
-    "tsk_4a57abb949e1a": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949e1a",
         "Label": "stop signal task"
     },
-    "tsk_4a57abb949e27": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949e27",
         "Label": "stroop task"
     },
-    "tsk_4a57abb949e35": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949e35",
         "Label": "structured clinical interview for diagnostic and statistical manual of mental disorders (dsm-iv)"
     },
-    "tsk_4a57abb949e44": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949e44",
         "Label": "symbol-digit substitution"
     },
-    "tsk_4a57abb949e5b": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949e5b",
         "Label": "symptom checklist-90-revised"
     },
-    "tsk_4a57abb949e7c": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949e7c",
         "Label": "syntactic acceptability judgement task"
     },
-    "tsk_4a57abb949e8a": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949e8a",
         "Label": "task-switching"
     },
-    "tsk_4a57abb949e98": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949e98",
         "Label": "temporal discounting task"
     },
-    "tsk_4a57abb949ea5": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949ea5",
         "Label": "test of word reading efficiency"
     },
-    "tsk_4a57abb949eb3": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949eb3",
         "Label": "tobacco craving questionnaire"
     },
-    "tsk_4a57abb949ec0": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949ec0",
         "Label": "trail making test a and b"
     },
-    "tsk_4a57abb949ece": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949ece",
         "Label": "unified parkinson's disease rating scale"
     },
-    "tsk_4a57abb949edb": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949edb",
         "Label": "visual alignment task"
     },
-    "tsk_4a57abb949ee9": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949ee9",
         "Label": "visuospatial cueing task"
     },
-    "tsk_4a57abb949ef7": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949ef7",
         "Label": "warrington's face/word recognition test"
     },
-    "tsk_4a57abb949f04": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949f04",
         "Label": "wechsler adult intelligence scale-revised"
     },
-    "tsk_4a57abb949f12": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949f12",
         "Label": "wechsler adult intelligence scale - revised"
     },
-    "tsk_4a57abb949f21": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949f21",
         "Label": "wisconsin card sorting test"
     },
-    "tsk_4a57abb949f2f": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949f2f",
         "Label": "word attack"
     },
-    "tsk_4a57abb949f3d": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949f3d",
         "Label": "word generation task"
     },
-    "tsk_4a57abb949f4a": {
+    {
         "TermURL": "cogatlas:tsk_4a57abb949f4a",
         "Label": "word identification"
     },
-    "trm_4d54b2cc0f943": {
+    {
         "TermURL": "cogatlas:trm_4d54b2cc0f943",
         "Label": "cambridge gambling task"
     },
-    "trm_4d54b61a14a14": {
+    {
         "TermURL": "cogatlas:trm_4d54b61a14a14",
         "Label": "probabilistic gambling task"
     },
-    "trm_4d54b8361e93e": {
+    {
         "TermURL": "cogatlas:trm_4d54b8361e93e",
         "Label": "behavioral investment allocation strategy"
     },
-    "trm_4d55997cd3edb": {
+    {
         "TermURL": "cogatlas:trm_4d55997cd3edb",
         "Label": "non-choice task"
     },
-    "trm_4d559bcd67c18": {
+    {
         "TermURL": "cogatlas:trm_4d559bcd67c18",
         "Label": "balloon analogue risk task"
     },
-    "trm_4d559d2703bae": {
+    {
         "TermURL": "cogatlas:trm_4d559d2703bae",
         "Label": "devil's task"
     },
-    "trm_4d55a2bbcfdff": {
+    {
         "TermURL": "cogatlas:trm_4d55a2bbcfdff",
         "Label": "choice task between risky and non-risky options"
     },
-    "trm_4d8a48e403c78": {
+    {
         "TermURL": "cogatlas:trm_4d8a48e403c78",
         "Label": "inductive reasoning aptitude"
     },
-    "trm_4d949c5b0e380": {
+    {
         "TermURL": "cogatlas:trm_4d949c5b0e380",
         "Label": "rhyme verification task"
     },
-    "trm_4da6304c9aa23": {
+    {
         "TermURL": "cogatlas:trm_4da6304c9aa23",
         "Label": "attention networks test"
     },
-    "trm_4da63146f12d7": {
+    {
         "TermURL": "cogatlas:trm_4da63146f12d7",
         "Label": "remember/know task"
     },
-    "trm_4da6318f7381b": {
+    {
         "TermURL": "cogatlas:trm_4da6318f7381b",
         "Label": "probabilistic reversal learning task"
     },
-    "trm_4da631be60291": {
+    {
         "TermURL": "cogatlas:trm_4da631be60291",
         "Label": "counting stroop task"
     },
-    "trm_4da6327154fd4": {
+    {
         "TermURL": "cogatlas:trm_4da6327154fd4",
         "Label": "scene recognition task"
     },
-    "trm_4da6331cdeeb5": {
+    {
         "TermURL": "cogatlas:trm_4da6331cdeeb5",
         "Label": "california verbal learning test"
     },
-    "trm_4da6338803ed2": {
+    {
         "TermURL": "cogatlas:trm_4da6338803ed2",
         "Label": "wechsler intelligence scale for children - revised"
     },
-    "trm_4da633dbb5817": {
+    {
         "TermURL": "cogatlas:trm_4da633dbb5817",
         "Label": "word fluency test"
     },
-    "trm_4da633fe917c4": {
+    {
         "TermURL": "cogatlas:trm_4da633fe917c4",
         "Label": "color trails test"
     },
-    "trm_4da634216ebbc": {
+    {
         "TermURL": "cogatlas:trm_4da634216ebbc",
         "Label": "dual-task paradigm"
     },
-    "trm_4da869646e5d1": {
+    {
         "TermURL": "cogatlas:trm_4da869646e5d1",
         "Label": "item recognition task"
     },
-    "trm_4da869e68b5c4": {
+    {
         "TermURL": "cogatlas:trm_4da869e68b5c4",
         "Label": "memory span test"
     },
-    "trm_4da86ad02b3ea": {
+    {
         "TermURL": "cogatlas:trm_4da86ad02b3ea",
         "Label": "complex span test"
     },
-    "trm_4da86b539924c": {
+    {
         "TermURL": "cogatlas:trm_4da86b539924c",
         "Label": "spatial span test"
     },
-    "trm_4da86c2a70a7d": {
+    {
         "TermURL": "cogatlas:trm_4da86c2a70a7d",
         "Label": "dot pattern expectancy task"
     },
-    "trm_4da86c6808ddd": {
+    {
         "TermURL": "cogatlas:trm_4da86c6808ddd",
         "Label": "cattell's culture fair intelligence test"
     },
-    "trm_4da86c8bb3b04": {
+    {
         "TermURL": "cogatlas:trm_4da86c8bb3b04",
         "Label": "letter comparison task"
     },
-    "trm_4da86cb034ff6": {
+    {
         "TermURL": "cogatlas:trm_4da86cb034ff6",
         "Label": "pattern comparison task"
     },
-    "trm_4da86cdbd9eeb": {
+    {
         "TermURL": "cogatlas:trm_4da86cdbd9eeb",
         "Label": "test of variables of attention"
     },
-    "trm_4da86cfe8cf1b": {
+    {
         "TermURL": "cogatlas:trm_4da86cfe8cf1b",
         "Label": "sustained attention to response task"
     },
-    "trm_4da87b8bf1511": {
+    {
         "TermURL": "cogatlas:trm_4da87b8bf1511",
         "Label": "matching familiar figures test"
     },
-    "trm_4da87e439c411": {
+    {
         "TermURL": "cogatlas:trm_4da87e439c411",
         "Label": "tower of london"
     },
-    "trm_4da87e7282f92": {
+    {
         "TermURL": "cogatlas:trm_4da87e7282f92",
         "Label": "tower of hanoi"
     },
-    "trm_4da87e9c79847": {
+    {
         "TermURL": "cogatlas:trm_4da87e9c79847",
         "Label": "dichotic listening task"
     },
-    "trm_4da87f383435b": {
+    {
         "TermURL": "cogatlas:trm_4da87f383435b",
         "Label": "directed forgetting task"
     },
-    "trm_4da87f81bc2c8": {
+    {
         "TermURL": "cogatlas:trm_4da87f81bc2c8",
         "Label": "retrieval-induced forgetting task"
     },
-    "trm_4da87fb28978e": {
+    {
         "TermURL": "cogatlas:trm_4da87fb28978e",
         "Label": "paced auditory serial addition test"
     },
-    "trm_4da87fdd7820e": {
+    {
         "TermURL": "cogatlas:trm_4da87fdd7820e",
         "Label": "porteus maze test"
     },
-    "trm_4da880396c76b": {
+    {
         "TermURL": "cogatlas:trm_4da880396c76b",
         "Label": "rey-ostereith complex figure test"
     },
-    "trm_4da880ff8fd4a": {
+    {
         "TermURL": "cogatlas:trm_4da880ff8fd4a",
         "Label": "cambridge neuropsychological test automated battery"
     },
-    "trm_4da881dace79c": {
+    {
         "TermURL": "cogatlas:trm_4da881dace79c",
         "Label": "corsi blocks"
     },
-    "trm_4da886fc2bc46": {
+    {
         "TermURL": "cogatlas:trm_4da886fc2bc46",
         "Label": "visual patterns test"
     },
-    "trm_4da8885b33375": {
+    {
         "TermURL": "cogatlas:trm_4da8885b33375",
         "Label": "rivermead behavioural memory test"
     },
-    "trm_4da88a2a63d97": {
+    {
         "TermURL": "cogatlas:trm_4da88a2a63d97",
         "Label": "paired associate learning"
     },
-    "trm_4da88a8e13f26": {
+    {
         "TermURL": "cogatlas:trm_4da88a8e13f26",
         "Label": "vigilance"
     },
-    "trm_4da88ae0f2952": {
+    {
         "TermURL": "cogatlas:trm_4da88ae0f2952",
         "Label": "rey auditory verbal learning task"
     },
-    "trm_4da88b17b985b": {
+    {
         "TermURL": "cogatlas:trm_4da88b17b985b",
         "Label": "nonword repetition task"
     },
-    "trm_4da88b3b0cbcc": {
+    {
         "TermURL": "cogatlas:trm_4da88b3b0cbcc",
         "Label": "response mapping task"
     },
-    "trm_4da88b63787d6": {
+    {
         "TermURL": "cogatlas:trm_4da88b63787d6",
         "Label": "pursuit rotor task"
     },
-    "trm_4da88b8b60ffb": {
+    {
         "TermURL": "cogatlas:trm_4da88b8b60ffb",
         "Label": "alternating runs paradigm"
     },
-    "trm_4da88bb3c2462": {
+    {
         "TermURL": "cogatlas:trm_4da88bb3c2462",
         "Label": "object alternation task"
     },
-    "trm_4da88bd4412da": {
+    {
         "TermURL": "cogatlas:trm_4da88bd4412da",
         "Label": "animal naming task"
     },
-    "trm_4da88bff0507c": {
+    {
         "TermURL": "cogatlas:trm_4da88bff0507c",
         "Label": "catbat task"
     },
-    "trm_4da88c205b16b": {
+    {
         "TermURL": "cogatlas:trm_4da88c205b16b",
         "Label": "haptic illusion task"
     },
-    "trm_4da88c5302e06": {
+    {
         "TermURL": "cogatlas:trm_4da88c5302e06",
         "Label": "brixton spatial anticipation test"
     },
-    "trm_4da88c904862b": {
+    {
         "TermURL": "cogatlas:trm_4da88c904862b",
         "Label": "hayling sentence completion test"
     },
-    "trm_4da88cb222308": {
+    {
         "TermURL": "cogatlas:trm_4da88cb222308",
         "Label": "nih toolbox picture sequence memory test"
     },
-    "trm_4da88ec6735ad": {
+    {
         "TermURL": "cogatlas:trm_4da88ec6735ad",
         "Label": "uznadze haptic illusion task"
     },
-    "trm_4da890594742a": {
+    {
         "TermURL": "cogatlas:trm_4da890594742a",
         "Label": "emotional regulation task"
     },
-    "trm_4da89077f19ae": {
+    {
         "TermURL": "cogatlas:trm_4da89077f19ae",
         "Label": "digit cancellation task"
     },
-    "trm_4da89089ce0af": {
+    {
         "TermURL": "cogatlas:trm_4da89089ce0af",
         "Label": "zoo map test"
     },
-    "trm_4da890a9bd7a3": {
+    {
         "TermURL": "cogatlas:trm_4da890a9bd7a3",
         "Label": "morris water maze"
     },
-    "trm_4da890cf99b9e": {
+    {
         "TermURL": "cogatlas:trm_4da890cf99b9e",
         "Label": "stockings of cambridge task"
     },
-    "trm_4da890f978492": {
+    {
         "TermURL": "cogatlas:trm_4da890f978492",
         "Label": "glasgow coma scale"
     },
-    "trm_4da8911e715e3": {
+    {
         "TermURL": "cogatlas:trm_4da8911e715e3",
         "Label": "early social and communication scales"
     },
-    "trm_4da8914987ee2": {
+    {
         "TermURL": "cogatlas:trm_4da8914987ee2",
         "Label": "reynell developmental language scales"
     },
-    "trm_4da891794859f": {
+    {
         "TermURL": "cogatlas:trm_4da891794859f",
         "Label": "macarthur communicative development inventories"
     },
-    "trm_4da891a546d8c": {
+    {
         "TermURL": "cogatlas:trm_4da891a546d8c",
         "Label": "autism diagnostic observation schedule"
     },
-    "trm_4da891d43240c": {
+    {
         "TermURL": "cogatlas:trm_4da891d43240c",
         "Label": "modified erickson scale of communication attitudes"
     },
-    "trm_4dadbdd0b2b8c": {
+    {
         "TermURL": "cogatlas:trm_4dadbdd0b2b8c",
         "Label": "delayed response task"
     },
-    "trm_4dadbe225bdf1": {
+    {
         "TermURL": "cogatlas:trm_4dadbe225bdf1",
         "Label": "spatial delayed response task"
     },
-    "trm_4dadbfd771a54": {
+    {
         "TermURL": "cogatlas:trm_4dadbfd771a54",
         "Label": "picture-word stroop test"
     },
-    "trm_4e31d031bc8c2": {
+    {
         "TermURL": "cogatlas:trm_4e31d031bc8c2",
         "Label": "synchrony judgment task"
     },
-    "trm_4fbd2b6fd33c5": {
+    {
         "TermURL": "cogatlas:trm_4fbd2b6fd33c5",
         "Label": "position of gap match task"
     },
-    "trm_4fbd2b16e7aff": {
+    {
         "TermURL": "cogatlas:trm_4fbd2b16e7aff",
         "Label": "length match task"
     },
-    "trm_4e31d69b7f422": {
+    {
         "TermURL": "cogatlas:trm_4e31d69b7f422",
         "Label": "temporal order judgment task"
     },
-    "trm_4fba857ad04ac": {
+    {
         "TermURL": "cogatlas:trm_4fba857ad04ac",
         "Label": "immediate memory task"
     },
-    "trm_4e550887d92de": {
+    {
         "TermURL": "cogatlas:trm_4e550887d92de",
         "Label": "heat stimulation"
     },
-    "trm_4e5662373bc89": {
+    {
         "TermURL": "cogatlas:trm_4e5662373bc89",
         "Label": "heat sensitization/adaptation"
     },
-    "trm_4e5bb14d814a8": {
+    {
         "TermURL": "cogatlas:trm_4e5bb14d814a8",
         "Label": "rubber hand illusion"
     },
-    "trm_4e5d07565b68e": {
+    {
         "TermURL": "cogatlas:trm_4e5d07565b68e",
         "Label": "mechanical stimulation"
     },
-    "trm_4e5e7ac84c2e5": {
+    {
         "TermURL": "cogatlas:trm_4e5e7ac84c2e5",
         "Label": "dual sensitization"
     },
-    "trm_4e5fcd75efb58": {
+    {
         "TermURL": "cogatlas:trm_4e5fcd75efb58",
         "Label": "thermal grill illusion"
     },
-    "trm_4e6112759926e": {
+    {
         "TermURL": "cogatlas:trm_4e6112759926e",
         "Label": "tonic pain stimulation"
     },
-    "trm_4e6114e7b1ff2": {
+    {
         "TermURL": "cogatlas:trm_4e6114e7b1ff2",
         "Label": "phasic pain stimulation"
     },
-    "trm_4e664d3718e1b": {
+    {
         "TermURL": "cogatlas:trm_4e664d3718e1b",
         "Label": "cold stimulation"
     },
-    "trm_4e68e08950157": {
+    {
         "TermURL": "cogatlas:trm_4e68e08950157",
         "Label": "electric stimulation"
     },
-    "trm_4e6a2f61b17b0": {
+    {
         "TermURL": "cogatlas:trm_4e6a2f61b17b0",
         "Label": "capsaicin-evoked pain"
     },
-    "trm_4e6a44ee854f8": {
+    {
         "TermURL": "cogatlas:trm_4e6a44ee854f8",
         "Label": "cold pressor test"
     },
-    "trm_4e8a0dd29ec7b": {
+    {
         "TermURL": "cogatlas:trm_4e8a0dd29ec7b",
         "Label": "sequential shape matching"
     },
-    "trm_4e8dd3831f0cc": {
+    {
         "TermURL": "cogatlas:trm_4e8dd3831f0cc",
         "Label": "deterministic classification"
     },
-    "trm_4e8dd3dfd9fff": {
+    {
         "TermURL": "cogatlas:trm_4e8dd3dfd9fff",
         "Label": "mixed event-related probe"
     },
-    "trm_4eb1f3a8ec119": {
+    {
         "TermURL": "cogatlas:trm_4eb1f3a8ec119",
         "Label": "intermodal preferential looking paradigm"
     },
-    "trm_4ebc6a6b75ebf": {
+    {
         "TermURL": "cogatlas:trm_4ebc6a6b75ebf",
         "Label": "tone counting"
     },
-    "trm_4ebc728326a13": {
+    {
         "TermURL": "cogatlas:trm_4ebc728326a13",
         "Label": "single-task weather prediction"
     },
-    "trm_4ebc98cc77e7b": {
+    {
         "TermURL": "cogatlas:trm_4ebc98cc77e7b",
         "Label": "dual-task weather prediction"
     },
-    "trm_4ebc9d2e397f2": {
+    {
         "TermURL": "cogatlas:trm_4ebc9d2e397f2",
         "Label": "classification probe without feedback"
     },
-    "trm_4ebd44cd88360": {
+    {
         "TermURL": "cogatlas:trm_4ebd44cd88360",
         "Label": "abstract/concrete judgment: bilingual"
     },
-    "trm_4ebd477ab5a11": {
+    {
         "TermURL": "cogatlas:trm_4ebd477ab5a11",
         "Label": "object n-back"
     },
-    "trm_4ebd47b8bab6b": {
+    {
         "TermURL": "cogatlas:trm_4ebd47b8bab6b",
         "Label": "object one-back task"
     },
-    "trm_4ebd482eba5b1": {
+    {
         "TermURL": "cogatlas:trm_4ebd482eba5b1",
         "Label": "word one-back task"
     },
-    "trm_4f23fc8c42d28": {
+    {
         "TermURL": "cogatlas:trm_4f23fc8c42d28",
         "Label": "monetary incentive delay task"
     },
-    "trm_4f240cb09f8e5": {
+    {
         "TermURL": "cogatlas:trm_4f240cb09f8e5",
         "Label": "semantic decision task"
     },
-    "trm_4f240d346320c": {
+    {
         "TermURL": "cogatlas:trm_4f240d346320c",
         "Label": "covert naming task"
     },
-    "trm_4f240d7664628": {
+    {
         "TermURL": "cogatlas:trm_4f240d7664628",
         "Label": "semantic relatedness task"
     },
-    "trm_4f240e7f989f8": {
+    {
         "TermURL": "cogatlas:trm_4f240e7f989f8",
         "Label": "auditory temporal discrimination task"
     },
-    "trm_4f240edf92865": {
+    {
         "TermURL": "cogatlas:trm_4f240edf92865",
         "Label": "mental imagery task"
     },
-    "trm_4f240f1c740da": {
+    {
         "TermURL": "cogatlas:trm_4f240f1c740da",
         "Label": "verbal fluency task"
     },
-    "trm_4f240fbdf1601": {
+    {
         "TermURL": "cogatlas:trm_4f240fbdf1601",
         "Label": "word comprehension task"
     },
-    "trm_4f241001dfcee": {
+    {
         "TermURL": "cogatlas:trm_4f241001dfcee",
         "Label": "letter case judgment task"
     },
-    "trm_4f24108555294": {
+    {
         "TermURL": "cogatlas:trm_4f24108555294",
         "Label": "visually guided saccade task"
     },
-    "trm_4f24112057e90": {
+    {
         "TermURL": "cogatlas:trm_4f24112057e90",
         "Label": "categorization task"
     },
-    "trm_4f241173868a3": {
+    {
         "TermURL": "cogatlas:trm_4f241173868a3",
         "Label": "navigation task"
     },
-    "trm_4f2411c91ae5e": {
+    {
         "TermURL": "cogatlas:trm_4f2411c91ae5e",
         "Label": "recall test"
     },
-    "trm_4f24126c22011": {
+    {
         "TermURL": "cogatlas:trm_4f24126c22011",
         "Label": "abstract/concrete task"
     },
-    "trm_4f2412d4c3b88": {
+    {
         "TermURL": "cogatlas:trm_4f2412d4c3b88",
         "Label": "semantic classification task"
     },
-    "trm_4f241325579c6": {
+    {
         "TermURL": "cogatlas:trm_4f241325579c6",
         "Label": "problem solving task"
     },
-    "trm_4f24135453d65": {
+    {
         "TermURL": "cogatlas:trm_4f24135453d65",
         "Label": "spelling task"
     },
-    "trm_4f2414059baa8": {
+    {
         "TermURL": "cogatlas:trm_4f2414059baa8",
         "Label": "instrumental learning task"
     },
-    "trm_4f2414a1bab77": {
+    {
         "TermURL": "cogatlas:trm_4f2414a1bab77",
         "Label": "phonetic discrimination task"
     },
-    "trm_4f24154867d84": {
+    {
         "TermURL": "cogatlas:trm_4f24154867d84",
         "Label": "logical reasoning task"
     },
-    "trm_4f241614d4a25": {
+    {
         "TermURL": "cogatlas:trm_4f241614d4a25",
         "Label": "attention switching task"
     },
-    "trm_4f24179122380": {
+    {
         "TermURL": "cogatlas:trm_4f24179122380",
         "Label": "mental arithmetic task"
     },
-    "trm_4f2417d4a63ae": {
+    {
         "TermURL": "cogatlas:trm_4f2417d4a63ae",
         "Label": "random number generation task"
     },
-    "trm_4f24183fe80c6": {
+    {
         "TermURL": "cogatlas:trm_4f24183fe80c6",
         "Label": "verb generation task"
     },
-    "trm_4f24189031a4a": {
+    {
         "TermURL": "cogatlas:trm_4f24189031a4a",
         "Label": "cyberball task"
     },
-    "trm_4f24194bce29f": {
+    {
         "TermURL": "cogatlas:trm_4f24194bce29f",
         "Label": "conjunction search task"
     },
-    "trm_4f2419c4a1646": {
+    {
         "TermURL": "cogatlas:trm_4f2419c4a1646",
         "Label": "multisource interference task"
     },
-    "trm_4f241ab50513b": {
+    {
         "TermURL": "cogatlas:trm_4f241ab50513b",
         "Label": "mentalizing task"
     },
-    "trm_4fbd2ac1cd035": {
+    {
         "TermURL": "cogatlas:trm_4fbd2ac1cd035",
         "Label": "copying task"
     },
-    "trm_4f241b50caaf7": {
+    {
         "TermURL": "cogatlas:trm_4f241b50caaf7",
         "Label": "semantic task"
     },
-    "trm_4f241b751c5a0": {
+    {
         "TermURL": "cogatlas:trm_4f241b751c5a0",
         "Label": "phonological task"
     },
-    "trm_4f241bd52b509": {
+    {
         "TermURL": "cogatlas:trm_4f241bd52b509",
         "Label": "semantic fluency task"
     },
-    "trm_4f241be43458e": {
+    {
         "TermURL": "cogatlas:trm_4f241be43458e",
         "Label": "phonemic fluency task"
     },
-    "trm_4f241c0737cc0": {
+    {
         "TermURL": "cogatlas:trm_4f241c0737cc0",
         "Label": "semantic memory task"
     },
-    "trm_4f241c735e7f6": {
+    {
         "TermURL": "cogatlas:trm_4f241c735e7f6",
         "Label": "serial reaction time task"
     },
-    "trm_4f241c8d4a75c": {
+    {
         "TermURL": "cogatlas:trm_4f241c8d4a75c",
         "Label": "gender discrimination task"
     },
-    "trm_4f241d7adf14e": {
+    {
         "TermURL": "cogatlas:trm_4f241d7adf14e",
         "Label": "global-local task"
     },
-    "trm_4f241e8a01052": {
+    {
         "TermURL": "cogatlas:trm_4f241e8a01052",
         "Label": "sentence-picture matching task"
     },
-    "trm_4f241ee9c4e37": {
+    {
         "TermURL": "cogatlas:trm_4f241ee9c4e37",
         "Label": "word-picture matching task"
     },
-    "trm_4f241fb95918f": {
+    {
         "TermURL": "cogatlas:trm_4f241fb95918f",
         "Label": "recency judgment task"
     },
-    "trm_4f241fd47f16b": {
+    {
         "TermURL": "cogatlas:trm_4f241fd47f16b",
         "Label": "passive avoidance task"
     },
-    "trm_4f241fe40a950": {
+    {
         "TermURL": "cogatlas:trm_4f241fe40a950",
         "Label": "fame judgment task"
     },
-    "trm_4f242042e5805": {
+    {
         "TermURL": "cogatlas:trm_4f242042e5805",
         "Label": "cambridge risk task"
     },
-    "trm_4f2420b042165": {
+    {
         "TermURL": "cogatlas:trm_4f2420b042165",
         "Label": "reappraisal task"
     },
-    "trm_4f24211a03b07": {
+    {
         "TermURL": "cogatlas:trm_4f24211a03b07",
         "Label": "raven's advanced progressive matrices"
     },
-    "trm_4f242172aea5d": {
+    {
         "TermURL": "cogatlas:trm_4f242172aea5d",
         "Label": "updating task"
     },
-    "trm_4f2421a62cdf8": {
+    {
         "TermURL": "cogatlas:trm_4f2421a62cdf8",
         "Label": "face working memory task"
     },
-    "trm_4f2421c391b83": {
+    {
         "TermURL": "cogatlas:trm_4f2421c391b83",
         "Label": "object working memory task"
     },
-    "trm_4f24226fa2903": {
+    {
         "TermURL": "cogatlas:trm_4f24226fa2903",
         "Label": "fitts task"
     },
-    "trm_4f24237f2ed47": {
+    {
         "TermURL": "cogatlas:trm_4f24237f2ed47",
         "Label": "general knowledge task"
     },
-    "trm_4f24239cc239e": {
+    {
         "TermURL": "cogatlas:trm_4f24239cc239e",
         "Label": "short-term memory task"
     },
-    "trm_4f24247912761": {
+    {
         "TermURL": "cogatlas:trm_4f24247912761",
         "Label": "face matching task"
     },
-    "trm_4f242499b8952": {
+    {
         "TermURL": "cogatlas:trm_4f242499b8952",
         "Label": "target detection task"
     },
-    "trm_5542841f3dcd5": {
+    {
         "TermURL": "cogatlas:trm_5542841f3dcd5",
         "Label": "color-word stroop with task switching"
     },
-    "trm_4f24250e0137e": {
+    {
         "TermURL": "cogatlas:trm_4f24250e0137e",
         "Label": "orthographic task"
     },
-    "trm_4f24258b51e2c": {
+    {
         "TermURL": "cogatlas:trm_4f24258b51e2c",
         "Label": "living-nonliving task"
     },
-    "trm_4f24479b0db8f": {
+    {
         "TermURL": "cogatlas:trm_4f24479b0db8f",
         "Label": "phoneme detection task"
     },
-    "trm_4f2447dfa5947": {
+    {
         "TermURL": "cogatlas:trm_4f2447dfa5947",
         "Label": "stop-change task"
     },
-    "trm_4f2447fe67fb9": {
+    {
         "TermURL": "cogatlas:trm_4f2447fe67fb9",
         "Label": "visual search task"
     },
-    "trm_4f244860c702c": {
+    {
         "TermURL": "cogatlas:trm_4f244860c702c",
         "Label": "prospective memory task"
     },
-    "trm_4f2448d02d4d9": {
+    {
         "TermURL": "cogatlas:trm_4f2448d02d4d9",
         "Label": "object naming task"
     },
-    "trm_4f24492504ca0": {
+    {
         "TermURL": "cogatlas:trm_4f24492504ca0",
         "Label": "contextual cueing task"
     },
-    "trm_4f24496a80587": {
+    {
         "TermURL": "cogatlas:trm_4f24496a80587",
         "Label": "gambling task"
     },
-    "trm_4f2449bdcb0b1": {
+    {
         "TermURL": "cogatlas:trm_4f2449bdcb0b1",
         "Label": "wason card selection task"
     },
-    "trm_4f244a453522b": {
+    {
         "TermURL": "cogatlas:trm_4f244a453522b",
         "Label": "syntactic task"
     },
-    "trm_4f244a67d5b17": {
+    {
         "TermURL": "cogatlas:trm_4f244a67d5b17",
         "Label": "mirror tracing task"
     },
-    "trm_4f244a88013ae": {
+    {
         "TermURL": "cogatlas:trm_4f244a88013ae",
         "Label": "artificial grammar learning task"
     },
-    "trm_4f244ad7dcde7": {
+    {
         "TermURL": "cogatlas:trm_4f244ad7dcde7",
         "Label": "dot motion task"
     },
-    "trm_4f244c1f6b53f": {
+    {
         "TermURL": "cogatlas:trm_4f244c1f6b53f",
         "Label": "color naming task"
     },
-    "trm_4f244d2a54e27": {
+    {
         "TermURL": "cogatlas:trm_4f244d2a54e27",
         "Label": "autobiographical memory task"
     },
-    "trm_4f244d64e45bc": {
+    {
         "TermURL": "cogatlas:trm_4f244d64e45bc",
         "Label": "negative priming task"
     },
-    "trm_4f244f0286947": {
+    {
         "TermURL": "cogatlas:trm_4f244f0286947",
         "Label": "analogical reasoning task"
     },
-    "trm_4f244f46ebf58": {
+    {
         "TermURL": "cogatlas:trm_4f244f46ebf58",
         "Label": ""
     },
-    "trm_4f244f997615c": {
+    {
         "TermURL": "cogatlas:trm_4f244f997615c",
         "Label": "bimanual coordination task"
     },
-    "trm_4f244fee7d195": {
+    {
         "TermURL": "cogatlas:trm_4f244fee7d195",
         "Label": "multi-attribute decision making task"
     },
-    "trm_4f2452adb7d23": {
+    {
         "TermURL": "cogatlas:trm_4f2452adb7d23",
         "Label": "odd-even task"
     },
-    "trm_4f245326e2eaf": {
+    {
         "TermURL": "cogatlas:trm_4f245326e2eaf",
         "Label": "biological motion task"
     },
-    "trm_4f2453b806fe1": {
+    {
         "TermURL": "cogatlas:trm_4f2453b806fe1",
         "Label": "spatial working memory task"
     },
-    "trm_4f2453ce33f16": {
+    {
         "TermURL": "cogatlas:trm_4f2453ce33f16",
         "Label": "social judgment task"
     },
-    "trm_4f2454dfca337": {
+    {
         "TermURL": "cogatlas:trm_4f2454dfca337",
         "Label": "relational reasoning task"
     },
-    "trm_4f24550fc5f38": {
+    {
         "TermURL": "cogatlas:trm_4f24550fc5f38",
         "Label": "prototype distortion task"
     },
-    "trm_4f2456027809f": {
+    {
         "TermURL": "cogatlas:trm_4f2456027809f",
         "Label": "false belief task"
     },
-    "trm_4f2456932f11b": {
+    {
         "TermURL": "cogatlas:trm_4f2456932f11b",
         "Label": "shadowing task"
     },
-    "trm_4f24572cb42e4": {
+    {
         "TermURL": "cogatlas:trm_4f24572cb42e4",
         "Label": "parity judgment task"
     },
-    "trm_4f2457454e458": {
+    {
         "TermURL": "cogatlas:trm_4f2457454e458",
         "Label": "numerosity estimation task"
     },
-    "trm_4f2457a8b0bc8": {
+    {
         "TermURL": "cogatlas:trm_4f2457a8b0bc8",
         "Label": "verbal working memory task"
     },
-    "trm_4f2457d94fd93": {
+    {
         "TermURL": "cogatlas:trm_4f2457d94fd93",
         "Label": "memory guided saccade task"
     },
-    "trm_50f72fafa53ec": {
+    {
         "TermURL": "cogatlas:trm_50f72fafa53ec",
         "Label": "big/little circle"
     },
-    "trm_4fbd2d71adf87": {
+    {
         "TermURL": "cogatlas:trm_4fbd2d71adf87",
         "Label": "minimal feature match task"
     },
-    "trm_4fbd2dc0273d9": {
+    {
         "TermURL": "cogatlas:trm_4fbd2dc0273d9",
         "Label": "foreshortened view task"
     },
-    "trm_4fbd2e5614028": {
+    {
         "TermURL": "cogatlas:trm_4fbd2e5614028",
         "Label": "drawing from memory task"
     },
-    "trm_50b65ef129e23": {
+    {
         "TermURL": "cogatlas:trm_50b65ef129e23",
         "Label": "partial report procedure"
     },
-    "trm_50b6660b1b847": {
+    {
         "TermURL": "cogatlas:trm_50b6660b1b847",
         "Label": "implicit association task"
     },
-    "trm_50f733d7305a1": {
+    {
         "TermURL": "cogatlas:trm_50f733d7305a1",
         "Label": "spatial recognition memory"
     },
-    "trm_5023ef8eab626": {
+    {
         "TermURL": "cogatlas:trm_5023ef8eab626",
         "Label": "delay conditioning"
     },
-    "trm_50240427b4c1b": {
+    {
         "TermURL": "cogatlas:trm_50240427b4c1b",
         "Label": "counterconditioning"
     },
-    "trm_50240f06af135": {
+    {
         "TermURL": "cogatlas:trm_50240f06af135",
         "Label": "operant task"
     },
-    "trm_502420a682976": {
+    {
         "TermURL": "cogatlas:trm_502420a682976",
         "Label": "npu-threat test"
     },
-    "trm_502985b4baaed": {
+    {
         "TermURL": "cogatlas:trm_502985b4baaed",
         "Label": "psychophysics task"
     },
-    "trm_502abd109f255": {
+    {
         "TermURL": "cogatlas:trm_502abd109f255",
         "Label": "ambiguous figure task"
     },
-    "trm_502ad907e3299": {
+    {
         "TermURL": "cogatlas:trm_502ad907e3299",
         "Label": "apparent verticality judgment"
     },
-    "trm_502be67697201": {
+    {
         "TermURL": "cogatlas:trm_502be67697201",
         "Label": "contrast detection task"
     },
-    "trm_50b66c50ca2ac": {
+    {
         "TermURL": "cogatlas:trm_50b66c50ca2ac",
         "Label": "symbol counter task"
     },
-    "trm_5090b32d6b376": {
+    {
         "TermURL": "cogatlas:trm_5090b32d6b376",
         "Label": "facial recognition task"
     },
-    "trm_50c0f3e6c596e": {
+    {
         "TermURL": "cogatlas:trm_50c0f3e6c596e",
         "Label": "time wall"
     },
-    "trm_5181f83b77fa4": {
+    {
         "TermURL": "cogatlas:trm_5181f83b77fa4",
         "Label": "stop signal task with letter naming"
     },
-    "trm_50df0d8dc717b": {
+    {
         "TermURL": "cogatlas:trm_50df0d8dc717b",
         "Label": "attention bias"
     },
-    "trm_50df0dd9d0b6f": {
+    {
         "TermURL": "cogatlas:trm_50df0dd9d0b6f",
         "Label": "incidental encoding task"
     },
-    "trm_50df1c0d946b8": {
+    {
         "TermURL": "cogatlas:trm_50df1c0d946b8",
         "Label": "space fortress"
     },
-    "trm_50df1dd534ff2": {
+    {
         "TermURL": "cogatlas:trm_50df1dd534ff2",
         "Label": "space fortress with oddball"
     },
-    "trm_50f734f86b11a": {
+    {
         "TermURL": "cogatlas:trm_50f734f86b11a",
         "Label": "emotion recognition task"
     },
-    "trm_50f7370ace495": {
+    {
         "TermURL": "cogatlas:trm_50f7370ace495",
         "Label": "visual analogue scales"
     },
-    "trm_50f73d557c967": {
+    {
         "TermURL": "cogatlas:trm_50f73d557c967",
         "Label": "information sampling task"
     },
-    "trm_50eb0a01bfd05": {
+    {
         "TermURL": "cogatlas:trm_50eb0a01bfd05",
         "Label": "nih toolbox words-in noise test"
     },
-    "trm_50eb0dc6668e1": {
+    {
         "TermURL": "cogatlas:trm_50eb0dc6668e1",
         "Label": "nih toolbox picture vocabulary test"
     },
-    "trm_50eb115b6c476": {
+    {
         "TermURL": "cogatlas:trm_50eb115b6c476",
         "Label": "nih toolbox dimensional change card sort test"
     },
-    "trm_50eb17385e9a6": {
+    {
         "TermURL": "cogatlas:trm_50eb17385e9a6",
         "Label": "nih toolbox list sorting working memory test"
     },
-    "trm_50eb3b2d1de11": {
+    {
         "TermURL": "cogatlas:trm_50eb3b2d1de11",
         "Label": "nih toolbox oral reading recognition test"
     },
-    "trm_50eb461d446e1": {
+    {
         "TermURL": "cogatlas:trm_50eb461d446e1",
         "Label": "nih toolbox oral symbol digit test"
     },
-    "trm_50eb4d3d96ff8": {
+    {
         "TermURL": "cogatlas:trm_50eb4d3d96ff8",
         "Label": "nih toolbox 9-hole pegboard dexterity test"
     },
-    "trm_50eb51c2cd9fe": {
+    {
         "TermURL": "cogatlas:trm_50eb51c2cd9fe",
         "Label": "nih toolbox grip strength test"
     },
-    "trm_50eb54d78841b": {
+    {
         "TermURL": "cogatlas:trm_50eb54d78841b",
         "Label": "nih toolbox standing balance test"
     },
-    "trm_50eb585f62f24": {
+    {
         "TermURL": "cogatlas:trm_50eb585f62f24",
         "Label": "nih toolbox 4-meter walk gait speed test"
     },
-    "trm_50eb69a57bc96": {
+    {
         "TermURL": "cogatlas:trm_50eb69a57bc96",
         "Label": "nih toolbox 2-minute walk endurance test"
     },
-    "trm_50f374718a91c": {
+    {
         "TermURL": "cogatlas:trm_50f374718a91c",
         "Label": "nih toolbox hearing threshold test"
     },
-    "trm_50f37767e2958": {
+    {
         "TermURL": "cogatlas:trm_50f37767e2958",
         "Label": "nih toolbox hearing handicap inventory"
     },
-    "trm_50f379c6c9ea9": {
+    {
         "TermURL": "cogatlas:trm_50f379c6c9ea9",
         "Label": "nih toolbox taste intensity test"
     },
-    "trm_50f37caf81432": {
+    {
         "TermURL": "cogatlas:trm_50f37caf81432",
         "Label": "nih toolbox visual acuity test"
     },
-    "trm_50f37f231aa4c": {
+    {
         "TermURL": "cogatlas:trm_50f37f231aa4c",
         "Label": "nih toolbox vision-related quality of life survey"
     },
-    "trm_50f38098952cb": {
+    {
         "TermURL": "cogatlas:trm_50f38098952cb",
         "Label": "nih toolbox dynamic visual acuity test"
     },
-    "trm_50f383e76e03b": {
+    {
         "TermURL": "cogatlas:trm_50f383e76e03b",
         "Label": "nih toolbox odor identification test"
     },
-    "trm_50f385a8269ce": {
+    {
         "TermURL": "cogatlas:trm_50f385a8269ce",
         "Label": "nih toolbox pain intensity survey"
     },
-    "trm_50f3862422509": {
+    {
         "TermURL": "cogatlas:trm_50f3862422509",
         "Label": "nih toolbox pain interference survey"
     },
-    "trm_50f3bc06cae36": {
+    {
         "TermURL": "cogatlas:trm_50f3bc06cae36",
         "Label": "nih toolbox positive affect survey"
     },
-    "trm_50f3c003327c4": {
+    {
         "TermURL": "cogatlas:trm_50f3c003327c4",
         "Label": "nih toolbox general life satisfaction survey"
     },
-    "trm_50f5822624e53": {
+    {
         "TermURL": "cogatlas:trm_50f5822624e53",
         "Label": "articulatory suppression task"
     },
-    "trm_50f5bfef58abb": {
+    {
         "TermURL": "cogatlas:trm_50f5bfef58abb",
         "Label": "nih toolbox meaning and purpose survey"
     },
-    "trm_50f741a965470": {
+    {
         "TermURL": "cogatlas:trm_50f741a965470",
         "Label": "graded naming test"
     },
-    "trm_50f84bbdcfa4e": {
+    {
         "TermURL": "cogatlas:trm_50f84bbdcfa4e",
         "Label": "one touch stockings of cambridge"
     },
-    "trm_50f84e8ab7af8": {
+    {
         "TermURL": "cogatlas:trm_50f84e8ab7af8",
         "Label": "reaction time"
     },
-    "trm_50f8516279419": {
+    {
         "TermURL": "cogatlas:trm_50f8516279419",
         "Label": "rapid visual information processing"
     },
-    "trm_50f852c084fde": {
+    {
         "TermURL": "cogatlas:trm_50f852c084fde",
         "Label": "match to sample visual search"
     },
-    "trm_50f9952c2311a": {
+    {
         "TermURL": "cogatlas:trm_50f9952c2311a",
         "Label": "penn conditional exclusion test"
     },
-    "trm_50f998dcbfcc8": {
+    {
         "TermURL": "cogatlas:trm_50f998dcbfcc8",
         "Label": "penn word memory test"
     },
-    "trm_50f99e56117fe": {
+    {
         "TermURL": "cogatlas:trm_50f99e56117fe",
         "Label": "penn face memory test"
     },
-    "trm_50f9daf1c3834": {
+    {
         "TermURL": "cogatlas:trm_50f9daf1c3834",
         "Label": "visual object learning test"
     },
-    "trm_5106eae236c21": {
+    {
         "TermURL": "cogatlas:trm_5106eae236c21",
         "Label": "wais-information"
     },
-    "trm_5106eee90937a": {
+    {
         "TermURL": "cogatlas:trm_5106eee90937a",
         "Label": "wais digit span"
     },
-    "trm_5106f17025386": {
+    {
         "TermURL": "cogatlas:trm_5106f17025386",
         "Label": "wais vocabulary"
     },
-    "trm_5106f4dfe08b1": {
+    {
         "TermURL": "cogatlas:trm_5106f4dfe08b1",
         "Label": "wais arithmetic"
     },
-    "trm_5106f82530aff": {
+    {
         "TermURL": "cogatlas:trm_5106f82530aff",
         "Label": "wais comprehension"
     },
-    "trm_510703e93367e": {
+    {
         "TermURL": "cogatlas:trm_510703e93367e",
         "Label": "wais similarities"
     },
-    "trm_5107067241007": {
+    {
         "TermURL": "cogatlas:trm_5107067241007",
         "Label": "wais picture completion"
     },
-    "trm_51070ae889d95": {
+    {
         "TermURL": "cogatlas:trm_51070ae889d95",
         "Label": "wais picture arrangement"
     },
-    "trm_51071fc87a61f": {
+    {
         "TermURL": "cogatlas:trm_51071fc87a61f",
         "Label": "wais object assembly"
     },
-    "trm_512e7621189ad": {
+    {
         "TermURL": "cogatlas:trm_512e7621189ad",
         "Label": "criteria task"
     },
-    "trm_5181f863d24f4": {
+    {
         "TermURL": "cogatlas:trm_5181f863d24f4",
         "Label": "stop signal task with pseudo word naming"
     },
-    "trm_5154906cbead5": {
+    {
         "TermURL": "cogatlas:trm_5154906cbead5",
         "Label": "change detection task"
     },
-    "trm_515495b718cd6": {
+    {
         "TermURL": "cogatlas:trm_515495b718cd6",
         "Label": "ax-dpx"
     },
-    "trm_5736095d91380": {
+    {
         "TermURL": "cogatlas:trm_5736095d91380",
         "Label": "delayed intention task"
     },
-    "trm_5176cf2c19e89": {
+    {
         "TermURL": "cogatlas:trm_5176cf2c19e89",
         "Label": "mirror reading task"
     },
-    "trm_5176cf9d3d512": {
+    {
         "TermURL": "cogatlas:trm_5176cf9d3d512",
         "Label": "living/nonliving judgment on mirror-reversed and plain-text words"
     },
-    "trm_5181fb7bf350b": {
+    {
         "TermURL": "cogatlas:trm_5181fb7bf350b",
         "Label": "reversal weather prediction"
     },
-    "trm_51a637dfeffd5": {
+    {
         "TermURL": "cogatlas:trm_51a637dfeffd5",
         "Label": "mcgurk effect"
     },
-    "trm_51c453f64d2a6": {
+    {
         "TermURL": "cogatlas:trm_51c453f64d2a6",
         "Label": "psychological refractory period (prp) paradigm"
     },
-    "trm_51d6fe3f3942f": {
+    {
         "TermURL": "cogatlas:trm_51d6fe3f3942f",
         "Label": "autism spectrum quotient"
     },
-    "trm_5206bf053acf4": {
+    {
         "TermURL": "cogatlas:trm_5206bf053acf4",
         "Label": "piaget's water jar task"
     },
-    "trm_5208fe678c652": {
+    {
         "TermURL": "cogatlas:trm_5208fe678c652",
         "Label": "social responsiveness scale"
     },
-    "trm_52167db323438": {
+    {
         "TermURL": "cogatlas:trm_52167db323438",
         "Label": "children's memory scale"
     },
-    "trm_521687032f822": {
+    {
         "TermURL": "cogatlas:trm_521687032f822",
         "Label": "social communication questionnaire"
     },
-    "trm_523c7a0a73cf5": {
+    {
         "TermURL": "cogatlas:trm_523c7a0a73cf5",
         "Label": "aberrant behavior checklist - community"
     },
-    "trm_523ca67b786d5": {
+    {
         "TermURL": "cogatlas:trm_523ca67b786d5",
         "Label": "adult behavior checklist"
     },
-    "trm_523df616da8a6": {
+    {
         "TermURL": "cogatlas:trm_523df616da8a6",
         "Label": "adolescent symptom inventory"
     },
-    "trm_523dfd5b7a9f1": {
+    {
         "TermURL": "cogatlas:trm_523dfd5b7a9f1",
         "Label": "broad autism phenotype questionnaire"
     },
-    "trm_523e10cad0ce6": {
+    {
         "TermURL": "cogatlas:trm_523e10cad0ce6",
         "Label": "battelle developmental inventory"
     },
-    "trm_523f58d91f2c0": {
+    {
         "TermURL": "cogatlas:trm_523f58d91f2c0",
         "Label": "beery-buktenica developmental test of visual-motor integration"
     },
-    "trm_523f5c17d7edb": {
+    {
         "TermURL": "cogatlas:trm_523f5c17d7edb",
         "Label": "big five questionnaire"
     },
-    "trm_524055ac4fecf": {
+    {
         "TermURL": "cogatlas:trm_524055ac4fecf",
         "Label": "broader phenotype autism symptom scale"
     },
-    "trm_52405b6f7ebe9": {
+    {
         "TermURL": "cogatlas:trm_52405b6f7ebe9",
         "Label": "brief symptom inventory"
     },
-    "trm_524b4a402c87e": {
+    {
         "TermURL": "cogatlas:trm_524b4a402c87e",
         "Label": "child behavior checklist"
     },
-    "trm_524b563fb87c8": {
+    {
         "TermURL": "cogatlas:trm_524b563fb87c8",
         "Label": "conners comprehensive behavior rating scales"
     },
-    "trm_5255c99be1e53": {
+    {
         "TermURL": "cogatlas:trm_5255c99be1e53",
         "Label": "children's communication checklist"
     },
-    "trm_5258346e72223": {
+    {
         "TermURL": "cogatlas:trm_5258346e72223",
         "Label": "center for epidemiologic studies depression scale"
     },
-    "trm_525c4a78089ad": {
+    {
         "TermURL": "cogatlas:trm_525c4a78089ad",
         "Label": "social competence questionnaire"
     },
-    "trm_525c4cb94bfff": {
+    {
         "TermURL": "cogatlas:trm_525c4cb94bfff",
         "Label": "conners 3rd edition"
     },
-    "trm_525c56680c13c": {
+    {
         "TermURL": "cogatlas:trm_525c56680c13c",
         "Label": "children's psychiatric rating scale"
     },
-    "trm_525d847e2bd0b": {
+    {
         "TermURL": "cogatlas:trm_525d847e2bd0b",
         "Label": "autism diagnostic interview - revised"
     },
-    "trm_526027c99b726": {
+    {
         "TermURL": "cogatlas:trm_526027c99b726",
         "Label": "comprehensive test of phonological processing"
     },
-    "trm_52602c143d3a9": {
+    {
         "TermURL": "cogatlas:trm_52602c143d3a9",
         "Label": "children's yale-brown obsessive compulsive scale"
     },
-    "trm_52602e2e0c43b": {
+    {
         "TermURL": "cogatlas:trm_52602e2e0c43b",
         "Label": "expressive vocabulary test"
     },
-    "trm_5262c98a09546": {
+    {
         "TermURL": "cogatlas:trm_5262c98a09546",
         "Label": "expressive one word-picture vocabulary test"
     },
-    "trm_5262cb3d852c0": {
+    {
         "TermURL": "cogatlas:trm_5262cb3d852c0",
         "Label": "leiter international performance scale"
     },
-    "trm_5262d6d7b2097": {
+    {
         "TermURL": "cogatlas:trm_5262d6d7b2097",
         "Label": "mullen scales of early learning"
     },
-    "trm_5262d903ae91d": {
+    {
         "TermURL": "cogatlas:trm_5262d903ae91d",
         "Label": "pdd behavior inventory"
     },
-    "trm_5266bc6473fd8": {
+    {
         "TermURL": "cogatlas:trm_5266bc6473fd8",
         "Label": "preschool language scale"
     },
-    "trm_5266bebe14d2e": {
+    {
         "TermURL": "cogatlas:trm_5266bebe14d2e",
         "Label": "peabody picture vocabulary test"
     },
-    "trm_526943e3cbaaf": {
+    {
         "TermURL": "cogatlas:trm_526943e3cbaaf",
         "Label": "sensory profile"
     },
-    "trm_526af65b16c82": {
+    {
         "TermURL": "cogatlas:trm_526af65b16c82",
         "Label": "stanford-binet intelligence scales"
     },
-    "trm_527138126fb20": {
+    {
         "TermURL": "cogatlas:trm_527138126fb20",
         "Label": "test of early language development"
     },
-    "trm_52713c85c0bd2": {
+    {
         "TermURL": "cogatlas:trm_52713c85c0bd2",
         "Label": "test of adolescent and adult language"
     },
-    "trm_527143a263937": {
+    {
         "TermURL": "cogatlas:trm_527143a263937",
         "Label": "test of language development"
     },
-    "trm_52717a95a3b03": {
+    {
         "TermURL": "cogatlas:trm_52717a95a3b03",
         "Label": "vineland adaptive behavior scales"
     },
-    "trm_52718631bc934": {
+    {
         "TermURL": "cogatlas:trm_52718631bc934",
         "Label": "communication and symbolic behavior scales development profile"
     },
-    "trm_5272806688e63": {
+    {
         "TermURL": "cogatlas:trm_5272806688e63",
         "Label": "differential ability scales"
     },
-    "trm_5298e7a465b41": {
+    {
         "TermURL": "cogatlas:trm_5298e7a465b41",
         "Label": "early childhood behavioral questionnaire"
     },
-    "trm_5298ed1336e43": {
+    {
         "TermURL": "cogatlas:trm_5298ed1336e43",
         "Label": "early development interview (edi)"
     },
-    "trm_5298f15fe0fcf": {
+    {
         "TermURL": "cogatlas:trm_5298f15fe0fcf",
         "Label": "expressive one-word picture vocabulary test"
     },
-    "trm_529911569b592": {
+    {
         "TermURL": "cogatlas:trm_529911569b592",
         "Label": "halstead-reitan battery"
     },
-    "trm_529ce04b778b6": {
+    {
         "TermURL": "cogatlas:trm_529ce04b778b6",
         "Label": "joint attention / social and nonsocial orienting task"
     },
-    "trm_529ce3d22be3e": {
+    {
         "TermURL": "cogatlas:trm_529ce3d22be3e",
         "Label": "judgment of line orientation task"
     },
-    "trm_529ce6ecb35f8": {
+    {
         "TermURL": "cogatlas:trm_529ce6ecb35f8",
         "Label": "kaufman brief intelligence test"
     },
-    "trm_529d087705bfa": {
+    {
         "TermURL": "cogatlas:trm_529d087705bfa",
         "Label": "loneliness rating scale"
     },
-    "trm_534690b0e9dc5": {
+    {
         "TermURL": "cogatlas:trm_534690b0e9dc5",
         "Label": "overt word repetition"
     },
-    "trm_5346927710e88": {
+    {
         "TermURL": "cogatlas:trm_5346927710e88",
         "Label": "covert verb generation task"
     },
-    "trm_534692ef3b5df": {
+    {
         "TermURL": "cogatlas:trm_534692ef3b5df",
         "Label": "tapping task"
     },
-    "trm_5346938eed092": {
+    {
         "TermURL": "cogatlas:trm_5346938eed092",
         "Label": "landmark task"
     },
-    "trm_53c4465b0466f": {
+    {
         "TermURL": "cogatlas:trm_53c4465b0466f",
         "Label": "why/how task"
     },
-    "trm_54e69c642d89b": {
+    {
         "TermURL": "cogatlas:trm_54e69c642d89b",
         "Label": "rest eyes closed"
     },
-    "trm_54f93101b2fd8": {
+    {
         "TermURL": "cogatlas:trm_54f93101b2fd8",
         "Label": "think/no-think task"
     },
-    "trm_550b50095d4a3": {
+    {
         "TermURL": "cogatlas:trm_550b50095d4a3",
         "Label": "working memory fmri task paradigm"
     },
-    "trm_550b53d7dd674": {
+    {
         "TermURL": "cogatlas:trm_550b53d7dd674",
         "Label": "motor fmri task paradigm"
     },
-    "trm_550b54a8b30f4": {
+    {
         "TermURL": "cogatlas:trm_550b54a8b30f4",
         "Label": "language processing fmri task paradigm"
     },
-    "trm_550b557e5f90e": {
+    {
         "TermURL": "cogatlas:trm_550b557e5f90e",
         "Label": "social cognition (theory of mind) fmri task paradigm"
     },
-    "trm_550b5a47aa23e": {
+    {
         "TermURL": "cogatlas:trm_550b5a47aa23e",
         "Label": "relational processing fmri task paradigm"
     },
-    "trm_550b5b066d37b": {
+    {
         "TermURL": "cogatlas:trm_550b5b066d37b",
         "Label": "emotion processing fmri task paradigm"
     },
-    "trm_550b5c1a7f4db": {
+    {
         "TermURL": "cogatlas:trm_550b5c1a7f4db",
         "Label": "gambling fmri task paradigm"
     },
-    "trm_5519c2645167e": {
+    {
         "TermURL": "cogatlas:trm_5519c2645167e",
         "Label": "tone matching"
     },
-    "trm_5519c2d8d7b1d": {
+    {
         "TermURL": "cogatlas:trm_5519c2d8d7b1d",
         "Label": "deviance detection"
     },
-    "trm_5519c329eb334": {
+    {
         "TermURL": "cogatlas:trm_5519c329eb334",
         "Label": "regularity and change detection"
     },
-    "trm_5519c3eaa3fb7": {
+    {
         "TermURL": "cogatlas:trm_5519c3eaa3fb7",
         "Label": "speech detection"
     },
-    "trm_5519c4bb1d1ee": {
+    {
         "TermURL": "cogatlas:trm_5519c4bb1d1ee",
         "Label": "bistability"
     },
-    "trm_5519c5f2ad56f": {
+    {
         "TermURL": "cogatlas:trm_5519c5f2ad56f",
         "Label": "tone detection (jnd)"
     },
-    "trm_5519c7f17de9f": {
+    {
         "TermURL": "cogatlas:trm_5519c7f17de9f",
         "Label": "vernier discrimination task"
     },
-    "trm_5519c85ed1e8d": {
+    {
         "TermURL": "cogatlas:trm_5519c85ed1e8d",
         "Label": "contour integration task"
     },
-    "trm_551b05e03be48": {
+    {
         "TermURL": "cogatlas:trm_551b05e03be48",
         "Label": "perceptual closure task"
     },
-    "trm_551b06cf9783b": {
+    {
         "TermURL": "cogatlas:trm_551b06cf9783b",
         "Label": "parallel/serial search"
     },
-    "trm_551b0bb59173d": {
+    {
         "TermURL": "cogatlas:trm_551b0bb59173d",
         "Label": "contour interpolation task"
     },
-    "trm_551b0c0a742d2": {
+    {
         "TermURL": "cogatlas:trm_551b0c0a742d2",
         "Label": "lateral facilitation"
     },
-    "trm_551b0c616de16": {
+    {
         "TermURL": "cogatlas:trm_551b0c616de16",
         "Label": "coherent motion"
     },
-    "trm_551b0cdcde976": {
+    {
         "TermURL": "cogatlas:trm_551b0cdcde976",
         "Label": "multistability"
     },
-    "trm_551b0d687ee33": {
+    {
         "TermURL": "cogatlas:trm_551b0d687ee33",
         "Label": "figure ground task"
     },
-    "trm_551b0dc4e4359": {
+    {
         "TermURL": "cogatlas:trm_551b0dc4e4359",
         "Label": "visual illusion susceptibility"
     },
-    "trm_551b0e17c6c76": {
+    {
         "TermURL": "cogatlas:trm_551b0e17c6c76",
         "Label": "cross modality"
     },
-    "trm_551b0e6b88363": {
+    {
         "TermURL": "cogatlas:trm_551b0e6b88363",
         "Label": "perceptual organization"
     },
-    "trm_551b0ee81fb6b": {
+    {
         "TermURL": "cogatlas:trm_551b0ee81fb6b",
         "Label": "object perception task"
     },
-    "trm_551b0f2b930ab": {
+    {
         "TermURL": "cogatlas:trm_551b0f2b930ab",
         "Label": "object recognition task"
     },
-    "trm_551b0fd03d7d8": {
+    {
         "TermURL": "cogatlas:trm_551b0fd03d7d8",
         "Label": "retinotopic representation"
     },
-    "trm_551b1004bc652": {
+    {
         "TermURL": "cogatlas:trm_551b1004bc652",
         "Label": "local computation"
     },
-    "trm_551b107c5c111": {
+    {
         "TermURL": "cogatlas:trm_551b107c5c111",
         "Label": "object classification"
     },
-    "trm_551b1460e89a3": {
+    {
         "TermURL": "cogatlas:trm_551b1460e89a3",
         "Label": "auditory scene perception"
     },
-    "trm_551b14d7d5882": {
+    {
         "TermURL": "cogatlas:trm_551b14d7d5882",
         "Label": "gating"
     },
-    "trm_551b153bc78fc": {
+    {
         "TermURL": "cogatlas:trm_551b153bc78fc",
         "Label": "self monitoring task"
     },
-    "trm_551b15af981c6": {
+    {
         "TermURL": "cogatlas:trm_551b15af981c6",
         "Label": "action-perception loop"
     },
-    "trm_551b17b190582": {
+    {
         "TermURL": "cogatlas:trm_551b17b190582",
         "Label": "intensity for somatosensory stimulation"
     },
-    "trm_551b1b6f6a262": {
+    {
         "TermURL": "cogatlas:trm_551b1b6f6a262",
         "Label": "auditory masking task"
     },
-    "trm_551efd39a74dd": {
+    {
         "TermURL": "cogatlas:trm_551efd39a74dd",
         "Label": "re-entrant processing"
     },
-    "trm_551efd8a98162": {
+    {
         "TermURL": "cogatlas:trm_551efd8a98162",
         "Label": "emotion expression identification"
     },
-    "trm_551efdcd10677": {
+    {
         "TermURL": "cogatlas:trm_551efdcd10677",
         "Label": "contrast sensitivity test"
     },
-    "trm_551efdfd1a356": {
+    {
         "TermURL": "cogatlas:trm_551efdfd1a356",
         "Label": "face identification task"
     },
-    "trm_551efeacb9deb": {
+    {
         "TermURL": "cogatlas:trm_551efeacb9deb",
         "Label": "manipulation of isi"
     },
-    "trm_551eff0fdab74": {
+    {
         "TermURL": "cogatlas:trm_551eff0fdab74",
         "Label": "novelty detection task"
     },
-    "trm_551f0634b2607": {
+    {
         "TermURL": "cogatlas:trm_551f0634b2607",
         "Label": "spatial cuing paradigm"
     },
-    "trm_551f06a08dcc4": {
+    {
         "TermURL": "cogatlas:trm_551f06a08dcc4",
         "Label": "attentional blink paradigm"
     },
-    "trm_551f0713a5a17": {
+    {
         "TermURL": "cogatlas:trm_551f0713a5a17",
         "Label": "inter-modal selective attention task"
     },
-    "trm_551f0757982bc": {
+    {
         "TermURL": "cogatlas:trm_551f0757982bc",
         "Label": "blocked channel-selection task"
     },
-    "trm_551f07a281283": {
+    {
         "TermURL": "cogatlas:trm_551f07a281283",
         "Label": "distraction paradigm (capture)"
     },
-    "trm_551f0857e1db8": {
+    {
         "TermURL": "cogatlas:trm_551f0857e1db8",
         "Label": "ant task"
     },
-    "trm_551f0a8b5ba2c": {
+    {
         "TermURL": "cogatlas:trm_551f0a8b5ba2c",
         "Label": "sternberg item recognition task"
     },
-    "trm_551f0b18d7ca0": {
+    {
         "TermURL": "cogatlas:trm_551f0b18d7ca0",
         "Label": "running memory"
     },
-    "trm_551f0b9654d23": {
+    {
         "TermURL": "cogatlas:trm_551f0b9654d23",
         "Label": "simple span task"
     },
-    "trm_551f0c294ce23": {
+    {
         "TermURL": "cogatlas:trm_551f0c294ce23",
         "Label": "continuous performance test - ax version"
     },
-    "trm_551f0cc82ed49": {
+    {
         "TermURL": "cogatlas:trm_551f0cc82ed49",
         "Label": "sequence encoding"
     },
-    "trm_551f103b3edeb": {
+    {
         "TermURL": "cogatlas:trm_551f103b3edeb",
         "Label": "sequence reproduction"
     },
-    "trm_551f1491a2fe8": {
+    {
         "TermURL": "cogatlas:trm_551f1491a2fe8",
         "Label": "transitive inference task"
     },
-    "trm_551f151f7347e": {
+    {
         "TermURL": "cogatlas:trm_551f151f7347e",
         "Label": "acquired equivalence"
     },
-    "trm_552174863d51e": {
+    {
         "TermURL": "cogatlas:trm_552174863d51e",
         "Label": "naming tasks"
     },
-    "trm_552174d3b61fb": {
+    {
         "TermURL": "cogatlas:trm_552174d3b61fb",
         "Label": "verbal description of visual depiction"
     },
-    "trm_5521752956bb2": {
+    {
         "TermURL": "cogatlas:trm_5521752956bb2",
         "Label": "corpus analysis"
     },
-    "trm_55217860a9dea": {
+    {
         "TermURL": "cogatlas:trm_55217860a9dea",
         "Label": "coherent/incoherent discourse distinction task"
     },
-    "trm_55217a446eb3b": {
+    {
         "TermURL": "cogatlas:trm_55217a446eb3b",
         "Label": "discourse content questions"
     },
-    "trm_55217a9f473f0": {
+    {
         "TermURL": "cogatlas:trm_55217a9f473f0",
         "Label": "listening and reading task"
     },
-    "trm_55217b48995ce": {
+    {
         "TermURL": "cogatlas:trm_55217b48995ce",
         "Label": "eye tracking paradigms"
     },
-    "trm_55217bd86ee12": {
+    {
         "TermURL": "cogatlas:trm_55217bd86ee12",
         "Label": "mouse tracking paradigms"
     },
-    "trm_55217c8179b00": {
+    {
         "TermURL": "cogatlas:trm_55217c8179b00",
         "Label": "visual world paradigm"
     },
-    "trm_55217d7fbfdba": {
+    {
         "TermURL": "cogatlas:trm_55217d7fbfdba",
         "Label": "manipulation of predictability and acceptability"
     },
-    "trm_55217e77441b0": {
+    {
         "TermURL": "cogatlas:trm_55217e77441b0",
         "Label": "manipulation of language and non-verbal behaviors"
     },
-    "trm_5521807e50549": {
+    {
         "TermURL": "cogatlas:trm_5521807e50549",
         "Label": "sentence/discourse content test"
     },
-    "trm_55218116cbf40": {
+    {
         "TermURL": "cogatlas:trm_55218116cbf40",
         "Label": "manipulation of individual words"
     },
-    "trm_552181d7be45e": {
+    {
         "TermURL": "cogatlas:trm_552181d7be45e",
         "Label": "manipulation of coherence and cohesion"
     },
-    "trm_552184243d7ab": {
+    {
         "TermURL": "cogatlas:trm_552184243d7ab",
         "Label": "surface properties of object paradigms"
     },
-    "trm_55218536d1710": {
+    {
         "TermURL": "cogatlas:trm_55218536d1710",
         "Label": "time-series of response time"
     },
-    "trm_55295382db2c5": {
+    {
         "TermURL": "cogatlas:trm_55295382db2c5",
         "Label": "non-spatial cuing paradigm"
     },
-    "trm_5535623c2536a": {
+    {
         "TermURL": "cogatlas:trm_5535623c2536a",
         "Label": "muller-lyer illusion"
     },
-    "trm_5536be03400e7": {
+    {
         "TermURL": "cogatlas:trm_5536be03400e7",
         "Label": "motion processing"
     },
-    "trm_553e6b8e33da4": {
+    {
         "TermURL": "cogatlas:trm_553e6b8e33da4",
         "Label": "predictive-inference helicopter task"
     },
-    "trm_553e73e29cf7d": {
+    {
         "TermURL": "cogatlas:trm_553e73e29cf7d",
         "Label": "contextual semantic priming task"
     },
-    "trm_553e77887abc7": {
+    {
         "TermURL": "cogatlas:trm_553e77887abc7",
         "Label": "becker-degroot-marschak (bdm) procedure"
     },
-    "trm_553e77e53497d": {
+    {
         "TermURL": "cogatlas:trm_553e77e53497d",
         "Label": "cue approach task"
     },
-    "trm_553e85265f51e": {
+    {
         "TermURL": "cogatlas:trm_553e85265f51e",
         "Label": "functional localizer fmri tasks"
     },
-    "trm_553e8882e3cb6": {
+    {
         "TermURL": "cogatlas:trm_553e8882e3cb6",
         "Label": "ultimatum game (ug)"
     },
-    "trm_553e88a66b676": {
+    {
         "TermURL": "cogatlas:trm_553e88a66b676",
         "Label": "social bargaining fmri task"
     },
-    "trm_553eb28436233": {
+    {
         "TermURL": "cogatlas:trm_553eb28436233",
         "Label": "multi-attribute reward-guided decision task"
     },
-    "trm_553eb45e2b709": {
+    {
         "TermURL": "cogatlas:trm_553eb45e2b709",
         "Label": "social judgment of faces task"
     },
-    "trm_553ebfc390256": {
+    {
         "TermURL": "cogatlas:trm_553ebfc390256",
         "Label": "perceptual discrimination task"
     },
-    "trm_553ec40d44c51": {
+    {
         "TermURL": "cogatlas:trm_553ec40d44c51",
         "Label": "numerical working memory task"
     },
-    "trm_553ec64e6cb1b": {
+    {
         "TermURL": "cogatlas:trm_553ec64e6cb1b",
         "Label": "associative memory encoding task"
     },
-    "trm_553fbba5d5327": {
+    {
         "TermURL": "cogatlas:trm_553fbba5d5327",
         "Label": "object rating task"
     },
-    "trm_553fbbf79ebc5": {
+    {
         "TermURL": "cogatlas:trm_553fbbf79ebc5",
         "Label": "social influence for food preferences task"
     },
-    "trm_553fd2fc7a648": {
+    {
         "TermURL": "cogatlas:trm_553fd2fc7a648",
         "Label": "complex trait judgment task"
     },
-    "trm_553fc63a54ae6": {
+    {
         "TermURL": "cogatlas:trm_553fc63a54ae6",
         "Label": "motion discrimination task"
     },
-    "trm_553fc858cacc5": {
+    {
         "TermURL": "cogatlas:trm_553fc858cacc5",
         "Label": "consensus decision-making task"
     },
-    "trm_553fcbbe974ba": {
+    {
         "TermURL": "cogatlas:trm_553fcbbe974ba",
         "Label": "stop signal walking task with stroop"
     },
-    "trm_553fce5d21da7": {
+    {
         "TermURL": "cogatlas:trm_553fce5d21da7",
         "Label": "bistable percept paradigm"
     },
-    "trm_55492d262a847": {
+    {
         "TermURL": "cogatlas:trm_55492d262a847",
         "Label": "manipulation of predictability"
     },
-    "trm_5550e5011ce10": {
+    {
         "TermURL": "cogatlas:trm_5550e5011ce10",
         "Label": "audio narrative"
     },
-    "trm_5585c83d15fad": {
+    {
         "TermURL": "cogatlas:trm_5585c83d15fad",
         "Label": "pittsburgh sleep quality index"
     },
-    "trm_5586ff878155d": {
+    {
         "TermURL": "cogatlas:trm_5586ff878155d",
         "Label": "adult adhd clinical diagnostic scale"
     },
-    "trm_558702243da12": {
+    {
         "TermURL": "cogatlas:trm_558702243da12",
         "Label": "young mania rating scale"
     },
-    "trm_558c324478d22": {
+    {
         "TermURL": "cogatlas:trm_558c324478d22",
         "Label": "multi-class n-back task"
     },
-    "trm_558c3350c6a9f": {
+    {
         "TermURL": "cogatlas:trm_558c3350c6a9f",
         "Label": "stop signal task with dot motion discrimination"
     },
-    "trm_558c33e7714ba": {
+    {
         "TermURL": "cogatlas:trm_558c33e7714ba",
         "Label": "multi-object localizer task"
     },
-    "trm_558c35979a284": {
+    {
         "TermURL": "cogatlas:trm_558c35979a284",
         "Label": "sentence/nonword language localizer"
     },
-    "trm_558c36935a0e9": {
+    {
         "TermURL": "cogatlas:trm_558c36935a0e9",
         "Label": "spatial working memory localizer task"
     },
-    "trm_558c4d3105abf": {
+    {
         "TermURL": "cogatlas:trm_558c4d3105abf",
         "Label": "retinotopic mapping task"
     },
-    "trm_559e2af1cc0ce": {
+    {
         "TermURL": "cogatlas:trm_559e2af1cc0ce",
         "Label": "hamilton psychiatric rating scale for depression"
     },
-    "trm_55a6a36d9c3f9": {
+    {
         "TermURL": "cogatlas:trm_55a6a36d9c3f9",
         "Label": "scale for the assessment of negative symptoms"
     },
-    "trm_55a6a52537c2b": {
+    {
         "TermURL": "cogatlas:trm_55a6a52537c2b",
         "Label": "brief psychiatric rating scale"
     },
-    "trm_55a6a79b55c8b": {
+    {
         "TermURL": "cogatlas:trm_55a6a79b55c8b",
         "Label": "adult adhd self-report scale"
     },
-    "trm_55a6a860a7088": {
+    {
         "TermURL": "cogatlas:trm_55a6a860a7088",
         "Label": "hopkins symptom checklist"
     },
-    "trm_55a6a8e81b7f4": {
+    {
         "TermURL": "cogatlas:trm_55a6a8e81b7f4",
         "Label": "barratt impulsiveness scale"
     },
-    "trm_55a6a95f66508": {
+    {
         "TermURL": "cogatlas:trm_55a6a95f66508",
         "Label": "dickman impulsivity inventory"
     },
-    "trm_55a6aa62c54f8": {
+    {
         "TermURL": "cogatlas:trm_55a6aa62c54f8",
         "Label": "multidimensional personality questionnaire"
     },
-    "trm_55a6ae8f44ac3": {
+    {
         "TermURL": "cogatlas:trm_55a6ae8f44ac3",
         "Label": "eysenck personality questionnaire"
     },
-    "trm_55a6c80b2c1d6": {
+    {
         "TermURL": "cogatlas:trm_55a6c80b2c1d6",
         "Label": "minnesota multiphasic personality inventory"
     },
-    "trm_55a6c92db12b0": {
+    {
         "TermURL": "cogatlas:trm_55a6c92db12b0",
         "Label": "hypomanic personality scale"
     },
-    "trm_57c0c570473d3": {
+    {
         "TermURL": "cogatlas:trm_57c0c570473d3",
         "Label": "chapman magical ideation scale"
     },
-    "trm_55a6cb4f951ea": {
+    {
         "TermURL": "cogatlas:trm_55a6cb4f951ea",
         "Label": "temperament and character inventory"
     },
-    "trm_55a6cffbcb5f7": {
+    {
         "TermURL": "cogatlas:trm_55a6cffbcb5f7",
         "Label": "scale for the assessment of positive symptoms"
     },
-    "trm_5696a599bfcb6": {
+    {
         "TermURL": "cogatlas:trm_5696a599bfcb6",
         "Label": "bickel titrator"
     },
-    "trm_55c686e0824e8": {
+    {
         "TermURL": "cogatlas:trm_55c686e0824e8",
         "Label": "single item food choice task"
     },
-    "trm_55c691909c580": {
+    {
         "TermURL": "cogatlas:trm_55c691909c580",
         "Label": "two item food choice task"
     },
-    "trm_566745bbf272a": {
+    {
         "TermURL": "cogatlas:trm_566745bbf272a",
         "Label": "task switching (3x2)"
     },
-    "trm_5667476fc14dd": {
+    {
         "TermURL": "cogatlas:trm_5667476fc14dd",
         "Label": "inter-dimensional/extra-dimensional shift task"
     },
-    "trm_566747c3d757f": {
+    {
         "TermURL": "cogatlas:trm_566747c3d757f",
         "Label": "dimensions task"
     },
-    "trm_5667483dcc371": {
+    {
         "TermURL": "cogatlas:trm_5667483dcc371",
         "Label": "probabilistic selection task"
     },
-    "trm_5667488d52ccc": {
+    {
         "TermURL": "cogatlas:trm_5667488d52ccc",
         "Label": "angling risk task"
     },
-    "trm_566748c929afc": {
+    {
         "TermURL": "cogatlas:trm_566748c929afc",
         "Label": "delay discounting titration"
     },
-    "trm_5667492c555b7": {
+    {
         "TermURL": "cogatlas:trm_5667492c555b7",
         "Label": "columbia card task"
     },
-    "trm_56674987c8f0c": {
+    {
         "TermURL": "cogatlas:trm_56674987c8f0c",
         "Label": "sternberg recent probes"
     },
-    "trm_56674c7c2fa4f": {
+    {
         "TermURL": "cogatlas:trm_56674c7c2fa4f",
         "Label": "sternberg directed forgetting"
     },
-    "trm_56674d6aa9faf": {
+    {
         "TermURL": "cogatlas:trm_56674d6aa9faf",
         "Label": "dietary decisions task"
     },
-    "trm_56674e49d15e9": {
+    {
         "TermURL": "cogatlas:trm_56674e49d15e9",
         "Label": "adaptation of marshmellow test"
     },
-    "trm_56674f71483b0": {
+    {
         "TermURL": "cogatlas:trm_56674f71483b0",
         "Label": "holt and laury risk titrator"
     },
-    "trm_56675359b663a": {
+    {
         "TermURL": "cogatlas:trm_56675359b663a",
         "Label": "cognitive reflection test"
     },
-    "trm_566db10532583": {
+    {
         "TermURL": "cogatlas:trm_566db10532583",
         "Label": "roving somatosensory oddball task"
     },
-    "trm_5696a9cfe45b1": {
+    {
         "TermURL": "cogatlas:trm_5696a9cfe45b1",
         "Label": "letter memory"
     },
-    "trm_5696abecf2569": {
+    {
         "TermURL": "cogatlas:trm_5696abecf2569",
         "Label": "dospert"
     },
-    "trm_5696b180169bd": {
+    {
         "TermURL": "cogatlas:trm_5696b180169bd",
         "Label": "volatile bandit"
     },
-    "trm_5696b316c220a": {
+    {
         "TermURL": "cogatlas:trm_5696b316c220a",
         "Label": "plus-minus"
     },
-    "trm_5696b61ff253e": {
+    {
         "TermURL": "cogatlas:trm_5696b61ff253e",
         "Label": "multi-source interference task"
     },
-    "trm_5696bb7166121": {
+    {
         "TermURL": "cogatlas:trm_5696bb7166121",
         "Label": "hierarchical rule task"
     },
-    "trm_5696bcf1b5c64": {
+    {
         "TermURL": "cogatlas:trm_5696bcf1b5c64",
         "Label": "tower of london imagine"
     },
-    "trm_5696c2c063222": {
+    {
         "TermURL": "cogatlas:trm_5696c2c063222",
         "Label": "multiplication task"
     },
-    "trm_5696c3fa0061a": {
+    {
         "TermURL": "cogatlas:trm_5696c3fa0061a",
         "Label": "shift task"
     },
-    "trm_5696d061adfb5": {
+    {
         "TermURL": "cogatlas:trm_5696d061adfb5",
         "Label": "wrat-4 math computation"
     },
-    "trm_5696d0a4902df": {
+    {
         "TermURL": "cogatlas:trm_5696d0a4902df",
         "Label": "wrat-4 word reading"
     },
-    "trm_5696e10fcd36a": {
+    {
         "TermURL": "cogatlas:trm_5696e10fcd36a",
         "Label": "penn vocabulary test"
     },
-    "trm_569989ef8cff4": {
+    {
         "TermURL": "cogatlas:trm_569989ef8cff4",
         "Label": "willingness to wait task"
     },
-    "trm_569d6eef27433": {
+    {
         "TermURL": "cogatlas:trm_569d6eef27433",
         "Label": "gm paradigm"
     },
-    "trm_569fc84bd541d": {
+    {
         "TermURL": "cogatlas:trm_569fc84bd541d",
         "Label": "penn fractal n-back"
     },
-    "trm_56a2b7c08a279": {
+    {
         "TermURL": "cogatlas:trm_56a2b7c08a279",
         "Label": "short penn continuous performance test-number and letter version"
     },
-    "trm_56a2a5f8315c5": {
+    {
         "TermURL": "cogatlas:trm_56a2a5f8315c5",
         "Label": "penn matrix reasoning test"
     },
-    "trm_56a2a622cdfbd": {
+    {
         "TermURL": "cogatlas:trm_56a2a622cdfbd",
         "Label": "penn facial memory test delayed memory"
     },
-    "trm_56a2a665baeb1": {
+    {
         "TermURL": "cogatlas:trm_56a2a665baeb1",
         "Label": "adult's penn word memory test delayed memory"
     },
-    "trm_56a2a6ad6edee": {
+    {
         "TermURL": "cogatlas:trm_56a2a6ad6edee",
         "Label": "penn visual object learning test"
     },
-    "trm_56a2a6ce24586": {
+    {
         "TermURL": "cogatlas:trm_56a2a6ce24586",
         "Label": "penn emotion recognition task"
     },
-    "trm_56a2a74ab3ef6": {
+    {
         "TermURL": "cogatlas:trm_56a2a74ab3ef6",
         "Label": "measured emotion differentiation test"
     },
-    "trm_56a2a7750ffd0": {
+    {
         "TermURL": "cogatlas:trm_56a2a7750ffd0",
         "Label": "penn\u00e2\u0080\u0099s logical reasoning test"
     },
-    "trm_56a2a8d78dd39": {
+    {
         "TermURL": "cogatlas:trm_56a2a8d78dd39",
         "Label": "ataxia"
     },
-    "trm_56a2a98785453": {
+    {
         "TermURL": "cogatlas:trm_56a2a98785453",
         "Label": "penn visual object learning test delayed memory"
     },
-    "trm_56a2abffcfae3": {
+    {
         "TermURL": "cogatlas:trm_56a2abffcfae3",
         "Label": "penn motor praxis"
     },
-    "trm_56a9123fe580f": {
+    {
         "TermURL": "cogatlas:trm_56a9123fe580f",
         "Label": "stimulus selective stop signal task"
     },
-    "trm_56a9137d9dce1": {
+    {
         "TermURL": "cogatlas:trm_56a9137d9dce1",
         "Label": "behavioral approach/inhibition systems"
     },
-    "trm_56a915461cd91": {
+    {
         "TermURL": "cogatlas:trm_56a915461cd91",
         "Label": "brief self control scale"
     },
-    "trm_56a915fe77945": {
+    {
         "TermURL": "cogatlas:trm_56a915fe77945",
         "Label": "future time perspective questionnaire"
     },
-    "trm_56a9166421494": {
+    {
         "TermURL": "cogatlas:trm_56a9166421494",
         "Label": "duckworth's short grit scale"
     },
-    "trm_56a919a478935": {
+    {
         "TermURL": "cogatlas:trm_56a919a478935",
         "Label": "ten item personality questionnaire"
     },
-    "trm_56a91a3082c31": {
+    {
         "TermURL": "cogatlas:trm_56a91a3082c31",
         "Label": "theories of willpower scale"
     },
-    "trm_56a91a92043bc": {
+    {
         "TermURL": "cogatlas:trm_56a91a92043bc",
         "Label": "upps-p impulsivity scale"
     },
-    "trm_56a91e3e982f9": {
+    {
         "TermURL": "cogatlas:trm_56a91e3e982f9",
         "Label": "i7 impulsiveness and venturesomeness questionnaire"
     },
-    "trm_56a91e92eab46": {
+    {
         "TermURL": "cogatlas:trm_56a91e92eab46",
         "Label": "zimbardo time perspective inventory"
     },
-    "trm_56a91ed5f1ccc": {
+    {
         "TermURL": "cogatlas:trm_56a91ed5f1ccc",
         "Label": "self regulation questionnaire"
     },
-    "trm_56aa9833c4be2": {
+    {
         "TermURL": "cogatlas:trm_56aa9833c4be2",
         "Label": "treatment self-regulation questionnaire"
     },
-    "trm_58335e885873f": {
+    {
         "TermURL": "cogatlas:trm_58335e885873f",
         "Label": "hidden state decision making task"
     },
-    "trm_56aac5f6e4702": {
+    {
         "TermURL": "cogatlas:trm_56aac5f6e4702",
         "Label": "eating questionnaire"
     },
-    "trm_56ab12e0f1a61": {
+    {
         "TermURL": "cogatlas:trm_56ab12e0f1a61",
         "Label": "five facet mindfulness questionnaire"
     },
-    "trm_56abcba3df89b": {
+    {
         "TermURL": "cogatlas:trm_56abcba3df89b",
         "Label": "mindful attention and awareness scale"
     },
-    "trm_56abebfe9aaa3": {
+    {
         "TermURL": "cogatlas:trm_56abebfe9aaa3",
         "Label": "zuckerman sensation seeking scale"
     },
-    "trm_56ac06bac9334": {
+    {
         "TermURL": "cogatlas:trm_56ac06bac9334",
         "Label": "selection-optimization-compensation (soc) questionnaire"
     },
-    "trm_56bbe12994926": {
+    {
         "TermURL": "cogatlas:trm_56bbe12994926",
         "Label": "stanford leisure-time activity categorical item"
     },
-    "trm_57ebe6583f52d": {
+    {
         "TermURL": "cogatlas:trm_57ebe6583f52d",
         "Label": "moral dilemma task"
     },
-    "trm_56bbe45003cf7": {
+    {
         "TermURL": "cogatlas:trm_56bbe45003cf7",
         "Label": "motor selective stop signal task"
     },
-    "trm_56bbea82c12bb": {
+    {
         "TermURL": "cogatlas:trm_56bbea82c12bb",
         "Label": "emotion regulation task"
     },
-    "trm_56bbead1a7ed4": {
+    {
         "TermURL": "cogatlas:trm_56bbead1a7ed4",
         "Label": "emotion regulation questionnaire"
     },
-    "trm_56bbee951f161": {
+    {
         "TermURL": "cogatlas:trm_56bbee951f161",
         "Label": "kirby delay discounting task"
     },
-    "trm_579640ddba2c0": {
+    {
         "TermURL": "cogatlas:trm_579640ddba2c0",
         "Label": "birkbeck reversible sentence comprehension test"
     },
-    "trm_57964b8a66aed": {
+    {
         "TermURL": "cogatlas:trm_57964b8a66aed",
         "Label": "montreal cognitive assessment"
     },
-    "trm_5798c6a933abc": {
+    {
         "TermURL": "cogatlas:trm_5798c6a933abc",
         "Label": "word recognition task"
     },
-    "trm_5798cb6027f28": {
+    {
         "TermURL": "cogatlas:trm_5798cb6027f28",
         "Label": "following commands"
     },
-    "trm_5798d0fbe2bd1": {
+    {
         "TermURL": "cogatlas:trm_5798d0fbe2bd1",
         "Label": "ideational praxis task"
     },
-    "trm_5798d2693915d": {
+    {
         "TermURL": "cogatlas:trm_5798d2693915d",
         "Label": "clock drawing task"
     },
-    "trm_5798d7ba0197d": {
+    {
         "TermURL": "cogatlas:trm_5798d7ba0197d",
         "Label": "orientation test"
     },
-    "trm_5798f5c57048d": {
+    {
         "TermURL": "cogatlas:trm_5798f5c57048d",
         "Label": "national adult reading test"
     },
-    "trm_5798f94752841": {
+    {
         "TermURL": "cogatlas:trm_5798f94752841",
         "Label": "nart-r"
     },
-    "trm_5798fa39b4315": {
+    {
         "TermURL": "cogatlas:trm_5798fa39b4315",
         "Label": "american national adult reading test"
     },
-    "trm_57c0bf6b14b90": {
+    {
         "TermURL": "cogatlas:trm_57c0bf6b14b90",
         "Label": "eckblad and chapman's hypomanic personality scale"
     },
-    "trm_57c0c015b603c": {
+    {
         "TermURL": "cogatlas:trm_57c0c015b603c",
         "Label": "chapman infrequency scale"
     },
-    "trm_57c0c146e0019": {
+    {
         "TermURL": "cogatlas:trm_57c0c146e0019",
         "Label": "chapman perceptual aberration scale"
     },
-    "trm_57c0c186b07d4": {
+    {
         "TermURL": "cogatlas:trm_57c0c186b07d4",
         "Label": "chapman social anhedonia scale"
     },
-    "trm_57c0c1af018a5": {
+    {
         "TermURL": "cogatlas:trm_57c0c1af018a5",
         "Label": "chapman physical anhedonia scale"
     },
-    "trm_57c0c34e61fdf": {
+    {
         "TermURL": "cogatlas:trm_57c0c34e61fdf",
         "Label": "continuous performance task"
     },
-    "trm_5845a809e30d5": {
+    {
         "TermURL": "cogatlas:trm_5845a809e30d5",
         "Label": "false belief task"
     },
-    "trm_586fd45d1bd21": {
+    {
         "TermURL": "cogatlas:trm_586fd45d1bd21",
         "Label": "vertical checkerboard"
     },
-    "trm_586fd4fd8754a": {
+    {
         "TermURL": "cogatlas:trm_586fd4fd8754a",
         "Label": "horizontal checkerboard"
     },
-    "trm_586fd8a2c77ca": {
+    {
         "TermURL": "cogatlas:trm_586fd8a2c77ca",
         "Label": "hand side  recognition"
     },
-    "trm_586fd907e4fc6": {
+    {
         "TermURL": "cogatlas:trm_586fd907e4fc6",
         "Label": "hand chirality recognition"
     },
-    "trm_5873cd1c9d4c4": {
+    {
         "TermURL": "cogatlas:trm_5873cd1c9d4c4",
         "Label": "standard localizer fmri task paradigm"
     },
-    "trm_5873ce8e77d1d": {
+    {
         "TermURL": "cogatlas:trm_5873ce8e77d1d",
         "Label": "spatial localizer fmri task paradigm"
     },
-    "trm_5873d014bcfc8": {
+    {
         "TermURL": "cogatlas:trm_5873d014bcfc8",
         "Label": "social localizer fmri task paradigm"
     },
-    "trm_5873d0be34b8f": {
+    {
         "TermURL": "cogatlas:trm_5873d0be34b8f",
         "Label": "emotional localizer fmri task paradigm"
     },
-    "trm_5873e2469dd0d": {
+    {
         "TermURL": "cogatlas:trm_5873e2469dd0d",
         "Label": "synatcting and semantic fmri task paradigm"
     },
-    "trm_5879199fde201": {
+    {
         "TermURL": "cogatlas:trm_5879199fde201",
         "Label": "body image self-reflection task"
     },
-    "trm_5887c029d46f4": {
+    {
         "TermURL": "cogatlas:trm_5887c029d46f4",
         "Label": "gustatory stimulation with liquid tastes or flavors"
     },
-    "trm_58a5d31f5c72d": {
+    {
         "TermURL": "cogatlas:trm_58a5d31f5c72d",
         "Label": "biological motion perception (passive viewing) paradigm"
     },
-    "trm_58ab8a6131c5a": {
+    {
         "TermURL": "cogatlas:trm_58ab8a6131c5a",
         "Label": "route learning"
     },
-    "trm_58c80c3376c95": {
+    {
         "TermURL": "cogatlas:trm_58c80c3376c95",
         "Label": "social norm processing task"
     },
-    "trm_59668f09db813": {
+    {
         "TermURL": "cogatlas:trm_59668f09db813",
         "Label": "yellow light game"
     },
-    "trm_597249e1ec9d3": {
+    {
         "TermURL": "cogatlas:trm_597249e1ec9d3",
         "Label": "network traversal task"
     },
-    "trm_5975f939336c0": {
+    {
         "TermURL": "cogatlas:trm_5975f939336c0",
         "Label": "motorphotic"
     },
-    "trm_59cd03eeeab30": {
+    {
         "TermURL": "cogatlas:trm_59cd03eeeab30",
         "Label": "fictitious event ordering"
     },
-    "trm_59ed1f7a0ac9c": {
+    {
         "TermURL": "cogatlas:trm_59ed1f7a0ac9c",
         "Label": "episodic recombination paradigm"
     },
-    "tsk_bupiifcjbo2ax": {
+    {
         "TermURL": "cogatlas:tsk_bupiifcjbo2ax",
         "Label": "generalization of instrumental avoidance task"
     },
-    "tsk_nzi0bkdoo8a23": {
+    {
         "TermURL": "cogatlas:tsk_nzi0bkdoo8a23",
         "Label": "error awareness task"
     },
-    "tsk_ec4xbqynlg1ur": {
+    {
         "TermURL": "cogatlas:tsk_ec4xbqynlg1ur",
         "Label": "social influence on emotion task"
     },
-    "tsk_pnuomlnoaajst": {
+    {
         "TermURL": "cogatlas:tsk_pnuomlnoaajst",
         "Label": "letter matching task"
     },
-    "tsk_o32s7ulzu8ato": {
+    {
         "TermURL": "cogatlas:tsk_o32s7ulzu8ato",
         "Label": "hidden path learning task"
     },
-    "tsk_edrfwnl1ktvsf": {
+    {
         "TermURL": "cogatlas:tsk_edrfwnl1ktvsf",
         "Label": "compensatory tracking task"
     },
-    "tsk_gdteohkqzjlyg": {
+    {
         "TermURL": "cogatlas:tsk_gdteohkqzjlyg",
         "Label": "pursuit tracking task"
     },
-    "tsk_zaclbcwucewt2": {
+    {
         "TermURL": "cogatlas:tsk_zaclbcwucewt2",
         "Label": "continuous tapping task"
     },
-    "tsk_xfpgex9zovlou": {
+    {
         "TermURL": "cogatlas:tsk_xfpgex9zovlou",
         "Label": "non-instrumental information seeking task"
     },
-    "tsk_zmtnk4oce5b2j": {
+    {
         "TermURL": "cogatlas:tsk_zmtnk4oce5b2j",
         "Label": "remote associates test"
     },
-    "tsk_zcuaj6vrsfmfv": {
+    {
         "TermURL": "cogatlas:tsk_zcuaj6vrsfmfv",
         "Label": "reciprocal artwork evaluation task"
     },
-    "tsk_vokaidevrx1vs": {
+    {
         "TermURL": "cogatlas:tsk_vokaidevrx1vs",
         "Label": "prospective sequential decision making task"
     },
-    "tsk_rjsjbua5jk2mb": {
+    {
         "TermURL": "cogatlas:tsk_rjsjbua5jk2mb",
         "Label": "food viewing (passive)"
     },
-    "tsk_mfs3uwumahxxe": {
+    {
         "TermURL": "cogatlas:tsk_mfs3uwumahxxe",
         "Label": "memory encoding task"
     },
-    "tsk_29il64wzhio9u": {
+    {
         "TermURL": "cogatlas:tsk_29il64wzhio9u",
         "Label": "self evaluation task"
     },
-    "tsk_i6bcjhsadb30o": {
+    {
         "TermURL": "cogatlas:tsk_i6bcjhsadb30o",
         "Label": "other evaluation task"
     },
-    "tsk_ncknr0soim4iv": {
+    {
         "TermURL": "cogatlas:tsk_ncknr0soim4iv",
         "Label": "social decision-making task"
     },
-    "tsk_d9vpgovlo7aju": {
+    {
         "TermURL": "cogatlas:tsk_d9vpgovlo7aju",
         "Label": "risky decision-making under social influence"
     },
-    "tsk_xxvr20bf4zyme": {
+    {
         "TermURL": "cogatlas:tsk_xxvr20bf4zyme",
         "Label": "mental time travel task"
     },
-    "tsk_jb7hdmvdy3rlv": {
+    {
         "TermURL": "cogatlas:tsk_jb7hdmvdy3rlv",
         "Label": "pleasantness rating task"
     },
-    "tsk_wicmunujvvrcr": {
+    {
         "TermURL": "cogatlas:tsk_wicmunujvvrcr",
         "Label": "enumeration task"
     },
-    "tsk_1eluszkc87ti1": {
+    {
         "TermURL": "cogatlas:tsk_1eluszkc87ti1",
         "Label": "visual short term memory task"
     },
-    "tsk_vbkfbu486lzdr": {
+    {
         "TermURL": "cogatlas:tsk_vbkfbu486lzdr",
         "Label": "pain-matrix narrative localizer"
     },
-    "tsk_jbg1of4d9otko": {
+    {
         "TermURL": "cogatlas:tsk_jbg1of4d9otko",
         "Label": "movie watching task"
     },
-    "tsk_wmfvpdb0y6uyl": {
+    {
         "TermURL": "cogatlas:tsk_wmfvpdb0y6uyl",
         "Label": "donation task"
     },
-    "tsk_zmlmdcfxjld0k": {
+    {
         "TermURL": "cogatlas:tsk_zmlmdcfxjld0k",
         "Label": "point subtraction aggression paradigm"
     },
-    "tsk_02fiuoofbohmh": {
+    {
         "TermURL": "cogatlas:tsk_02fiuoofbohmh",
         "Label": "facial expression observation"
     },
-    "tsk_4huwbaqzf0tgz": {
+    {
         "TermURL": "cogatlas:tsk_4huwbaqzf0tgz",
         "Label": "facial expression of emotion"
     },
-    "tsk_n4kooyljmyobg": {
+    {
         "TermURL": "cogatlas:tsk_n4kooyljmyobg",
         "Label": "task-set learning"
     },
-    "tsk_gxjzbnijorj1k": {
+    {
         "TermURL": "cogatlas:tsk_gxjzbnijorj1k",
         "Label": "p300 bci"
     },
-    "tsk_xqrufihzsbufe": {
+    {
         "TermURL": "cogatlas:tsk_xqrufihzsbufe",
         "Label": "facial expression display task"
     },
-    "tsk_jaf5u33ggyrt3": {
+    {
         "TermURL": "cogatlas:tsk_jaf5u33ggyrt3",
         "Label": "facial expression observing task"
     },
-    "tsk_r8kof3we48jca": {
+    {
         "TermURL": "cogatlas:tsk_r8kof3we48jca",
         "Label": "correlated bandits"
     },
-    "tsk_kvuzhlsv8pesh": {
+    {
         "TermURL": "cogatlas:tsk_kvuzhlsv8pesh",
         "Label": "language rule learning"
     },
-    "tsk_lihqgpc9y8ge0": {
+    {
         "TermURL": "cogatlas:tsk_lihqgpc9y8ge0",
         "Label": "thirst perception"
     },
-    "tsk_wpiafikslx3tm": {
+    {
         "TermURL": "cogatlas:tsk_wpiafikslx3tm",
         "Label": "risky lotteries task"
     },
-    "tsk_qm81ynuuiovho": {
+    {
         "TermURL": "cogatlas:tsk_qm81ynuuiovho",
         "Label": "value-based decision making"
     },
-    "tsk_3kf7rodrbgivs": {
+    {
         "TermURL": "cogatlas:tsk_3kf7rodrbgivs",
         "Label": "internal menu choice task"
     },
-    "tsk_isdztd6ptyb2c": {
+    {
         "TermURL": "cogatlas:tsk_isdztd6ptyb2c",
         "Label": "center of mass approximation"
     },
-    "tsk_37y3edrertjba": {
+    {
         "TermURL": "cogatlas:tsk_37y3edrertjba",
         "Label": "catoon (cognitive and affective theory of mind cartoon task)"
     },
-    "tsk_pl4uqvgm1uj3z": {
+    {
         "TermURL": "cogatlas:tsk_pl4uqvgm1uj3z",
         "Label": "positive and negative images task"
     },
-    "tsk_uzbpk1yb47iqd": {
+    {
         "TermURL": "cogatlas:tsk_uzbpk1yb47iqd",
         "Label": "motivational go/no-go learning task"
     },
-    "tsk_tlatuto2tmcyc": {
+    {
         "TermURL": "cogatlas:tsk_tlatuto2tmcyc",
         "Label": "narrative-based pain empathy task"
     },
-    "tsk_ovuqxhbappmls": {
+    {
         "TermURL": "cogatlas:tsk_ovuqxhbappmls",
         "Label": "boston naming test"
     },
-    "tsk_orazdoo86knfm": {
+    {
         "TermURL": "cogatlas:tsk_orazdoo86knfm",
         "Label": "fmri localizer for the frontotemporal language system"
     },
-    "tsk_qyzsv96fivlt1": {
+    {
         "TermURL": "cogatlas:tsk_qyzsv96fivlt1",
         "Label": "tri-modal roving stimulus paradigm"
     },
-    "tsk_kbyltvzx59uoc": {
+    {
         "TermURL": "cogatlas:tsk_kbyltvzx59uoc",
         "Label": "mindstrong for regulation of emotion"
     },
-    "tsk_qbdquejhsouuf": {
+    {
         "TermURL": "cogatlas:tsk_qbdquejhsouuf",
         "Label": "five-trial adjusting delay discounting task"
     },
-    "tsk_ttkd4o04kpuda": {
+    {
         "TermURL": "cogatlas:tsk_ttkd4o04kpuda",
         "Label": "go-nogo fmri paradigm"
     },
-    "tsk_oa90ujx5qwtyc": {
+    {
         "TermURL": "cogatlas:tsk_oa90ujx5qwtyc",
         "Label": "kessler psychological distress scale (k6+)"
     },
-    "tsk_p7cabukvvqpbs": {
+    {
         "TermURL": "cogatlas:tsk_p7cabukvvqpbs",
         "Label": "generalized self-efficacy scale"
     },
-    "tsk_cctkynmv7tozy": {
+    {
         "TermURL": "cogatlas:tsk_cctkynmv7tozy",
         "Label": "verbal interference test"
     },
-    "tsk_u9gdp8utahafo": {
+    {
         "TermURL": "cogatlas:tsk_u9gdp8utahafo",
         "Label": "pittsburgh stress battery"
     },
-    "tsk_gskvleichg899": {
+    {
         "TermURL": "cogatlas:tsk_gskvleichg899",
         "Label": "future orientation scale of the time perspective survey (child version)"
     },
-    "tsk_alz5hjluxp4wy": {
+    {
         "TermURL": "cogatlas:tsk_alz5hjluxp4wy",
         "Label": "parent-child coercion scale"
     },
-    "tsk_h2hu4wmhyl8tu": {
+    {
         "TermURL": "cogatlas:tsk_h2hu4wmhyl8tu",
         "Label": "immersive virtual reality assay for target: regulation of cognition (behavioral and self-report)"
     },
-    "tsk_eddtjcirl19qj": {
+    {
         "TermURL": "cogatlas:tsk_eddtjcirl19qj",
         "Label": "daily inventory of stressful events (dise)"
     },
-    "tsk_asxftzukfk3te": {
+    {
         "TermURL": "cogatlas:tsk_asxftzukfk3te",
         "Label": "social vs physical perception task"
     },
-    "tsk_hfeou5rlqcxad": {
+    {
         "TermURL": "cogatlas:tsk_hfeou5rlqcxad",
         "Label": "sides affect dysregulation scale (child-reported)"
     },
-    "tsk_161qcskoytlfy": {
+    {
         "TermURL": "cogatlas:tsk_161qcskoytlfy",
         "Label": "video-mediated affective recall"
     },
-    "tsk_zajzlqgqcxclq": {
+    {
         "TermURL": "cogatlas:tsk_zajzlqgqcxclq",
         "Label": "immersive virtual reality assay for target: regulation of self-reflection (behavioral and self-report)"
     },
-    "tsk_uh2rnlbc0pu3v": {
+    {
         "TermURL": "cogatlas:tsk_uh2rnlbc0pu3v",
         "Label": "maze"
     },
-    "tsk_qsprwaphqkwim": {
+    {
         "TermURL": "cogatlas:tsk_qsprwaphqkwim",
         "Label": "fmri facial emotion paradigm"
     },
-    "tsk_eaamakelseyxm": {
+    {
         "TermURL": "cogatlas:tsk_eaamakelseyxm",
         "Label": "hierarchical task"
     },
-    "tsk_dn4ejmrggauaz": {
+    {
         "TermURL": "cogatlas:tsk_dn4ejmrggauaz",
         "Label": "relative reinforcing efficacy purchase task"
     },
-    "tsk_a1aevp7clzscb": {
+    {
         "TermURL": "cogatlas:tsk_a1aevp7clzscb",
         "Label": "emotion identification task"
     },
-    "tsk_k6madfngbhqdx": {
+    {
         "TermURL": "cogatlas:tsk_k6madfngbhqdx",
         "Label": "go-no-go zoo task"
     },
-    "tsk_zfixinjdic1dm": {
+    {
         "TermURL": "cogatlas:tsk_zfixinjdic1dm",
         "Label": "mindstrong for regulation of cognition"
     },
-    "tsk_zhaw4g31jtprw": {
+    {
         "TermURL": "cogatlas:tsk_zhaw4g31jtprw",
         "Label": "angling risk task \u2013 always sunny"
     },
-    "tsk_tp1574mcrybwd": {
+    {
         "TermURL": "cogatlas:tsk_tp1574mcrybwd",
         "Label": "multidimensional personality questionnaire: control vs. impulsivity scale"
     },
-    "tsk_nrsnidhxy2nkm": {
+    {
         "TermURL": "cogatlas:tsk_nrsnidhxy2nkm",
         "Label": "brief risk-resilience index for screening (brisc)"
     },
-    "tsk_nhhifqgl91nkc": {
+    {
         "TermURL": "cogatlas:tsk_nhhifqgl91nkc",
         "Label": "internal self-efficacy task"
     },
-    "tsk_lurj93bk1echa": {
+    {
         "TermURL": "cogatlas:tsk_lurj93bk1echa",
         "Label": "consideration of future consequences scale"
     },
-    "tsk_sgb6i1nfqmvjq": {
+    {
         "TermURL": "cogatlas:tsk_sgb6i1nfqmvjq",
         "Label": "immersive virtual reality assay for target: regulation of emotion (behavioral and self-report)"
     },
-    "tsk_aojkzj2tvdhgz": {
+    {
         "TermURL": "cogatlas:tsk_aojkzj2tvdhgz",
         "Label": "mindstrong for regulation of self-focused reflection"
     },
-    "tsk_zndt4sbtz2bye": {
+    {
         "TermURL": "cogatlas:tsk_zndt4sbtz2bye",
         "Label": "stroop-like arrows task"
     },
-    "tsk_qlxqe5gup7ufj": {
+    {
         "TermURL": "cogatlas:tsk_qlxqe5gup7ufj",
         "Label": "international physical activity questionnaire \u2013 short form (ipaq-sf)"
     },
-    "tsk_c6667ospanrbt": {
+    {
         "TermURL": "cogatlas:tsk_c6667ospanrbt",
         "Label": "ecological momentary assessment of stressful events"
     },
-    "tsk_l1akyyjegdius": {
+    {
         "TermURL": "cogatlas:tsk_l1akyyjegdius",
         "Label": "anxiety sensitivity index - 3 (asi-3)"
     },
-    "tsk_rpfz9hvrptucq": {
+    {
         "TermURL": "cogatlas:tsk_rpfz9hvrptucq",
         "Label": "interoceptive attentiveness fmri task"
     },
-    "tsk_jdo0ke737b9n8": {
+    {
         "TermURL": "cogatlas:tsk_jdo0ke737b9n8",
         "Label": "two-stage task"
     },
-    "tsk_mumzkg2xvn82g": {
+    {
         "TermURL": "cogatlas:tsk_mumzkg2xvn82g",
         "Label": "convex time budgets"
     },
-    "tsk_eejgkbabphkim": {
+    {
         "TermURL": "cogatlas:tsk_eejgkbabphkim",
         "Label": "emotion regulation strategies scale"
     },
-    "tsk_2lu25qylrwkfj": {
+    {
         "TermURL": "cogatlas:tsk_2lu25qylrwkfj",
         "Label": "violation-of-expectation task"
     },
-    "tsk_zj7eacdoz1dae": {
+    {
         "TermURL": "cogatlas:tsk_zj7eacdoz1dae",
         "Label": "couples conflict task"
     },
-    "tsk_2wrb9xpia4xmn": {
+    {
         "TermURL": "cogatlas:tsk_2wrb9xpia4xmn",
         "Label": "multidimensional assessment of interoceptive awareness"
     },
-    "tsk_osfnj7dne8db0": {
+    {
         "TermURL": "cogatlas:tsk_osfnj7dne8db0",
         "Label": "pearlin mastery scale"
     },
-    "tsk_hji7nly38yzgx": {
+    {
         "TermURL": "cogatlas:tsk_hji7nly38yzgx",
         "Label": "parent-child interaction protocol"
     },
-    "tsk_sj4q7goyfy25y": {
+    {
         "TermURL": "cogatlas:tsk_sj4q7goyfy25y",
         "Label": "raven\u2019s progressive matrices test"
     },
-    "tsk_22kttbdddjzru": {
+    {
         "TermURL": "cogatlas:tsk_22kttbdddjzru",
         "Label": "risk preferences task"
     },
-    "tsk_9ub5vndvakzyw": {
+    {
         "TermURL": "cogatlas:tsk_9ub5vndvakzyw",
         "Label": "cue-based expectancy paradigm combining emotion regulation task"
     },
-    "tsk_bc6viposhchdf": {
+    {
         "TermURL": "cogatlas:tsk_bc6viposhchdf",
         "Label": "positive and negative affect schedule (panas)- child version"
     },
-    "tsk_uwgwphdqkmjqi": {
+    {
         "TermURL": "cogatlas:tsk_uwgwphdqkmjqi",
         "Label": "nih self-efficacy scale"
     },
-    "tsk_qn7tao3lqgqpv": {
+    {
         "TermURL": "cogatlas:tsk_qn7tao3lqgqpv",
         "Label": "rapid marital interaction coding system (rmics)"
     },
-    "tsk_qegcdl3g9d3fp": {
+    {
         "TermURL": "cogatlas:tsk_qegcdl3g9d3fp",
         "Label": "couple coercion scale"
     },
-    "tsk_m9orbitznadcz": {
+    {
         "TermURL": "cogatlas:tsk_m9orbitznadcz",
         "Label": "parent-rated stress (nih perceived stress scale)"
     },
-    "tsk_dwodvcer9rnbx": {
+    {
         "TermURL": "cogatlas:tsk_dwodvcer9rnbx",
         "Label": "parent cognition scale"
     },
-    "tsk_m9zog13yjvspv": {
+    {
         "TermURL": "cogatlas:tsk_m9zog13yjvspv",
         "Label": "frustration in timed backwards math"
     },
-    "tsk_5upyiqtox3yuf": {
+    {
         "TermURL": "cogatlas:tsk_5upyiqtox3yuf",
         "Label": "future events structured interview"
     }
-}
+]
