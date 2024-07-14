@@ -4,9 +4,10 @@ from typing import Dict, Any, Union
 from langchain_community.chat_models import ChatOllama
 from langchain_core.prompts import PromptTemplate
 
+
 def SexLevel(result_dict: Dict[str, str], r: str, key: str) -> Dict[str, Any]:
     value = result_dict[key]
-    value = value.lower()
+    value = value.casefold()
     var1: str = ""
     var2: str = ""
     var3: str = ""
@@ -74,6 +75,21 @@ def is_european_decimal(s: str) -> bool:
     return False
 
 
+def is_bounded(s: str) -> bool:
+    if "+" in s:
+        return True
+    else:
+        return False
+
+
+def is_years(s: str) -> bool:
+    s.casefold()
+    if "y" in s:
+        return True
+    else:
+        return False
+
+
 # def is_bounded(s:str)->bool: yet to be added
 # def is_years yet to be added
 
@@ -97,11 +113,15 @@ def AgeFormat(result_dict: Dict[str, str], r: str, key: str) -> Dict[str, Any]:
         elif is_european_decimal(num_str):
             Fvar = "europeandecimalvalue"
             break
-        # 2 more conditions yet to be added
+        elif is_bounded(num_str):
+            Fvar = "boundedvalue"
+            break
+        elif is_years(num_str):
+            Fvar = "yearunit"
+            break
 
     output: Dict[str, str] = {
         "TermURL": "nb:Age",
         "Format": Fvar,
     }
     return output
-
