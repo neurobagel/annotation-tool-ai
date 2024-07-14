@@ -129,6 +129,6 @@ def test_llm_invocation1(mock_llm_response: Any) -> None:
         assert output == expected_output
 
 
-        output = llm_invocation(result_dict)
+        output = llm_invocation1(result_dict)
         expected_output = {"TermURL": "nb:Age", "Format": "floatvalue"}
         assert output == expected_output
