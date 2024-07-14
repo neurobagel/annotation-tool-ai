@@ -1,8 +1,13 @@
 from typing import Dict, Optional, Union
 import json
 from langchain_community.chat_models import ChatOllama
-from promptTemplate import prompt, Aprompt, Dprompt
-from llm_helper import SexLevel, AgeFormat
+from promptTemplate import(
+prompt,
+Aprompt,
+Dprompt)
+from llm_helper import (
+SexLevel, 
+AgeFormat)
 
 
 def D(key: str, value: str) -> Optional[Dict[str, str]]:
