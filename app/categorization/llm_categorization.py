@@ -46,7 +46,7 @@ def llm_invocation2(key: str, value: str) -> Optional[Dict[str, str]]:
 
 
 def llm_invocation1(result_dict: Dict[str, str]) -> Optional[Dict[str, str]]:
-    output: Union[Dict[str, str],None]
+    output: Union[Dict[str, str], None]
     llm = ChatOllama(model="gemma")
     chain = prompt | llm
     key, value = list(result_dict.items())[0]

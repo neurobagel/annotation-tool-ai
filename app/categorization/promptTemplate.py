@@ -32,23 +32,28 @@ Output= <category>
 """,
     input_variables=["column", "content"],
 )
-
-
 Aprompt = PromptTemplate(
-    template="""Given the column data {column}: {content},
-    Instructions: Based on the provided sample data, please evaluate if this column is an assessment tool. 
-    give yes or no for {question}
-    Consider the following characteristics of assessment tools in your evaluation:
-    Purpose: Does the column aim to measure or evaluate something specific?
-    Format: Is the data structured in a way that suggests a test, survey, or questionnaire (e.g., Likert scale, multiple-choice, ratings)?
-    Consistency: Is there a consistent format or scale used throughout the data (e.g., scores out of 10, ratings from 1 to 5)?
-    Content: Does the content of the data suggest evaluation metrics (e.g., scores, ratings, evaluation criteria)?
-    Metadata: Are there labels, descriptions, or metadata that indicate the column's purpose as an assessment tool?
-    The sample data might include session or participant IDs - these are not assessment tools.
-    Do not give any explanation in the output. Simply provide yes or no for .
+    template="""
+        Given the column data {column}: {content},
+    Instructions: Based on the provided information, please evaluate if this column is an assessment tool  . Consider the following characteristics of assessment tools in your evaluation:
+    In context of medical studies return yes or no for {question} if properties of Assessment tool is as follows:
+    The {content} structured in a way that suggests a test, survey, or questionnaire or evaluation metric(e.g.,IQ,scores, Likert scale, multiple-choice, ratings) and  consistent format or scale used throughout the {content} with numerical entries  (e.g., scores out of powers of 10, ratings in a range of numbers )?
+    The {column} aim to measure or evaluate something specific?
+
+
+    Give answer No if  {column}:{content}  indicate a "group" or result of a collection
+
+If not describing a  diagnosis in context of medical research answer Yes
+
+
+    provide yes if assessment tool  or no if not.
+    Do not give any explanation in the output.
     """,
     input_variables=["column", "content", "question"],
 )
+
+
+
 Dprompt = PromptTemplate(
     template="""Given the column data {column}: {content},
     Based on the sample data provided, please evaluate whether each column should be categorized as a "Diagnosis". 
@@ -74,22 +79,20 @@ Dprompt = PromptTemplate(
 )
 
 
+
 # Aprompt = PromptTemplate(
-#     template="""
-#         Given the column data {column}: {content},
-#     Instructions: Based on the provided information, please evaluate if this column is an assessment tool  . Consider the following characteristics of assessment tools in your evaluation:
-#     In context of medical studies return yes or no for {question} if properties of Assessment tool is as follows:
-#     The {content} structured in a way that suggests a test, survey, or questionnaire or evaluation metric(e.g.,IQ,scores, Likert scale, multiple-choice, ratings) and  consistent format or scale used throughout the {content} with numerical entries  (e.g., scores out of powers of 10, ratings in a range of numbers )?
-#     The {column} aim to measure or evaluate something specific?
-
-
-#     Give answer No if  {column}:{content}  indicate a "group" or result of a collection
-
-# If not describing a  diagnosis in context of medical research answer Yes
-
-
-#     provide yes if assessment tool  or no if not.
-#     Do not give any explanation in the output.
+#      template="""Given the column data {column}: {content},
+#     Instructions: Based on the provided sample data, please evaluate if this column is an assessment tool. 
+#     give yes or no for {question}
+#     Consider the following characteristics of assessment tools in your evaluation:
+#     Purpose: Does the column aim to measure or evaluate something specific?
+#     Format: Is the data structured in a way that suggests a test, survey, or questionnaire (e.g., Likert scale, multiple-choice, ratings)?
+#     Consistency: Is there a consistent format or scale used throughout the data (e.g., scores out of 10, ratings from 1 to 5)?
+#     Content: Does the content of the data suggest evaluation metrics (e.g., scores, ratings, evaluation criteria)?
+#     Metadata: Are there labels, descriptions, or metadata that indicate the column's purpose as an assessment tool?
+#     The sample data might include session or participant IDs - these are not assessment tools.
+#     Do not give any explanation in the output. Simply provide yes or no for .
 #     """,
+        
 #     input_variables=["column", "content", "question"],
 # )
