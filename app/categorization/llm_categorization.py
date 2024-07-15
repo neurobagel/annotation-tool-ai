@@ -28,7 +28,7 @@ def AssessmentTool(key: str, value: str) -> Optional[Dict[str, str]]:
     llm = ChatOllama(model="gemma")
     questionAssessmentTool = f"Is the {key}:{value} an assessment tool"
     chainAssessmentTool = AssessmentToolPrompt | llm
-    llm_response2 = chain.invoke(
+    llm_response2 = chainAssessmentTool.invoke(
         {"column": key, "content": value, "question": questionA}
     )
     reply = str(llm_response2)
