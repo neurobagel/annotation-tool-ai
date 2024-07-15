@@ -26,7 +26,7 @@ def Diagnosis(key: str, value: str) -> Optional[Dict[str, str]]:
 
 def AssessmentTool(key: str, value: str) -> Optional[Dict[str, str]]:
     llm = ChatOllama(model="gemma")
-    questionA = f"Is the {key}:{value} an assessment tool"
+    questionAssessmentTool = f"Is the {key}:{value} an assessment tool"
     chain = Aprompt | llm
     llm_response2 = chain.invoke(
         {"column": key, "content": value, "question": questionA}
