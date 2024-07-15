@@ -54,7 +54,7 @@ If not describing a  diagnosis in context of medical research answer Yes
 
 
 
-Dprompt = PromptTemplate(
+DiagnosisPrompt = PromptTemplate(
     template="""Given the column data {column}: {content},
     Based on the sample data provided, please evaluate whether each column should be categorized as a "Diagnosis". 
     by considering the following characteristics 
