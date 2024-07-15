@@ -1,11 +1,11 @@
 from typing import Dict, Optional, Union
 import json
 from langchain_community.chat_models import ChatOllama
-from promptTemplate import(
+from categorization.promptTemplate import(
 GeneralPrompt,
 AssessmentToolPrompt,
 DiagnosisPrompt)
-from llm_helper import (
+from categorization.llm_helper import (
 SexLevel, 
 AgeFormat)
 
