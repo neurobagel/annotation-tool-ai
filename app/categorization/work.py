@@ -12,7 +12,7 @@ from llm_helper import (
 
 )
 from promptTemplate import(
-    prompt,
+    GeneralPrompt,
     Aprompt,
     Dprompt
 )
