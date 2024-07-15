@@ -5,7 +5,7 @@ from app.categorization.llm_categorization import (
     SexLevel,
     AgeFormat,
 
-    llm_invocation1,
+    llm_invocation,
 
 )
 
@@ -37,7 +37,7 @@ def test_age_format() -> None:
     assert output == expected_output
 
 
-def test_llm_invocation1(mock_llm_response: Any) -> None:
+def test_llm_invocation(mock_llm_response: Any) -> None:
 
     # Test case 1
     result_dict = {"pheno_sex": "1 2 1 2 missing missing"}
@@ -49,7 +49,7 @@ def test_llm_invocation1(mock_llm_response: Any) -> None:
         mock_chain.invoke.return_value = "Sex"
         MockPromptTemplate.return_value.__or__.return_value = mock_chain
 
-        output = llm_invocation1(result_dict)
+        output = llm_invocation(result_dict)
 
         expected_output = {
             "TermURL": "nb:Sex",
@@ -67,7 +67,7 @@ def test_llm_invocation1(mock_llm_response: Any) -> None:
         mock_chain.invoke.return_value = "Participant_IDs"
         MockPromptTemplate.return_value.__or__.return_value = mock_chain
 
-        output = llm_invocation1(result_dict)
+        output = llm_invocation(result_dict)
 
         expected_output = {"TermURL": "nb:ParticipantID"}
         assert output == expected_output
@@ -82,7 +82,7 @@ def test_llm_invocation1(mock_llm_response: Any) -> None:
         mock_chain.invoke.return_value = "Session_IDs"
         MockPromptTemplate.return_value.__or__.return_value = mock_chain
 
-        output = llm_invocation1(result_dict)
+        output = llm_invocation(result_dict)
 
         expected_output = {"TermURL": "nb:Session"}
         assert output == expected_output
@@ -97,7 +97,7 @@ def test_llm_invocation1(mock_llm_response: Any) -> None:
         mock_chain.invoke.return_value = "Age"
         MockPromptTemplate.return_value.__or__.return_value = mock_chain
 
-        output = llm_invocation1(result_dict)
+        output = llm_invocation(result_dict)
         expected_output = {"TermURL": "nb:Age", "Format": "floatvalue"}
         assert output == expected_output
      # Test case 5
@@ -110,7 +110,7 @@ def test_llm_invocation1(mock_llm_response: Any) -> None:
         mock_chain = MagicMock()
         mock_chain.invoke.return_value = "Diagnosis"
         MockPromptTemplate.return_value.__or__.return_value = mock_chain
-        output = llm_invocation1(result_dict)
+        output = llm_invocation(result_dict)
         expected_output = {"TermURL": "nb:Diagnosis"}
         assert output == expected_output
 
@@ -124,11 +124,9 @@ def test_llm_invocation1(mock_llm_response: Any) -> None:
         mock_chain = MagicMock()
         mock_chain.invoke.return_value = "Assessment"
         MockPromptTemplate.return_value.__or__.return_value = mock_chain
-        output = llm_invocation1(result_dict)
+        output = llm_invocation(result_dict)
         expected_output = {"TermURL": "nb:Assessment"}
         assert output == expected_output
 
 
-        output = llm_invocation1(result_dict)
-        expected_output = {"TermURL": "nb:Age", "Format": "floatvalue"}
-        assert output == expected_output
+      
