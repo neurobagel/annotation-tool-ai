@@ -90,8 +90,6 @@ def is_years(s: str) -> bool:
         return False
 
 
-# def is_bounded(s:str)->bool: yet to be added
-# def is_years yet to be added
 
 
 def AgeFormat(result_dict: Dict[str, str], r: str, key: str) -> Dict[str, Any]:
