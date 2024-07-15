@@ -43,11 +43,11 @@ def AssessmentTool(key: str, value: str) -> Optional[Dict[str, str]]:
 
 
 def llm_invocation2(key: str, value: str) -> Optional[Dict[str, str]]:
-    result_d = D(key, value)
-    if result_d:
-        return result_d
+    resultDiagnosis = Diagnosis(key, value)
+    if resultDiagnosis:
+        return resultDiagnosis
     else:
-        return A(key, value)
+        return AssessmentTool(key, value)
 
 
 def llm_invocation1(result_dict: Dict[str, str]) -> Optional[Dict[str, str]]:
