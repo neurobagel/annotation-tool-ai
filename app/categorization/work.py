@@ -40,7 +40,7 @@ def llm_invocation(result_dict: Dict[str, str]) -> Dict[str, Any]:
     for key, value in result_dict.items():
 
     # Invoke LLM
-        llm_response = chain.invoke({"column": key, "content": value,"age":age})
+        llm_response = chainGeneral.invoke({"column": key, "content": value,"age":age})
 
         r = str(llm_response)
     # check mapping of categorization
