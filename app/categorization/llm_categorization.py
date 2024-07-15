@@ -13,8 +13,8 @@ AgeFormat)
 def Diagnosis(key: str, value: str) -> Optional[Dict[str, str]]:
     llm = ChatOllama(model="gemma")
     chainDiagnosis = DiagnosisPrompt | llm
-    llm_response2 = chainDiagnosis.invoke({"column": key, "content": value})
-    reply = str(llm_response2)
+    llm_response_Diagnosis = chainDiagnosis.invoke({"column": key, "content": value})
+    reply = str(llm_response_Diagnosis)
     if "yes" in reply.lower():
         output = {"TermURL": "nb:Diagnosis"}
         print(json.dumps(output))
@@ -28,10 +28,10 @@ def AssessmentTool(key: str, value: str) -> Optional[Dict[str, str]]:
     llm = ChatOllama(model="gemma")
     questionAssessmentTool = f"Is the {key}:{value} an assessment tool"
     chainAssessmentTool = AssessmentToolPrompt | llm
-    llm_response2 = chainAssessmentTool.invoke(
+    llm_response_Assessment = chainAssessmentTool.invoke(
         {"column": key, "content": value, "question": questionA}
     )
-    reply = str(llm_response2)
+    reply = str(llm_response_Assessment)
     if "yes" in reply.lower():
         output = {"TermURL": "nb:Assessment"}
         print(json.dumps(output))
@@ -42,7 +42,7 @@ def AssessmentTool(key: str, value: str) -> Optional[Dict[str, str]]:
         return None
 
 
-def llm_invocation2(key: str, value: str) -> Optional[Dict[str, str]]:
+def llm_diagnosis_assessment(key: str, value: str) -> Optional[Dict[str, str]]:
     resultDiagnosis = Diagnosis(key, value)
     if resultDiagnosis:
         return resultDiagnosis
@@ -50,7 +50,7 @@ def llm_invocation2(key: str, value: str) -> Optional[Dict[str, str]]:
         return AssessmentTool(key, value)
 
 
-def llm_invocation1(result_dict: Dict[str, str]) -> Optional[Dict[str, str]]:
+def llm_invocation(result_dict: Dict[str, str]) -> Optional[Dict[str, str]]:
     output: Union[Dict[str, str], None]
     llm = ChatOllama(model="gemma")
     chain = prompt | llm
@@ -66,6 +66,6 @@ def llm_invocation1(result_dict: Dict[str, str]) -> Optional[Dict[str, str]]:
     elif "Age" in r:
         output = AgeFormat(result_dict, r, key)
     else:
-        output = llm_invocation2(key, value)
+        output = llm_diagnosis_assessment(key, value)
 
     return output
