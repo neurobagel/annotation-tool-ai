@@ -10,7 +10,7 @@ SexLevel,
 AgeFormat)
 
 
-def D(key: str, value: str) -> Optional[Dict[str, str]]:
+def Diagnosis(key: str, value: str) -> Optional[Dict[str, str]]:
     llm = ChatOllama(model="gemma")
     chainD = Dprompt | llm
     llm_response2 = chainD.invoke({"column": key, "content": value})
