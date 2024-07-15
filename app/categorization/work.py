@@ -25,7 +25,7 @@ def llm_invocation(result_dict: Dict[str, str]) -> Dict[str, Any]:
     # Create prompt template
     
     # Create chain
-    chain = prompt |llm
+    chainGeneral = GeneralPrompt |llm
     
     # chain = SequentialChain(
 #     chains=[chain1,chain2],
