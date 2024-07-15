@@ -17,8 +17,6 @@ from promptTemplate import(
 from llm_categorization import(
     llm_invocation1,
     llm_invocation2,
-    D,
-    A
 )
 def llm_invocation(result_dict: Dict[str, str]) -> Dict[str, Any]:
 
