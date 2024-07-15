@@ -53,7 +53,7 @@ def llm_diagnosis_assessment(key: str, value: str) -> Optional[Dict[str, str]]:
 def llm_invocation(result_dict: Dict[str, str]) -> Optional[Dict[str, str]]:
     output: Union[Dict[str, str], None]
     llm = ChatOllama(model="gemma")
-    chain = prompt | llm
+    chainGeneral = GeneralPrompt | llm
     key, value = list(result_dict.items())[0]
     llm_response = chain.invoke({"column": key, "content": value})
     r = str(llm_response)
