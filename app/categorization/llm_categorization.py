@@ -2,9 +2,9 @@ from typing import Dict, Optional, Union
 import json
 from langchain_community.chat_models import ChatOllama
 from promptTemplate import(
-prompt,
-Aprompt,
-Dprompt)
+GeneralPrompt,
+AssessmentToolPrompt,
+DiagnosisPrompt)
 from llm_helper import (
 SexLevel, 
 AgeFormat)
@@ -29,7 +29,7 @@ def AssessmentTool(key: str, value: str) -> Optional[Dict[str, str]]:
     questionAssessmentTool = f"Is the {key}:{value} an assessment tool"
     chainAssessmentTool = AssessmentToolPrompt | llm
     llm_response_Assessment = chainAssessmentTool.invoke(
-        {"column": key, "content": value, "question": questionA}
+        {"column": key, "content": value, "question": questionAssessmentTool}
     )
     reply = str(llm_response_Assessment)
     if "yes" in reply.lower():
