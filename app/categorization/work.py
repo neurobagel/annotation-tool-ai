@@ -15,7 +15,6 @@ from promptTemplate import(
     GeneralPrompt,
 )
 from llm_categorization import(
-    llm_invocation1,
     llm_invocation2,
 )
 def llm_invocation(result_dict: Dict[str, str]) -> Dict[str, Any]:
