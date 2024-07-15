@@ -24,7 +24,7 @@ def Diagnosis(key: str, value: str) -> Optional[Dict[str, str]]:
         return None
 
 
-def A(key: str, value: str) -> Optional[Dict[str, str]]:
+def AssessmentTool(key: str, value: str) -> Optional[Dict[str, str]]:
     llm = ChatOllama(model="gemma")
     questionA = f"Is the {key}:{value} an assessment tool"
     chain = Aprompt | llm
