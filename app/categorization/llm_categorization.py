@@ -12,7 +12,7 @@ AgeFormat)
 
 def Diagnosis(key: str, value: str) -> Optional[Dict[str, str]]:
     llm = ChatOllama(model="gemma")
-    chainD = Dprompt | llm
+    chainDiagnosis = DiagnosisPrompt | llm
     llm_response2 = chainD.invoke({"column": key, "content": value})
     reply = str(llm_response2)
     if "yes" in reply.lower():
