@@ -13,8 +13,6 @@ from llm_helper import (
 )
 from promptTemplate import(
     GeneralPrompt,
-    Aprompt,
-    Dprompt
 )
 from llm_categorization import(
     llm_invocation1,
