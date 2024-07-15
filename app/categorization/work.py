@@ -27,10 +27,6 @@ def llm_invocation(result_dict: Dict[str, str]) -> Dict[str, Any]:
     # Create chain
     chainGeneral = GeneralPrompt |llm
     
-    # chain = SequentialChain(
-#     chains=[chain1,chain2],
-#     input_variables=["column","content"]
-# )
     
 
     
