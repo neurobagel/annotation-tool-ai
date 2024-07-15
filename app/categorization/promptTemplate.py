@@ -32,7 +32,7 @@ Output= <category>
 """,
     input_variables=["column", "content"],
 )
-Aprompt = PromptTemplate(
+AssessmentToolPrompt = PromptTemplate(
     template="""
         Given the column data {column}: {content},
     Instructions: Based on the provided information, please evaluate if this column is an assessment tool  . Consider the following characteristics of assessment tools in your evaluation:
