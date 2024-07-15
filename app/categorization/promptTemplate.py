@@ -5,7 +5,7 @@ from langchain_community.chat_models import ChatOllama
 from langchain_core.prompts import PromptTemplate
 from langchain.chains import SequentialChain
 
-prompt = PromptTemplate(
+GeneralPrompt = PromptTemplate(
     template="""Given the column data {column}: {content}, determine the category and give only the category name as output
 
 Examples:
