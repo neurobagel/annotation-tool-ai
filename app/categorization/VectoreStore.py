@@ -149,9 +149,45 @@ def VS(entry):
         db.persist()
         print("New Chroma database created and persisted.")
 
-    query = "What is full form of HC according to the text"
-    retireved_results=db.similarity_search(query)
-    print(retireved_results)
+    prompt = ChatPromptTemplate.from_template("""
+Give the full form for the Acronym based on the context given.
+Use the information available in the db to give the output.
+Return only the full form and not anything else.
+The output should not have 'input' and 'context' 
+and give only 'answer' as output.
+
+Instruction: if a number or digit is present do not return anything.
+
+<context>
+{context}
+</context>
+Acronym: {input}
+""")
+
+    llm = ChatOllama(model="gemma")
+
+# Create the document chain
+    document_chain = create_stuff_documents_chain(llm, prompt)
+
+# Set up the retriever
+    retriever = db.as_retriever()
+
+# Create the retrieval chain
+    retrieval_chain = create_retrieval_chain(retriever, document_chain)
+
+# Example input for testing
+    # entry = "example acronym"  # Replace with actual input
+
+# Invoke the retrieval chain
+    response = retrieval_chain.invoke({"input": entry})
+    print("Response:", response)
+
+
+    # query = "What is full form of HC according to the text"
+    # retireved_results=db.similarity_search(query)
+    # print(retireved_results)
+
+
 
 
 def llm_invocation(result_dict: Dict[str, str]) -> Dict[str, Any]:
