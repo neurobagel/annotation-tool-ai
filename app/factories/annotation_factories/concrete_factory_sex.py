@@ -9,7 +9,7 @@ from app.products.tsv_annotations import TSVAnnotations
 
 
 class SexFactory(AnnotationFactory):
-    def __init__(self, mapping_file: str = "/app/data/diagnosisTerms.json"):
+    def __init__(self, mapping_file: str = "app/data/diagnosisTerms.json"):
         self.levels_mapping = self.load_levels_mapping(mapping_file)
 
     def create_annotation(
