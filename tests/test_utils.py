@@ -101,15 +101,14 @@ def test_process_llm_output_success() -> None:
     assert result.Description == expected_result.Description
     assert (
         result.Annotations.IsAbout.Label
-        == expected_result.Annotations["IsAbout"]["Label"]
+        == expected_result.Annotations.IsAbout.Label
     )
     assert (
         result.Annotations.IsAbout.TermURL
-        == expected_result.Annotations["IsAbout"]["TermURL"]
+        == expected_result.Annotations.IsAbout.TermURL
     )
     assert (
-        result.Annotations.Identifies
-        == expected_result.Annotations["Identifies"]
+        result.Annotations.Identifies == expected_result.Annotations.Identifies
     )
 
 
