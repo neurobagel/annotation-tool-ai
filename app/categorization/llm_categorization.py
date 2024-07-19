@@ -1,20 +1,22 @@
 from typing import Dict, Optional, Union
 import json
 from langchain_community.chat_models import ChatOllama
-from categorization.promptTemplate import(
-GeneralPrompt,
-AssessmentToolPrompt,
-DiagnosisPrompt)
-from categorization.llm_helper import (
-SexLevel, 
-AgeFormat)
+from categorization.promptTemplate import (
+    GeneralPrompt,
+    AssessmentToolPrompt,
+    DiagnosisPrompt,
+)
+from categorization.llm_helper import SexLevel, AgeFormat
 
 
 def Diagnosis(key: str, value: str) -> Optional[Dict[str, str]]:
     llm = ChatOllama(model="gemma")
     chainDiagnosis = DiagnosisPrompt | llm
-    llm_response_Diagnosis = chainDiagnosis.invoke({"column": key, "content": value})
+    llm_response_Diagnosis = chainDiagnosis.invoke(
+        {"column": key, "content": value}
+    )
     reply = str(llm_response_Diagnosis)
+    print(reply)
     if "yes" in reply.lower():
         output = {"TermURL": "nb:Diagnosis"}
         print(json.dumps(output))
@@ -62,9 +64,9 @@ def llm_invocation(result_dict: Dict[str, str]) -> Optional[Dict[str, str]]:
     elif "Session_IDs" in r:
         output = {"TermURL": "nb:Session"}
     elif "Sex" in r:
-        output = SexLevel(result_dict, r, key)
+        output = SexLevel(result_dict, key)
     elif "Age" in r:
-        output = AgeFormat(result_dict, r, key)
+        output = AgeFormat(result_dict, key)
     else:
         output = llm_diagnosis_assessment(key, value)
 
