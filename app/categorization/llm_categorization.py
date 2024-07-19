@@ -9,7 +9,9 @@ from categorization.promptTemplate import (
 from categorization.llm_helper import SexLevel, AgeFormat
 
 
-def Diagnosis(key: str, value: str) -> Optional[Dict[str, str]]:
+def Diagnosis(
+    key: str, value: str
+) -> Optional[Union[Dict[str, str], Dict[str, str]]]:
     llm = ChatOllama(model="gemma")
     chainDiagnosis = DiagnosisPrompt | llm
     llm_response_Diagnosis = chainDiagnosis.invoke(
@@ -17,13 +19,17 @@ def Diagnosis(key: str, value: str) -> Optional[Dict[str, str]]:
     )
     reply = str(llm_response_Diagnosis)
     print(reply)
+
     if "yes" in reply.lower():
         output = {"TermURL": "nb:Diagnosis"}
         print(json.dumps(output))
         return output
     else:
-        print("next")
-        return None
+        message = {
+            "Note": f"The column {key} does not fit any entity in the current Neurobagel data model. "  # noqa: E501
+            "Please be patient as we are working on expanding the data model for more entities :)"  # noqa: E501
+        }
+        return message
 
 
 def AssessmentTool(key: str, value: str) -> Optional[Dict[str, str]]:
