@@ -24,6 +24,7 @@ from langchain_community.vectorstores import FAISS
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_chroma import Chroma
 from langchain_community.vectorstores import Chroma
+from langchain.chains import RetrievalQA
 
 
 pass2={}
@@ -123,7 +124,7 @@ def VS(entry):
     
 
 
-    persist_directory = '/home/tvisha/gsoc/Annotation-tool-llm/Docfolder'
+    persist_directory = '/home/atharv-vedant/NB/annotation-tool-ai/app/categorization/Docfolder'
 
 # Check if the persist directory exists
     if os.path.exists(persist_directory):
@@ -133,21 +134,24 @@ def VS(entry):
     else:
     # Load the documents
         raw_documents = TextLoader('Docfolder/demo.txt').load()
-        print("Documents loaded:", raw_documents)
+        
 
     # Split the documents
         text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=20)
         documents = text_splitter.split_documents(raw_documents)
-        print("Documents split into chunks:", documents)
+        
 
     # Initialize the Chroma database with persistence
         
-        db = Chroma.from_documents(documents, OllamaEmbeddings(model="gemma"),
+        db = Chroma.from_documents(documents[:8], OllamaEmbeddings(model="nomic-embed-text"),
 
         persist_directory=persist_directory)
+
     # Save the database
         db.persist()
         print("New Chroma database created and persisted.")
+
+
 
     prompt = ChatPromptTemplate.from_template("""
 Give the full form for the Acronym based on the context given.
@@ -156,16 +160,21 @@ Return only the full form and not anything else.
 The output should not have 'input' and 'context' 
 and give only 'answer' as output.
 
+    example in the db CSS: coffin-siris syndrome then output is coffin-siris syndrome.
+
 Instruction: if a number or digit is present do not return anything.
 
 <context>
-{context}
+
+                                              {context}
 </context>
 Acronym: {input}
 """)
 
-    llm = ChatOllama(model="gemma")
 
+    llm = ChatOllama(model="gemma")
+    
+    
 # Create the document chain
     document_chain = create_stuff_documents_chain(llm, prompt)
 
@@ -175,20 +184,20 @@ Acronym: {input}
 # Create the retrieval chain
     retrieval_chain = create_retrieval_chain(retriever, document_chain)
 
-# Example input for testing
-    # entry = "example acronym"  # Replace with actual input
-
+   
 # Invoke the retrieval chain
     response = retrieval_chain.invoke({"input": entry})
     print("Response:", response)
+  
 
+    # qa = RetrievalQA.from_chain_type(llm=llm, chain_type="stuff", vectorstore=db)
+    # query = "What is {entry}"
+    # print(qa.run(query))
 
-    # query = "What is full form of HC according to the text"
+    
+    # query = " {entry}"
     # retireved_results=db.similarity_search(query)
     # print(retireved_results)
-
-
-
 
 def llm_invocation(result_dict: Dict[str, str]) -> Dict[str, Any]:
 
