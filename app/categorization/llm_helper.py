@@ -1,44 +1,32 @@
 from datetime import datetime
-import json
-from typing import Dict, Any, Union
-from langchain_community.chat_models import ChatOllama
-from langchain_core.prompts import PromptTemplate
+from typing import Any, Dict
 
 
-def SexLevel(result_dict: Dict[str, str], r: str, key: str) -> Dict[str, Any]:
+def SexLevel(result_dict: Dict[str, str], key: str) -> Dict[str, Any]:
+    print("test")
+    print(result_dict)
     value = result_dict[key]
-    value = value.casefold()
-    var1: str = ""
-    var2: str = ""
-    var3: str = ""
+    values = value.split()
+    values = values[1:]  # Remove the key
 
-    if "1" in value or "2" in value or "3" in value:
-        var1 = "1"
-        var2 = "2"
-        var3 = "3"
-    elif "0" in value or "1" in value or "2" in value:
-        var1 = "0"
-        var2 = "1"
-        var3 = "2"
-    elif "m" in value or "f" in value or "o" in value:
-        var1 = "m"
-        var2 = "f"
-        var3 = "o"
-    elif "male" in value or "female" in value or "other" in value:
-        var1 = "male"
-        var2 = "female"
-        var3 = "other"
-    else:
-        output: Dict[str, Union[str, Dict[str, str]]] = (
-            {}
-        )  # Or any default output as per your requirement
-        print(json.dumps(output))
-
-    output = {
-        "TermURL": "nb:Sex",
-        "Levels": {str(var1): "male", str(var2): "female"},
+    # Step 3: Define the mapping rules with case sensitivity
+    mapping = {
+        "female": {"f", "female", "fem", "females", "F"},
+        "male": {"m", "male", "males", "M"},
+        "other": {"o", "other", "others", "O"},
     }
-    return output
+
+    reverse_mapping = {}
+    for category, terms in mapping.items():
+        for term in terms:
+            reverse_mapping[term] = category
+
+        result = {}
+    for item in set(values):  # Use set to handle unique items
+        category = reverse_mapping.get(item.lower(), "unknown")
+        result[item] = category
+
+    return {"TermURL": "nb:Sex", "Levels": result}
 
 
 def is_integer(s: str) -> bool:
@@ -88,8 +76,6 @@ def is_years(s: str) -> bool:
         return True
     else:
         return False
-
-
 
 
 def AgeFormat(result_dict: Dict[str, str], r: str, key: str) -> Dict[str, Any]:
