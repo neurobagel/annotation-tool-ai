@@ -78,7 +78,7 @@ def is_years(s: str) -> bool:
         return False
 
 
-def AgeFormat(result_dict: Dict[str, str], r: str, key: str) -> Dict[str, Any]:
+def AgeFormat(result_dict: Dict[str, str], key: str) -> Dict[str, Any]:
     value = result_dict[key].strip()  # Ensure no leading/trailing whitespace
     numbers_list_str = value.split()
     Age_l = [num_str.strip() for num_str in numbers_list_str]
