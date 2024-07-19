@@ -10,4 +10,4 @@ class AnnotationFactory(ABC):
     def create_annotation(
         self, parsed_output: Dict[str, Any]
     ) -> TSVAnnotations:
-        pass
+        raise NotImplementedError("Subclasses must implement create_annotation method")
