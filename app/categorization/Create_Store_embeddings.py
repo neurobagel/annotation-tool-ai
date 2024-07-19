@@ -24,7 +24,9 @@ from langchain_chroma import Chroma
 from langchain_community.vectorstores import Chroma
 from langchain.chains import RetrievalQA
 
-def embeddings(name: str) -> None:
+base='/home/atharv-vedant/NB/annotation-tool-ai/app/categorization/Docfolder'
+file= 'Docfolder/demo.txt'
+def embeddings(name: str, file: str, base: str) -> None:
     """
     Create or load a Chroma database based on the given name.
 
@@ -32,7 +34,7 @@ def embeddings(name: str) -> None:
     name (str): The name of the database to be created or loaded.
     """
     # The directory path is the local directory I was working on once dockerized this will have to be figured out
-    persist_base_directory: str = '/home/atharv-vedant/NB/annotation-tool-ai/app/categorization/Docfolder'
+    persist_base_directory: str = base
 
     # Override the base directory for persisted databases
     persist_base_directory = "persisted_databases"
@@ -48,7 +50,7 @@ def embeddings(name: str) -> None:
         print("Existing Chroma database reloaded.")
     else:
         # Load the documents
-        raw_documents: list = TextLoader('Docfolder/demo.txt').load()
+        raw_documents: list = TextLoader(file).load()
 
         # Split the documents
         text_splitter: RecursiveCharacterTextSplitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=20)
