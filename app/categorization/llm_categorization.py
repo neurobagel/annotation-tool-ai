@@ -25,11 +25,7 @@ def Diagnosis(
         print(json.dumps(output))
         return output
     else:
-        message = {
-            "Note": f"The column {key} does not fit any entity in the current Neurobagel data model. "  # noqa: E501
-            "Please be patient as we are working on expanding the data model for more entities :)"  # noqa: E501
-        }
-        return message
+        return AssessmentTool(key, value)
 
 
 def AssessmentTool(key: str, value: str) -> Optional[Dict[str, str]]:
@@ -45,8 +41,10 @@ def AssessmentTool(key: str, value: str) -> Optional[Dict[str, str]]:
         print(json.dumps(output))
         return output
     else:
-        print(key)
-        print("not in data model")
+        print(
+            "The column does not fit any entity in the current Neurobagel data model. "  # noqa: E501
+            "Please be patient as we are working on expanding the data model for more entities :)"  # noqa: E501
+        )
         return None
 
 
