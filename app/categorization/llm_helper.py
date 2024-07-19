@@ -3,7 +3,6 @@ from typing import Any, Dict
 
 
 def SexLevel(result_dict: Dict[str, str], key: str) -> Dict[str, Any]:
-    print("test")
     print(result_dict)
     value = result_dict[key]
     values = value.split()
@@ -26,7 +25,8 @@ def SexLevel(result_dict: Dict[str, str], key: str) -> Dict[str, Any]:
         category = reverse_mapping.get(item.lower(), "unknown")
         result[item] = category
 
-    return {"TermURL": "nb:Sex", "Levels": result}
+    output: Dict[str, Any] = {"TermURL": "nb:Sex", "Levels": result}
+    return output
 
 
 def is_integer(s: str) -> bool:
