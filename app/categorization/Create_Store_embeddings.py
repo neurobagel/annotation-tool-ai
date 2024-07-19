@@ -26,6 +26,7 @@ from langchain.chains import RetrievalQA
 
 base='/home/atharv-vedant/NB/annotation-tool-ai/app/categorization/Docfolder'
 file= 'Docfolder/demo.txt'
+name='anything'
 def embeddings(name: str, file: str, base: str) -> None:
     """
     Create or load a Chroma database based on the given name.
