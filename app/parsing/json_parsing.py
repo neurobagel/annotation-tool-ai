@@ -201,11 +201,11 @@ def process_parsed_output(
 ) -> Union[str, Any]:
 
     # Load the levels mapping from a JSON file for diagnosis
-    levels_mapping_file = "app/parsing/diagnosisTerms.json"
+    levels_mapping_file = "parsing/diagnosisTerms.json"
     levels_mapping = load_levels_mapping(levels_mapping_file)
 
     # Load term-mapping from a JSON file for assessment tool
-    assessmenttool_mapping_file = "app/parsing/toolTerms.json"
+    assessmenttool_mapping_file = "parsing/toolTerms.json"
     assessmenttool_mapping = load_assessmenttool_mapping(
         assessmenttool_mapping_file
     )
