@@ -1,12 +1,20 @@
-from typing import Any, Generator
-import pytest
-from unittest.mock import patch, MagicMock
-from app.categorization.llm_categorization import (
+import sys
+import os
+
+# Add the app directory to sys.path
+sys.path.insert(
+    0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "app"))
+)
+
+from typing import Any, Generator  # noqa: E402
+from unittest.mock import MagicMock, patch  # noqa: E402
+import pytest  # noqa: E402
+from app.categorization.llm_categorization import (  # noqa: E402
     AssessmentTool,
     Diagnosis,
     llm_invocation,
 )
-from app.categorization.llm_helper import SexLevel, AgeFormat
+from app.categorization.llm_helper import AgeFormat, SexLevel  # noqa: E402
 
 
 @pytest.fixture  # type: ignore
