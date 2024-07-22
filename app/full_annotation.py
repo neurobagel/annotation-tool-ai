@@ -1,6 +1,6 @@
 import argparse
-from app.categorization.llm_categorization import llm_invocation
-from app.parsing.json_parsing import (
+from categorization.llm_categorization import llm_invocation
+from parsing.json_parsing import (
     convert_tsv_to_dict,
     process_parsed_output,
     update_json_file,
@@ -28,7 +28,7 @@ def main(file_path: str, json_file: str) -> None:
             print("Error message:", e)
             continue
 
-        result = process_parsed_output(llm_response)
+        result = process_parsed_output(llm_response)  # type: ignore
         print(result)
         update_json_file(result, json_file, key)
 
