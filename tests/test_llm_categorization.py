@@ -1,11 +1,20 @@
-from typing import Any, Generator
-import pytest
-from unittest.mock import patch, MagicMock
-from app.categorization.llm_categorization import (
-    SexLevel,
-    AgeFormat,
+import sys
+import os
+
+# Add the app directory to sys.path
+sys.path.insert(
+    0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "app"))
+)
+
+from typing import Any, Generator  # noqa: E402
+from unittest.mock import MagicMock, patch  # noqa: E402
+import pytest  # noqa: E402
+from app.categorization.llm_categorization import (  # noqa: E402
+    AssessmentTool,
+    Diagnosis,
     llm_invocation,
 )
+from app.categorization.llm_helper import AgeFormat, SexLevel  # noqa: E402
 
 
 @pytest.fixture  # type: ignore
@@ -18,75 +27,157 @@ def mock_llm_response() -> Generator[Any, Any, Any]:
         yield instance.invoke
 
 
+def test_llm_invocation_sex(mock_llm_response: Any) -> None:
+    result_dict = {"pheno_sex": "pheno_sex m f o"}
+    mock_llm_response.return_value = "Sex"
+
+    with patch(
+        "app.categorization.promptTemplate.PromptTemplate"
+    ) as MockPromptTemplate:
+        mock_chain = MagicMock()
+        mock_chain.invoke.return_value = "Sex"
+        MockPromptTemplate.return_value.__or__.return_value = mock_chain
+
+        with patch(
+            "app.categorization.llm_categorization.GeneralPrompt",
+            new=MagicMock(),
+        ) as MockGeneralPrompt:
+            MockGeneralPrompt.__or__.return_value = mock_chain
+            output = llm_invocation(result_dict)
+            expected_output = {
+                "TermURL": "nb:Sex",
+                "Levels": {"m": "male", "f": "female", "o": "other"},
+            }
+            assert output == expected_output
+
+
+def test_llm_invocation_participant(mock_llm_response: Any) -> None:
+    result_dict = {"participant_id": "sub-01 sub-02 sub-03"}
+    mock_llm_response.return_value = "Participant_IDs"
+
+    with patch(
+        "app.categorization.promptTemplate.PromptTemplate"
+    ) as MockPromptTemplate:
+        mock_chain = MagicMock()
+        mock_chain.invoke.return_value = "Participant_IDs"
+        MockPromptTemplate.return_value.__or__.return_value = mock_chain
+
+        with patch(
+            "app.categorization.llm_categorization.GeneralPrompt",
+            new=MagicMock(),
+        ) as MockGeneralPrompt:
+            MockGeneralPrompt.__or__.return_value = mock_chain
+            output = llm_invocation(result_dict)
+            expected_output = {"TermURL": "nb:ParticipantID"}
+            assert output == expected_output
+
+
+def test_llm_invocation_session(mock_llm_response: Any) -> None:
+    result_dict = {"session_id": "ses-01 ses-02"}
+    mock_llm_response.return_value = "Session_IDs"
+
+    with patch(
+        "app.categorization.promptTemplate.PromptTemplate"
+    ) as MockPromptTemplate:
+        mock_chain = MagicMock()
+        mock_chain.invoke.return_value = "Session_IDs"
+        MockPromptTemplate.return_value.__or__.return_value = mock_chain
+
+        with patch(
+            "app.categorization.llm_categorization.GeneralPrompt",
+            new=MagicMock(),
+        ) as MockGeneralPrompt:
+            MockGeneralPrompt.__or__.return_value = mock_chain
+            output = llm_invocation(result_dict)
+            expected_output = {"TermURL": "nb:Session"}
+            assert output == expected_output
+
+
+def test_llm_invocation_age(mock_llm_response: Any) -> None:
+    result_dict = {"pheno_age": "34.1 35.3 NA"}
+    mock_llm_response.return_value = "Age"
+
+    with patch(
+        "app.categorization.promptTemplate.PromptTemplate"
+    ) as MockPromptTemplate:
+        mock_chain = MagicMock()
+        mock_chain.invoke.return_value = "Age"
+        MockPromptTemplate.return_value.__or__.return_value = mock_chain
+
+        with patch(
+            "app.categorization.llm_categorization.GeneralPrompt",
+            new=MagicMock(),
+        ) as MockGeneralPrompt:
+            MockGeneralPrompt.__or__.return_value = mock_chain
+            output = llm_invocation(result_dict)
+            expected_output = {"TermURL": "nb:Age", "Format": "floatvalue"}
+            assert output == expected_output
+
+
+def test_llm_invocation_diagnosis(mock_llm_response: Any) -> None:
+    key = "diagnosis"
+    value = "diagnosis PD PD HC HC PD"
+    mock_llm_response.return_value = "yes"
+
+    with patch(
+        "app.categorization.promptTemplate.PromptTemplate"
+    ) as MockPromptTemplate:
+        mock_chain = MagicMock()
+        mock_chain.invoke.return_value = "yes"
+        MockPromptTemplate.return_value.__or__.return_value = mock_chain
+
+        with patch(
+            "app.categorization.llm_categorization.DiagnosisPrompt",
+            new=MagicMock(),
+        ) as DiagnosisPrompt:
+            DiagnosisPrompt.__or__.return_value = mock_chain
+            output = Diagnosis(key, value)
+            expected_output = {"TermURL": "nb:Diagnosis"}
+            assert output == expected_output
+
+
+def test_llm_invocation_assessment(mock_llm_response: Any) -> None:
+    key = "bdi"
+    value = "bdi 10 18 17 13 6 3 2 7"
+    mock_llm_response.return_value = "yes"
+
+    with patch(
+        "app.categorization.promptTemplate.PromptTemplate"
+    ) as MockPromptTemplate:
+        mock_chain = MagicMock()
+        mock_chain.invoke.return_value = "yes"
+        MockPromptTemplate.return_value.__or__.return_value = mock_chain
+
+        with patch(
+            "app.categorization.llm_categorization.AssessmentToolPrompt",
+            new=MagicMock(),
+        ) as DiagnosisPrompt:
+            DiagnosisPrompt.__or__.return_value = mock_chain
+            output = AssessmentTool(key, value)
+            expected_output = {"TermURL": "nb:Assessment"}
+            assert output == expected_output
+
+
 def test_sex_level() -> None:
-    result_dict = {"m": "male"}
-    output = SexLevel(result_dict, "", "m")
+    result_dict = {"sex": "sex male female m M O f F"}
+    output = SexLevel(result_dict, "sex")
     expected_output = {
         "TermURL": "nb:Sex",
-        "Levels": {"m": "male", "f": "female", "o": "other"},
+        "Levels": {
+            "male": "male",
+            "female": "female",
+            "m": "male",
+            "M": "male",
+            "O": "other",
+            "f": "female",
+            "F": "female",
+        },
     }
     assert output == expected_output
 
 
 def test_age_format() -> None:
     result_dict = {"age": "34 35.3 NA"}
-    output = AgeFormat(result_dict, "", "age")
+    output = AgeFormat(result_dict, "age")
     expected_output = {"TermURL": "nb:Age", "Format": "integervalue"}
     assert output == expected_output
-
-
-def test_llm_invocation(mock_llm_response: Any) -> None:
-    # Test case 1
-    result_dict = {"pheno_sex": "1 2 1 2 missing missing"}
-    mock_llm_response.return_value = "Sex"
-    with patch(
-        "app.categorization.llm_categorization.PromptTemplate"
-    ) as MockPromptTemplate:
-        mock_chain = MagicMock()
-        mock_chain.invoke.return_value = "Sex"
-        MockPromptTemplate.return_value.__or__.return_value = mock_chain
-        output = llm_invocation(result_dict)
-        expected_output = {
-            "TermURL": "nb:Sex",
-            "Levels": {"1": "male", "2": "female", "3": "other"},
-        }
-        assert output == expected_output
-
-    # Test case 2
-    result_dict = {"participant_id": "sub-01 sub-02 sub-03"}
-    mock_llm_response.return_value = "Participant_IDs"
-    with patch(
-        "app.categorization.llm_categorization.PromptTemplate"
-    ) as MockPromptTemplate:
-        mock_chain = MagicMock()
-        mock_chain.invoke.return_value = "Participant_IDs"
-        MockPromptTemplate.return_value.__or__.return_value = mock_chain
-        output = llm_invocation(result_dict)
-        expected_output = {"TermURL": "nb:ParticipantID"}
-        assert output == expected_output
-
-    # Test case 3
-    result_dict = {"session_id": "ses-01 ses-02"}
-    mock_llm_response.return_value = "Session_IDs"
-    with patch(
-        "app.categorization.llm_categorization.PromptTemplate"
-    ) as MockPromptTemplate:
-        mock_chain = MagicMock()
-        mock_chain.invoke.return_value = "Session_IDs"
-        MockPromptTemplate.return_value.__or__.return_value = mock_chain
-        output = llm_invocation(result_dict)
-        expected_output = {"TermURL": "nb:Session"}
-        assert output == expected_output
-
-    # Test case 4
-    result_dict = {"pheno_age": "34.1 35.3 NA"}
-    mock_llm_response.return_value = "Age"
-    with patch(
-        "app.categorization.llm_categorization.PromptTemplate"
-    ) as MockPromptTemplate:
-        mock_chain = MagicMock()
-        mock_chain.invoke.return_value = "Age"
-        MockPromptTemplate.return_value.__or__.return_value = mock_chain
-        output = llm_invocation(result_dict)
-        expected_output = {"TermURL": "nb:Age", "Format": "floatvalue"}
-        assert output == expected_output
