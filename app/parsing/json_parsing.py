@@ -2,6 +2,10 @@ from typing import Dict, Union, Optional, List, Any, Callable, Mapping
 import pandas as pd
 from pydantic import BaseModel, Field
 import json
+from app.level_identification.owl_extaction import (
+    find_full_labels,
+    find_highest_position_terms,
+)
 
 
 class IsAboutBase(BaseModel):  # type:ignore
@@ -124,9 +128,15 @@ def handle_categorical(
     elif termurl == "nb:Diagnosis":
         description = "Group variable"
         annotation_instance = IsAboutGroup(Label="Diagnosis", TermURL=termurl)
+        full_level_labels = find_full_labels(parsed_output.get("Levels"))  # type: ignore # noqa: E501
+        highest_terms = find_highest_position_terms(full_level_labels)
+        parsed_output["Levels"] = highest_terms["Levels"]
     else:
         raise ValueError(f"Unhandled TermURL: {termurl}")
 
+    print(parsed_output.get("Levels"))
+
+    # add the highest terms to the levels_mapping here (now levels)
     levels = {
         key: levels_mapping.get(value.strip().lower(), {})
         for key, value in parsed_output.get("Levels", {}).items()
