@@ -135,7 +135,7 @@ def handle_categorical(
     annotations = Annotations(IsAbout=annotation_instance, Levels=levels)
     return TSVAnnotations(
         Description=description,
-        Levels={k: v["Label"] for k, v in levels.items() if "Label" in v},
+        Levels=parsed_output.get("Levels"),
         Annotations=annotations,
     )
 
