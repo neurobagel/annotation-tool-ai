@@ -122,7 +122,7 @@ def main() -> None:
         "http://purl.obolibrary.org/obo/DOID_150",  # mental disorder
         "http://purl.obolibrary.org/obo/DOID_863",  # nervous system
     ]
-    levels_tsv = {"HC": "", "PDD": ""}
+    levels_tsv = {"HC": "", "PDD": ""}  # testing purposes
 
     subclass_dict = extract_subclasses(ontology_path, specific_entities)
     # print(subclass_dict)
