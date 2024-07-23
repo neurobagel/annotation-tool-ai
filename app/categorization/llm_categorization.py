@@ -1,4 +1,4 @@
-from typing import Dict, Optional, Union
+from typing import Any, Dict, Optional, Union
 import json
 from langchain_community.chat_models import ChatOllama
 from categorization.promptTemplate import (
@@ -11,7 +11,7 @@ from categorization.llm_helper import SexLevel, AgeFormat
 
 def Diagnosis(
     key: str, value: str
-) -> Optional[Union[Dict[str, str], Dict[str, str]]]:
+) -> Optional[Union[Dict[str, str], Dict[str, Any]]]:
     llm = ChatOllama(model="gemma")
     chainDiagnosis = DiagnosisPrompt | llm
     llm_response_Diagnosis = chainDiagnosis.invoke(
@@ -21,7 +21,15 @@ def Diagnosis(
     print(reply)
 
     if "yes" in reply.lower():
-        output = {"TermURL": "nb:Diagnosis"}
+        values = value.split()
+        unique_values = list(set(values[1:]))
+
+        # Create dictionary for Levels
+        levels_dict = {val: "" for val in unique_values}
+
+        # Create the output dictionary
+        output = {"TermURL": "nb:Diagnosis", "Levels": levels_dict}
+
         print(json.dumps(output))
         return output
     else:
