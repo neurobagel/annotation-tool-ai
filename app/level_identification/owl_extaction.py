@@ -2,7 +2,8 @@ import json
 from rdflib import Graph
 import os
 from fuzzywuzzy import process, fuzz
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Tuple
+from owlready2 import Thing, get_ontology
 
 
 def extract_subclasses(
@@ -116,30 +117,108 @@ def check_abbreviations_in_levels_tsv(
     return matched_keys
 
 
-def main() -> None:
-    ontology_path = "app/level_identification/src/doid.owl"
-    specific_entities = [
-        "http://purl.obolibrary.org/obo/DOID_150",  # mental disorder
-        "http://purl.obolibrary.org/obo/DOID_863",  # nervous system
-    ]
-    levels_tsv = {"HC": "", "PDD": ""}  # testing purposes
+def get_term_hierarchy_position(ontology: Any, term_name: str) -> int | None:
+    # Get the class corresponding to the term name
+    term_class = ontology.search_one(label=term_name)
+    if not term_class:
+        return None
 
-    subclass_dict = extract_subclasses(ontology_path, specific_entities)
-    # print(subclass_dict)
+    # Calculate the depth of the term in the hierarchy
+    depth = 0
+    current_class = term_class
+    while current_class.is_a and current_class.is_a[0] != Thing:
+        depth += 1
+        current_class = current_class.is_a[0]
 
-    # Abbreviation list
-    json_file_path = "rag_documents/abbreviations_diagnosisTerms.json"
+    return depth
+
+
+def find_highest_position_terms(
+    possible_terms: Dict[str, List[str]]
+) -> Dict[str, Any]:
+    ontology_path: str = "app/level_identification/src/doid.owl"
+    ontology: Any = get_ontology(ontology_path).load()
+
+    # Initialize a dictionary to store the highest position term
+    highest_position_terms: Dict[str, Tuple[str, int]] = {}
+
+    for key, labels in possible_terms.items():
+        # Initialize variables to track the highest position term and its depth
+        highest_position: int | None = None
+        best_label: str | None = None
+
+        for label in labels:
+            if label != "Not found":
+                # Get the hierarchy position of the current label
+                hierarchy_position: int | None = get_term_hierarchy_position(
+                    ontology, label.lower()
+                )
+
+                if hierarchy_position is not None:
+                    # Check if this is the highest position so far
+                    if (
+                        highest_position is None
+                        or hierarchy_position < highest_position
+                    ):
+                        highest_position = hierarchy_position
+                        best_label = label
+                else:
+                    print(f"The term '{label}' was not found in the ontology.")
+            else:
+                print(f"The abbreviation '{key}' did not match any labels.")
+
+        # Store the term with the highest position
+        if best_label is not None:
+            highest_position_terms[key] = (best_label, highest_position)  # type: ignore # noqa: E501
+        else:
+            highest_position_terms[key] = ("Not found", None)  # type: ignore
+
+    highest_position_terms = {
+        key: term for key, (term, _) in highest_position_terms.items()  # type: ignore # noqa: E501
+    }
+
+    return {"Levels": highest_position_terms}
+
+
+def find_full_labels(lookup_dict: Dict[str, Any]) -> Dict[str, List[str]]:
+
+    json_file_path: str = "rag_documents/abbreviations_diagnosisTerms.json"
     with open(json_file_path, "r") as file:
-        abbreviation_list = json.load(file)
+        abbreviation_list: List[Dict[str, Any]] = json.load(file)
 
-    matched_keys = check_abbreviations_in_levels_tsv(
-        levels_tsv, subclass_dict, abbreviation_list
-    )
+    result: Dict[str, List[str]] = {}
+    for key in lookup_dict:
+        labels: List[str] = []
+        for item in abbreviation_list:
+            if key in item["abbreviations"]:
+                labels.append(item["label"])
+        result[key] = labels if labels else ["Not found"]
 
-    print("Matched Keys and Labels:")
-    for key, labels in matched_keys.items():
-        print(f"{key}: {labels}")
+    return result
 
 
-if __name__ == "__main__":
-    main()
+def find_fuzzy_matches(
+    all_classes: List[str], labels_dict: Dict[str, List[str]], threshold: int
+) -> Dict[str, List[Tuple[str, int]]]:
+
+    # Dictionary to store the matching results
+    match_results: Dict[str, List[Tuple[str, int]]] = {}
+
+    for key, labels in labels_dict.items():
+        match_results[key] = []
+        for label in labels:
+            if label != "Not found":
+                # Perform fuzzy matching
+                matches = process.extractBests(
+                    label,
+                    all_classes,
+                    scorer=fuzz.partial_ratio,
+                    score_cutoff=threshold,
+                )
+
+                # Store matches that meet or exceed the threshold
+                for match, score in matches:
+                    if score >= threshold:
+                        match_results[key].append((match, score))
+
+    return match_results
