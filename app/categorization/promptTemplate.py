@@ -89,3 +89,27 @@ Do not include any explanation in the output.
 """,
     input_variables=["column", "content"],
 )
+
+
+AssessmentLevelPrompt = PromptTemplate(
+    template="""
+    You are provided with a list of assessment tools.
+    Your task is to determine which of these tools is
+    most frequently used in
+    neuropsychological and clinical research.
+    List of assessment tools: {possible_tool_terms}
+
+    Consider the following criteria to make your decision:
+    - Frequency of citation in scientific literature and
+    peer-reviewed journals.
+    - Adoption and recommendation by major neuropsychological
+    and clinical research organizations.
+    - Prevalence of use in clinical trials and research studies.
+    - Recognition and validation in published neuropsychological
+    and clinical assessment protocols.
+    - Endorsements by leading experts and institutions in the field.
+    Do not include any explanation in the output. Only respond with
+    the provided name of the most frequently used assessment tool.
+    """,
+    input_variables=["possible_tool_terms"],
+)
