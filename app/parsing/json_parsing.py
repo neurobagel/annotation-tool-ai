@@ -135,7 +135,7 @@ def handle_categorical(
     annotations = Annotations(IsAbout=annotation_instance, Levels=levels)
     return TSVAnnotations(
         Description=description,
-        Levels={k: v["Label"] for k, v in levels.items() if "Label" in v},
+        Levels=parsed_output.get("Levels"),
         Annotations=annotations,
     )
 
@@ -201,11 +201,11 @@ def process_parsed_output(
 ) -> Union[str, Any]:
 
     # Load the levels mapping from a JSON file for diagnosis
-    levels_mapping_file = "parsing/diagnosisTerms.json"
+    levels_mapping_file = "app/parsing/diagnosisTerms.json"
     levels_mapping = load_levels_mapping(levels_mapping_file)
 
     # Load term-mapping from a JSON file for assessment tool
-    assessmenttool_mapping_file = "parsing/toolTerms.json"
+    assessmenttool_mapping_file = "app/parsing/toolTerms.json"
     assessmenttool_mapping = load_assessmenttool_mapping(
         assessmenttool_mapping_file
     )
