@@ -6,48 +6,52 @@ from langchain_core.prompts import PromptTemplate
 from langchain.chains import SequentialChain
 import re
 
+ # Check if all elements in the list are digit strings
 def are_all_digits(input_list):
-    # Check if all elements in the list are digit strings
     return all(is_score(element) for element in input_list)
+
+
+ # Remove all whitespace
 def is_score(input_string):
-    # Remove all whitespace
     cleaned_string = re.sub(r'\s+', '', input_string)
-    
     # Check if the string contains only digits
     if cleaned_string.isdigit():
         return True
-    
     # Check if the string contains only one or two alphabetic characters with digits
     alpha_count = sum(c.isalpha() for c in cleaned_string)
     if alpha_count <= 2 and all(c.isdigit() or c.isalpha() for c in cleaned_string):
         return True
-    
     return False
+
+#Extract only the required string from the complete LLM output.
 def extract_from_LLM(response):
     match = re.search(r"content='([^']*)'", response)
     if match:
         extracted_content = match.group(1)
     else:
         extracted_content = None
+    # print(extracted_content)
     return extracted_content
+    
 
-    print(extracted_content)
-
+#make a list of the unique entries of a column to get the levels of diagnosis
 def list_terms (value):
     words = value.split()
     unique_entries = list(set(words))
     print(unique_entries)
     return unique_entries
 
-# from langchain.chains import load_qa_chain
-def VSD(entry):
+""" process every unique entry and map it to a full form for levels using 
+fist a dictionary 
+and then passing that output to an LLM  """
+def Diagnosis_Level(entry):
     print(entry)
-    
 
     def load_dictionary(file_path):
         with open(file_path, 'r') as file:
             return json.load(file)
 
+    #get the list of related labels
     def get_label_for_abbreviation(abbreviation, abbreviation_to_label):
         if abbreviation in abbreviation_to_label:
             return abbreviation_to_label[abbreviation]
@@ -80,11 +84,14 @@ def VSD(entry):
     chain= D_acro_prompt | llm 
     ans= chain.invoke({"Dict":Diagnosis_Dict,"Abbreviation":entry})
     ans=str(ans)
+
+    #value has the part of LLM output which is required
     value=extract_from_LLM(ans)
     print(value)
     
     value = str(value)
     return value
+
 
 def Diagnosis(key: str, value: str) -> Optional[Dict[str, str]]:
     llm = ChatOllama(model="gemma")
@@ -122,12 +129,12 @@ def Diagnosis(key: str, value: str) -> Optional[Dict[str, str]]:
         output = {"TermURL": "nb:Diagnosis", "Levels": {}}
         print(f" {json.dumps(output)}")
         unique_entries=list_terms(value)
-        header_desc=VSD(key)
+        header_desc=Diagnosis_Level(key)
         if are_all_digits(unique_entries):
             print("scores")
         else:
             for i in range (0,len(unique_entries)):
-                levelfield=VSD(unique_entries[i])
+                levelfield=Diagnosis_Level(unique_entries[i])
                 output["Levels"][unique_entries[i]] = levelfield
                 print(output)
         
@@ -137,7 +144,44 @@ def Diagnosis(key: str, value: str) -> Optional[Dict[str, str]]:
         print("next")
         
     return None
-  
+
+def AssessmentTool(key: str, value: str) -> Optional[Dict[str, str]]:
+    llm = ChatOllama(model="gemma")
+    questionAssessmentTool = f"Is the {key}:{value} an assessment tool"
+
+    AssessmentToolPrompt = PromptTemplate(
+        template="""
+        Given the column data {column}: {content},
+    Instructions: Based on the provided information, please evaluate if this column is an assessment tool  . Consider the following characteristics of assessment tools in your evaluation:
+    In context of medical studies return yes or no for {question} if properties of Assessment tool is as follows:
+    The {content} structured in a way that suggests a test, survey, or questionnaire or evaluation metric(e.g.,IQ,scores, Likert scale, multiple-choice, ratings) and  consistent format or scale used throughout the {content} with numerical entries  (e.g., scores out of powers of 10, ratings in a range of numbers )?
+    The {column} aim to measure or evaluate something specific?
+
+
+    Give answer No if  {column}:{content}  indicate a "group" or result of a collection
+
+If not describing a  diagnosis in context of medical research answer Yes
+
+
+    provide yes if assessment tool  or no if not.
+    Do not give any explanation in the output.
+    """,
+        input_variables=["column", "content", "question"],
+    )
+    chainAssessmentTool = AssessmentToolPrompt | llm
+    llm_response_Assessment = chainAssessmentTool.invoke(
+        {"column": key, "content": value, "question": questionAssessmentTool}
+    )
+    reply = str(llm_response_Assessment)
+    if "yes" in reply.lower():
+        output = {"TermURL": " nb:Assessment"}
+        print(json.dumps(output))
+        return output
+    else:
+        print(key)
+        print("not in data model")
+        return None
+
 
 def SexLevel(result_dict: Dict[str, str], r: str, key: str) -> Dict[str, Any]:
     value = result_dict[key]
@@ -255,46 +299,6 @@ def AgeFormat(result_dict: Dict[str, str], r: str, key: str) -> Dict[str, Any]:
         "Format": Fvar,
     }
     return output
-
-
-
-
-def AssessmentTool(key: str, value: str) -> Optional[Dict[str, str]]:
-    llm = ChatOllama(model="gemma")
-    questionAssessmentTool = f"Is the {key}:{value} an assessment tool"
-
-    AssessmentToolPrompt = PromptTemplate(
-        template="""
-        Given the column data {column}: {content},
-    Instructions: Based on the provided information, please evaluate if this column is an assessment tool  . Consider the following characteristics of assessment tools in your evaluation:
-    In context of medical studies return yes or no for {question} if properties of Assessment tool is as follows:
-    The {content} structured in a way that suggests a test, survey, or questionnaire or evaluation metric(e.g.,IQ,scores, Likert scale, multiple-choice, ratings) and  consistent format or scale used throughout the {content} with numerical entries  (e.g., scores out of powers of 10, ratings in a range of numbers )?
-    The {column} aim to measure or evaluate something specific?
-
-
-    Give answer No if  {column}:{content}  indicate a "group" or result of a collection
-
-If not describing a  diagnosis in context of medical research answer Yes
-
-
-    provide yes if assessment tool  or no if not.
-    Do not give any explanation in the output.
-    """,
-        input_variables=["column", "content", "question"],
-    )
-    chainAssessmentTool = AssessmentToolPrompt | llm
-    llm_response_Assessment = chainAssessmentTool.invoke(
-        {"column": key, "content": value, "question": questionAssessmentTool}
-    )
-    reply = str(llm_response_Assessment)
-    if "yes" in reply.lower():
-        output = {"TermURL": " nb:Assessment"}
-        print(json.dumps(output))
-        return output
-    else:
-        print(key)
-        print("not in data model")
-        return None
 
 
 def llm_diagnosis_assessment(key: str, value: str) -> Optional[Dict[str, str]]:
