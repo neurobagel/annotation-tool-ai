@@ -228,7 +228,7 @@ def process_parsed_output(
         str,
         Callable[[Dict[str, Any], Mapping[str, Dict[str, str]]], Any],
     ] = {
-        "nb:AssessmentTool": handle_assessmentTool,
+        "nb:Assessment": handle_assessmentTool,
     }
 
     if isinstance(parsed_output, dict):

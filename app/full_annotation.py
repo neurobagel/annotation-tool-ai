@@ -28,7 +28,7 @@ def main(file_path: str, json_file: str) -> None:
             print("Error message:", e)
             continue
 
-        result = process_parsed_output(llm_response)
+        result = process_parsed_output(llm_response)  # type: ignore
         print(result)
         update_json_file(result, json_file, key)
 

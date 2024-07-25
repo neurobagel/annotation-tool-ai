@@ -1,43 +1,31 @@
 from datetime import datetime
-import json
-from typing import Dict, Any, Union
-from langchain_community.chat_models import ChatOllama
-from langchain_core.prompts import PromptTemplate
-from langchain.chains import SequentialChain
+from typing import Any, Dict
 
-def SexLevel(result_dict: Dict[str, str], r: str, key: str) -> Dict[str, Any]:
+
+def SexLevel(result_dict: Dict[str, str], key: str) -> Dict[str, Any]:
+    print(result_dict)
     value = result_dict[key]
-    value = value.casefold()
-    var1: str = ""
-    var2: str = ""
-    var3: str = ""
+    values = value.split()
+    values = values[1:]  # Remove the key
 
-    if "1" in value or "2" in value or "3" in value:
-        var1 = "1"
-        var2 = "2"
-        var3 = "3"
-    elif "0" in value or "1" in value or "2" in value:
-        var1 = "0"
-        var2 = "1"
-        var3 = "2"
-    elif "m" in value or "f" in value or "o" in value:
-        var1 = "m"
-        var2 = "f"
-        var3 = "o"
-    elif "male" in value or "female" in value or "other" in value:
-        var1 = "male"
-        var2 = "female"
-        var3 = "other"
-    else:
-        output: Dict[str, Union[str, Dict[str, str]]] = (
-            {}
-        )  # Or any default output as per your requirement
-        print(json.dumps(output))
-
-    output = {
-        "TermURL": "nb:Sex",
-        "Levels": {str(var1): "male", str(var2): "female",str(var3): "other"},
+    # Step 3: Define the mapping rules with case sensitivity
+    mapping = {
+        "female": {"f", "female", "fem", "females", "F"},
+        "male": {"m", "male", "males", "M"},
+        "other": {"o", "other", "others", "O"},
     }
+
+    reverse_mapping = {}
+    for category, terms in mapping.items():
+        for term in terms:
+            reverse_mapping[term] = category
+
+        result = {}
+    for item in set(values):  # Use set to handle unique items
+        category = reverse_mapping.get(item.lower(), "unknown")
+        result[item] = category
+
+    output: Dict[str, Any] = {"TermURL": "nb:Sex", "Levels": result}
     return output
 
 
@@ -74,22 +62,23 @@ def is_european_decimal(s: str) -> bool:
 
     return False
 
+
 def is_bounded(s: str) -> bool:
     if "+" in s:
         return True
-    else : return False
+    else:
+        return False
 
-def is_years(s:str) -> bool:
-    s.lower()
+
+def is_years(s: str) -> bool:
+    s.casefold()
     if "y" in s:
         return True
-    else : return False
-
-# def is_bounded(s:str)->bool: yet to be added
-# def is_years yet to be added
+    else:
+        return False
 
 
-def AgeFormat(result_dict: Dict[str, str], r: str, key: str) -> Dict[str, Any]:
+def AgeFormat(result_dict: Dict[str, str], key: str) -> Dict[str, Any]:
     value = result_dict[key].strip()  # Ensure no leading/trailing whitespace
     numbers_list_str = value.split()
     Age_l = [num_str.strip() for num_str in numbers_list_str]
@@ -112,7 +101,7 @@ def AgeFormat(result_dict: Dict[str, str], r: str, key: str) -> Dict[str, Any]:
             Fvar = "boundedvalue"
             break
         elif is_years(num_str):
-            Fvar = "years"
+            Fvar = "yearunit"
             break
 
     output: Dict[str, str] = {

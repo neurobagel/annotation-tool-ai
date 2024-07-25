@@ -179,14 +179,14 @@ def test_assessmentTool_variable(
     assessmenttool_mapping_fixture: Dict[str, Dict[str, str]]
 ) -> None:
     parsed_output: Dict[str, Union[str, Dict[str, str], None]] = {
-        "TermURL": "nb:AssessmentTool",
+        "TermURL": "nb:Assessment",
         "AssessmentTool": "wisc-r mazes",
     }
     expected_result = TSVAnnotations(
         Description="Description of Assessment Tool conducted",
         Annotations=Annotations(
             IsAbout=IsAboutAssessmentTool(
-                Label="Assessment Tool", TermURL="nb:AssessmentTool"
+                Label="Assessment Tool", TermURL="nb:Assessment"
             ),
             IsPartOf={
                 "TermURL": "cogatlas:trm_4b86c55f3d5df",
