@@ -1,7 +1,9 @@
-from typing import Any, Dict, Optional, Union
+from typing import Any, Dict, List, Optional, Union
 import json
+import re
 from langchain_community.chat_models import ChatOllama
 from categorization.promptTemplate import (
+    AssessmentLevelPrompt,
     GeneralPrompt,
     AssessmentToolPrompt,
     DiagnosisPrompt,
@@ -49,8 +51,10 @@ def AssessmentTool(key: str, value: str) -> Optional[Dict[str, str]]:
         tool_term = get_assessment_label(key)
         if isinstance(tool_term, list) and len(tool_term) == 1:
             tool_term = tool_term[0]
+        elif isinstance(tool_term, list) and len(tool_term) > 1:
+            tool_term = assessment_level_decision(tool_term)
         else:
-            tool_term = "Multiple entries found"
+            tool_term = "Not found"
         output = {"TermURL": "nb:Assessment", "AssessmentTool": tool_term}
         print(json.dumps(output))
         return output
@@ -89,3 +93,14 @@ def llm_invocation(result_dict: Dict[str, str]) -> Optional[Dict[str, str]]:
         output = llm_diagnosis_assessment(key, value)
 
     return output
+
+
+def assessment_level_decision(possible_tool_terms: List[str]) -> str:
+    llm = ChatOllama(model="gemma")
+    chain_assessment_level = AssessmentLevelPrompt | llm
+    llm_response = chain_assessment_level.invoke(
+        {"possible_tool_terms": possible_tool_terms}
+    )
+    response = re.sub(r"[^a-z0-9\s]", "", llm_response.content.lower())
+    print(response)
+    return response
