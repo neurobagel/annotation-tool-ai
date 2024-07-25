@@ -5,7 +5,7 @@ from langchain_community.chat_models import ChatOllama
 from langchain_core.prompts import PromptTemplate
 from langchain.chains import SequentialChain
 
-GeneralPrompt = PromptTemplate(
+prompt = PromptTemplate(
     template="""Given the column data {column}: {content}, determine the category and give only the category name as output
 
 Examples:
@@ -32,7 +32,7 @@ Output= <category>
 """,
     input_variables=["column", "content"],
 )
-AssessmentToolPrompt = PromptTemplate(
+Aprompt = PromptTemplate(
     template="""
         Given the column data {column}: {content},
     Instructions: Based on the provided information, please evaluate if this column is an assessment tool  . Consider the following characteristics of assessment tools in your evaluation:
@@ -54,7 +54,7 @@ If not describing a  diagnosis in context of medical research answer Yes
 
 
 
-DiagnosisPrompt = PromptTemplate(
+Dprompt = PromptTemplate(
     template="""Given the column data {column}: {content},
     Based on the sample data provided, please evaluate whether each column should be categorized as a "Diagnosis". 
     by considering the following characteristics 
@@ -79,3 +79,20 @@ DiagnosisPrompt = PromptTemplate(
 )
 
 
+
+# Aprompt = PromptTemplate(
+#      template="""Given the column data {column}: {content},
+#     Instructions: Based on the provided sample data, please evaluate if this column is an assessment tool. 
+#     give yes or no for {question}
+#     Consider the following characteristics of assessment tools in your evaluation:
+#     Purpose: Does the column aim to measure or evaluate something specific?
+#     Format: Is the data structured in a way that suggests a test, survey, or questionnaire (e.g., Likert scale, multiple-choice, ratings)?
+#     Consistency: Is there a consistent format or scale used throughout the data (e.g., scores out of 10, ratings from 1 to 5)?
+#     Content: Does the content of the data suggest evaluation metrics (e.g., scores, ratings, evaluation criteria)?
+#     Metadata: Are there labels, descriptions, or metadata that indicate the column's purpose as an assessment tool?
+#     The sample data might include session or participant IDs - these are not assessment tools.
+#     Do not give any explanation in the output. Simply provide yes or no for .
+#     """,
+        
+#     input_variables=["column", "content", "question"],
+# )
