@@ -70,8 +70,14 @@ def A(key: str, value: str) -> Union[None, Dict[str, str]]:
     reply = str(llm_response2)
     
     if "yes" in reply.lower():
-        output = {"TermURL": "nb:Assessment"}
+        print(key)
+        output = {"TermURL": "nb:Diagnosis"}
         print(f" {json.dumps(output)}")
+        unique_entries=list_terms(value)
+        Assessment_Desc(key)
+        for i in range (0,len(unique_entries)):
+            Assessment_Desc(unique_entries[i])
+
         return output
     else:
         print(key)
@@ -125,7 +131,34 @@ def Diagnosis_Levels(entry):
 
     print(result)
     
-  
+def Assessment_Desc(entry):
+    print("entry")
+    
+
+    def load_dictionary(file_path):
+        with open(file_path, 'r') as file:
+            return json.load(file)
+
+    def get_label_for_abbreviation(abbreviation, abbreviation_to_label):
+        if abbreviation in abbreviation_to_label:
+            return abbreviation_to_label[abbreviation]
+        elif abbreviation.isdigit():
+            return "some score"
+        else:
+            return "LLMcheck"
+# Path to your JSON file
+    file_path = 'Docfolder/AssessmentMapDict.json'
+
+# Load the JSON data
+    data = load_dictionary(file_path)
+
+# Abbreviation to check in the mappings
+    abbreviation_to_check = entry
+
+# Get the label for the abbreviation
+    result = get_label_for_abbreviation(abbreviation_to_check, data)
+
+    print(result)
 
 
 
