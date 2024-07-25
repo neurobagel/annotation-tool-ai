@@ -1,4 +1,4 @@
-from typing import Dict, Optional, Union
+from typing import Any, Dict, Optional, Union
 import json
 from langchain_community.chat_models import ChatOllama
 from categorization.promptTemplate import (
@@ -7,11 +7,12 @@ from categorization.promptTemplate import (
     DiagnosisPrompt,
 )
 from categorization.llm_helper import SexLevel, AgeFormat
+from categorization.fetchlevels import get_assessment_label
 
 
 def Diagnosis(
     key: str, value: str
-) -> Optional[Union[Dict[str, str], Dict[str, str]]]:
+) -> Optional[Union[Dict[str, str], Dict[str, Any]]]:
     llm = ChatOllama(model="gemma")
     chainDiagnosis = DiagnosisPrompt | llm
     llm_response_Diagnosis = chainDiagnosis.invoke(
@@ -21,7 +22,15 @@ def Diagnosis(
     print(reply)
 
     if "yes" in reply.lower():
-        output = {"TermURL": "nb:Diagnosis"}
+        values = value.split()
+        unique_values = list(set(values[1:]))
+
+        # Create dictionary for Levels
+        levels_dict = {val: "" for val in unique_values}
+
+        # Create the output dictionary
+        output = {"TermURL": "nb:Diagnosis", "Levels": levels_dict}
+
         print(json.dumps(output))
         return output
     else:
@@ -37,7 +46,12 @@ def AssessmentTool(key: str, value: str) -> Optional[Dict[str, str]]:
     )
     reply = str(llm_response_Assessment)
     if "yes" in reply.lower():
-        output = {"TermURL": "nb:Assessment"}
+        tool_term = get_assessment_label(key)
+        if isinstance(tool_term, list) and len(tool_term) == 1:
+            tool_term = tool_term[0]
+        else:
+            tool_term = "Multiple entries found"
+        output = {"TermURL": "nb:Assessment", "AssessmentTool": tool_term}
         print(json.dumps(output))
         return output
     else:
