@@ -161,17 +161,23 @@ def handle_assessmentTool(
     # Check if ispartof_key is a list of strings
     if isinstance(ispartof_key, list):
         print("Multiple entries found")
-        ispartof = ispartof_key
+        ispartof: Optional[List[str]] = ispartof_key
+        annotations = Annotations(
+            IsAbout=annotation_instance, IsPartOf=ispartof
+        )
     else:
-        ispartof = []
         ispartof_key = ispartof_key.strip().lower()
-        ispartof = [
-            item["Label"]
-            for item in assessmenttool_mapping.values()
-            if item["Label"].strip().lower() == ispartof_key
-        ]
-    print(ispartof)
-    annotations = Annotations(IsAbout=annotation_instance, IsPartOf=ispartof)
+        ispartof: Optional[Dict[str, str]] = next(  # type: ignore
+            (
+                item
+                for item in assessmenttool_mapping.values()
+                if item["Label"].strip().lower() == ispartof_key
+            ),
+            None,
+        )
+        annotations = Annotations(
+            IsAbout=annotation_instance, IsPartOf=ispartof
+        )
     return TSVAnnotations(Description=description, Annotations=annotations)
 
 
