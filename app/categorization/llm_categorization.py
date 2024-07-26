@@ -39,7 +39,7 @@ def Diagnosis(
 
 def AssessmentTool(
     key: str, value: str, code_system: str
-) -> Optional[Dict[str, str]]:
+) -> Optional[Dict[str, Any]]:
     llm = ChatOllama(model="gemma")
     questionAssessmentTool = f"Is the {key}:{value} an assessment tool"
     chainAssessmentTool = AssessmentToolPrompt | llm
