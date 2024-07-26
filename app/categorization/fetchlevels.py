@@ -26,7 +26,7 @@ def Diagnosis_Levels(entry: str) -> None:
     print(result)
 
 
-def get_assessment_label(key: str) -> Union[str, List[str]]:
+def get_assessment_label(key: str, code_system: str) -> Union[str, List[str]]:
     def load_dictionary(file_path: str) -> Any:
         with open(file_path, "r") as file:
             return json.load(file)
@@ -40,12 +40,15 @@ def get_assessment_label(key: str) -> Union[str, List[str]]:
                 matches.append(item["label"])
         if matches:
             return matches
-        if abbreviation.isdigit():
-            return "some score"
+        elif abbreviation.isdigit():
+            return "Cannot evaluate column header: it is a number."
         else:
-            return "LLMcheck"
+            return "Cannot evaluate column header: no match found."
 
-    file_path = "rag_documents/abbreviations_ToolTerms.json"
+    if code_system == "cogatlas":
+        file_path = "rag_documents/abbreviations_ToolTerms.json"
+    elif code_system == "snomed":
+        file_path = "rag_documents/abbreviations_measurementTerms.json"
     data = load_dictionary(file_path)
     result = get_label_for_abbreviation(key, data)
     print(result)
