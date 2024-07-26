@@ -8,7 +8,7 @@ from parsing.json_parsing import (
 )
 
 
-def main(file_path: str, json_file: str) -> None:
+def main(file_path: str, json_file: str, code_system: str) -> None:
     columns_dict = convert_tsv_to_dict(file_path)
 
     tsv_to_json(file_path, json_file)
@@ -21,14 +21,14 @@ def main(file_path: str, json_file: str) -> None:
             input_dict = {key: value}
             print(key)
             # Column information is inserted in prompt template
-            llm_response = llm_invocation(input_dict)
+            llm_response = llm_invocation(input_dict, code_system)
 
         except Exception as e:
             print("Error processing column:", key)
             print("Error message:", e)
             continue
 
-        result = process_parsed_output(llm_response)  # type: ignore
+        result = process_parsed_output(llm_response, code_system)  # type: ignore # noqa: E501
         print(result)
         update_json_file(result, json_file, key)
 
@@ -41,7 +41,13 @@ if __name__ == "__main__":
     parser.add_argument(
         "json_file", type=str, help="Path to the output JSON file"
     )
+    parser.add_argument(
+        "--codeSystem",
+        type=str,
+        help="Specify the code system for assessment tools - 'cogatlas' for the cognitive atlas, 'snomed' for SNOMED CT annotation",  # noqa: E501
+        default="cogatlas",
+    )
 
     args = parser.parse_args()
 
-    main(args.file_path, args.json_file)
+    main(args.file_path, args.json_file, args.codeSystem)
