@@ -6,8 +6,7 @@ from categorization.promptTemplate import (
     AssessmentToolPrompt,
     DiagnosisPrompt,
 )
-from categorization.llm_helper import SexLevel, AgeFormat
-from categorization.fetchlevels import get_assessment_label
+from categorization.llm_helper import SexLevel, AgeFormat, get_assessment_label
 
 
 def Diagnosis(
