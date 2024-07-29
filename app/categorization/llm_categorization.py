@@ -1,4 +1,4 @@
-from typing import Dict, Optional, Union
+from typing import Any, Dict, Optional, Union
 import json
 from langchain_community.chat_models import ChatOllama
 from categorization.promptTemplate import (
@@ -6,12 +6,12 @@ from categorization.promptTemplate import (
     AssessmentToolPrompt,
     DiagnosisPrompt,
 )
-from categorization.llm_helper import SexLevel, AgeFormat
+from categorization.llm_helper import SexLevel, AgeFormat, get_assessment_label
 
 
 def Diagnosis(
-    key: str, value: str
-) -> Optional[Union[Dict[str, str], Dict[str, str]]]:
+    key: str, value: str, code_system: str
+) -> Optional[Union[Dict[str, str], Dict[str, Any]]]:
     llm = ChatOllama(model="gemma")
     chainDiagnosis = DiagnosisPrompt | llm
     llm_response_Diagnosis = chainDiagnosis.invoke(
@@ -21,14 +21,24 @@ def Diagnosis(
     print(reply)
 
     if "yes" in reply.lower():
-        output = {"TermURL": "nb:Diagnosis"}
+        values = value.split()
+        unique_values = list(set(values[1:]))
+
+        # Create dictionary for Levels
+        levels_dict = {val: "" for val in unique_values}
+
+        # Create the output dictionary
+        output = {"TermURL": "nb:Diagnosis", "Levels": levels_dict}
+
         print(json.dumps(output))
         return output
     else:
-        return AssessmentTool(key, value)
+        return AssessmentTool(key, value, code_system)
 
 
-def AssessmentTool(key: str, value: str) -> Optional[Dict[str, str]]:
+def AssessmentTool(
+    key: str, value: str, code_system: str
+) -> Optional[Dict[str, Any]]:
     llm = ChatOllama(model="gemma")
     questionAssessmentTool = f"Is the {key}:{value} an assessment tool"
     chainAssessmentTool = AssessmentToolPrompt | llm
@@ -37,7 +47,16 @@ def AssessmentTool(key: str, value: str) -> Optional[Dict[str, str]]:
     )
     reply = str(llm_response_Assessment)
     if "yes" in reply.lower():
-        output = {"TermURL": "nb:Assessment"}
+        tool_term = get_assessment_label(key, code_system)
+        if isinstance(tool_term, list) and len(tool_term) == 1:
+            tool_term = tool_term[0]
+        elif isinstance(tool_term, list) and len(tool_term) > 1:
+            print(
+                "Multiple terms found for the assessment tool. Please select one:"  # noqa: E501
+            )
+        else:
+            tool_term = "Not found"
+        output = {"TermURL": "nb:Assessment", "AssessmentTool": tool_term}
         print(json.dumps(output))
         return output
     else:
@@ -48,15 +67,22 @@ def AssessmentTool(key: str, value: str) -> Optional[Dict[str, str]]:
         return None
 
 
-def llm_diagnosis_assessment(key: str, value: str) -> Optional[Dict[str, str]]:
-    resultDiagnosis = Diagnosis(key, value)
+def llm_diagnosis_assessment(
+    key: str, value: str, code_system: str
+) -> Optional[Dict[str, str]]:
+    resultDiagnosis = Diagnosis(key, value, code_system)
     if resultDiagnosis:
         return resultDiagnosis
     else:
-        return AssessmentTool(key, value)
+        print(
+            "Currently no entity in the Neurobagel data model fits the column."
+        )
+        return None
 
 
-def llm_invocation(result_dict: Dict[str, str]) -> Optional[Dict[str, str]]:
+def llm_invocation(
+    result_dict: Dict[str, str], code_system: str
+) -> Optional[Dict[str, str]]:
     output: Union[Dict[str, str], None]
     llm = ChatOllama(model="gemma")
     chainGeneral = GeneralPrompt | llm
@@ -72,6 +98,6 @@ def llm_invocation(result_dict: Dict[str, str]) -> Optional[Dict[str, str]]:
     elif "Age" in r:
         output = AgeFormat(result_dict, key)
     else:
-        output = llm_diagnosis_assessment(key, value)
+        output = llm_diagnosis_assessment(key, value, code_system)
 
     return output

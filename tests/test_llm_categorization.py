@@ -14,7 +14,11 @@ from app.categorization.llm_categorization import (  # noqa: E402
     Diagnosis,
     llm_invocation,
 )
-from app.categorization.llm_helper import AgeFormat, SexLevel  # noqa: E402
+from app.categorization.llm_helper import (  # noqa: E402
+    AgeFormat,
+    SexLevel,
+    get_assessment_label,
+)
 
 
 @pytest.fixture  # type: ignore
@@ -43,7 +47,7 @@ def test_llm_invocation_sex(mock_llm_response: Any) -> None:
             new=MagicMock(),
         ) as MockGeneralPrompt:
             MockGeneralPrompt.__or__.return_value = mock_chain
-            output = llm_invocation(result_dict)
+            output = llm_invocation(result_dict, "snomed")
             expected_output = {
                 "TermURL": "nb:Sex",
                 "Levels": {"m": "male", "f": "female", "o": "other"},
@@ -67,7 +71,7 @@ def test_llm_invocation_participant(mock_llm_response: Any) -> None:
             new=MagicMock(),
         ) as MockGeneralPrompt:
             MockGeneralPrompt.__or__.return_value = mock_chain
-            output = llm_invocation(result_dict)
+            output = llm_invocation(result_dict, "cogatlas")
             expected_output = {"TermURL": "nb:ParticipantID"}
             assert output == expected_output
 
@@ -88,7 +92,7 @@ def test_llm_invocation_session(mock_llm_response: Any) -> None:
             new=MagicMock(),
         ) as MockGeneralPrompt:
             MockGeneralPrompt.__or__.return_value = mock_chain
-            output = llm_invocation(result_dict)
+            output = llm_invocation(result_dict, "snomed")
             expected_output = {"TermURL": "nb:Session"}
             assert output == expected_output
 
@@ -109,7 +113,7 @@ def test_llm_invocation_age(mock_llm_response: Any) -> None:
             new=MagicMock(),
         ) as MockGeneralPrompt:
             MockGeneralPrompt.__or__.return_value = mock_chain
-            output = llm_invocation(result_dict)
+            output = llm_invocation(result_dict, "snomed")
             expected_output = {"TermURL": "nb:Age", "Format": "floatvalue"}
             assert output == expected_output
 
@@ -131,15 +135,16 @@ def test_llm_invocation_diagnosis(mock_llm_response: Any) -> None:
             new=MagicMock(),
         ) as DiagnosisPrompt:
             DiagnosisPrompt.__or__.return_value = mock_chain
-            output = Diagnosis(key, value)
+            output = Diagnosis(key, value, "snomed")
             expected_output = {"TermURL": "nb:Diagnosis"}
             assert output == expected_output
 
 
-def test_llm_invocation_assessment(mock_llm_response: Any) -> None:
+def test_llm_invocation_assessment_cogatlas(mock_llm_response: Any) -> None:
     key = "bdi"
     value = "bdi 10 18 17 13 6 3 2 7"
     mock_llm_response.return_value = "yes"
+    code_system = "cogatlas"
 
     with patch(
         "app.categorization.promptTemplate.PromptTemplate"
@@ -153,8 +158,37 @@ def test_llm_invocation_assessment(mock_llm_response: Any) -> None:
             new=MagicMock(),
         ) as DiagnosisPrompt:
             DiagnosisPrompt.__or__.return_value = mock_chain
-            output = AssessmentTool(key, value)
-            expected_output = {"TermURL": "nb:Assessment"}
+            output = AssessmentTool(key, value, code_system)
+            expected_output = {
+                "TermURL": "nb:Assessment",
+                "AssessmentTool": "battelle developmental inventory",
+            }
+            assert output == expected_output
+
+
+def test_llm_invocation_assessment_snomed(mock_llm_response: Any) -> None:
+    key = "bdi"
+    value = "bdi 10 18 17 13 6 3 2 7"
+    mock_llm_response.return_value = "yes"
+    code_system = "snomed"
+
+    with patch(
+        "app.categorization.promptTemplate.PromptTemplate"
+    ) as MockPromptTemplate:
+        mock_chain = MagicMock()
+        mock_chain.invoke.return_value = "yes"
+        MockPromptTemplate.return_value.__or__.return_value = mock_chain
+
+        with patch(
+            "app.categorization.llm_categorization.AssessmentToolPrompt",
+            new=MagicMock(),
+        ) as DiagnosisPrompt:
+            DiagnosisPrompt.__or__.return_value = mock_chain
+            output = AssessmentTool(key, value, code_system)
+            expected_output = {
+                "TermURL": "nb:Assessment",
+                "AssessmentTool": "Beck depression inventory",
+            }
             assert output == expected_output
 
 
@@ -181,3 +215,22 @@ def test_age_format() -> None:
     output = AgeFormat(result_dict, "age")
     expected_output = {"TermURL": "nb:Age", "Format": "integervalue"}
     assert output == expected_output
+
+
+def test_get_assessment_label() -> None:
+    # perfect match
+    assert get_assessment_label("BDI", "snomed") == [
+        "Beck depression inventory"
+    ]
+    # partial match
+    assert get_assessment_label("BDI_Score", "cogatlas") == [
+        "battelle developmental inventory"
+    ]
+    assert get_assessment_label("Item1_BDI", "snomed") == [
+        "Beck depression inventory"
+    ]
+    # no match
+    assert (
+        get_assessment_label("handedness", "snomed")
+        == "Cannot evaluate column header: no match found."
+    )
