@@ -51,7 +51,7 @@ class Annotations(BaseModel):  # type:ignore
     Identifies: Optional[str] = None
     Levels: Optional[Dict[str, Dict[str, str]]] = None
     Transformation: Optional[Dict[str, str]] = None
-    IsPartOf: Optional[Union[Dict[str, str], List[str]]] = None
+    IsPartOf: Optional[Union[List[Dict[str, str]], Dict[str, str], str]] = None
 
 
 class TSVAnnotations(BaseModel):  # type:ignore
@@ -158,16 +158,33 @@ def handle_assessmentTool(
     )
     description = "Description of Assessment Tool conducted"
     ispartof_key = parsed_output.get("AssessmentTool", "")
-    # Check if ispartof_key is a list of strings
+
     if isinstance(ispartof_key, list):
         print("Multiple entries found")
-        ispartof: Optional[List[str]] = ispartof_key
+        ispartof_list = []
+        for key in ispartof_key:
+            key = key.strip().lower()
+            ispartof_item = next(
+                (
+                    item
+                    for item in assessmenttool_mapping.values()
+                    if item["Label"].strip().lower() == key
+                ),
+                None,
+            )
+            if ispartof_item:
+                ispartof_list.append(ispartof_item)
         annotations = Annotations(
-            IsAbout=annotation_instance, IsPartOf=ispartof
+            IsAbout=annotation_instance,
+            IsPartOf=ispartof_list if ispartof_list else None,
         )
+
+    elif ispartof_key == "Not found":
+        annotations = Annotations(IsAbout=annotation_instance, IsPartOf=None)
+
     else:
         ispartof_key = ispartof_key.strip().lower()
-        ispartof: Optional[Dict[str, str]] = next(  # type: ignore
+        ispartof = next(
             (
                 item
                 for item in assessmenttool_mapping.values()
@@ -178,6 +195,7 @@ def handle_assessmentTool(
         annotations = Annotations(
             IsAbout=annotation_instance, IsPartOf=ispartof
         )
+
     return TSVAnnotations(Description=description, Annotations=annotations)
 
 
