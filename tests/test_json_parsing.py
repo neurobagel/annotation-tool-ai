@@ -137,7 +137,7 @@ def test_sex_variable(
 ) -> None:
     parsed_output: Dict[str, Union[str, Dict[str, str], None]] = {
         "TermURL": "nb:Sex",
-        "Levels": {"M": "male", "F": "female"},
+        "Levels": {"M": "Male", "F": "Female"},
     }
     expected_result = TSVAnnotations(
         Description="Sex variable",
