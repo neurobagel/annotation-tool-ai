@@ -42,8 +42,17 @@ To run the current version of the LLM-based Annotation Tool execute
 the `full_annotation.py` by following command:
 
 ```
-python3 app/full_annotation.py <input-file.tsv> <output-file.json>
+python3 app/full_annotation.py <input-file.tsv> <output-file.json> --codeSystem [cogatlas | snomed]
 ```
+
+| flag | value | info  |   
+|---|---|---|
+| `--codeSystem` | `cogatlas`  | If assessment tools are identified within the provided `.tsv` file, the TermURLs and Labels from the [Cognitive Atlas](https://www.cognitiveatlas.org/) are assigned (if available). `cogatlas` is the default value.   |
+|   | `snomed`  | If assessment tools are identified within the provided `.tsv` file, the TermURLs and Labels from [SNOMED CT](https://www.snomed.org/) are assigned (if available).    |
+
+
+ 
+
 ## Dockerized version
 
 Since the annotation tool uses ollama to run the LLM it has to be provided by the docker container.
