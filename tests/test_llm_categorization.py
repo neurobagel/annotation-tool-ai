@@ -1,8 +1,6 @@
 import sys
 import os
 
-from app.categorization.fetchlevels import get_assessment_label
-
 # Add the app directory to sys.path
 sys.path.insert(
     0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "app"))
@@ -16,7 +14,11 @@ from app.categorization.llm_categorization import (  # noqa: E402
     Diagnosis,
     llm_invocation,
 )
-from app.categorization.llm_helper import AgeFormat, SexLevel  # noqa: E402
+from app.categorization.llm_helper import (  # noqa: E402
+    AgeFormat,
+    SexLevel,
+    get_assessment_label,
+)
 
 
 @pytest.fixture  # type: ignore
