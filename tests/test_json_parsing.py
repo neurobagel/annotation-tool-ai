@@ -86,7 +86,7 @@ def test_participant_id(
             Identifies="participant",
         ),
     )
-    result = process_parsed_output(parsed_output)
+    result = process_parsed_output(parsed_output, "snomed")
     assert result == expected_result
 
 
@@ -111,7 +111,7 @@ def test_diagnosis_variable(
             },
         ),
     )
-    result = process_parsed_output(parsed_output)
+    result = process_parsed_output(parsed_output, "snomed")
     assert result == expected_result
 
 
@@ -128,7 +128,7 @@ def test_session_id(levels_mapping_fixture: Dict[str, Dict[str, str]]) -> None:
             Identifies="session",
         ),
     )
-    result = process_parsed_output(parsed_output)
+    result = process_parsed_output(parsed_output, "snomed")
     assert result == expected_result
 
 
@@ -150,7 +150,7 @@ def test_sex_variable(
             },
         ),
     )
-    result = process_parsed_output(parsed_output)
+    result = process_parsed_output(parsed_output, "cogatlas")
     assert result == expected_result
 
 
@@ -171,7 +171,7 @@ def test_age_variable(
             },
         ),
     )
-    result = process_parsed_output(parsed_output)
+    result = process_parsed_output(parsed_output, "snomed")
     assert result == expected_result
 
 
@@ -194,7 +194,7 @@ def test_assessmentTool_variable(
             },
         ),
     )
-    result = process_parsed_output(parsed_output)
+    result = process_parsed_output(parsed_output, "cogatlas")
     assert result == expected_result
 
 
