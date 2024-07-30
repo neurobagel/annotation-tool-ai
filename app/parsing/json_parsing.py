@@ -2,10 +2,6 @@ from typing import Dict, Union, Optional, List, Any, Callable, Mapping
 import pandas as pd
 from pydantic import BaseModel, Field
 import json
-from app.level_identification.owl_extaction import (
-    find_full_labels,
-    find_highest_position_terms,
-)
 
 
 class IsAboutBase(BaseModel):  # type:ignore
@@ -55,7 +51,7 @@ class Annotations(BaseModel):  # type:ignore
     Identifies: Optional[str] = None
     Levels: Optional[Dict[str, Dict[str, str]]] = None
     Transformation: Optional[Dict[str, str]] = None
-    IsPartOf: Optional[Dict[str, str]] = None
+    IsPartOf: Optional[Union[List[Dict[str, str]], Dict[str, str], str]] = None
 
 
 class TSVAnnotations(BaseModel):  # type:ignore
@@ -128,19 +124,14 @@ def handle_categorical(
     elif termurl == "nb:Diagnosis":
         description = "Group variable"
         annotation_instance = IsAboutGroup(Label="Diagnosis", TermURL=termurl)
-        full_level_labels = find_full_labels(parsed_output.get("Levels"))  # type: ignore # noqa: E501
-        highest_terms = find_highest_position_terms(full_level_labels)
-        parsed_output["Levels"] = highest_terms["Levels"]
     else:
         raise ValueError(f"Unhandled TermURL: {termurl}")
 
-    print(parsed_output.get("Levels"))
-
-    # add the highest terms to the levels_mapping here (now levels)
     levels = {
-        key: levels_mapping.get(value.strip().lower(), {})
-        for key, value in parsed_output.get("Levels", {}).items()
-    }
+    key: [levels_mapping.get(item.strip().lower(), {}) for item in value]
+    for key, value in parsed_output.get("Levels", {}).items()
+}
+    print(levels)
 
     annotations = Annotations(IsAbout=annotation_instance, Levels=levels)
     return TSVAnnotations(
@@ -160,24 +151,52 @@ def handle_session(parsed_output: Dict[str, Any]) -> TSVAnnotations:
 
 
 def handle_assessmentTool(
-    parsed_output: Dict[str, str],
+    parsed_output: Dict[str, Union[str, List[str]]],
     assessmenttool_mapping: Mapping[str, Dict[str, str]],
 ) -> TSVAnnotations:
     annotation_instance = IsAboutAssessmentTool(
         TermURL=parsed_output["TermURL"]
     )
     description = "Description of Assessment Tool conducted"
-    ispartof_key = parsed_output.get("AssessmentTool", "").strip().lower()
-    ispartof = next(
-        (
-            item
-            for item in assessmenttool_mapping.values()
-            if item["Label"].strip().lower() == ispartof_key
-        ),
-        None,
-    )
-    print(ispartof)
-    annotations = Annotations(IsAbout=annotation_instance, IsPartOf=ispartof)
+    ispartof_key = parsed_output.get("AssessmentTool", "")
+
+    if isinstance(ispartof_key, list):
+        print("Multiple entries found")
+        ispartof_list = []
+        for key in ispartof_key:
+            key = key.strip().lower()
+            ispartof_item = next(
+                (
+                    item
+                    for item in assessmenttool_mapping.values()
+                    if item["Label"].strip().lower() == key
+                ),
+                None,
+            )
+            if ispartof_item:
+                ispartof_list.append(ispartof_item)
+        annotations = Annotations(
+            IsAbout=annotation_instance,
+            IsPartOf=ispartof_list if ispartof_list else None,
+        )
+
+    elif ispartof_key == "Not found":
+        annotations = Annotations(IsAbout=annotation_instance, IsPartOf=None)
+
+    else:
+        ispartof_key = ispartof_key.strip().lower()
+        ispartof = next(
+            (
+                item
+                for item in assessmenttool_mapping.values()
+                if item["Label"].strip().lower() == ispartof_key
+            ),
+            None,
+        )
+        annotations = Annotations(
+            IsAbout=annotation_instance, IsPartOf=ispartof
+        )
+
     return TSVAnnotations(Description=description, Annotations=annotations)
 
 
@@ -207,7 +226,8 @@ def load_assessmenttool_mapping(
 
 
 def process_parsed_output(
-    parsed_output: Dict[str, Union[str, Dict[str, str], None]]
+    parsed_output: Dict[str, Union[str, Dict[str, str], None]],
+    code_system: str,
 ) -> Union[str, Any]:
 
     # Load the levels mapping from a JSON file for diagnosis
@@ -215,10 +235,18 @@ def process_parsed_output(
     levels_mapping = load_levels_mapping(levels_mapping_file)
 
     # Load term-mapping from a JSON file for assessment tool
-    assessmenttool_mapping_file = "app/parsing/toolTerms.json"
-    assessmenttool_mapping = load_assessmenttool_mapping(
-        assessmenttool_mapping_file
-    )
+    if code_system == "cogatlas":
+        print("Using cognitive atlas terms for assessment tool annotation.")
+        assessmenttool_mapping_file = "app/parsing/toolTerms.json"
+        assessmenttool_mapping = load_assessmenttool_mapping(
+            assessmenttool_mapping_file
+        )
+    elif code_system == "snomed":
+        print("Using SNOMED CT terms for assessment tool annotation.")
+        assessmenttool_mapping_file = "app/parsing/measurementTerms.json"
+        assessmenttool_mapping = load_levels_mapping(
+            assessmenttool_mapping_file
+        )
 
     termurl_to_function: Dict[str, Callable[[Dict[str, Any]], Any]] = {
         "nb:ParticipantID": handle_participant,
