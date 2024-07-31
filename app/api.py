@@ -9,7 +9,7 @@ from processing import process_file
 app = FastAPI()
 
 
-@app.post("/process/")  # type: ignore
+@app.post("/process/", response_model=None)  # type: ignore
 async def process_files(
     file: UploadFile = File(...), code_system: str = "cogatlas"
 ) -> Union[FileResponse, JSONResponse]:
