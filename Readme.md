@@ -48,13 +48,13 @@ curl -X POST "http://127.0.0.1:8000/process/?code_system=snomed" -F "file=@your-
 
 | param | value | info  |   
 |---|---|---|
-|`codeSystem`| `cogatlas`  | If assessment tools are identified within the provided `.tsv` file, the TermURLs and Labels from the [Cognitive Atlas](https://www.cognitiveatlas.org/) are assigned (if available). `cogatlas` is the default value.   |
+|`code_system`| `cogatlas`  | If assessment tools are identified within the provided `.tsv` file, the TermURLs and Labels from the [Cognitive Atlas](https://www.cognitiveatlas.org/) are assigned (if available). `cogatlas` is the default value.   |
 |   | `snomed`  | If assessment tools are identified within the provided `.tsv` file, the TermURLs and Labels from [SNOMED CT](https://www.snomed.org/) are assigned (if available).    |
 
 
  
 
-## Dockerized version - **outdated**
+## Dockerized version
 
 Since the annotation tool uses ollama to run the LLM it has to be provided by the docker container.
 This is done by extending the available [ollama container](https://hub.docker.com/r/ollama/ollama)
@@ -76,10 +76,12 @@ Let's break down the command:
 ## Run the container from the built image
 
 ```bash
-docker run -d \
--v ollama:/root/.ollama \
--v /path/to/some/local/folder/:/app/output/  \
---name instance-name annotation-tool-ai
+docker run -d 
+-v ollama:/root/.ollama 
+-v /home/barbara/Documents/git/annotation-tool-ai/output:/app/output/  
+--name instance_name
+-p 8000:8000 
+annotation-tool-ai
 ```
 
 Let't break down the command:
@@ -87,20 +89,23 @@ Let't break down the command:
 - `docker run -d`: The -d flag runs the container in the background without any output in the terminal.
 - `-v ollama:root/.ollama`: The -v flag mounts external volumes into the container. In this case the models used within the container are stored locally as well as *Docker volumes* - these are created and managed by Docker itself and is not directly accessible via the local file system.
 - `-v /path/to/some/local/folder/:/app/output/`: This is a bind mount (also indicated by the -v flag) and makes a local directory accessible to the container. Via this folder the input and output files (i.e. the `.tsv` input and `.json` output files) are passed to the container but since the directory is mounted also locally accessible. Within the container the files are located in `app/output/`. For more information about Docker volumes vs. Bind mounts see [here](https://www.geeksforgeeks.org/docker-volume-vs-bind-mount/).
-- `--name instance-name annotation-tool-ai`: Here you choose a (nice) name for your container from the image we created in the step above.
+- `--name instance-name`: Here you choose a (nice) name for your container from the image we created in the step above.
+- `-p 8000:8000`: Mount port for API requests inside the container
+- `annotation-tool-ai`: Name of the image we create the instance of.
 
 ## Execute the annotation script
 
 The following command runs the script for the annotation process:
 
 ```
-docker exec -it instance-name python3 full_annotation.py container/input/file container/output/file
+docker exec -it api_test curl -X POST "http://127.0.0.1:8000/process/?code_system=<snomed | cogatlas>" -F "file=@<filepath-to-tsv-inside-container>.tsv" -o <filepath-to-output-file-inside-container>.json
 ```
 
 Let's break down this again:
 - `docker exec`: This command is used to execute a command in a running Docker container.
 - `-it`: Here are the `-i` and `-t` flag combined which allows for interactive terminal session. It is needed, for example, when you run commands that require input.
-- `python3 full_annotation.py container/input/file container/output/file`: This is the command you want to execute in the interactive terminal session within the container. The input file is the to-be-annotated `.tsv` file and the output file is the final `.json` file.
+- `api_test`: Name of the instance. 
+- `curl -X POST "http://127.0.0.1:8000/process/?code_system=<snomed | cogatlas>" -F "file=@<filepath-to-tsv-inside-container>.tsv" -o <filepath-to-output-file-inside-container>.json`: This is the command you want to execute in the interactive terminal session within the container. The input file is the to-be-annotated `.tsv` file and the output file is the `.json` file.
 
 # Details of the codebase 
 
