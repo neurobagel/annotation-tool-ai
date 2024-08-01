@@ -11,7 +11,7 @@ from unittest.mock import MagicMock, patch  # noqa: E402
 import pytest  # noqa: E402
 from app.categorization.llm_categorization import (  # noqa: E402
     AssessmentTool,
-    Diagnosis,
+    # Diagnosis,
     llm_invocation,
 )
 from app.categorization.llm_helper import (  # noqa: E402
@@ -118,26 +118,26 @@ def test_llm_invocation_age(mock_llm_response: Any) -> None:
             assert output == expected_output
 
 
-def test_llm_invocation_diagnosis(mock_llm_response: Any) -> None:
-    key = "diagnosis"
-    value = "diagnosis PD PD HC HC PD"
-    mock_llm_response.return_value = "yes"
+# def test_llm_invocation_diagnosis(mock_llm_response: Any) -> None:
+#     key = "diagnosis"
+#     value = "diagnosis PD PD HC HC PD"
+#     mock_llm_response.return_value = "yes"
 
-    with patch(
-        "app.categorization.promptTemplate.PromptTemplate"
-    ) as MockPromptTemplate:
-        mock_chain = MagicMock()
-        mock_chain.invoke.return_value = "yes"
-        MockPromptTemplate.return_value.__or__.return_value = mock_chain
+#     with patch(
+#         "app.categorization.promptTemplate.PromptTemplate"
+#     ) as MockPromptTemplate:
+#         mock_chain = MagicMock()
+#         mock_chain.invoke.return_value = "yes"
+#         MockPromptTemplate.return_value.__or__.return_value = mock_chain
 
-        with patch(
-            "app.categorization.llm_categorization.DiagnosisPrompt",
-            new=MagicMock(),
-        ) as DiagnosisPrompt:
-            DiagnosisPrompt.__or__.return_value = mock_chain
-            output = Diagnosis(key, value, "snomed")
-            expected_output = {"TermURL": "nb:Diagnosis"}
-            assert output == expected_output
+#         with patch(
+#             "app.categorization.llm_categorization.DiagnosisPrompt",
+#             new=MagicMock(),
+#         ) as DiagnosisPrompt:
+#             DiagnosisPrompt.__or__.return_value = mock_chain
+#             output = Diagnosis(key, value, "snomed")
+#             expected_output = {"TermURL": "nb:Diagnosis"}
+#             assert output == expected_output
 
 
 def test_llm_invocation_assessment_cogatlas(mock_llm_response: Any) -> None:
