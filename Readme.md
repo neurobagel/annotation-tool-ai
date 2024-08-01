@@ -39,10 +39,11 @@ We are attempting to achieve this automation using LLMs (at present gemma) and v
  ```pip install -r requirements.txt```
 
 To run the current version of the LLM-based Annotation Tool execute
-the `full_annotation.py` by following command:
+the following two commands:
 
 ```
-python3 app/full_annotation.py <input-file.tsv> <output-file.json> --codeSystem [cogatlas | snomed]
+python3 app/api.py --host 127.0.0.1 --port 8000 #to start the local uvicorn instance
+curl -X POST "http://127.0.0.1:8000/process/?code_system=snomed" -F "file=@your-file.tsv" -o downloaded_file.json #to test the tool
 ```
 
 | flag | value | info  |   
@@ -53,7 +54,7 @@ python3 app/full_annotation.py <input-file.tsv> <output-file.json> --codeSystem 
 
  
 
-## Dockerized version
+## Dockerized version - **outdated**
 
 Since the annotation tool uses ollama to run the LLM it has to be provided by the docker container.
 This is done by extending the available [ollama container](https://hub.docker.com/r/ollama/ollama)
