@@ -46,9 +46,9 @@ python3 app/api.py --host 127.0.0.1 --port 8000 #to start the local uvicorn inst
 curl -X POST "http://127.0.0.1:8000/process/?code_system=snomed" -F "file=@your-file.tsv" -o downloaded_file.json #to test the tool
 ```
 
-| flag | value | info  |   
+| param | value | info  |   
 |---|---|---|
-| `--codeSystem` | `cogatlas`  | If assessment tools are identified within the provided `.tsv` file, the TermURLs and Labels from the [Cognitive Atlas](https://www.cognitiveatlas.org/) are assigned (if available). `cogatlas` is the default value.   |
+|`codeSystem`| `cogatlas`  | If assessment tools are identified within the provided `.tsv` file, the TermURLs and Labels from the [Cognitive Atlas](https://www.cognitiveatlas.org/) are assigned (if available). `cogatlas` is the default value.   |
 |   | `snomed`  | If assessment tools are identified within the provided `.tsv` file, the TermURLs and Labels from [SNOMED CT](https://www.snomed.org/) are assigned (if available).    |
 
 
