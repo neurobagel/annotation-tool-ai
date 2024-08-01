@@ -78,7 +78,7 @@ Let's break down the command:
 ```bash
 docker run -d 
 -v ollama:/root/.ollama 
--v /home/barbara/Documents/git/annotation-tool-ai/output:/app/output/  
+-v /some/local/path/output:/app/output/  
 --name instance_name
 -p 8000:8000 
 annotation-tool-ai
