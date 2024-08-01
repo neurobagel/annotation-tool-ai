@@ -84,10 +84,12 @@ def llm_invocation(
     result_dict: Dict[str, str], code_system: str
 ) -> Optional[Dict[str, str]]:
     output: Union[Dict[str, str], None]
+    print("I am in the llm_invocation function")
     llm = ChatOllama(model="gemma")
     chainGeneral = GeneralPrompt | llm
     key, value = list(result_dict.items())[0]
     llm_response = chainGeneral.invoke({"column": key, "content": value})
+    print(llm_response)
     r = str(llm_response)
     if "Participant_IDs" in r:
         output = {"TermURL": "nb:ParticipantID"}
