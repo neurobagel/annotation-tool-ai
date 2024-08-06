@@ -5,14 +5,7 @@
 
 We are attempting to achieve this automation using LLMs (at present gemma) and various libraries like Pydantic.
 
-- The tool can be deployed locally - to do so please follow the [instructions here](#local-installation)
-- The tool can be run via a docker container - to do so please follow the [instructions here](#dockerized-version) 
-
-Further information:
-[Details of the codebase ](#details-of-the-codebase) |
-[License](#license)
-
-## Local Installation
+## Respository Setup
 
 - clone the repo
 
@@ -34,8 +27,18 @@ Further information:
 
 
 - complete installations 
- ```pip install -r requirements.txt```
+ ```pip install -r requirements.txt``` 
 
+## Deployment
+
+- The tool can be deployed locally - to do so please follow the [instructions here](#local-deployment)
+- The tool can be run via a docker container - to do so please follow the [instructions here](#dockerized-version) 
+
+Further information:
+[Details of the codebase ](#details-of-the-codebase) |
+[License](#license)
+
+### Local deployment
 
 To run the current version of the LLM-based Annotation Tool locally execute
 the following command to start the uvicorn server locally:
@@ -46,13 +49,13 @@ python3 app/api.py --host 127.0.0.1 --port 8000
 
 Now please follow the instructions [here](#access-the-api)
 
-## Dockerized version
+### Dockerized version
 
 Since the annotation tool uses ollama to run the LLM it has to be provided by the docker container.
 This is done by extending the available [ollama container](https://hub.docker.com/r/ollama/ollama)
 For this instructions it is assumed that [docker](https://www.docker.com/) is installed.
 
-### Build the image
+#### Build the image
 
 The container can be built from the dockerfile available in the repo
 
@@ -65,7 +68,7 @@ Let's break down the command:
 - `-t `: This flag allows you to name (or tag) an image. 
 - `annotation-tool-ai`: This is the nice name for the image
 
-### Run the container from the built image
+#### Run the container from the built image
 
 ```bash
 docker run -d 
@@ -85,7 +88,7 @@ Let't break down the command:
 - `-p 8000:8000`: Mount port for API requests inside the container
 - `annotation-tool-ai`: Name of the image we create the instance of.
 
-## Access the API
+## Access the API via the GUI
 
 Once the `docker run` command or the `app/api.py` script has been executed, the uvicorn server for the FastAPI application will be initiated. To access the GUI for the API, please enter the following in your browser and follow the instructions provided.
 
@@ -120,7 +123,7 @@ If `json` is the chosen `response_type` the direct JSON output will be provided 
 Well done - you have annotated your tabular file! 
 (It's clear that this documentation is written in a way that you can follow the instructions and annotate your tabular file.)
 
-### Use the tool from the command line
+## Using the tool from the command line
 
 The following command runs the script for the annotation process if you deployed it via docker:
 
