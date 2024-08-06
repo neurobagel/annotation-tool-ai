@@ -93,7 +93,7 @@ Let't break down the command:
 Once the `docker run` command or the `app/api.py` script has been executed, the uvicorn server for the FastAPI application will be initiated. To access the GUI for the API, please enter the following in your browser and follow the instructions provided.
 
 ```
-http://127.0.0.1/docs
+http://127.0.0.1:8000/docs
 ```
 
 ### Explanation of parameters used
