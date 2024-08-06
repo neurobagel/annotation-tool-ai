@@ -47,7 +47,8 @@ the following command to start the uvicorn server locally:
 python3 app/api.py --host 127.0.0.1 --port 8000 
 ```
 
-Now please follow the instructions [here](#access-the-api)
+For accessing the API via the browser please follow the instructions [here](#access-the-api).
+For running the tool via the command line please follow the instructions [here](#using-the-tool-from-the-command-line).
 
 ### Dockerized version
 
