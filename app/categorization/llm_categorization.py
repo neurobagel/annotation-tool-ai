@@ -84,7 +84,6 @@ def llm_invocation(
     result_dict: Dict[str, str], code_system: str
 ) -> Optional[Dict[str, str]]:
     output: Union[Dict[str, str], None]
-    print("I am in the llm_invocation function")
     llm = ChatOllama(model="gemma")
     chainGeneral = GeneralPrompt | llm
     key, value = list(result_dict.items())[0]
