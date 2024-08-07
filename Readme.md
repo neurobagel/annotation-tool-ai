@@ -129,19 +129,19 @@ Well done - you have annotated your tabular file!
 The following command runs the script for the annotation process if you deployed it via docker:
 
 ```
-docker exec -it api_test curl -X POST "http://127.0.0.1:8000/process/?code_system=<snomed | cogatlas>&response_type=<file | json>" -F "file=@<filepath-to-tsv-inside-container>.tsv" -o <filepath-to-output-file-inside-container>.json
+docker exec -it api_test curl -X POST "http://127.0.0.1:8000/process/?code_system=<snomed | cogatlas>&response_type=<file | json>" -F "file=@<filepath-to-tsv-inside-container>.tsv"
 ```
 
 If you chose the local deployment you can run the tool via this command:
 ```
-curl -X POST "http://127.0.0.1:8000/process/?code_system=<snomed | cogatlas>&response_type=<file | json>" -F "file=@<filepath-to-tsv-inside-container>.tsv" -o <filepath-to-output-file-inside-container>.json
+curl -X POST "http://127.0.0.1:8000/process/?code_system=<snomed | cogatlas>&response_type=<file | json>" -F "file=@<filepath-to-tsv-inside-container>.tsv"
 ```
 
 Let's break down this again (for non-docker deployment ignore the first 3 list items):
 - `docker exec`: This command is used to execute a command in a running Docker container.
 - `-it`: Here are the `-i` and `-t` flag combined which allows for interactive terminal session. It is needed, for example, when you run commands that require input.
 - `api_test`: Name of the instance. 
-- `curl -X POST "http://127.0.0.1:8000/process/?code_system=<snomed | cogatlas>" -F "file=@<filepath-to-tsv-inside-container>.tsv" -o <filepath-to-output-file-inside-container>.json`: This is the command you want to execute in the interactive terminal session within the container. The input file is the to-be-annotated `.tsv` file and the output file is the `.json` file.
+- `curl -X POST "http://127.0.0.1:9000/process/?code_system=<snomed | cogatlas>" -F "file=@<filepath-to-tsv-inside-container>.tsv" -o <filepath-to-output-file-inside-container>.json`: This is the command you want to execute in the interactive terminal session within the container. The input file is the to-be-annotated `.tsv` file and the output file is the `.json` file.
 
 
 # Details of the codebase 
