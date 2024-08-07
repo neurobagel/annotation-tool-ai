@@ -12,10 +12,10 @@ COPY ./app/ /app/
 COPY ./entrypoint.sh ./
 
 # Make port 8000 available to the world outside this container
-EXPOSE 8000
+EXPOSE 9000
 
 # Define environment variable
-ENV PORT 8000
+ENV PORT 9000
 
 # Make the entrypoint script executable
 RUN chmod +x ./entrypoint.sh

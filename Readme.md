@@ -76,7 +76,7 @@ docker run -d
 -v ollama:/root/.ollama 
 -v /some/local/path/output:/app/output/  
 --name instance_name
--p 8000:8000 
+-p 9000:8000 
 annotation-tool-ai
 ```
 
@@ -86,7 +86,7 @@ Let't break down the command:
 - `-v ollama:root/.ollama`: The -v flag mounts external volumes into the container. In this case the models used within the container are stored locally as well as *Docker volumes* - these are created and managed by Docker itself and is not directly accessible via the local file system.
 - `-v /path/to/some/local/folder/:/app/output/`: This is a bind mount (also indicated by the -v flag) and makes a local directory accessible to the container. Via this folder the input and output files (i.e. the `.tsv` input and `.json` output files) are passed to the container but since the directory is mounted also locally accessible. Within the container the files are located in `app/output/`. For more information about Docker volumes vs. Bind mounts see [here](https://www.geeksforgeeks.org/docker-volume-vs-bind-mount/).
 - `--name instance-name`: Here you choose a (nice) name for your container from the image we created in the step above.
-- `-p 8000:8000`: Mount port for API requests inside the container
+- `-p 9000:8000`: Mount port for API requests inside the container
 - `annotation-tool-ai`: Name of the image we create the instance of.
 
 ## Access the API via the GUI
@@ -94,7 +94,7 @@ Let't break down the command:
 Once the `docker run` command or the `app/api.py` script has been executed, the uvicorn server for the FastAPI application will be initiated. To access the GUI for the API, please enter the following in your browser and follow the instructions provided.
 
 ```
-http://127.0.0.1:8000/docs
+http://127.0.0.1:9000/docs
 ```
 
 ### Explanation of parameters used
