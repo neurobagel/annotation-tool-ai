@@ -47,8 +47,8 @@ the following command to start the uvicorn server locally:
 python3 app/api.py --host 127.0.0.1 --port 8000 
 ```
 
-For accessing the API via the browser please follow the instructions [here](#access-the-api).
-For running the tool via the command line please follow the instructions [here](#using-the-tool-from-the-command-line).
+- For accessing the API via the browser please follow the instructions [here](#access-the-api-via-the-gui).
+- For running the tool via the command line please follow the instructions [here](#using-the-tool-from-the-command-line).
 
 ### Dockerized version
 
@@ -93,9 +93,16 @@ Let't break down the command:
 
 Once the `docker run` command or the `app/api.py` script has been executed, the uvicorn server for the FastAPI application will be initiated. To access the GUI for the API, please enter the following in your browser and follow the instructions provided.
 
+- Docker
 ```
 http://127.0.0.1:9000/docs
 ```
+
+- Locally
+```
+http://127.0.0.1:8000/docs
+```
+
 
 ### Explanation of parameters used
 
@@ -128,13 +135,18 @@ Well done - you have annotated your tabular file!
 
 The following command runs the script for the annotation process if you deployed it via docker:
 
+Please choose the `code_system`, `response_type`and indicate the correct `instance_name` and filepaths.
 ```
-docker exec -it api_test curl -X POST "http://127.0.0.1:8000/process/?code_system=<snomed | cogatlas>&response_type=<file | json>" -F "file=@<filepath-to-tsv-inside-container>.tsv" -o <filepath-to-output-file-inside-container>.json
+docker exec -it instance_name curl -X POST "http://127.0.0.1:8000/process/?code_system=<snomed | cogatlas>&response_type=<file | json>" 
+-F "file=@<filepath-to-tsv-inside-container>.tsv" 
+-o <filepath-to-output-file-inside-container>.json
 ```
 
 If you chose the local deployment you can run the tool via this command:
 ```
-curl -X POST "http://127.0.0.1:8000/process/?code_system=<snomed | cogatlas>&response_type=<file | json>" -F "file=@<filepath-to-tsv-inside-container>.tsv"
+curl -X POST "http://127.0.0.1:8000/process/?code_system=<snomed | cogatlas>&response_type=<file | json>" 
+-F "file=@<filepath-to-tsv-inside-container>.tsv" 
+-o <filepath-to-output-file-inside-container>.json
 ```
 
 Let's break down this again (for non-docker deployment ignore the first 3 list items):
