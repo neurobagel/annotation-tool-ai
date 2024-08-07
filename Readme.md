@@ -129,7 +129,7 @@ Well done - you have annotated your tabular file!
 The following command runs the script for the annotation process if you deployed it via docker:
 
 ```
-docker exec -it api_test curl -X POST "http://127.0.0.1:8000/process/?code_system=<snomed | cogatlas>&response_type=<file | json>" -F "file=@<filepath-to-tsv-inside-container>.tsv"
+docker exec -it api_test curl -X POST "http://127.0.0.1:8000/process/?code_system=<snomed | cogatlas>&response_type=<file | json>" -F "file=@<filepath-to-tsv-inside-container>.tsv" -o <filepath-to-output-file-inside-container>.json
 ```
 
 If you chose the local deployment you can run the tool via this command:
@@ -142,6 +142,13 @@ Let's break down this again (for non-docker deployment ignore the first 3 list i
 - `-it`: Here are the `-i` and `-t` flag combined which allows for interactive terminal session. It is needed, for example, when you run commands that require input.
 - `api_test`: Name of the instance. 
 - `curl -X POST "http://127.0.0.1:9000/process/?code_system=<snomed | cogatlas>" -F "file=@<filepath-to-tsv-inside-container>.tsv" -o <filepath-to-output-file-inside-container>.json`: This is the command you want to execute in the interactive terminal session within the container. The input file is the to-be-annotated `.tsv` file and the output file is the `.json` file.
+
+---
+**NOTE**
+
+The `-o <filepath-to-output-file-inside-container>.json` is only necessary if `file` is chosen as `response_type` parameter.
+
+---
 
 
 # Details of the codebase 
