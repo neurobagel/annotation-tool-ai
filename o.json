@@ -2,45 +2,6 @@
   "HCCConvertedMDD": {
     "Description": "Group variable",
     "Levels": {
-      "HC": [
-        "Healthy Control",
-        "Hemichorea",
-        "Hemicephaly",
-        "Hydrocephalus",
-        "Hepatitis with hepatic coma",
-        "Huntington's chorea",
-        "Hypomyelination and congenital cataract",
-        "Hepatic coma",
-        "Henoch's chorea"
-      ],
-      "MDD": [
-        "Recurrent depression with current moderate episode",
-        "Recurrent moderate major depressive disorder co-occurrent with anxiety",
-        "Bipolar affective disorder, current episode depression",
-        "Bipolar affective disorder, currently depressed, moderate",
-        "Moderate depression",
-        "Depressive disorder",
-        "Severe recurrent major depression without psychotic features",
-        "Major depressive disorder",
-        "Mild recurrent major depression",
-        "Organic mood disorder of depressed type",
-        "Severe major depression",
-        "Mood disorder",
-        "Minor depressive disorder",
-        "PCP mood disorder",
-        "Minimal depression",
-        "Moderately severe depression",
-        "Minimal major depression single episode",
-        "Mental disorder",
-        "Severe major depression without psychotic features",
-        "Moderate major depression",
-        "Organic mood disorder of mixed type",
-        "Mild major depression",
-        "Moderate mood disorder"
-      ],
-      "HCCConvertedMDD": [
-        "left for user"
-      ],
       "PDD": [
         "Persistent depressive disorder",
         "Psychological disorder during pregnancy",
@@ -53,7 +14,7 @@
         "PCP delusional disorder",
         "Dementia"
       ],
-      "Groupdx": [
+      "HCCConvertedMDD": [
         "left for user"
       ],
       "PD": [
@@ -81,6 +42,45 @@
         "Disorder of basal ganglia",
         "Mental disorder",
         "Primary dysthymia"
+      ],
+      "HC": [
+        "Healthy Control",
+        "Hemichorea",
+        "Hemicephaly",
+        "Hydrocephalus",
+        "Hepatitis with hepatic coma",
+        "Huntington's chorea",
+        "Hypomyelination and congenital cataract",
+        "Hepatic coma",
+        "Henoch's chorea"
+      ],
+      "Groupdx": [
+        "left for user"
+      ],
+      "MDD": [
+        "Recurrent depression with current moderate episode",
+        "Recurrent moderate major depressive disorder co-occurrent with anxiety",
+        "Bipolar affective disorder, current episode depression",
+        "Bipolar affective disorder, currently depressed, moderate",
+        "Moderate depression",
+        "Depressive disorder",
+        "Severe recurrent major depression without psychotic features",
+        "Major depressive disorder",
+        "Mild recurrent major depression",
+        "Organic mood disorder of depressed type",
+        "Severe major depression",
+        "Mood disorder",
+        "Minor depressive disorder",
+        "PCP mood disorder",
+        "Minimal depression",
+        "Moderately severe depression",
+        "Minimal major depression single episode",
+        "Mental disorder",
+        "Severe major depression without psychotic features",
+        "Moderate major depression",
+        "Organic mood disorder of mixed type",
+        "Mild major depression",
+        "Moderate mood disorder"
       ]
     },
     "Annotations": {
@@ -89,141 +89,6 @@
         "TermURL": "nb:Diagnosis"
       },
       "Levels": {
-        "HC": [
-          {
-            "TermURL": "ncit:C94342",
-            "Label": "Healthy Control"
-          },
-          {
-            "TermURL": "snomed:11265003",
-            "Label": "Hemichorea"
-          },
-          {
-            "TermURL": "snomed:11701009",
-            "Label": "Hemicephaly"
-          },
-          {
-            "TermURL": "snomed:230745008",
-            "Label": "Hydrocephalus"
-          },
-          {
-            "TermURL": "snomed:435091000124105",
-            "Label": "Hepatitis with hepatic coma"
-          },
-          {
-            "TermURL": "snomed:58756001",
-            "Label": "Huntington's chorea"
-          },
-          {
-            "TermURL": "snomed:702379005",
-            "Label": "Hypomyelination and congenital cataract"
-          },
-          {
-            "TermURL": "snomed:72836002",
-            "Label": "Hepatic coma"
-          },
-          {
-            "TermURL": "snomed:88125005",
-            "Label": "Henoch's chorea"
-          }
-        ],
-        "MDD": [
-          {
-            "TermURL": "snomed:1089641000000100",
-            "Label": "Recurrent depression with current moderate episode"
-          },
-          {
-            "TermURL": "snomed:16264901000119109",
-            "Label": "Recurrent moderate major depressive disorder co-occurrent with anxiety"
-          },
-          {
-            "TermURL": "snomed:191627008",
-            "Label": "Bipolar affective disorder, current episode depression"
-          },
-          {
-            "TermURL": "snomed:191630001",
-            "Label": "Bipolar affective disorder, currently depressed, moderate"
-          },
-          {
-            "TermURL": "snomed:310496002",
-            "Label": "Moderate depression"
-          },
-          {
-            "TermURL": "snomed:35489007",
-            "Label": "Depressive disorder"
-          },
-          {
-            "TermURL": "snomed:36474008",
-            "Label": "Severe recurrent major depression without psychotic features"
-          },
-          {
-            "TermURL": "snomed:370143000",
-            "Label": "Major depressive disorder"
-          },
-          {
-            "TermURL": "snomed:40379007",
-            "Label": "Mild recurrent major depression"
-          },
-          {
-            "TermURL": "snomed:42594001",
-            "Label": "Organic mood disorder of depressed type"
-          },
-          {
-            "TermURL": "snomed:450714000",
-            "Label": "Severe major depression"
-          },
-          {
-            "TermURL": "snomed:46206005",
-            "Label": "Mood disorder"
-          },
-          {
-            "TermURL": "snomed:48589009",
-            "Label": "Minor depressive disorder"
-          },
-          {
-            "TermURL": "snomed:4863002",
-            "Label": "PCP mood disorder"
-          },
-          {
-            "TermURL": "snomed:718636001",
-            "Label": "Minimal depression"
-          },
-          {
-            "TermURL": "snomed:719593009",
-            "Label": "Moderately severe depression"
-          },
-          {
-            "TermURL": "snomed:720454007",
-            "Label": "Minimal major depression single episode"
-          },
-          {
-            "TermURL": "snomed:74732009",
-            "Label": "Mental disorder"
-          },
-          {
-            "TermURL": "snomed:75084000",
-            "Label": "Severe major depression without psychotic features"
-          },
-          {
-            "TermURL": "snomed:832007",
-            "Label": "Moderate major depression"
-          },
-          {
-            "TermURL": "snomed:83501007",
-            "Label": "Organic mood disorder of mixed type"
-          },
-          {
-            "TermURL": "snomed:87512008",
-            "Label": "Mild major depression"
-          },
-          {
-            "TermURL": "snomed:9167000",
-            "Label": "Moderate mood disorder"
-          }
-        ],
-        "HCCConvertedMDD": [
-          {}
-        ],
         "PDD": [
           {
             "TermURL": "snomed:1153575004",
@@ -266,7 +131,7 @@
             "Label": "Dementia"
           }
         ],
-        "Groupdx": [
+        "HCCConvertedMDD": [
           {}
         ],
         "PD": [
@@ -365,6 +230,141 @@
           {
             "TermURL": "snomed:83176005",
             "Label": "Primary dysthymia"
+          }
+        ],
+        "HC": [
+          {
+            "TermURL": "ncit:C94342",
+            "Label": "Healthy Control"
+          },
+          {
+            "TermURL": "snomed:11265003",
+            "Label": "Hemichorea"
+          },
+          {
+            "TermURL": "snomed:11701009",
+            "Label": "Hemicephaly"
+          },
+          {
+            "TermURL": "snomed:230745008",
+            "Label": "Hydrocephalus"
+          },
+          {
+            "TermURL": "snomed:435091000124105",
+            "Label": "Hepatitis with hepatic coma"
+          },
+          {
+            "TermURL": "snomed:58756001",
+            "Label": "Huntington's chorea"
+          },
+          {
+            "TermURL": "snomed:702379005",
+            "Label": "Hypomyelination and congenital cataract"
+          },
+          {
+            "TermURL": "snomed:72836002",
+            "Label": "Hepatic coma"
+          },
+          {
+            "TermURL": "snomed:88125005",
+            "Label": "Henoch's chorea"
+          }
+        ],
+        "Groupdx": [
+          {}
+        ],
+        "MDD": [
+          {
+            "TermURL": "snomed:1089641000000100",
+            "Label": "Recurrent depression with current moderate episode"
+          },
+          {
+            "TermURL": "snomed:16264901000119109",
+            "Label": "Recurrent moderate major depressive disorder co-occurrent with anxiety"
+          },
+          {
+            "TermURL": "snomed:191627008",
+            "Label": "Bipolar affective disorder, current episode depression"
+          },
+          {
+            "TermURL": "snomed:191630001",
+            "Label": "Bipolar affective disorder, currently depressed, moderate"
+          },
+          {
+            "TermURL": "snomed:310496002",
+            "Label": "Moderate depression"
+          },
+          {
+            "TermURL": "snomed:35489007",
+            "Label": "Depressive disorder"
+          },
+          {
+            "TermURL": "snomed:36474008",
+            "Label": "Severe recurrent major depression without psychotic features"
+          },
+          {
+            "TermURL": "snomed:370143000",
+            "Label": "Major depressive disorder"
+          },
+          {
+            "TermURL": "snomed:40379007",
+            "Label": "Mild recurrent major depression"
+          },
+          {
+            "TermURL": "snomed:42594001",
+            "Label": "Organic mood disorder of depressed type"
+          },
+          {
+            "TermURL": "snomed:450714000",
+            "Label": "Severe major depression"
+          },
+          {
+            "TermURL": "snomed:46206005",
+            "Label": "Mood disorder"
+          },
+          {
+            "TermURL": "snomed:48589009",
+            "Label": "Minor depressive disorder"
+          },
+          {
+            "TermURL": "snomed:4863002",
+            "Label": "PCP mood disorder"
+          },
+          {
+            "TermURL": "snomed:718636001",
+            "Label": "Minimal depression"
+          },
+          {
+            "TermURL": "snomed:719593009",
+            "Label": "Moderately severe depression"
+          },
+          {
+            "TermURL": "snomed:720454007",
+            "Label": "Minimal major depression single episode"
+          },
+          {
+            "TermURL": "snomed:74732009",
+            "Label": "Mental disorder"
+          },
+          {
+            "TermURL": "snomed:75084000",
+            "Label": "Severe major depression without psychotic features"
+          },
+          {
+            "TermURL": "snomed:832007",
+            "Label": "Moderate major depression"
+          },
+          {
+            "TermURL": "snomed:83501007",
+            "Label": "Organic mood disorder of mixed type"
+          },
+          {
+            "TermURL": "snomed:87512008",
+            "Label": "Mild major depression"
+          },
+          {
+            "TermURL": "snomed:9167000",
+            "Label": "Moderate mood disorder"
           }
         ]
       }

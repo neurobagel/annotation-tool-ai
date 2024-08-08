@@ -6,6 +6,7 @@ from app.categorization.promptTemplate import (
     AssessmentToolPrompt,
     DiagnosisPrompt,
 )
+
 from app.categorization.llm_helper import SexLevel, AgeFormat, get_assessment_label,Diagnosis_Level,list_terms
 
 
@@ -23,8 +24,8 @@ def Diagnosis(
     if "yes" in reply.lower():
         output = {"TermURL": "nb:Diagnosis", "Levels": {}}
         unique_entries=list_terms(value)
-        levels={}
-        level={}
+        levels={} #the empty dictionary passed to the diagnosis_level function to be filled 
+        level={} # the dictionary which will become the output 
         level = Diagnosis_Level(unique_entries, code_system,levels)
         print(''' 
 

@@ -292,28 +292,6 @@ def list_terms (value):
     return unique_entries
 
 
-
-
-def load_dictionary(file_path: str) -> Any:
-    try:
-        with open(file_path, 'r') as file:
-            return json.load(file)
-    except FileNotFoundError:
-        print(f"File not found: {file_path}")
-        return None
-    except json.JSONDecodeError:
-        print(f"Error decoding JSON from file: {file_path}")
-        return None
-
-def get_label_for_abbreviation(abbreviation: str, abbreviation_to_label: Dict[str, Any]) -> str:
-    if abbreviation in abbreviation_to_label:
-        return abbreviation_to_label[abbreviation]
-    elif abbreviation.isdigit():
-        return "some score"
-    else:
-        return "left for user"
-
-
 def is_score(input_string):
     # Remove all whitespace
     cleaned_string = re.sub(r'\s+', '', input_string)
@@ -329,6 +307,10 @@ def is_score(input_string):
     
     return False
 
+def are_all_digits(input_list):
+    # Check if all elements in the list are digit strings
+        return all(element.isdigit() for element in input_list)
+
 def Diagnosis_Level(unique_entries:dict,code_system: str,levels):
     print(unique_entries)
 
@@ -336,10 +318,7 @@ def Diagnosis_Level(unique_entries:dict,code_system: str,levels):
         with open(file_path, 'r') as file:
             return json.load(file)
         
-    def are_all_digits(input_list):
-    # Check if all elements in the list are digit strings
-        return all(is_score(element) for element in input_list)
-
+   
     #get the list of related labels
     def get_label_for_abbreviation(abbreviation:str, abbreviation_to_label):
         if abbreviation in abbreviation_to_label:
@@ -348,6 +327,7 @@ def Diagnosis_Level(unique_entries:dict,code_system: str,levels):
             return "some score"
         else:
             return ["left for user"]
+        
 # Path to your JSON file
     file_path = 'app/categorization/rag_documents/abbreviation_to_labels.json'
 

@@ -9,6 +9,7 @@ class IsAboutBase(BaseModel):  # type:ignore
     TermURL: str
 
 
+
 class IsAboutParticipant(IsAboutBase):
     Label: str = Field(default="Subject Unique Identifier")
     TermURL: str
