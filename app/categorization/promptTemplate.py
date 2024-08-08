@@ -5,7 +5,7 @@ from langchain_community.chat_models import ChatOllama
 from langchain_core.prompts import PromptTemplate
 from langchain.chains import SequentialChain
 
-prompt = PromptTemplate(
+GeneralPrompt = PromptTemplate(
     template="""Given the column data {column}: {content}, determine the category and give only the category name as output
 
 Examples:
@@ -32,7 +32,7 @@ Output= <category>
 """,
     input_variables=["column", "content"],
 )
-Aprompt = PromptTemplate(
+AssessmentToolPrompt = PromptTemplate(
     template="""
         Given the column data {column}: {content},
     Instructions: Based on the provided information, please evaluate if this column is an assessment tool  . Consider the following characteristics of assessment tools in your evaluation:
@@ -54,7 +54,7 @@ If not describing a  diagnosis in context of medical research answer Yes
 
 
 
-Dprompt = PromptTemplate(
+DiagnosisPrompt = PromptTemplate(
     template="""Given the column data {column}: {content},
     Based on the sample data provided, please evaluate whether each column should be categorized as a "Diagnosis". 
     by considering the following characteristics 

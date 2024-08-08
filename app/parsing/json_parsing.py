@@ -49,14 +49,25 @@ class Annotations(BaseModel):  # type:ignore
         IsAboutAssessmentTool,
     ]
     Identifies: Optional[str] = None
-    Levels: Optional[Dict[str, Dict[str, str]]] = None
+   
+    Levels: Optional[Union[
+    Dict[str, List[Dict[str, str]]],
+    Dict[str, Dict[str, str]],
+    Dict[str, str],
+    Dict[str, List[str]]
+   
+     # Add this to allow for lists of strings
+]] = None
     Transformation: Optional[Dict[str, str]] = None
     IsPartOf: Optional[Union[List[Dict[str, str]], Dict[str, str], str]] = None
 
 
 class TSVAnnotations(BaseModel):  # type:ignore
     Description: str
-    Levels: Optional[Dict[str, str]] = None
+    #    Levels: Optional[Union[Dict[str, str],Dict[str, List[str]]]] = None
+
+    Levels: Optional[Dict[str, List[str]]] = None
+    # Levels: Optional[Union[Dict[str,List[str]],Dict[str,str],str]]
     Annotations: Annotations
 
 
@@ -114,7 +125,7 @@ def handle_age(parsed_output: Dict[str, Any]) -> TSVAnnotations:
 
 
 def handle_categorical(
-    parsed_output: Dict[str, Any], levels_mapping: Mapping[str, Dict[str, str]]
+    parsed_output: Dict[str, Any], levels_mapping: Mapping[str,List[ Dict[str, str]]]
 ) -> TSVAnnotations:
     termurl = parsed_output.get("TermURL")
 
@@ -130,7 +141,21 @@ def handle_categorical(
     levels = {
     key: [levels_mapping.get(item.strip().lower(), {}) for item in value]
     for key, value in parsed_output.get("Levels", {}).items()
-}
+}   
+    print(''' 
+
+
+soething parser
+
+
+
+
+
+
+
+
+
+''')
     print(levels)
 
     annotations = Annotations(IsAbout=annotation_instance, Levels=levels)
@@ -200,7 +225,8 @@ def handle_assessmentTool(
     return TSVAnnotations(Description=description, Annotations=annotations)
 
 
-def load_levels_mapping(mapping_file: str) -> Dict[str, Dict[str, str]]:
+
+def load_levels_mapping(mapping_file: str) -> Dict[str, Dict[str, List[str]]]:
     with open(mapping_file, "r") as file:
         mappings = json.load(file)
     return {
@@ -209,7 +235,6 @@ def load_levels_mapping(mapping_file: str) -> Dict[str, Dict[str, str]]:
         .lower(): {"TermURL": entry["identifier"], "Label": entry["label"]}
         for entry in mappings
     }
-
 
 def load_assessmenttool_mapping(
     mapping_file: str,
@@ -256,7 +281,7 @@ def process_parsed_output(
 
     termurl_to_function_with_levels: Dict[
         str,
-        Callable[[Dict[str, Any], Mapping[str, Dict[str, str]]], Any],
+        Callable[[Dict[str, Any], Mapping[str, Dict[str, Any]]], Any],
     ] = {
         "nb:Sex": handle_categorical,
         "nb:Diagnosis": handle_categorical,
@@ -302,6 +327,24 @@ def process_parsed_output(
 def update_json_file(
     data: Union[str, TSVAnnotations], filename: str, target_key: str
 ) -> None:
+    print('''
+          
+          
+          
+          
+          
+          
+          
+          reach
+          
+          
+          
+          
+          
+          
+          
+          
+          ''')
     if isinstance(data, TSVAnnotations):
         data_dict = data.model_dump(exclude_none=True)
     else:

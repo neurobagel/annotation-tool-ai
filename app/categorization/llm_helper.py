@@ -347,7 +347,7 @@ def Diagnosis_Level(unique_entries:dict,code_system: str,levels):
         elif abbreviation.isdigit():
             return "some score"
         else:
-            return "left for user"
+            return ["left for user"]
 # Path to your JSON file
     file_path = 'app/categorization/rag_documents/abbreviation_to_labels.json'
 
@@ -364,19 +364,19 @@ def Diagnosis_Level(unique_entries:dict,code_system: str,levels):
                 levelfield=get_label_for_abbreviation(unique_entries[i],data)
                 levels[unique_entries[i]] = levelfield
         
-        print(levels)
+        
         
     
     ex(unique_entries)
+    print(''' 
+
+helper return
+
+
+''')
+    print(levels)
     return levels
 
 
 def list_terms(value: str) -> List[str]:
     return list(set(value.split()))
-
-
-
-
-
-
-

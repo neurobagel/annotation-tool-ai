@@ -21,17 +21,17 @@ def Diagnosis(
     # print(reply)
     reply='yes'
     if "yes" in reply.lower():
-        output = {"TermURL": "nb:Diagnosis", "Levels": " "}
+        output = {"TermURL": "nb:Diagnosis", "Levels": {}}
         unique_entries=list_terms(value)
         levels={}
-        level={"kk"}
+        level={}
         level = Diagnosis_Level(unique_entries, code_system,levels)
         print(''' 
 
-
+llm_file
 
 ''')
-        print(level)
+        
         output["Levels"] = level
         print(json.dumps(output))
         return output
