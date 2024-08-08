@@ -88,6 +88,7 @@ def llm_invocation(
     chainGeneral = GeneralPrompt | llm
     key, value = list(result_dict.items())[0]
     llm_response = chainGeneral.invoke({"column": key, "content": value})
+    print(llm_response)
     r = str(llm_response)
     if "Participant_IDs" in r:
         output = {"TermURL": "nb:ParticipantID"}

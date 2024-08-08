@@ -5,16 +5,7 @@
 
 We are attempting to achieve this automation using LLMs (at present gemma) and various libraries like Pydantic.
 
-
-[Local Installation](#local-installation) |
-[Dockerized version](#dockerized-version) |
-[Details of the codebase ](#details-of-the-codebase) |
-[License](#license)
-
-
-## Local Installation
-
-### Building and running
+## Respository Setup
 
 - clone the repo
 
@@ -36,30 +27,36 @@ We are attempting to achieve this automation using LLMs (at present gemma) and v
 
 
 - complete installations 
- ```pip install -r requirements.txt```
+ ```pip install -r requirements.txt``` 
 
-To run the current version of the LLM-based Annotation Tool execute
-the `full_annotation.py` by following command:
+## Deployment
+
+- The tool can be deployed locally - to do so please follow the [instructions here](#local-deployment)
+- The tool can be run via a docker container - to do so please follow the [instructions here](#dockerized-version) 
+
+Further information:
+[Details of the codebase ](#details-of-the-codebase) |
+[License](#license)
+
+### Local deployment
+
+To run the current version of the LLM-based Annotation Tool locally execute
+the following command to start the uvicorn server locally:
 
 ```
-python3 app/full_annotation.py <input-file.tsv> <output-file.json> --codeSystem [cogatlas | snomed]
+python3 app/api.py --host 127.0.0.1 --port 8000 
 ```
 
-| flag | value | info  |   
-|---|---|---|
-| `--codeSystem` | `cogatlas`  | If assessment tools are identified within the provided `.tsv` file, the TermURLs and Labels from the [Cognitive Atlas](https://www.cognitiveatlas.org/) are assigned (if available). `cogatlas` is the default value.   |
-|   | `snomed`  | If assessment tools are identified within the provided `.tsv` file, the TermURLs and Labels from [SNOMED CT](https://www.snomed.org/) are assigned (if available).    |
+- For accessing the API via the browser please follow the instructions [here](#access-the-api-via-the-gui).
+- For running the tool via the command line please follow the instructions [here](#using-the-tool-from-the-command-line).
 
-
- 
-
-## Dockerized version
+### Dockerized version
 
 Since the annotation tool uses ollama to run the LLM it has to be provided by the docker container.
 This is done by extending the available [ollama container](https://hub.docker.com/r/ollama/ollama)
 For this instructions it is assumed that [docker](https://www.docker.com/) is installed.
 
-## Build the image
+#### Build the image
 
 The container can be built from the dockerfile available in the repo
 
@@ -72,13 +69,15 @@ Let's break down the command:
 - `-t `: This flag allows you to name (or tag) an image. 
 - `annotation-tool-ai`: This is the nice name for the image
 
-## Run the container from the built image
+#### Run the container from the built image
 
 ```bash
-docker run -d \
--v ollama:/root/.ollama \
--v /path/to/some/local/folder/:/app/output/  \
---name instance-name annotation-tool-ai
+docker run -d 
+-v ollama:/root/.ollama 
+-v /some/local/path/output:/app/output/  
+--name instance_name
+-p 9000:8000 
+annotation-tool-ai
 ```
 
 Let't break down the command:
@@ -86,24 +85,87 @@ Let't break down the command:
 - `docker run -d`: The -d flag runs the container in the background without any output in the terminal.
 - `-v ollama:root/.ollama`: The -v flag mounts external volumes into the container. In this case the models used within the container are stored locally as well as *Docker volumes* - these are created and managed by Docker itself and is not directly accessible via the local file system.
 - `-v /path/to/some/local/folder/:/app/output/`: This is a bind mount (also indicated by the -v flag) and makes a local directory accessible to the container. Via this folder the input and output files (i.e. the `.tsv` input and `.json` output files) are passed to the container but since the directory is mounted also locally accessible. Within the container the files are located in `app/output/`. For more information about Docker volumes vs. Bind mounts see [here](https://www.geeksforgeeks.org/docker-volume-vs-bind-mount/).
-- `--name instance-name annotation-tool-ai`: Here you choose a (nice) name for your container from the image we created in the step above.
+- `--name instance-name`: Here you choose a (nice) name for your container from the image we created in the step above.
+- `-p 9000:8000`: Mount port for API requests inside the container
+- `annotation-tool-ai`: Name of the image we create the instance of.
 
-## Execute the annotation script
+## Access the API via the GUI
 
-The following command runs the script for the annotation process:
+Once the `docker run` command or the `app/api.py` script has been executed, the uvicorn server for the FastAPI application will be initiated. To access the GUI for the API, please enter the following in your browser and follow the instructions provided.
 
+- Docker
 ```
-docker exec -it instance-name python3 full_annotation.py container/input/file container/output/file
+http://127.0.0.1:9000/docs
 ```
 
-Let's break down this again:
+- Locally
+```
+http://127.0.0.1:8000/docs
+```
+
+
+### Explanation of parameters used
+
+| param | value | info  |   
+|---|---|---|
+|`code_system`| `cogatlas`  | If assessment tools are identified within the provided `.tsv` file, the TermURLs and Labels from the [Cognitive Atlas](https://www.cognitiveatlas.org/) are assigned (if available). `cogatlas` is the default value.   |
+|   | `snomed`  | If assessment tools are identified within the provided `.tsv` file, the TermURLs and Labels from [SNOMED CT](https://www.snomed.org/) are assigned (if available).  |
+|`response_type`| `file` | After categorization and annotation the API provides a `.json` file ready to download. `file` is the default value |
+| | `json` | After categorization and annotation the API provides the raw JSON output.
+
+![startAPI](docs/img/api-load.png)
+
+
+### Results
+
+If `file` is the chosen `response_type` a `.json` file will be provided for download:
+
+
+![fileResponse](docs/img/fileResponse.png)
+
+If `json` is the chosen `response_type` the direct JSON output will be provided by the API:
+
+![jsonResponse](docs/img/jsonResponse.png)
+
+
+Well done - you have annotated your tabular file! 
+(It's clear that this documentation is written in a way that you can follow the instructions and annotate your tabular file.)
+
+## Using the tool from the command line
+
+The following command runs the script for the annotation process if you deployed it via docker:
+
+Please choose the `code_system`, `response_type`and indicate the correct `instance_name` and filepaths.
+```
+docker exec -it instance_name curl -X POST "http://127.0.0.1:8000/process/?code_system=<snomed | cogatlas>&response_type=<file | json>" 
+-F "file=@<filepath-to-tsv-inside-container>.tsv" 
+-o <filepath-to-output-file-inside-container>.json
+```
+
+If you chose the local deployment you can run the tool via this command:
+```
+curl -X POST "http://127.0.0.1:8000/process/?code_system=<snomed | cogatlas>&response_type=<file | json>" 
+-F "file=@<filepath-to-tsv-inside-container>.tsv" 
+-o <filepath-to-output-file-inside-container>.json
+```
+
+Let's break down this again (for non-docker deployment ignore the first 3 list items):
 - `docker exec`: This command is used to execute a command in a running Docker container.
 - `-it`: Here are the `-i` and `-t` flag combined which allows for interactive terminal session. It is needed, for example, when you run commands that require input.
-- `python3 full_annotation.py container/input/file container/output/file`: This is the command you want to execute in the interactive terminal session within the container. The input file is the to-be-annotated `.tsv` file and the output file is the final `.json` file.
+- `api_test`: Name of the instance. 
+- `curl -X POST "http://127.0.0.1:9000/process/?code_system=<snomed | cogatlas>" -F "file=@<filepath-to-tsv-inside-container>.tsv" -o <filepath-to-output-file-inside-container>.json`: This is the command you want to execute in the interactive terminal session within the container. The input file is the to-be-annotated `.tsv` file and the output file is the `.json` file.
+
+---
+**NOTE**
+
+The `-o <filepath-to-output-file-inside-container>.json` is only necessary if `file` is chosen as `response_type` parameter.
+
+---
+
 
 # Details of the codebase 
 
-### Currently the development of the tool is divided into 2 aspects: Parsing and Categorization
+Currently the development of the tool is divided into 2 aspects: Parsing and Categorization
 
 [Parsing](#Parsing) |
 [Categorization](#Categorization) |
@@ -160,7 +222,7 @@ Since we have separated the categorization and parsing steps, some assumptions h
 ```
 
 By now the code depends on 
-- `typing` for providing type hints for defined functions. (required for mypy)
+- `typing` for providing type hints for defined functions
 - `pandas` TSV file handling
 - `json` JSON handling
 - `pydantic` for data validation and modularized parsing
@@ -227,7 +289,7 @@ class Annotations(BaseModel):
     Identifies: Optional[str] = None
     Levels: Optional[Dict[str, Dict[str, str]]] = None
     Transformation: Optional[Dict[str, str]] = None
-    IsPartOf: Optional[Dict[str, str]] = None
+    IsPartOf: Optional[Union[List[Dict[str, str]], Dict[str, str], str]] = None
 ```
 
 As a final step in creating the JSON output format, fields such as `Description` and, in the case of categorical variables (optional), the `Levels` present in the TSV file should be added. To implement this, another data structure was introduced that contains these fields and the `Annotations` (which in turn contains the `isAbout`).
@@ -283,54 +345,39 @@ These include:
 | `convert_tsv_to_dict` | Extract the original column names (and their contents - for LLM queries) from the TSV file. This serves as a preparation step for the query passed to the LLM, as well as for the creation of the "raw" JSON file. | Input: <br> `tsv_file:str` <br> <br>Output: `column_strings:Dict[str,str]`|
 |`tsv_to_json` | This function initializes a JSON file with the columns of the TSV file as keys and empty strings as values. | Input: <br> `tsv_file:str` <br> `json_file:str` <br> <br> Output: <br> `None`|
 | |       LLM Categorization (see [here](https://hackmd.io/QymmEdIoTk-2g7-JNMq2lA#LLM-Utilisation--Annotation-Tool-AI-Documentation))       |
-|`process_parsed_output` | This function decides which handler function to call based on the TermURL of the LLM response.| Input: <br> `llm_output:Dict[str, Union[str, Dict[str, str], None]]` <br><br>`levels_mapping:Mapping[str, Dict[str, str]]` <br><br> Output: <br> `TSVAnnotations:Union[str, TSVAnnotations]`
-|`handle_participant` <br> `handle_age` <br> `handle_categorical` <br> `handle_session` <br> `handle_assessmentTool` | These functions create specific annotation instances to ensure that each annotated column contains only the fields required for it.|Input ParticipantID, Session, Age:<br> `llm_response:Dict[str, Any]` <br> Input Sex, Diagnosis, Assessment Tool: <br> `llm_response:Dict[str, Any]` <br> `mapping:Mapping[str, Dict[str, str]]` <br> <br> Output: <br> `TSVAnnotations`|
+|`process_parsed_output` | This function decides which handler function to call based on the TermURL of the LLM response.| Input: <br> `llm_output:Dict[str, Union[str, Dict[str, str], None]]` <br><br>`code_system: str` <br><br> Output: <br> `TSVAnnotations:Union[str, Any]`|
+|`handle_participant` <br> `handle_age` <br> `handle_categorical` <br> `handle_session` <br> `handle_assessmentTool`| These functions create specific annotation instances to ensure that each annotated column contains only the fields required for it.|Input ParticipantID, Session, Age:<br> `llm_response:Dict[str, Any]` <br> Input Categorical, Assessment Tool <br> `llm_response:Dict[str, Any]` <br> `mapping:Mapping[str, Dict[str, str]]` <br> <br> Output: <br> `TSVAnnotations`|
+|`get_assessment_label`| In many cases the assessment tool columns of a tabular file are represented via acronyms of standardized abbreviations. If a column is categorized as assessment tool the header is checked for the commonly used abbreviations of the assessment tools available in the respective coding system (snomed or cognitive atlas). | Input: <br>`key: str`, `code_system: str`<br><br> Output:`Union[str, List[str]]`<br>|
+|`SexLevel`| If a column is categorized as a sex column this functions tries to map the content of the column to the respective snomed entities for male, female and others. For now all formats recommended by BIDS are included. Sex columns are always annotated with the snomed TermURLs | Input: <br>`result_dict: Dict[str, str], key: str`<br><br> Output:`Dict[str, Any]`<br>|
+|`AgeFormat`| Within the Neurbagel data model the format of the original column values of age columns is also annotation via `Transformation`. By now integer values, float values, european decimal values, bounded values as well as ISO8601 and YearUnit coded values van be annotated. | Input: <br>`result_dict: Dict[str, str], key: str`<br><br> Output:`Dict[str, Any]`<br>|
 |`load_levels_mapping`<br> `load_assessmenttool_mapping` | These helper functions provide the mappings (i.e., the corresponding TermURLs to a specific label such as "Male" or "Alexia"). For diagnosis and sex the `load_levels_mapping` is used. For the assessment tool the `load_assessmenttool_mapping` is used. Two functions are needed because the original structure of the files (`diagnosisTerms.json` and `toolTerms.json`) is slightly different.| Input:<br> `mapping_file:str` <br> <br> Output: <br> `levels_mapping \|assessmenttool_mapping:Mapping[str, Dict[str, str]]`
 |`update_json_file` | Updates the "raw" JSON file with the processed data under the specific key (i.e. the original column name).| Input: <br> `data: Union[str, TSVAnnotations]` <br>`filename: str`<br>`target_key: str` <br><br> Output: <br> `None`
 
-## Main Script
+## Main Logic
 
 Here the main script demonstrates the complete process of annotating each column of the `TSV` file.
 
 ```python 
-def main(file_path: str, json_file: str) -> None:
-    columns_dict = convert_tsv_to_dict(file_path)
 
-    tsv_to_json(file_path, json_file)
+def process_file(
+    file_path: str, json_file: str, code_system: str
+) -> Dict[str, str]:
+    columns_dict = convert_tsv_to_dict(file_path) 
+    tsv_to_json(file_path, json_file) #creates a json file with headers
 
-    # Create output for each column
+    results = {}
+    
     for key, value in columns_dict.items():
-        print("Processing column:", key)
         try:
-            # Invoke the chain with the input data
             input_dict = {key: value}
-            print(key)
-            # Column information is inserted in prompt template
-            llm_response = llm_invocation(input_dict)
-
+            llm_response = llm_invocation(input_dict, code_system) #calls the LLM for the categorization of each column
+            result = process_parsed_output(llm_response, code_system) #depending on the column the json output is created
+            results[key] = result
+            update_json_file(result, json_file, key) #final annotations are written to JSON
         except Exception as e:
-            print("Error processing column:", key)
-            print("Error message:", e)
-            continue
+            results[key] = {"error": str(e)}
 
-        result = process_parsed_output(llm_response)
-        print(result)
-        update_json_file(result, json_file, key)
-
-
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(
-        description="Process TSV file and update JSON output."
-    )
-    parser.add_argument("file_path", type=str, help="Path to the TSV file")
-    parser.add_argument(
-        "json_file", type=str, help="Path to the output JSON file"
-    )
-
-    args = parser.parse_args()
-
-    main(args.file_path, args.json_file)
-
+    return results
 
 ```
 
@@ -347,8 +394,7 @@ the json library from python and the LLM 'Gemma' from Ollama.
 #### 2. Utilising Langchain and a well structured Prompt Template
 #### 3. Obtaining the Output in the req format to pass it on to the parser
 
-# 
-#
+##
 
 ### 1.Choice of LLM:
 

@@ -294,8 +294,6 @@ def process_parsed_output(
                 )
         else:
             return "Error: TermURL is missing from the parsed output"
-    else:
-        return "Error: parsed_output is not a dictionary"
 
 
 def update_json_file(

@@ -158,9 +158,9 @@ def get_assessment_label(key: str, code_system: str) -> Union[str, List[str]]:
 
     # Determine file path based on code system
     if code_system == "cogatlas":
-        file_path = "rag_documents/abbreviations_ToolTerms.json"
+        file_path = "app/parsing/abbreviations_ToolTerms.json"
     elif code_system == "snomed":
-        file_path = "rag_documents/abbreviations_measurementTerms.json"
+        file_path = "app/parsing/abbreviations_measurementTerms.json"
     else:
         return "Invalid code system"
 
