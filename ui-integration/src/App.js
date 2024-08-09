@@ -64,6 +64,20 @@ function FileUpload() {
           <div className="card shadow-sm">
             <div className="card-body">
               <h1 className="card-title text-center mb-4">Data Annotation, but make it Effortless with LLM Magic</h1>
+              
+              {/* Instructions section */}
+              <div className="mb-4">
+                <h4 className="text">Instructions</h4>
+                <p className="text">
+                  1. Upload your TSV file by selecting it using the "Choose File" button.<br /><br />
+                  2. Choose the coding system you prefer for assessment tools: "Cognitive Atlas" or "SNOMED".<br /><br />
+                  3. Select the response type: "File" for downloading a JSON file or "JSON" to view the response directly.<br /><br />
+                  4. Click "Submit" to process the file.<br /> <br />
+                  <b>Please be patient...the magic takes a while to happen....like really a while</b><br /><br />
+                  5. If you chose "File" as the response type, a JSON file will be automatically downloaded. If "JSON" was selected, the result will be displayed below.
+                </p>
+              </div>
+              
               <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                   <label htmlFor="fileInput" className="form-label">Upload File</label>
