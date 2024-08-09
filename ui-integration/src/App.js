@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 
 function FileUpload() {
   const [file, setFile] = useState(null);
   const [codeSystem, setCodeSystem] = useState('cogatlas');
   const [responseType, setResponseType] = useState('file');
   const [responseData, setResponseData] = useState(null);
-  const [loading, setLoading] = useState(false); // Add loading state
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleFileChange = (event) => {
     setFile(event.target.files[0]);
@@ -15,7 +16,8 @@ function FileUpload() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setLoading(true); // Set loading to true when request starts
+    setLoading(true);
+    setError(null);
 
     const formData = new FormData();
     formData.append('file', file);
@@ -23,17 +25,17 @@ function FileUpload() {
     formData.append('response_type', responseType);
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/process/', {
-        method: 'POST',
-        body: formData,
+      const response = await axios.post('http://127.0.0.1:8000/process/', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+        responseType: responseType === 'json' ? 'json' : 'blob',
       });
 
       if (responseType === 'json') {
-        const data = await response.json();
-        setResponseData(data);
+        setResponseData(response.data);
       } else if (responseType === 'file') {
-        const blob = await response.blob();
-        const url = window.URL.createObjectURL(blob);
+        const url = window.URL.createObjectURL(new Blob([response.data]));
         const a = document.createElement('a');
         a.href = url;
         a.download = `${file.name}.json`;
@@ -43,10 +45,17 @@ function FileUpload() {
       }
     } catch (error) {
       console.error('Error:', error);
+      setError(`Failed to process the request: ${error.message}`);
     } finally {
-      setLoading(false); // Set loading to false when request completes or fails
+      setLoading(false);
     }
   };
+
+  useEffect(() => {
+    if (responseData) {
+      console.log('responseData updated:', responseData);
+    }
+  }, [responseData]);
 
   return (
     <div className="container mt-5">
@@ -63,6 +72,7 @@ function FileUpload() {
                     className="form-control" 
                     id="fileInput" 
                     onChange={handleFileChange} 
+                    required 
                   />
                 </div>
                 <div className="mb-3">
@@ -72,6 +82,7 @@ function FileUpload() {
                     className="form-select"
                     value={codeSystem}
                     onChange={(e) => setCodeSystem(e.target.value)}
+                    required
                   >
                     <option value="cogatlas">Cognitive Atlas</option>
                     <option value="snomed">SNOMED</option>
@@ -84,6 +95,7 @@ function FileUpload() {
                     className="form-select"
                     value={responseType}
                     onChange={(e) => setResponseType(e.target.value)}
+                    required
                   >
                     <option value="file">File</option>
                     <option value="json">JSON</option>
@@ -102,10 +114,18 @@ function FileUpload() {
                 </div>
               )}
 
+              {error && (
+                <div className="text-center text-danger mt-3">
+                  {error}
+                </div>
+              )}
+
               {responseType === 'json' && responseData && !loading && (
                 <div className="mt-4">
                   <h2 className="h5">JSON Response:</h2>
-                  <pre className="bg-light p-3 rounded">{JSON.stringify(responseData, null, 2)}</pre>
+                  <pre className="bg-light p-3 rounded">
+                    {JSON.stringify(responseData, null, 2)}
+                  </pre>
                 </div>
               )}
             </div>
