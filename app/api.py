@@ -5,7 +5,7 @@ from typing import Union
 from fastapi import FastAPI, HTTPException, Query, UploadFile, File
 from fastapi.responses import FileResponse, JSONResponse
 import os
-
+from fastapi.middleware.cors import CORSMiddleware
 from processing import process_file
 
 app = FastAPI(
@@ -21,6 +21,16 @@ app = FastAPI(
 
     2. Hit the Execute button and the API will process the file and return a JSON (file) with the annotations.\n
         (Please be patient, the magic takes a while to happen...like really a while)\n""",
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "*"
+    ],  # --> Change this to the domain of the frontend in production
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 
