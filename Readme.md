@@ -44,7 +44,7 @@ To run the current version of the LLM-based Annotation Tool locally execute
 the following command to start the uvicorn server locally:
 
 ```
-python3 app/api.py --host 127.0.0.1 --port 8000 
+python3 app/api.py --host 127.0.0.1 --port 9000 
 ```
 
 - For accessing the API via the browser please follow the instructions [here](#access-the-api-via-the-gui).
@@ -76,7 +76,7 @@ docker run -d
 -v ollama:/root/.ollama 
 -v /some/local/path/output:/app/output/  
 --name instance_name
--p 9000:8000 
+-p 9000:9000 
 annotation-tool-ai
 ```
 
@@ -86,24 +86,47 @@ Let't break down the command:
 - `-v ollama:root/.ollama`: The -v flag mounts external volumes into the container. In this case the models used within the container are stored locally as well as *Docker volumes* - these are created and managed by Docker itself and is not directly accessible via the local file system.
 - `-v /path/to/some/local/folder/:/app/output/`: This is a bind mount (also indicated by the -v flag) and makes a local directory accessible to the container. Via this folder the input and output files (i.e. the `.tsv` input and `.json` output files) are passed to the container but since the directory is mounted also locally accessible. Within the container the files are located in `app/output/`. For more information about Docker volumes vs. Bind mounts see [here](https://www.geeksforgeeks.org/docker-volume-vs-bind-mount/).
 - `--name instance-name`: Here you choose a (nice) name for your container from the image we created in the step above.
-- `-p 9000:8000`: Mount port for API requests inside the container
+- `-p 9000:9000`: Mount port for API requests inside the container
 - `annotation-tool-ai`: Name of the image we create the instance of.
 
-## Access the API via the GUI
+## Access the tool
+
+After successful deployment there are three options how to access the tool - either accessing the API directly, accessing it via the UI or running it via the command line. Independent of the access mode there are two parameters that have to be set:
+
+| Parameter | Value | Info  |   
+|---|---|---|
+|`code_system`| `cogatlas`  | If assessment tools are identified within the provided `.tsv` file, the TermURLs and Labels from the [Cognitive Atlas](https://www.cognitiveatlas.org/) are assigned (if available). `cogatlas` is the default value.   |
+|   | `snomed`  | If assessment tools are identified within the provided `.tsv` file, the TermURLs and Labels from [SNOMED CT](https://www.snomed.org/) are assigned (if available).  |
+|`response_type`| `file` | After categorization and annotation the API provides a `.json` file ready to download. `file` is the default value |
+| | `json` | After categorization and annotation the API provides the raw JSON output.
+
+
+### Access the API directly
 
 Once the `docker run` command or the `app/api.py` script has been executed, the uvicorn server for the FastAPI application will be initiated. To access the GUI for the API, please enter the following in your browser and follow the instructions provided.
 
-- Docker
 ```
 http://127.0.0.1:9000/docs
 ```
 
-- Locally
-```
-http://127.0.0.1:8000/docs
-```
+![startAPI](docs/img/api-load.png)
 
-## The User-Interface
+#### Results API
+
+
+If `file` is the chosen `response_type` a `.json` file will be provided for download:
+
+![fileResponse](docs/img/fileResponse.png)
+
+If `json` is the chosen `response_type` the direct JSON output will be provided by the API:
+
+![jsonResponse](docs/img/jsonResponse.png)
+
+
+Well done - you have annotated your tabular file! 
+(It's clear that this documentation is written in a way that you can follow the instructions and annotate your tabular file.)
+
+### Access the Tool via the the User-Interface
 
 If you don't want to access the tool directly through the API, but rather through a more user-friendly interface, you can set up the integrated UI locally on your machine.
 
@@ -126,58 +149,34 @@ If this was successful, the terminal shows:
 
 ![ui-start](docs/img/ui-start.png)
 
-and the userinterface is accessible via `http://localhost:3000`
+and the userinterface is accessible via `http://localhost:3000`. Please follow the instructions there.
 
-### Explanation of parameters used
+![ui-success](docs/img/ui-success.png)
 
-| param | value | info  |   
-|---|---|---|
-|`code_system`| `cogatlas`  | If assessment tools are identified within the provided `.tsv` file, the TermURLs and Labels from the [Cognitive Atlas](https://www.cognitiveatlas.org/) are assigned (if available). `cogatlas` is the default value.   |
-|   | `snomed`  | If assessment tools are identified within the provided `.tsv` file, the TermURLs and Labels from [SNOMED CT](https://www.snomed.org/) are assigned (if available).  |
-|`response_type`| `file` | After categorization and annotation the API provides a `.json` file ready to download. `file` is the default value |
-| | `json` | After categorization and annotation the API provides the raw JSON output.
+#### Results UI
 
-![startAPI](docs/img/api-load.png)
+If `JSON` is the parameter chosen for response type, after running you data you should get something like:
 
+![alt text](docs/img/ui-json.png)
 
-### Results
+If `File` is the chosen response type, a file will be automatically downloaded.
 
-If `file` is the chosen `response_type` a `.json` file will be provided for download:
-
-
-![fileResponse](docs/img/fileResponse.png)
-
-If `json` is the chosen `response_type` the direct JSON output will be provided by the API:
-
-![jsonResponse](docs/img/jsonResponse.png)
-
-
-Well done - you have annotated your tabular file! 
-(It's clear that this documentation is written in a way that you can follow the instructions and annotate your tabular file.)
-
-## Using the tool from the command line
+### Using the tool from the command line
 
 The following command runs the script for the annotation process if you deployed it via docker (i.e. access is from INSIDE the docker container):
 
 Please choose the `code_system`, `response_type`and indicate the correct `instance_name` and filepaths.
 ```
-docker exec -it instance_name curl -X POST "http://127.0.0.1:8000/process/?code_system=<snomed | cogatlas>&response_type=<file | json>" 
+docker exec -it instance_name curl -X POST "http://127.0.0.1/9000/process/?code_system=<snomed | cogatlas>&response_type=<file | json>" 
 -F "file=@<filepath-to-tsv-inside-container>.tsv" 
 -o <filepath-to-output-file-inside-container>.json
 ```
 
-If you chose the local deployment you can run the tool via this command:
-
----
-**NOTE**
-
-If you want to access the dockerized API from outside the container the command is the same as for the local deployment, but the port changes from 8000 to 9000.
-
---- 
+If you chose the local deployment or you want to access the container from outside of it you can run the tool via this command:
 
 ```
-curl -X POST "http://127.0.0.1:8000/process/?code_system=<snomed | cogatlas>&response_type=<file | json>" 
--F "file=@<filepath-to-tsv-inside-container>.tsv" 
+curl -X POST "http://127.0.0.1:9000/process/?code_system=<snomed | cogatlas>&response_type=<file | json>" 
+-F "file=@<filepath-to-tsv-outside-container>.tsv" 
 -o <filepath-to-output-file-inside-container>.json
 ```
 
@@ -194,10 +193,6 @@ Let's break down this again (for non-docker deployment ignore the first 3 list i
 The `-o <filepath-to-output-file-inside-container>.json` is only necessary if `file` is chosen as `response_type` parameter.
 
 ---
-
-
-
-
 
 # Details of the codebase 
 
