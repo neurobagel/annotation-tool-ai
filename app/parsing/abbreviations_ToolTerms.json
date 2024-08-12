@@ -1,0 +1,5688 @@
+[
+    {
+        "label": "delayed memory task",
+        "abbreviations": [
+            "DMT",
+            "DMTS"
+        ]
+    },
+    {
+        "label": "regulated heat stimulation",
+        "abbreviations": [
+            "RHTS",
+            "RHS"
+        ]
+    },
+    {
+        "label": "2-stage decision task",
+        "abbreviations": [
+            "TSTD",
+            "DST"
+        ]
+    },
+    {
+        "label": "backward masking",
+        "abbreviations": [
+            "BM",
+            "BWM"
+        ]
+    },
+    {
+        "label": "size match task",
+        "abbreviations": [
+            "SMT"
+        ]
+    },
+    {
+        "label": "adaptive n-back task",
+        "abbreviations": [
+            "ANT",
+            "ANT-T"
+        ]
+    },
+    {
+        "label": "object decision task",
+        "abbreviations": [
+            "ODT",
+            "ODTS",
+            "ODTs",
+            "ODTT"
+        ]
+    },
+    {
+        "label": "incentive modulated antisaccade task",
+        "abbreviations": [
+            "IMAST"
+        ]
+    },
+    {
+        "label": "overlapping figures task",
+        "abbreviations": [
+            "OVT",
+            "OFT"
+        ]
+    },
+    {
+        "label": "meditation task",
+        "abbreviations": [
+            "MTT",
+            "MTB",
+            "MT",
+            "MTI",
+            "MTx"
+        ]
+    },
+    {
+        "label": "trace conditioning",
+        "abbreviations": [
+            "T-Cond",
+            "TC",
+            "TCing"
+        ]
+    },
+    {
+        "label": "hungry donkey task",
+        "abbreviations": [
+            "HDTS"
+        ]
+    },
+    {
+        "label": "image monitoring",
+        "abbreviations": [
+            "IM"
+        ]
+    },
+    {
+        "label": "2nd-order rule acquisition",
+        "abbreviations": [
+            "SORAC",
+            "SOA"
+        ]
+    },
+    {
+        "label": "pebl perceptual vigilance task",
+        "abbreviations": [
+            "PVAT"
+        ]
+    },
+    {
+        "label": "orientation match task",
+        "abbreviations": [
+            "OMT",
+            "OMTT"
+        ]
+    },
+    {
+        "label": "vandenberg & kuse tasks",
+        "abbreviations": [
+            "VKPT",
+            "VKS"
+        ]
+    },
+    {
+        "label": "color-word stroop task",
+        "abbreviations": [
+            "CWST",
+            "CWS"
+        ]
+    },
+    {
+        "label": "penn continuous performance task",
+        "abbreviations": [
+            "CPPT",
+            "CPT",
+            "PCT"
+        ]
+    },
+    {
+        "label": "word-picture verification task",
+        "abbreviations": [
+            "WPVT"
+        ]
+    },
+    {
+        "label": "block design test",
+        "abbreviations": [
+            "BDT"
+        ]
+    },
+    {
+        "label": "embedded figures test",
+        "abbreviations": [
+            "EFT"
+        ]
+    },
+    {
+        "label": "same-different task",
+        "abbreviations": [
+            "SDT",
+            "SDT-T"
+        ]
+    },
+    {
+        "label": "chimeric animal stroop task",
+        "abbreviations": [
+            "CAST",
+            "CAMST"
+        ]
+    },
+    {
+        "label": "rapid automatized naming test",
+        "abbreviations": [
+            "RANT"
+        ]
+    },
+    {
+        "label": "underlining test",
+        "abbreviations": [
+            "UT",
+            "UTT"
+        ]
+    },
+    {
+        "label": "wisc-r mazes",
+        "abbreviations": [
+            "WM",
+            "WMR"
+        ]
+    },
+    {
+        "label": "rapid serial object transformation",
+        "abbreviations": [
+            "RSOT"
+        ]
+    },
+    {
+        "label": "wechsler abbreviated scale of intelligence",
+        "abbreviations": [
+            "WASI",
+            "WAIS"
+        ]
+    },
+    {
+        "label": "wechsler memory scale fourth edition",
+        "abbreviations": [
+            "WMS-IV"
+        ]
+    },
+    {
+        "label": "microcog",
+        "abbreviations": [
+            "MCog",
+            "MC"
+        ]
+    },
+    {
+        "label": "letter number sequencing",
+        "abbreviations": [
+            "LNSS",
+            "LNS"
+        ]
+    },
+    {
+        "label": "oculomotor delayed response",
+        "abbreviations": [
+            "ODR",
+            "ODRT"
+        ]
+    },
+    {
+        "label": "operation span task",
+        "abbreviations": [
+            "OST",
+            "OSTT"
+        ]
+    },
+    {
+        "label": "reading span task",
+        "abbreviations": [
+            "RST",
+            "RTS"
+        ]
+    },
+    {
+        "label": "listening span task",
+        "abbreviations": [
+            "LPT",
+            "LST"
+        ]
+    },
+    {
+        "label": "ax-cpt task",
+        "abbreviations": [
+            "AXCT",
+            "AT"
+        ]
+    },
+    {
+        "label": "self ordered pointing task",
+        "abbreviations": [
+            "SOP"
+        ]
+    },
+    {
+        "label": "keep-track task",
+        "abbreviations": [
+            "KTT",
+            "KT"
+        ]
+    },
+    {
+        "label": "acupuncture task",
+        "abbreviations": [
+            "ATx",
+            "AT"
+        ]
+    },
+    {
+        "label": "braille reading task",
+        "abbreviations": [
+            "BR",
+            "BRT"
+        ]
+    },
+    {
+        "label": "breath-holding",
+        "abbreviations": [
+            "BH"
+        ]
+    },
+    {
+        "label": "chewing/swallowing",
+        "abbreviations": [
+            "ORS",
+            "DS"
+        ]
+    },
+    {
+        "label": "pavlovian conditioning task",
+        "abbreviations": [
+            "PCP",
+            "PCT",
+            "PC"
+        ]
+    },
+    {
+        "label": "counting/calculation",
+        "abbreviations": [
+            "NumCalc",
+            "Arithmetics",
+            "Cnt",
+            "Stats",
+            "Num",
+            "Calc",
+            "Numeral"
+        ]
+    },
+    {
+        "label": "cued explicit recognition",
+        "abbreviations": [
+            "CERx",
+            "ER",
+            "CER",
+            "CE-R"
+        ]
+    },
+    {
+        "label": "deception task",
+        "abbreviations": [
+            "DT",
+            "DCT"
+        ]
+    },
+    {
+        "label": "deductive reasoning task",
+        "abbreviations": [
+            "DTT",
+            "DRT"
+        ]
+    },
+    {
+        "label": "divided auditory attention",
+        "abbreviations": [
+            "DAAT",
+            "DAA"
+        ]
+    },
+    {
+        "label": "drawing",
+        "abbreviations": [
+            "Drawing\\n\\n* Draw = D\\n* Drawing = DWG",
+            "Draw"
+        ]
+    },
+    {
+        "label": "eating/drinking",
+        "abbreviations": [
+            "AD",
+            "EDx",
+            "CDA",
+            "ED"
+        ]
+    },
+    {
+        "label": "encoding task",
+        "abbreviations": [
+            "ET"
+        ]
+    },
+    {
+        "label": "episodic recall",
+        "abbreviations": [
+            "ER"
+        ]
+    },
+    {
+        "label": "face monitor/discrimination",
+        "abbreviations": [
+            "FM"
+        ]
+    },
+    {
+        "label": "film viewing",
+        "abbreviations": [
+            "MV",
+            "FV",
+            "FTV"
+        ]
+    },
+    {
+        "label": "finger tapping task",
+        "abbreviations": [
+            "FITT"
+        ]
+    },
+    {
+        "label": "fixation task",
+        "abbreviations": [
+            "FT"
+        ]
+    },
+    {
+        "label": "flashing checkerboard",
+        "abbreviations": [
+            "FCBO",
+            "FCB"
+        ]
+    },
+    {
+        "label": "flexion/extension",
+        "abbreviations": [
+            "FEF"
+        ]
+    },
+    {
+        "label": "free word list recall",
+        "abbreviations": [
+            "FWLR"
+        ]
+    },
+    {
+        "label": "grasping task",
+        "abbreviations": [
+            "GT"
+        ]
+    },
+    {
+        "label": "imagined movement",
+        "abbreviations": [
+            "IM"
+        ]
+    },
+    {
+        "label": "imagined objects/scenes",
+        "abbreviations": [
+            "ISOS",
+            "IPS",
+            "IO",
+            "ISO",
+            "IMAG",
+            "IVO",
+            "IMAGES"
+        ]
+    },
+    {
+        "label": "isometric force",
+        "abbreviations": [
+            "IF",
+            "ISF"
+        ]
+    },
+    {
+        "label": "mental rotation task",
+        "abbreviations": [
+            "MRT"
+        ]
+    },
+    {
+        "label": "micturition task",
+        "abbreviations": [
+            "UT",
+            "MTT",
+            "MT"
+        ]
+    },
+    {
+        "label": "music comprehension/production",
+        "abbreviations": [
+            "MCP",
+            "MUSIP",
+            "MC/P"
+        ]
+    },
+    {
+        "label": "naming (covert)",
+        "abbreviations": [
+            "CN"
+        ]
+    },
+    {
+        "label": "naming (overt)",
+        "abbreviations": [
+            "ON",
+            "ONO"
+        ]
+    },
+    {
+        "label": "non-painful electrical stimulation",
+        "abbreviations": [
+            "NPE",
+            "NES"
+        ]
+    },
+    {
+        "label": "non-painful thermal stimulation",
+        "abbreviations": [
+            "NTS",
+            "NPTS"
+        ]
+    },
+    {
+        "label": "olfactory monitoring/discrimination",
+        "abbreviations": [
+            "OMD",
+            "OMF"
+        ]
+    },
+    {
+        "label": "orthographic discrimination",
+        "abbreviations": [
+            "OD"
+        ]
+    },
+    {
+        "label": "pain monitor/discrimination task",
+        "abbreviations": [
+            "PMDTs",
+            "PMDT"
+        ]
+    },
+    {
+        "label": "paired associate recall",
+        "abbreviations": [
+            "PAIR"
+        ]
+    },
+    {
+        "label": "passive listening",
+        "abbreviations": [
+            "PL"
+        ]
+    },
+    {
+        "label": "passive viewing",
+        "abbreviations": [
+            "PV"
+        ]
+    },
+    {
+        "label": "phonological discrimination",
+        "abbreviations": [
+            "PDIM",
+            "PDISC",
+            "PD"
+        ]
+    },
+    {
+        "label": "pitch/monitor discrimination",
+        "abbreviations": [
+            "PMD"
+        ]
+    },
+    {
+        "label": "pointing task",
+        "abbreviations": [
+            "PTM",
+            "PTA",
+            "PT"
+        ]
+    },
+    {
+        "label": "reading (covert)",
+        "abbreviations": [
+            "CR"
+        ]
+    },
+    {
+        "label": "reading (overt)",
+        "abbreviations": [
+            "RO"
+        ]
+    },
+    {
+        "label": "recitation/repetition (covert)",
+        "abbreviations": [
+            "RR"
+        ]
+    },
+    {
+        "label": "recitation/repetition (overt)",
+        "abbreviations": [
+            "OR",
+            "RO"
+        ]
+    },
+    {
+        "label": "rest eyes open",
+        "abbreviations": [
+            "REO"
+        ]
+    },
+    {
+        "label": "motor screening task",
+        "abbreviations": [
+            "MSTT",
+            "MST",
+            "MoST"
+        ]
+    },
+    {
+        "label": "sequence recall/learning",
+        "abbreviations": [
+            "SR/L",
+            "SR",
+            "SRL"
+        ]
+    },
+    {
+        "label": "spatial location/discrimination",
+        "abbreviations": [
+            "SLD",
+            "SL",
+            "SDL"
+        ]
+    },
+    {
+        "label": "subjective emotional picture discrimination",
+        "abbreviations": [
+            "SEPD",
+            "SEPPD"
+        ]
+    },
+    {
+        "label": "syntactic discrimination",
+        "abbreviations": [
+            "SD"
+        ]
+    },
+    {
+        "label": "tactile monitor/discrimination",
+        "abbreviations": [
+            "TM",
+            "TD",
+            "TMD"
+        ]
+    },
+    {
+        "label": "theory of mind task",
+        "abbreviations": [
+            "ToM"
+        ]
+    },
+    {
+        "label": "tone monitor/discrimination",
+        "abbreviations": [
+            "TM",
+            "TMD"
+        ]
+    },
+    {
+        "label": "vibrotactile monitor/discrimination",
+        "abbreviations": [
+            "VTM",
+            "VM"
+        ]
+    },
+    {
+        "label": "video games",
+        "abbreviations": [
+            "VGS",
+            "VG",
+            "VGAs"
+        ]
+    },
+    {
+        "label": "visual attention task",
+        "abbreviations": [
+            "VAT-T",
+            "VAT",
+            "VATS",
+            "VAS",
+            "VTT"
+        ]
+    },
+    {
+        "label": "visual pursuit/tracking",
+        "abbreviations": [
+            "VPTS",
+            "VP/TS",
+            "VPT"
+        ]
+    },
+    {
+        "label": "whistling",
+        "abbreviations": [
+            "WS"
+        ]
+    },
+    {
+        "label": "word stem completion (covert)",
+        "abbreviations": [
+            "WSC"
+        ]
+    },
+    {
+        "label": "word stem completion (overt)",
+        "abbreviations": [
+            "WSC-O",
+            "WOSC"
+        ]
+    },
+    {
+        "label": "writing task",
+        "abbreviations": [
+            "WT"
+        ]
+    },
+    {
+        "label": "mixed gambles task",
+        "abbreviations": [
+            "MGT",
+            "MGTM"
+        ]
+    },
+    {
+        "label": "probabilistic classification task",
+        "abbreviations": [
+            "PC-T",
+            "PCAT"
+        ]
+    },
+    {
+        "label": "conditional stop signal task",
+        "abbreviations": [
+            "CSS"
+        ]
+    },
+    {
+        "label": "action imitation task",
+        "abbreviations": [
+            "AIT",
+            "IAT"
+        ]
+    },
+    {
+        "label": "action observation task",
+        "abbreviations": [
+            "AOT-T",
+            "AOV",
+            "AOTask",
+            "AOT"
+        ]
+    },
+    {
+        "label": "adult attachment interview",
+        "abbreviations": [
+            "AAI"
+        ]
+    },
+    {
+        "label": "antisaccade/prosaccade task",
+        "abbreviations": [
+            "ASP/T",
+            "ASPT"
+        ]
+    },
+    {
+        "label": "rapid serial visual presentation task",
+        "abbreviations": [
+            "RSVP-T",
+            "RSVP"
+        ]
+    },
+    {
+        "label": "audio-visual target detection task",
+        "abbreviations": [
+            "AVTDT"
+        ]
+    },
+    {
+        "label": "backward digit span task",
+        "abbreviations": [
+            "BDST"
+        ]
+    },
+    {
+        "label": "behavioral rating inventory of executive function",
+        "abbreviations": [
+            "BRIEF"
+        ]
+    },
+    {
+        "label": "benton facial recognition test",
+        "abbreviations": [
+            "BFRT",
+            "BFRS"
+        ]
+    },
+    {
+        "label": "birmingham object recognition battery",
+        "abbreviations": [
+            "BORB"
+        ]
+    },
+    {
+        "label": "block tapping test",
+        "abbreviations": [
+            "BT Test",
+            "BT"
+        ]
+    },
+    {
+        "label": "boston naming test",
+        "abbreviations": [
+            "BTN",
+            "BNT",
+            "BNTS"
+        ]
+    },
+    {
+        "label": "california verbal learning test-ii",
+        "abbreviations": [
+            "CVLT-II"
+        ]
+    },
+    {
+        "label": "cambridge face memory test",
+        "abbreviations": [
+            "CFMT",
+            "CFT"
+        ]
+    },
+    {
+        "label": "category fluency test",
+        "abbreviations": [
+            "CFT"
+        ]
+    },
+    {
+        "label": "choice reaction time task",
+        "abbreviations": [
+            "CHART",
+            "CRT",
+            "CRTT"
+        ]
+    },
+    {
+        "label": "clinical evaluation of language fundamentals-3",
+        "abbreviations": [
+            "CELF-3"
+        ]
+    },
+    {
+        "label": "color-discrimination task",
+        "abbreviations": [
+            "CDT",
+            "CD",
+            "CDCD"
+        ]
+    },
+    {
+        "label": "continuous recognition paradigm",
+        "abbreviations": [
+            "CRP",
+            "CRPD"
+        ]
+    },
+    {
+        "label": "cups task",
+        "abbreviations": [
+            "CT"
+        ]
+    },
+    {
+        "label": "delayed match to sample task",
+        "abbreviations": [
+            "DMTS"
+        ]
+    },
+    {
+        "label": "delayed nonmatch to sample task",
+        "abbreviations": [
+            "DNMS"
+        ]
+    },
+    {
+        "label": "delayed recall test",
+        "abbreviations": [
+            "DRTT",
+            "DRT"
+        ]
+    },
+    {
+        "label": "digit span task",
+        "abbreviations": [
+            "DS",
+            "DSTM"
+        ]
+    },
+    {
+        "label": "digit/symbol coding test",
+        "abbreviations": [
+            "DSCT",
+            "DSC",
+            "DSTT",
+            "DST"
+        ]
+    },
+    {
+        "label": "doors and people test",
+        "abbreviations": [
+            "DPT"
+        ]
+    },
+    {
+        "label": "edinburgh handedness inventory",
+        "abbreviations": [
+            "EHJI"
+        ]
+    },
+    {
+        "label": "eriksen flanker task",
+        "abbreviations": [
+            "ETF"
+        ]
+    },
+    {
+        "label": "extradimensional shift task",
+        "abbreviations": [
+            "EDS",
+            "EDST",
+            "EST"
+        ]
+    },
+    {
+        "label": "face n-back task",
+        "abbreviations": [
+            "FNBT",
+            "FNT"
+        ]
+    },
+    {
+        "label": "fagerstrom test for nicotine dependence",
+        "abbreviations": [
+            "FTND",
+            "FTNI"
+        ]
+    },
+    {
+        "label": "forward digit span task",
+        "abbreviations": [
+            "FDST"
+        ]
+    },
+    {
+        "label": "go/no-go task",
+        "abbreviations": [
+            "GNWT"
+        ]
+    },
+    {
+        "label": "gray oral reading test - 4",
+        "abbreviations": [
+            "GORT-4"
+        ]
+    },
+    {
+        "label": "hooper visual organization test",
+        "abbreviations": [
+            "HOVOT"
+        ]
+    },
+    {
+        "label": "immediate recall test",
+        "abbreviations": [
+            "IRM",
+            "IRT"
+        ]
+    },
+    {
+        "label": "international affective picture system",
+        "abbreviations": [
+            "IAPS"
+        ]
+    },
+    {
+        "label": "intradimensional shift task",
+        "abbreviations": [
+            "IDST"
+        ]
+    },
+    {
+        "label": "iowa gambling task",
+        "abbreviations": [
+            "IGT"
+        ]
+    },
+    {
+        "label": "ishihara plates for color blindness",
+        "abbreviations": [
+            "IHP",
+            "IshiHPP"
+        ]
+    },
+    {
+        "label": "kanizsa figures",
+        "abbreviations": [
+            "KFS",
+            "KFAs",
+            "KF"
+        ]
+    },
+    {
+        "label": "letter fluency test",
+        "abbreviations": [
+            "LFT",
+            "FLT",
+            "LFTT"
+        ]
+    },
+    {
+        "label": "letter n-back task",
+        "abbreviations": [
+            "NBT",
+            "N-Back",
+            "LNB"
+        ]
+    },
+    {
+        "label": "letter naming task",
+        "abbreviations": [
+            "LNT"
+        ]
+    },
+    {
+        "label": "lexical decision task",
+        "abbreviations": [
+            "LDT",
+            "LDTT"
+        ]
+    },
+    {
+        "label": "matching pennies game",
+        "abbreviations": [
+            "MPG"
+        ]
+    },
+    {
+        "label": "maudsley obsessive compulsive inventory",
+        "abbreviations": [
+            "MOCI",
+            "MOCSI",
+            "MOCI-40"
+        ]
+    },
+    {
+        "label": "mini mental state examination",
+        "abbreviations": [
+            "MMSE"
+        ]
+    },
+    {
+        "label": "motor sequencing task",
+        "abbreviations": [
+            "MAST",
+            "MST"
+        ]
+    },
+    {
+        "label": "n-back task",
+        "abbreviations": [
+            "NBT",
+            "NT"
+        ]
+    },
+    {
+        "label": "nine-hole peg test",
+        "abbreviations": [
+            "NHPT"
+        ]
+    },
+    {
+        "label": "object-discrimination task",
+        "abbreviations": [
+            "ODT"
+        ]
+    },
+    {
+        "label": "oddball task",
+        "abbreviations": [
+            "ODT",
+            "OT",
+            "OTO"
+        ]
+    },
+    {
+        "label": "pantomime task",
+        "abbreviations": [
+            "PT"
+        ]
+    },
+    {
+        "label": "parrott scale",
+        "abbreviations": [
+            "PSQ",
+            "PSR",
+            "PS"
+        ]
+    },
+    {
+        "label": "picture naming task",
+        "abbreviations": [
+            "PNT",
+            "PNP"
+        ]
+    },
+    {
+        "label": "positive and negative affect scale",
+        "abbreviations": [
+            "PANASX",
+            "PANAS"
+        ]
+    },
+    {
+        "label": "posner cueing task",
+        "abbreviations": [
+            "PCT"
+        ]
+    },
+    {
+        "label": "pseudoword naming task",
+        "abbreviations": [
+            "PWNT",
+            "PNT"
+        ]
+    },
+    {
+        "label": "pyramids and palm trees task",
+        "abbreviations": [
+            "PPTT"
+        ]
+    },
+    {
+        "label": "recognition memory test",
+        "abbreviations": [
+            "RM",
+            "RMT"
+        ]
+    },
+    {
+        "label": "reversal learning task",
+        "abbreviations": [
+            "RLT",
+            "RLTask"
+        ]
+    },
+    {
+        "label": "risky gains task",
+        "abbreviations": [
+            "RTG"
+        ]
+    },
+    {
+        "label": "salthouse and babcock listening span task",
+        "abbreviations": [
+            "LST",
+            "SLSP"
+        ]
+    },
+    {
+        "label": "selective attention task",
+        "abbreviations": [
+            "SART",
+            "SAT"
+        ]
+    },
+    {
+        "label": "semantic anomaly judgement task",
+        "abbreviations": [
+            "SAJT-T",
+            "SAJT"
+        ]
+    },
+    {
+        "label": "semantic association task",
+        "abbreviations": [
+            "SAT"
+        ]
+    },
+    {
+        "label": "sentence completion test",
+        "abbreviations": [
+            "SCT",
+            "SRT"
+        ]
+    },
+    {
+        "label": "set-shifting task",
+        "abbreviations": [
+            "SST",
+            "SET-T"
+        ]
+    },
+    {
+        "label": "simon task",
+        "abbreviations": [
+            "S-Task",
+            "ST"
+        ]
+    },
+    {
+        "label": "simple reaction time task",
+        "abbreviations": [
+            "SRTT",
+            "SRT"
+        ]
+    },
+    {
+        "label": "source memory test",
+        "abbreviations": [
+            "SMT",
+            "SRT"
+        ]
+    },
+    {
+        "label": "span/supra-span test",
+        "abbreviations": [
+            "SSST"
+        ]
+    },
+    {
+        "label": "spatial n-back task",
+        "abbreviations": [
+            "S-NBT",
+            "SNT",
+            "SNBT"
+        ]
+    },
+    {
+        "label": "spielberger's state-trait anxiety questionnaire",
+        "abbreviations": [
+            "STAI",
+            "STAIC"
+        ]
+    },
+    {
+        "label": "sternberg delayed recognition task",
+        "abbreviations": [
+            "SDRT"
+        ]
+    },
+    {
+        "label": "stop signal task",
+        "abbreviations": [
+            "SST",
+            "SSTT"
+        ]
+    },
+    {
+        "label": "stroop task",
+        "abbreviations": [
+            "SRT",
+            "STT"
+        ]
+    },
+    {
+        "label": "structured clinical interview for diagnostic and statistical manual of mental disorders (dsm-iv)",
+        "abbreviations": [
+            "SCID"
+        ]
+    },
+    {
+        "label": "symbol-digit substitution",
+        "abbreviations": [
+            "SDS"
+        ]
+    },
+    {
+        "label": "symptom checklist-90-revised",
+        "abbreviations": [
+            "SCL-90-R"
+        ]
+    },
+    {
+        "label": "syntactic acceptability judgement task",
+        "abbreviations": [
+            "SAT",
+            "SAJT"
+        ]
+    },
+    {
+        "label": "task-switching",
+        "abbreviations": [
+            "TS",
+            "TSW"
+        ]
+    },
+    {
+        "label": "temporal discounting task",
+        "abbreviations": [
+            "TDTS"
+        ]
+    },
+    {
+        "label": "test of word reading efficiency",
+        "abbreviations": [
+            "TEEREF",
+            "TEWL"
+        ]
+    },
+    {
+        "label": "tobacco craving questionnaire",
+        "abbreviations": [
+            "TTQQ",
+            "TCQ"
+        ]
+    },
+    {
+        "label": "trail making test a and b",
+        "abbreviations": [
+            "TMT A&B"
+        ]
+    },
+    {
+        "label": "unified parkinson's disease rating scale",
+        "abbreviations": [
+            "UPDRS"
+        ]
+    },
+    {
+        "label": "visual alignment task",
+        "abbreviations": [
+            "VAT",
+            "VAST"
+        ]
+    },
+    {
+        "label": "visuospatial cueing task",
+        "abbreviations": [
+            "VST",
+            "VSCP"
+        ]
+    },
+    {
+        "label": "warrington's face/word recognition test",
+        "abbreviations": [
+            "WFA",
+            "WFORT",
+            "FRT"
+        ]
+    },
+    {
+        "label": "wechsler adult intelligence scale-revised",
+        "abbreviations": [
+            "WAIS-R",
+            "WAIS-IV"
+        ]
+    },
+    {
+        "label": "wechsler adult intelligence scale - revised",
+        "abbreviations": [
+            "WAIS-R"
+        ]
+    },
+    {
+        "label": "wisconsin card sorting test",
+        "abbreviations": [
+            "WCST-T",
+            "WCSS",
+            "WCST"
+        ]
+    },
+    {
+        "label": "word attack",
+        "abbreviations": [
+            "WA"
+        ]
+    },
+    {
+        "label": "word generation task",
+        "abbreviations": [
+            "WGTT"
+        ]
+    },
+    {
+        "label": "word identification",
+        "abbreviations": [
+            "WI"
+        ]
+    },
+    {
+        "label": "cambridge gambling task",
+        "abbreviations": [
+            "CGT"
+        ]
+    },
+    {
+        "label": "probabilistic gambling task",
+        "abbreviations": [
+            "PGT"
+        ]
+    },
+    {
+        "label": "behavioral investment allocation strategy",
+        "abbreviations": [
+            "BIAS",
+            "BIS"
+        ]
+    },
+    {
+        "label": "non-choice task",
+        "abbreviations": [
+            "NCT"
+        ]
+    },
+    {
+        "label": "balloon analogue risk task",
+        "abbreviations": [
+            "BART"
+        ]
+    },
+    {
+        "label": "devil's task",
+        "abbreviations": [
+            "DT"
+        ]
+    },
+    {
+        "label": "choice task between risky and non-risky options",
+        "abbreviations": [
+            "RTN"
+        ]
+    },
+    {
+        "label": "inductive reasoning aptitude",
+        "abbreviations": [
+            "IRA",
+            "IRAT"
+        ]
+    },
+    {
+        "label": "rhyme verification task",
+        "abbreviations": [
+            "RVT",
+            "RVF"
+        ]
+    },
+    {
+        "label": "attention networks test",
+        "abbreviations": [
+            "ANT"
+        ]
+    },
+    {
+        "label": "remember/know task",
+        "abbreviations": [
+            "RKT",
+            "RK Task",
+            "RMK"
+        ]
+    },
+    {
+        "label": "probabilistic reversal learning task",
+        "abbreviations": [
+            "PRMT",
+            "PRLT"
+        ]
+    },
+    {
+        "label": "counting stroop task",
+        "abbreviations": [
+            "CST"
+        ]
+    },
+    {
+        "label": "scene recognition task",
+        "abbreviations": [
+            "SRT"
+        ]
+    },
+    {
+        "label": "california verbal learning test",
+        "abbreviations": [
+            "CVLT"
+        ]
+    },
+    {
+        "label": "wechsler intelligence scale for children - revised",
+        "abbreviations": [
+            "WISC-IV",
+            "WISC-R",
+            "WI-S-C IV"
+        ]
+    },
+    {
+        "label": "word fluency test",
+        "abbreviations": [
+            "WF",
+            "WFT"
+        ]
+    },
+    {
+        "label": "color trails test",
+        "abbreviations": [
+            "CTT",
+            "CTT-I",
+            "CTT-T",
+            "CTTS"
+        ]
+    },
+    {
+        "label": "dual-task paradigm",
+        "abbreviations": [
+            "DTP",
+            "DT"
+        ]
+    },
+    {
+        "label": "item recognition task",
+        "abbreviations": [
+            "IRT",
+            "IRTS"
+        ]
+    },
+    {
+        "label": "memory span test",
+        "abbreviations": [
+            "MST",
+            "MS",
+            "MSPT"
+        ]
+    },
+    {
+        "label": "complex span test",
+        "abbreviations": [
+            "CNST",
+            "CST"
+        ]
+    },
+    {
+        "label": "spatial span test",
+        "abbreviations": [
+            "SST",
+            "SSTT"
+        ]
+    },
+    {
+        "label": "dot pattern expectancy task",
+        "abbreviations": [
+            "DPET"
+        ]
+    },
+    {
+        "label": "cattell's culture fair intelligence test",
+        "abbreviations": [
+            "CFIT",
+            "CFTI"
+        ]
+    },
+    {
+        "label": "letter comparison task",
+        "abbreviations": [
+            "LCT",
+            "LC"
+        ]
+    },
+    {
+        "label": "pattern comparison task",
+        "abbreviations": [
+            "PCT",
+            "PCPT"
+        ]
+    },
+    {
+        "label": "test of variables of attention",
+        "abbreviations": [
+            "TOVA-C",
+            "TVA",
+            "TOVA"
+        ]
+    },
+    {
+        "label": "sustained attention to response task",
+        "abbreviations": [
+            "SART"
+        ]
+    },
+    {
+        "label": "matching familiar figures test",
+        "abbreviations": [
+            "FFM",
+            "MFRT"
+        ]
+    },
+    {
+        "label": "tower of london",
+        "abbreviations": [
+            "TL",
+            "ToL"
+        ]
+    },
+    {
+        "label": "tower of hanoi",
+        "abbreviations": [
+            "TdH",
+            "TOH"
+        ]
+    },
+    {
+        "label": "dichotic listening task",
+        "abbreviations": [
+            "DLT",
+            "DLTs"
+        ]
+    },
+    {
+        "label": "directed forgetting task",
+        "abbreviations": [
+            "DFT"
+        ]
+    },
+    {
+        "label": "retrieval-induced forgetting task",
+        "abbreviations": [
+            "RIF"
+        ]
+    },
+    {
+        "label": "paced auditory serial addition test",
+        "abbreviations": [
+            "PASAT"
+        ]
+    },
+    {
+        "label": "porteus maze test",
+        "abbreviations": [
+            "PMT"
+        ]
+    },
+    {
+        "label": "rey-ostereith complex figure test",
+        "abbreviations": [
+            "ROCF"
+        ]
+    },
+    {
+        "label": "cambridge neuropsychological test automated battery",
+        "abbreviations": [
+            "CANTAB"
+        ]
+    },
+    {
+        "label": "corsi blocks",
+        "abbreviations": [
+            "CBI",
+            "CBS"
+        ]
+    },
+    {
+        "label": "visual patterns test",
+        "abbreviations": [
+            "VP",
+            "VPT"
+        ]
+    },
+    {
+        "label": "rivermead behavioural memory test",
+        "abbreviations": [
+            "RBMT"
+        ]
+    },
+    {
+        "label": "paired associate learning",
+        "abbreviations": [
+            "PAL"
+        ]
+    },
+    {
+        "label": "vigilance",
+        "abbreviations": [
+            "VIG"
+        ]
+    },
+    {
+        "label": "rey auditory verbal learning task",
+        "abbreviations": [
+            "RAVLT"
+        ]
+    },
+    {
+        "label": "nonword repetition task",
+        "abbreviations": [
+            "NWR",
+            "NRT"
+        ]
+    },
+    {
+        "label": "response mapping task",
+        "abbreviations": [
+            "RM",
+            "RTM"
+        ]
+    },
+    {
+        "label": "pursuit rotor task",
+        "abbreviations": [
+            "PRT",
+            "PRTT"
+        ]
+    },
+    {
+        "label": "alternating runs paradigm",
+        "abbreviations": [
+            "ARP"
+        ]
+    },
+    {
+        "label": "object alternation task",
+        "abbreviations": [
+            "OATT",
+            "OAT"
+        ]
+    },
+    {
+        "label": "animal naming task",
+        "abbreviations": [
+            "ANT"
+        ]
+    },
+    {
+        "label": "catbat task",
+        "abbreviations": [
+            "CATBAT"
+        ]
+    },
+    {
+        "label": "haptic illusion task",
+        "abbreviations": [
+            "HIT"
+        ]
+    },
+    {
+        "label": "brixton spatial anticipation test",
+        "abbreviations": [
+            "BST"
+        ]
+    },
+    {
+        "label": "hayling sentence completion test",
+        "abbreviations": [
+            "HSCT"
+        ]
+    },
+    {
+        "label": "nih toolbox picture sequence memory test",
+        "abbreviations": [
+            "PSTS",
+            "PST",
+            "PSMT"
+        ]
+    },
+    {
+        "label": "uznadze haptic illusion task",
+        "abbreviations": [
+            "UHIT"
+        ]
+    },
+    {
+        "label": "emotional regulation task",
+        "abbreviations": [
+            "ERT"
+        ]
+    },
+    {
+        "label": "digit cancellation task",
+        "abbreviations": [
+            "DCAT",
+            "DCT"
+        ]
+    },
+    {
+        "label": "zoo map test",
+        "abbreviations": [
+            "ZM"
+        ]
+    },
+    {
+        "label": "morris water maze",
+        "abbreviations": [
+            "MWM"
+        ]
+    },
+    {
+        "label": "stockings of cambridge task",
+        "abbreviations": [
+            "SOCT"
+        ]
+    },
+    {
+        "label": "glasgow coma scale",
+        "abbreviations": [
+            "GCCS",
+            "GCS",
+            "GOS"
+        ]
+    },
+    {
+        "label": "early social and communication scales",
+        "abbreviations": [
+            "ESCS",
+            "ESSS"
+        ]
+    },
+    {
+        "label": "reynell developmental language scales",
+        "abbreviations": [
+            "R-DLS",
+            "RDLS"
+        ]
+    },
+    {
+        "label": "macarthur communicative development inventories",
+        "abbreviations": [
+            "MCDI",
+            "MCDCI"
+        ]
+    },
+    {
+        "label": "autism diagnostic observation schedule",
+        "abbreviations": [
+            "ADOS"
+        ]
+    },
+    {
+        "label": "modified erickson scale of communication attitudes",
+        "abbreviations": [
+            "MESCA"
+        ]
+    },
+    {
+        "label": "delayed response task",
+        "abbreviations": [
+            "DRTS",
+            "DRT"
+        ]
+    },
+    {
+        "label": "spatial delayed response task",
+        "abbreviations": [
+            "SDRT"
+        ]
+    },
+    {
+        "label": "picture-word stroop test",
+        "abbreviations": [
+            "PWST",
+            "PWT"
+        ]
+    },
+    {
+        "label": "synchrony judgment task",
+        "abbreviations": [
+            "SJT-J",
+            "SJT-T",
+            "SJT"
+        ]
+    },
+    {
+        "label": "position of gap match task",
+        "abbreviations": [
+            "POGMT",
+            "PGMT"
+        ]
+    },
+    {
+        "label": "length match task",
+        "abbreviations": [
+            "LMT"
+        ]
+    },
+    {
+        "label": "temporal order judgment task",
+        "abbreviations": [
+            "TOJ",
+            "TOJT"
+        ]
+    },
+    {
+        "label": "immediate memory task",
+        "abbreviations": [
+            "IMT",
+            "IMAT"
+        ]
+    },
+    {
+        "label": "heat stimulation",
+        "abbreviations": [
+            "HS therapy",
+            "HST",
+            "HS"
+        ]
+    },
+    {
+        "label": "heat sensitization/adaptation",
+        "abbreviations": [
+            "HS/HSA"
+        ]
+    },
+    {
+        "label": "rubber hand illusion",
+        "abbreviations": [
+            "RHHI",
+            "RHI"
+        ]
+    },
+    {
+        "label": "mechanical stimulation",
+        "abbreviations": [
+            "MSS",
+            "MS"
+        ]
+    },
+    {
+        "label": "dual sensitization",
+        "abbreviations": [
+            "DS",
+            "DSN"
+        ]
+    },
+    {
+        "label": "thermal grill illusion",
+        "abbreviations": [
+            "TGSI",
+            "TGI"
+        ]
+    },
+    {
+        "label": "tonic pain stimulation",
+        "abbreviations": [
+            "TPS",
+            "TPS-STIM",
+            "TPS-TE"
+        ]
+    },
+    {
+        "label": "phasic pain stimulation",
+        "abbreviations": [
+            "FPS",
+            "PPS"
+        ]
+    },
+    {
+        "label": "cold stimulation",
+        "abbreviations": [
+            "CSI",
+            "CST"
+        ]
+    },
+    {
+        "label": "electric stimulation",
+        "abbreviations": [
+            "ESU",
+            "EMS",
+            "ES"
+        ]
+    },
+    {
+        "label": "capsaicin-evoked pain",
+        "abbreviations": [
+            "CEP",
+            "CEPP"
+        ]
+    },
+    {
+        "label": "cold pressor test",
+        "abbreviations": [
+            "CPT"
+        ]
+    },
+    {
+        "label": "sequential shape matching",
+        "abbreviations": [
+            "SSM",
+            "SSHM"
+        ]
+    },
+    {
+        "label": "deterministic classification",
+        "abbreviations": [
+            "DetClas",
+            "DetClass",
+            "DC"
+        ]
+    },
+    {
+        "label": "mixed event-related probe",
+        "abbreviations": [
+            "MEP",
+            "MERP",
+            "MER"
+        ]
+    },
+    {
+        "label": "intermodal preferential looking paradigm",
+        "abbreviations": [
+            "IPL",
+            "IPLP"
+        ]
+    },
+    {
+        "label": "tone counting",
+        "abbreviations": [
+            "TC"
+        ]
+    },
+    {
+        "label": "single-task weather prediction",
+        "abbreviations": [
+            "STMP",
+            "STWP"
+        ]
+    },
+    {
+        "label": "dual-task weather prediction",
+        "abbreviations": [
+            "DTPW",
+            "DWTP",
+            "DTWP"
+        ]
+    },
+    {
+        "label": "classification probe without feedback",
+        "abbreviations": [
+            "CPWFB"
+        ]
+    },
+    {
+        "label": "abstract/concrete judgment: bilingual",
+        "abbreviations": [
+            "ACJBI"
+        ]
+    },
+    {
+        "label": "object n-back",
+        "abbreviations": [
+            "ONS",
+            "ONB"
+        ]
+    },
+    {
+        "label": "object one-back task",
+        "abbreviations": [
+            "OTOB",
+            "OBT"
+        ]
+    },
+    {
+        "label": "word one-back task",
+        "abbreviations": [
+            "WOBT"
+        ]
+    },
+    {
+        "label": "monetary incentive delay task",
+        "abbreviations": [
+            "MDT",
+            "MIDT",
+            "MID"
+        ]
+    },
+    {
+        "label": "semantic decision task",
+        "abbreviations": [
+            "SMT",
+            "SDT"
+        ]
+    },
+    {
+        "label": "covert naming task",
+        "abbreviations": [
+            "CNT"
+        ]
+    },
+    {
+        "label": "semantic relatedness task",
+        "abbreviations": [
+            "SRTask",
+            "SRT"
+        ]
+    },
+    {
+        "label": "auditory temporal discrimination task",
+        "abbreviations": [
+            "ATDT",
+            "ATD",
+            "AUDT"
+        ]
+    },
+    {
+        "label": "mental imagery task",
+        "abbreviations": [
+            "MIT"
+        ]
+    },
+    {
+        "label": "verbal fluency task",
+        "abbreviations": [
+            "VF"
+        ]
+    },
+    {
+        "label": "word comprehension task",
+        "abbreviations": [
+            "WCT"
+        ]
+    },
+    {
+        "label": "letter case judgment task",
+        "abbreviations": [
+            "LCJT"
+        ]
+    },
+    {
+        "label": "visually guided saccade task",
+        "abbreviations": [
+            "VGST"
+        ]
+    },
+    {
+        "label": "categorization task",
+        "abbreviations": [
+            "CT"
+        ]
+    },
+    {
+        "label": "recall test",
+        "abbreviations": [
+            "R-T",
+            "RTT",
+            "RT"
+        ]
+    },
+    {
+        "label": "abstract/concrete task",
+        "abbreviations": [
+            "ACTT",
+            "ACT"
+        ]
+    },
+    {
+        "label": "semantic classification task",
+        "abbreviations": [
+            "SCAT"
+        ]
+    },
+    {
+        "label": "problem solving task",
+        "abbreviations": [
+            "PSTT",
+            "PST"
+        ]
+    },
+    {
+        "label": "spelling task",
+        "abbreviations": [
+            "STT",
+            "ST"
+        ]
+    },
+    {
+        "label": "instrumental learning task",
+        "abbreviations": [
+            "ILT",
+            "ILLT"
+        ]
+    },
+    {
+        "label": "phonetic discrimination task",
+        "abbreviations": [
+            "PDTT",
+            "PDT",
+            "PDTO"
+        ]
+    },
+    {
+        "label": "logical reasoning task",
+        "abbreviations": [
+            "LRT",
+            "LR"
+        ]
+    },
+    {
+        "label": "attention switching task",
+        "abbreviations": [
+            "ASTT",
+            "AST"
+        ]
+    },
+    {
+        "label": "mental arithmetic task",
+        "abbreviations": [
+            "MAT",
+            "MATS"
+        ]
+    },
+    {
+        "label": "random number generation task",
+        "abbreviations": [
+            "RNDG",
+            "RNGT",
+            "RN Gen.",
+            "RNG"
+        ]
+    },
+    {
+        "label": "verb generation task",
+        "abbreviations": [
+            "VGTS"
+        ]
+    },
+    {
+        "label": "cyberball task",
+        "abbreviations": [
+            "CBT"
+        ]
+    },
+    {
+        "label": "conjunction search task",
+        "abbreviations": [
+            "CJS",
+            "CJT",
+            "CST"
+        ]
+    },
+    {
+        "label": "multisource interference task",
+        "abbreviations": [
+            "MSI-T",
+            "MIST"
+        ]
+    },
+    {
+        "label": "mentalizing task",
+        "abbreviations": [
+            "MRT",
+            "MT"
+        ]
+    },
+    {
+        "label": "copying task",
+        "abbreviations": [
+            "CTT",
+            "CT",
+            "CTa"
+        ]
+    },
+    {
+        "label": "semantic task",
+        "abbreviations": [
+            "ST",
+            "STA"
+        ]
+    },
+    {
+        "label": "phonological task",
+        "abbreviations": [
+            "PTa",
+            "PT"
+        ]
+    },
+    {
+        "label": "semantic fluency task",
+        "abbreviations": [
+            "SFT",
+            "SF"
+        ]
+    },
+    {
+        "label": "phonemic fluency task",
+        "abbreviations": [
+            "PF"
+        ]
+    },
+    {
+        "label": "semantic memory task",
+        "abbreviations": [
+            "SMT"
+        ]
+    },
+    {
+        "label": "serial reaction time task",
+        "abbreviations": [
+            "SRTT",
+            "SRT"
+        ]
+    },
+    {
+        "label": "gender discrimination task",
+        "abbreviations": [
+            "GDGT",
+            "GTD",
+            "GDT"
+        ]
+    },
+    {
+        "label": "global-local task",
+        "abbreviations": [
+            "GLT"
+        ]
+    },
+    {
+        "label": "sentence-picture matching task",
+        "abbreviations": [
+            "SPMT"
+        ]
+    },
+    {
+        "label": "word-picture matching task",
+        "abbreviations": [
+            "WPMT"
+        ]
+    },
+    {
+        "label": "recency judgment task",
+        "abbreviations": [
+            "RJT-T",
+            "RJT"
+        ]
+    },
+    {
+        "label": "passive avoidance task",
+        "abbreviations": [
+            "PAT",
+            "PATT"
+        ]
+    },
+    {
+        "label": "fame judgment task",
+        "abbreviations": [
+            "FJT"
+        ]
+    },
+    {
+        "label": "cambridge risk task",
+        "abbreviations": [
+            "CRT"
+        ]
+    },
+    {
+        "label": "reappraisal task",
+        "abbreviations": [
+            "RTT",
+            "RT"
+        ]
+    },
+    {
+        "label": "raven's advanced progressive matrices",
+        "abbreviations": [
+            "RASPER"
+        ]
+    },
+    {
+        "label": "updating task",
+        "abbreviations": [
+            "UT",
+            "UPD"
+        ]
+    },
+    {
+        "label": "face working memory task",
+        "abbreviations": [
+            "FMR",
+            "N-back",
+            "FM",
+            "FWMT"
+        ]
+    },
+    {
+        "label": "object working memory task",
+        "abbreviations": [
+            "OWMT"
+        ]
+    },
+    {
+        "label": "fitts task",
+        "abbreviations": [
+            "FT"
+        ]
+    },
+    {
+        "label": "general knowledge task",
+        "abbreviations": [
+            "GKT",
+            "GKTQ"
+        ]
+    },
+    {
+        "label": "short-term memory task",
+        "abbreviations": [
+            "STEMT"
+        ]
+    },
+    {
+        "label": "face matching task",
+        "abbreviations": [
+            "FT",
+            "FMT",
+            "FMA"
+        ]
+    },
+    {
+        "label": "target detection task",
+        "abbreviations": [
+            "TDS",
+            "TDT",
+            "TDTS"
+        ]
+    },
+    {
+        "label": "color-word stroop with task switching",
+        "abbreviations": [
+            "StroopSW",
+            "CWSTS",
+            "CWTS",
+            "Stroop-TS"
+        ]
+    },
+    {
+        "label": "orthographic task",
+        "abbreviations": [
+            "OT"
+        ]
+    },
+    {
+        "label": "living-nonliving task",
+        "abbreviations": [
+            "LLT",
+            "LNLT"
+        ]
+    },
+    {
+        "label": "phoneme detection task",
+        "abbreviations": [
+            "PDT"
+        ]
+    },
+    {
+        "label": "stop-change task",
+        "abbreviations": [
+            "SCT",
+            "STCT"
+        ]
+    },
+    {
+        "label": "visual search task",
+        "abbreviations": [
+            "VST",
+            "VSTT"
+        ]
+    },
+    {
+        "label": "prospective memory task",
+        "abbreviations": [
+            "PRT",
+            "PMT"
+        ]
+    },
+    {
+        "label": "object naming task",
+        "abbreviations": [
+            "ONT",
+            "OMT",
+            "ONS"
+        ]
+    },
+    {
+        "label": "contextual cueing task",
+        "abbreviations": [
+            "CCT"
+        ]
+    },
+    {
+        "label": "gambling task",
+        "abbreviations": [
+            "GT",
+            "GTT"
+        ]
+    },
+    {
+        "label": "wason card selection task",
+        "abbreviations": [
+            "WCST"
+        ]
+    },
+    {
+        "label": "syntactic task",
+        "abbreviations": [
+            "STT",
+            "ST"
+        ]
+    },
+    {
+        "label": "mirror tracing task",
+        "abbreviations": [
+            "MRT",
+            "MTT"
+        ]
+    },
+    {
+        "label": "artificial grammar learning task",
+        "abbreviations": [
+            "AGL",
+            "AGT",
+            "AGLT"
+        ]
+    },
+    {
+        "label": "dot motion task",
+        "abbreviations": [
+            "DMT"
+        ]
+    },
+    {
+        "label": "color naming task",
+        "abbreviations": [
+            "CN"
+        ]
+    },
+    {
+        "label": "autobiographical memory task",
+        "abbreviations": [
+            "AMT"
+        ]
+    },
+    {
+        "label": "negative priming task",
+        "abbreviations": [
+            "NPT",
+            "NTP"
+        ]
+    },
+    {
+        "label": "analogical reasoning task",
+        "abbreviations": [
+            "ART"
+        ]
+    },
+    {
+        "label": "bimanual coordination task",
+        "abbreviations": [
+            "BCMT",
+            "BCT"
+        ]
+    },
+    {
+        "label": "multi-attribute decision making task",
+        "abbreviations": [
+            "MADT",
+            "MADM"
+        ]
+    },
+    {
+        "label": "odd-even task",
+        "abbreviations": [
+            "OET",
+            "OE"
+        ]
+    },
+    {
+        "label": "biological motion task",
+        "abbreviations": [
+            "BM"
+        ]
+    },
+    {
+        "label": "spatial working memory task",
+        "abbreviations": [
+            "SWM",
+            "S-WMT"
+        ]
+    },
+    {
+        "label": "social judgment task",
+        "abbreviations": [
+            "SJAT",
+            "SJT"
+        ]
+    },
+    {
+        "label": "relational reasoning task",
+        "abbreviations": [
+            "RRT",
+            "RRTS"
+        ]
+    },
+    {
+        "label": "prototype distortion task",
+        "abbreviations": [
+            "PDT",
+            "PTD",
+            "PD-T"
+        ]
+    },
+    {
+        "label": "false belief task",
+        "abbreviations": [
+            "FBAT",
+            "FBT"
+        ]
+    },
+    {
+        "label": "shadowing task",
+        "abbreviations": [
+            "SH",
+            "ST"
+        ]
+    },
+    {
+        "label": "parity judgment task",
+        "abbreviations": [
+            "PJT",
+            "PJD"
+        ]
+    },
+    {
+        "label": "numerosity estimation task",
+        "abbreviations": [
+            "NET"
+        ]
+    },
+    {
+        "label": "verbal working memory task",
+        "abbreviations": [
+            "VWMTS",
+            "VWMT"
+        ]
+    },
+    {
+        "label": "memory guided saccade task",
+        "abbreviations": [
+            "MGST"
+        ]
+    },
+    {
+        "label": "big/little circle",
+        "abbreviations": [
+            "BLC",
+            "DLC"
+        ]
+    },
+    {
+        "label": "minimal feature match task",
+        "abbreviations": [
+            "MFTM",
+            "MFMTS",
+            "MFMT"
+        ]
+    },
+    {
+        "label": "foreshortened view task",
+        "abbreviations": [
+            "FVT",
+            "FST"
+        ]
+    },
+    {
+        "label": "drawing from memory task",
+        "abbreviations": [
+            "DFMT"
+        ]
+    },
+    {
+        "label": "partial report procedure",
+        "abbreviations": [
+            "PRP"
+        ]
+    },
+    {
+        "label": "implicit association task",
+        "abbreviations": [
+            "IAT"
+        ]
+    },
+    {
+        "label": "spatial recognition memory",
+        "abbreviations": [
+            "SRM"
+        ]
+    },
+    {
+        "label": "delay conditioning",
+        "abbreviations": [
+            "DCond",
+            "DC"
+        ]
+    },
+    {
+        "label": "counterconditioning",
+        "abbreviations": [
+            "CC"
+        ]
+    },
+    {
+        "label": "operant task",
+        "abbreviations": [
+            "OT"
+        ]
+    },
+    {
+        "label": "npu-threat test",
+        "abbreviations": [
+            "NPUT"
+        ]
+    },
+    {
+        "label": "psychophysics task",
+        "abbreviations": [
+            "PST",
+            "PFT"
+        ]
+    },
+    {
+        "label": "ambiguous figure task",
+        "abbreviations": [
+            "AFT"
+        ]
+    },
+    {
+        "label": "apparent verticality judgment",
+        "abbreviations": [
+            "AVJ"
+        ]
+    },
+    {
+        "label": "contrast detection task",
+        "abbreviations": [
+            "CDT",
+            "CDTT",
+            "CD"
+        ]
+    },
+    {
+        "label": "symbol counter task",
+        "abbreviations": [
+            "SCT",
+            "SMT",
+            "SCTT"
+        ]
+    },
+    {
+        "label": "facial recognition task",
+        "abbreviations": [
+            "FR",
+            "FER",
+            "FRT"
+        ]
+    },
+    {
+        "label": "time wall",
+        "abbreviations": [
+            "T-W",
+            "TW"
+        ]
+    },
+    {
+        "label": "stop signal task with letter naming",
+        "abbreviations": [
+            "SSSLN",
+            "SSTLN",
+            "SS-TLN",
+            "SST-LN"
+        ]
+    },
+    {
+        "label": "attention bias",
+        "abbreviations": [
+            "AB",
+            "ABF"
+        ]
+    },
+    {
+        "label": "incidental encoding task",
+        "abbreviations": [
+            "IE"
+        ]
+    },
+    {
+        "label": "space fortress",
+        "abbreviations": [
+            "SFortress",
+            "SF"
+        ]
+    },
+    {
+        "label": "emotion recognition task",
+        "abbreviations": [
+            "ERT",
+            "ERTS"
+        ]
+    },
+    {
+        "label": "visual analogue scales",
+        "abbreviations": [
+            "VASs",
+            "VAS"
+        ]
+    },
+    {
+        "label": "information sampling task",
+        "abbreviations": [
+            "IST"
+        ]
+    },
+    {
+        "label": "nih toolbox words-in noise test",
+        "abbreviations": [
+            "WINS",
+            "WNIT",
+            "WINT"
+        ]
+    },
+    {
+        "label": "nih toolbox picture vocabulary test",
+        "abbreviations": [
+            "PVT",
+            "PTV"
+        ]
+    },
+    {
+        "label": "nih toolbox dimensional change card sort test",
+        "abbreviations": [
+            "DCCS"
+        ]
+    },
+    {
+        "label": "nih toolbox list sorting working memory test",
+        "abbreviations": [
+            "N-back"
+        ]
+    },
+    {
+        "label": "nih toolbox oral reading recognition test",
+        "abbreviations": [
+            "TORRT",
+            "TORR"
+        ]
+    },
+    {
+        "label": "nih toolbox oral symbol digit test",
+        "abbreviations": [
+            "OSDT"
+        ]
+    },
+    {
+        "label": "nih toolbox 9-hole pegboard dexterity test",
+        "abbreviations": [
+            "NPDSPT"
+        ]
+    },
+    {
+        "label": "nih toolbox grip strength test",
+        "abbreviations": [
+            "HGT",
+            "NGST",
+            "GGT"
+        ]
+    },
+    {
+        "label": "nih toolbox standing balance test",
+        "abbreviations": [
+            "SBT",
+            "TSBT",
+            "TBST"
+        ]
+    },
+    {
+        "label": "nih toolbox 4-meter walk gait speed test",
+        "abbreviations": [
+            "4mWS",
+            "4MWT"
+        ]
+    },
+    {
+        "label": "nih toolbox 2-minute walk endurance test",
+        "abbreviations": [
+            "\u2022 2MWT\\n\u2022 TWEE\\n\u2022 NIH-Toolbox-2M-WT"
+        ]
+    },
+    {
+        "label": "nih toolbox hearing threshold test",
+        "abbreviations": [
+            "HTT",
+            "HTT-T"
+        ]
+    },
+    {
+        "label": "nih toolbox hearing handicap inventory",
+        "abbreviations": [
+            "GHHI"
+        ]
+    },
+    {
+        "label": "nih toolbox taste intensity test",
+        "abbreviations": [
+            "TIET"
+        ]
+    },
+    {
+        "label": "nih toolbox visual acuity test",
+        "abbreviations": [
+            "VT"
+        ]
+    },
+    {
+        "label": "nih toolbox vision-related quality of life survey",
+        "abbreviations": [
+            "VOL",
+            "VFOQLS",
+            "VRQOLS"
+        ]
+    },
+    {
+        "label": "nih toolbox dynamic visual acuity test",
+        "abbreviations": [
+            "* DVA\\n* DVAT"
+        ]
+    },
+    {
+        "label": "nih toolbox odor identification test",
+        "abbreviations": [
+            "TOOD",
+            "TOI"
+        ]
+    },
+    {
+        "label": "nih toolbox pain intensity survey",
+        "abbreviations": [
+            "PICS"
+        ]
+    },
+    {
+        "label": "nih toolbox pain interference survey",
+        "abbreviations": [
+            "PTI-S"
+        ]
+    },
+    {
+        "label": "nih toolbox positive affect survey",
+        "abbreviations": [
+            "PANAS"
+        ]
+    },
+    {
+        "label": "nih toolbox general life satisfaction survey",
+        "abbreviations": [
+            "GLSS-SF6",
+            "GLSS",
+            "GLLS"
+        ]
+    },
+    {
+        "label": "articulatory suppression task",
+        "abbreviations": [
+            "ASAP",
+            "AST"
+        ]
+    },
+    {
+        "label": "nih toolbox meaning and purpose survey",
+        "abbreviations": [
+            "NIH-MPS",
+            "NIH-TPS"
+        ]
+    },
+    {
+        "label": "graded naming test",
+        "abbreviations": [
+            "GNTT",
+            "GNT"
+        ]
+    },
+    {
+        "label": "one touch stockings of cambridge",
+        "abbreviations": [
+            "OTSC"
+        ]
+    },
+    {
+        "label": "reaction time",
+        "abbreviations": [
+            "RT"
+        ]
+    },
+    {
+        "label": "rapid visual information processing",
+        "abbreviations": [
+            "RVPP",
+            "RVP",
+            "RVIP"
+        ]
+    },
+    {
+        "label": "match to sample visual search",
+        "abbreviations": [
+            "MSSV",
+            "MTSVS"
+        ]
+    },
+    {
+        "label": "penn conditional exclusion test",
+        "abbreviations": [
+            "PCET"
+        ]
+    },
+    {
+        "label": "penn word memory test",
+        "abbreviations": [
+            "PWMT"
+        ]
+    },
+    {
+        "label": "penn face memory test",
+        "abbreviations": [
+            "PFMT"
+        ]
+    },
+    {
+        "label": "visual object learning test",
+        "abbreviations": [
+            "VOLTE",
+            "VOLT",
+            "VOT"
+        ]
+    },
+    {
+        "label": "wais-information",
+        "abbreviations": [
+            "WIQ",
+            "WAIS-I"
+        ]
+    },
+    {
+        "label": "wais digit span",
+        "abbreviations": [
+            "WAIS-Digit Span"
+        ]
+    },
+    {
+        "label": "wais vocabulary",
+        "abbreviations": [
+            "WVV",
+            "WAISV"
+        ]
+    },
+    {
+        "label": "wais arithmetic",
+        "abbreviations": [
+            "WAIS-A"
+        ]
+    },
+    {
+        "label": "wais comprehension",
+        "abbreviations": [
+            "WICS",
+            "WSC"
+        ]
+    },
+    {
+        "label": "wais similarities",
+        "abbreviations": [
+            "WAIS-S"
+        ]
+    },
+    {
+        "label": "wais picture completion",
+        "abbreviations": [
+            "WPPSI"
+        ]
+    },
+    {
+        "label": "wais picture arrangement",
+        "abbreviations": [
+            "WAIS-PA"
+        ]
+    },
+    {
+        "label": "wais object assembly",
+        "abbreviations": [
+            "WOA"
+        ]
+    },
+    {
+        "label": "criteria task",
+        "abbreviations": [
+            "CT"
+        ]
+    },
+    {
+        "label": "stop signal task with pseudo word naming",
+        "abbreviations": [
+            "SSPTPW"
+        ]
+    },
+    {
+        "label": "change detection task",
+        "abbreviations": [
+            "CDT",
+            "CDTT"
+        ]
+    },
+    {
+        "label": "ax-dpx",
+        "abbreviations": [
+            "AXD-PX",
+            "AXDP"
+        ]
+    },
+    {
+        "label": "delayed intention task",
+        "abbreviations": [
+            "DINT",
+            "DIT"
+        ]
+    },
+    {
+        "label": "mirror reading task",
+        "abbreviations": [
+            "MRT",
+            "MRTT"
+        ]
+    },
+    {
+        "label": "living/nonliving judgment on mirror-reversed and plain-text words",
+        "abbreviations": [
+            "LNLJ"
+        ]
+    },
+    {
+        "label": "reversal weather prediction",
+        "abbreviations": [
+            "RWP",
+            "WPRev",
+            "RWOP"
+        ]
+    },
+    {
+        "label": "mcgurk effect",
+        "abbreviations": [
+            "MCE",
+            "McGE"
+        ]
+    },
+    {
+        "label": "psychological refractory period (prp) paradigm",
+        "abbreviations": [
+            "PRP"
+        ]
+    },
+    {
+        "label": "autism spectrum quotient",
+        "abbreviations": [
+            "ASQ",
+            "AQ"
+        ]
+    },
+    {
+        "label": "piaget's water jar task",
+        "abbreviations": [
+            "PJWJT"
+        ]
+    },
+    {
+        "label": "social responsiveness scale",
+        "abbreviations": [
+            "SRS"
+        ]
+    },
+    {
+        "label": "children's memory scale",
+        "abbreviations": [
+            "CMS-30",
+            "CMS"
+        ]
+    },
+    {
+        "label": "social communication questionnaire",
+        "abbreviations": [
+            "SCQ",
+            "SCIQ"
+        ]
+    },
+    {
+        "label": "aberrant behavior checklist - community",
+        "abbreviations": [
+            "ABC-C"
+        ]
+    },
+    {
+        "label": "adult behavior checklist",
+        "abbreviations": [
+            "ABCL"
+        ]
+    },
+    {
+        "label": "adolescent symptom inventory",
+        "abbreviations": [
+            "ASPI"
+        ]
+    },
+    {
+        "label": "broad autism phenotype questionnaire",
+        "abbreviations": [
+            "B-APQ",
+            "BAPQ",
+            "BOAQ"
+        ]
+    },
+    {
+        "label": "battelle developmental inventory",
+        "abbreviations": [
+            "BDI"
+        ]
+    },
+    {
+        "label": "beery-buktenica developmental test of visual-motor integration",
+        "abbreviations": [
+            "BVMI",
+            "VMI",
+            "BOT"
+        ]
+    },
+    {
+        "label": "big five questionnaire",
+        "abbreviations": [
+            "NEO-PI",
+            "IPIP",
+            "FFMQ",
+            "PAQ",
+            "BFI"
+        ]
+    },
+    {
+        "label": "broader phenotype autism symptom scale",
+        "abbreviations": [
+            "BPSAS",
+            "BPASS"
+        ]
+    },
+    {
+        "label": "brief symptom inventory",
+        "abbreviations": [
+            "BSI",
+            "BSINV"
+        ]
+    },
+    {
+        "label": "child behavior checklist",
+        "abbreviations": [
+            "CBCL",
+            "CBCLS"
+        ]
+    },
+    {
+        "label": "conners comprehensive behavior rating scales",
+        "abbreviations": [
+            "CCPBS"
+        ]
+    },
+    {
+        "label": "children's communication checklist",
+        "abbreviations": [
+            "CCC"
+        ]
+    },
+    {
+        "label": "center for epidemiologic studies depression scale",
+        "abbreviations": [
+            "CES-D",
+            "CESDS"
+        ]
+    },
+    {
+        "label": "social competence questionnaire",
+        "abbreviations": [
+            "SCQ"
+        ]
+    },
+    {
+        "label": "conners 3rd edition",
+        "abbreviations": [
+            "CEQ"
+        ]
+    },
+    {
+        "label": "children's psychiatric rating scale",
+        "abbreviations": [
+            "C-PRRS",
+            "CPRS-R",
+            "CPRS"
+        ]
+    },
+    {
+        "label": "autism diagnostic interview - revised",
+        "abbreviations": [
+            "ADI-R"
+        ]
+    },
+    {
+        "label": "comprehensive test of phonological processing",
+        "abbreviations": [
+            "CTOPP"
+        ]
+    },
+    {
+        "label": "children's yale-brown obsessive compulsive scale",
+        "abbreviations": [
+            "CYBOCS"
+        ]
+    },
+    {
+        "label": "expressive vocabulary test",
+        "abbreviations": [
+            "EVT",
+            "EV"
+        ]
+    },
+    {
+        "label": "expressive one word-picture vocabulary test",
+        "abbreviations": [
+            "EOWPVT",
+            "EWVPT",
+            "PEVT"
+        ]
+    },
+    {
+        "label": "leiter international performance scale",
+        "abbreviations": [
+            "LIPS"
+        ]
+    },
+    {
+        "label": "mullen scales of early learning",
+        "abbreviations": [
+            "MSELS"
+        ]
+    },
+    {
+        "label": "pdd behavior inventory",
+        "abbreviations": [
+            "PDDBI"
+        ]
+    },
+    {
+        "label": "preschool language scale",
+        "abbreviations": [
+            "PPALS",
+            "PLI",
+            "ELPS",
+            "LAS",
+            "ELO"
+        ]
+    },
+    {
+        "label": "peabody picture vocabulary test",
+        "abbreviations": [
+            "PPVTV",
+            "PPVT"
+        ]
+    },
+    {
+        "label": "sensory profile",
+        "abbreviations": [
+            "SP"
+        ]
+    },
+    {
+        "label": "stanford-binet intelligence scales",
+        "abbreviations": [
+            "SB4",
+            "SB5",
+            "SB3"
+        ]
+    },
+    {
+        "label": "test of early language development",
+        "abbreviations": [
+            "TELD"
+        ]
+    },
+    {
+        "label": "test of adolescent and adult language",
+        "abbreviations": [
+            "TOAAL",
+            "TOFALL"
+        ]
+    },
+    {
+        "label": "test of language development",
+        "abbreviations": [
+            "TOLD",
+            "ELOP",
+            "TL",
+            "TLDS"
+        ]
+    },
+    {
+        "label": "vineland adaptive behavior scales",
+        "abbreviations": [
+            "VABS",
+            "VinBAS"
+        ]
+    },
+    {
+        "label": "communication and symbolic behavior scales development profile",
+        "abbreviations": [
+            "CSB-SF",
+            "CBSS-DP",
+            "COSBE",
+            "CSSD"
+        ]
+    },
+    {
+        "label": "differential ability scales",
+        "abbreviations": [
+            "DAS-II",
+            "DAS-I",
+            "DAS"
+        ]
+    },
+    {
+        "label": "early childhood behavioral questionnaire",
+        "abbreviations": [
+            "ECBCQ",
+            "ECBI"
+        ]
+    },
+    {
+        "label": "early development interview (edi)",
+        "abbreviations": [
+            "EDI",
+            "EDI-Interview",
+            "EDI-I"
+        ]
+    },
+    {
+        "label": "expressive one-word picture vocabulary test",
+        "abbreviations": [
+            "EOWPVT",
+            "EOVPV",
+            "EVPT"
+        ]
+    },
+    {
+        "label": "halstead-reitan battery",
+        "abbreviations": [
+            "HR",
+            "H-R",
+            "HRB"
+        ]
+    },
+    {
+        "label": "joint attention / social and nonsocial orienting task",
+        "abbreviations": [
+            "JOINT"
+        ]
+    },
+    {
+        "label": "judgment of line orientation task",
+        "abbreviations": [
+            "JOLO"
+        ]
+    },
+    {
+        "label": "kaufman brief intelligence test",
+        "abbreviations": [
+            "KBIT"
+        ]
+    },
+    {
+        "label": "loneliness rating scale",
+        "abbreviations": [
+            "LRS",
+            "LLRS"
+        ]
+    },
+    {
+        "label": "overt word repetition",
+        "abbreviations": [
+            "OWL",
+            "ORW"
+        ]
+    },
+    {
+        "label": "covert verb generation task",
+        "abbreviations": [
+            "CVGT"
+        ]
+    },
+    {
+        "label": "tapping task",
+        "abbreviations": [
+            "TTaS",
+            "TT",
+            "TTM"
+        ]
+    },
+    {
+        "label": "landmark task",
+        "abbreviations": [
+            "LMT",
+            "LT"
+        ]
+    },
+    {
+        "label": "why/how task",
+        "abbreviations": [
+            "WHY/HOW Task:\\n\\n* WHY-HOW\\n* WHT\\n* HH\\n* HIH"
+        ]
+    },
+    {
+        "label": "rest eyes closed",
+        "abbreviations": [
+            "REC"
+        ]
+    },
+    {
+        "label": "think/no-think task",
+        "abbreviations": [
+            "T/NT",
+            "TNT"
+        ]
+    },
+    {
+        "label": "working memory fmri task paradigm",
+        "abbreviations": [
+            "NLP",
+            "N-back",
+            "WMFTP"
+        ]
+    },
+    {
+        "label": "motor fmri task paradigm",
+        "abbreviations": [
+            "MFTP",
+            "MTRT",
+            "MFP",
+            "MT",
+            "M-FMRI",
+            "FMRI-TASK"
+        ]
+    },
+    {
+        "label": "language processing fmri task paradigm",
+        "abbreviations": [
+            "LPFP",
+            "LPFMRI",
+            "LP-TASK"
+        ]
+    },
+    {
+        "label": "social cognition (theory of mind) fmri task paradigm",
+        "abbreviations": [
+            "TOM",
+            "SC",
+            "fMRI",
+            "FC"
+        ]
+    },
+    {
+        "label": "relational processing fmri task paradigm",
+        "abbreviations": [
+            "RP-TASK",
+            "RP-FMRI",
+            "RPTP"
+        ]
+    },
+    {
+        "label": "emotion processing fmri task paradigm",
+        "abbreviations": [
+            "EP-FT",
+            "FTP",
+            "EPT",
+            "EPFTP",
+            "EPTP",
+            "EPFP"
+        ]
+    },
+    {
+        "label": "gambling fmri task paradigm",
+        "abbreviations": [
+            "GF",
+            "GFMRI",
+            "GFRP",
+            "GFT"
+        ]
+    },
+    {
+        "label": "tone matching",
+        "abbreviations": [
+            "TM",
+            "TMH"
+        ]
+    },
+    {
+        "label": "deviance detection",
+        "abbreviations": [
+            "DV",
+            "Anom",
+            "DD"
+        ]
+    },
+    {
+        "label": "regularity and change detection",
+        "abbreviations": [
+            "RCD",
+            "RSD",
+            "CD"
+        ]
+    },
+    {
+        "label": "speech detection",
+        "abbreviations": [
+            "SD"
+        ]
+    },
+    {
+        "label": "bistability",
+        "abbreviations": [
+            "BIT",
+            "BS"
+        ]
+    },
+    {
+        "label": "tone detection (jnd)",
+        "abbreviations": [
+            "TD-JND"
+        ]
+    },
+    {
+        "label": "vernier discrimination task",
+        "abbreviations": [
+            "VDT"
+        ]
+    },
+    {
+        "label": "contour integration task",
+        "abbreviations": [
+            "CIT",
+            "CITs"
+        ]
+    },
+    {
+        "label": "perceptual closure task",
+        "abbreviations": [
+            "PCT"
+        ]
+    },
+    {
+        "label": "parallel/serial search",
+        "abbreviations": [
+            "SS",
+            "PS",
+            "PSS"
+        ]
+    },
+    {
+        "label": "contour interpolation task",
+        "abbreviations": [
+            "CIT"
+        ]
+    },
+    {
+        "label": "lateral facilitation",
+        "abbreviations": [
+            "LF"
+        ]
+    },
+    {
+        "label": "coherent motion",
+        "abbreviations": [
+            "CM"
+        ]
+    },
+    {
+        "label": "multistability",
+        "abbreviations": [
+            "MS"
+        ]
+    },
+    {
+        "label": "figure ground task",
+        "abbreviations": [
+            "FGT"
+        ]
+    },
+    {
+        "label": "visual illusion susceptibility",
+        "abbreviations": [
+            "VISP",
+            "VIS"
+        ]
+    },
+    {
+        "label": "cross modality",
+        "abbreviations": [
+            "CM"
+        ]
+    },
+    {
+        "label": "perceptual organization",
+        "abbreviations": [
+            "POGO",
+            "PO"
+        ]
+    },
+    {
+        "label": "object perception task",
+        "abbreviations": [
+            "OPTT",
+            "OPT"
+        ]
+    },
+    {
+        "label": "object recognition task",
+        "abbreviations": [
+            "ORT",
+            "OT"
+        ]
+    },
+    {
+        "label": "retinotopic representation",
+        "abbreviations": [
+            "RTM",
+            "RTR"
+        ]
+    },
+    {
+        "label": "local computation",
+        "abbreviations": [
+            "LComp",
+            "LoComp",
+            "LC"
+        ]
+    },
+    {
+        "label": "object classification",
+        "abbreviations": [
+            "OC"
+        ]
+    },
+    {
+        "label": "auditory scene perception",
+        "abbreviations": [
+            "ASP"
+        ]
+    },
+    {
+        "label": "gating",
+        "abbreviations": [
+            "GO",
+            "GI"
+        ]
+    },
+    {
+        "label": "self monitoring task",
+        "abbreviations": [
+            "SMS",
+            "SMT",
+            "SMRT",
+            "SMTA"
+        ]
+    },
+    {
+        "label": "action-perception loop",
+        "abbreviations": [
+            "APP",
+            "APC",
+            "APL"
+        ]
+    },
+    {
+        "label": "intensity for somatosensory stimulation",
+        "abbreviations": [
+            "ISSS",
+            "ISS"
+        ]
+    },
+    {
+        "label": "auditory masking task",
+        "abbreviations": [
+            "AMTTS",
+            "MTS",
+            "AMT"
+        ]
+    },
+    {
+        "label": "re-entrant processing",
+        "abbreviations": [
+            "RRP"
+        ]
+    },
+    {
+        "label": "emotion expression identification",
+        "abbreviations": [
+            "EEI",
+            "EEIDS",
+            "EEM"
+        ]
+    },
+    {
+        "label": "contrast sensitivity test",
+        "abbreviations": [
+            "CST"
+        ]
+    },
+    {
+        "label": "face identification task",
+        "abbreviations": [
+            "FIDT",
+            "FIT"
+        ]
+    },
+    {
+        "label": "manipulation of isi",
+        "abbreviations": [
+            "ISM",
+            "ISO",
+            "IMIS"
+        ]
+    },
+    {
+        "label": "novelty detection task",
+        "abbreviations": [
+            "NDT",
+            "OND",
+            "OOD",
+            "NDTA"
+        ]
+    },
+    {
+        "label": "spatial cuing paradigm",
+        "abbreviations": [
+            "SCP"
+        ]
+    },
+    {
+        "label": "attentional blink paradigm",
+        "abbreviations": [
+            "ABP"
+        ]
+    },
+    {
+        "label": "inter-modal selective attention task",
+        "abbreviations": [
+            "ISMAT"
+        ]
+    },
+    {
+        "label": "blocked channel-selection task",
+        "abbreviations": [
+            "BCST"
+        ]
+    },
+    {
+        "label": "distraction paradigm (capture)",
+        "abbreviations": [
+            "DP-C",
+            "DPC"
+        ]
+    },
+    {
+        "label": "ant task",
+        "abbreviations": [
+            "AT"
+        ]
+    },
+    {
+        "label": "sternberg item recognition task",
+        "abbreviations": [
+            "SRT",
+            "SRIT"
+        ]
+    },
+    {
+        "label": "running memory",
+        "abbreviations": [
+            "RM",
+            "WM"
+        ]
+    },
+    {
+        "label": "simple span task",
+        "abbreviations": [
+            "SST",
+            "SSTT"
+        ]
+    },
+    {
+        "label": "continuous performance test - ax version",
+        "abbreviations": [
+            "CPT-Ax"
+        ]
+    },
+    {
+        "label": "sequence encoding",
+        "abbreviations": [
+            "SeqEnc",
+            "SEQENC",
+            "SE"
+        ]
+    },
+    {
+        "label": "sequence reproduction",
+        "abbreviations": [
+            "SRP",
+            "SR"
+        ]
+    },
+    {
+        "label": "transitive inference task",
+        "abbreviations": [
+            "TIT"
+        ]
+    },
+    {
+        "label": "acquired equivalence",
+        "abbreviations": [
+            "AE",
+            "AEQ"
+        ]
+    },
+    {
+        "label": "naming tasks",
+        "abbreviations": [
+            "NT"
+        ]
+    },
+    {
+        "label": "verbal description of visual depiction",
+        "abbreviations": [
+            "VOD"
+        ]
+    },
+    {
+        "label": "corpus analysis",
+        "abbreviations": [
+            "CA",
+            "CRA"
+        ]
+    },
+    {
+        "label": "coherent/incoherent discourse distinction task",
+        "abbreviations": [
+            "CDiT",
+            "CIDT"
+        ]
+    },
+    {
+        "label": "discourse content questions",
+        "abbreviations": [
+            "DCQs",
+            "DCCQs"
+        ]
+    },
+    {
+        "label": "listening and reading task",
+        "abbreviations": [
+            "LRR",
+            "LRT",
+            "LR"
+        ]
+    },
+    {
+        "label": "eye tracking paradigms",
+        "abbreviations": [
+            "ETP",
+            "GazeTrail.",
+            "ETT",
+            "TAT",
+            "ITP",
+            "SLOPE",
+            "AOT"
+        ]
+    },
+    {
+        "label": "mouse tracking paradigms",
+        "abbreviations": [
+            "MTP",
+            "MSTP",
+            "MTS"
+        ]
+    },
+    {
+        "label": "visual world paradigm",
+        "abbreviations": [
+            "VWP",
+            "VWPM"
+        ]
+    },
+    {
+        "label": "manipulation of predictability and acceptability",
+        "abbreviations": [
+            "MPA"
+        ]
+    },
+    {
+        "label": "manipulation of language and non-verbal behaviors",
+        "abbreviations": [
+            "LLN"
+        ]
+    },
+    {
+        "label": "sentence/discourse content test",
+        "abbreviations": [
+            "SCATS",
+            "SCCT"
+        ]
+    },
+    {
+        "label": "manipulation of individual words",
+        "abbreviations": [
+            "MIW"
+        ]
+    },
+    {
+        "label": "manipulation of coherence and cohesion",
+        "abbreviations": [
+            "MC&C",
+            "MCC"
+        ]
+    },
+    {
+        "label": "surface properties of object paradigms",
+        "abbreviations": [
+            "SPOP",
+            "SOP"
+        ]
+    },
+    {
+        "label": "time-series of response time",
+        "abbreviations": [
+            "TRS",
+            "RTTS"
+        ]
+    },
+    {
+        "label": "non-spatial cuing paradigm",
+        "abbreviations": [
+            "NPSCP",
+            "NPC"
+        ]
+    },
+    {
+        "label": "muller-lyer illusion",
+        "abbreviations": [
+            "MLI"
+        ]
+    },
+    {
+        "label": "motion processing",
+        "abbreviations": [
+            "MP"
+        ]
+    },
+    {
+        "label": "predictive-inference helicopter task",
+        "abbreviations": [
+            "PHIT"
+        ]
+    },
+    {
+        "label": "contextual semantic priming task",
+        "abbreviations": [
+            "CSMTP",
+            "CSP"
+        ]
+    },
+    {
+        "label": "becker-degroot-marschak (bdm) procedure",
+        "abbreviations": [
+            "BDM",
+            "BDM-Procedure"
+        ]
+    },
+    {
+        "label": "cue approach task",
+        "abbreviations": [
+            "CAT"
+        ]
+    },
+    {
+        "label": "functional localizer fmri tasks",
+        "abbreviations": [
+            "FLFT"
+        ]
+    },
+    {
+        "label": "ultimatum game (ug)",
+        "abbreviations": [
+            "UGQ",
+            "UG"
+        ]
+    },
+    {
+        "label": "social bargaining fmri task",
+        "abbreviations": [
+            "SBFT"
+        ]
+    },
+    {
+        "label": "multi-attribute reward-guided decision task",
+        "abbreviations": [
+            "MART",
+            "MARDET"
+        ]
+    },
+    {
+        "label": "social judgment of faces task",
+        "abbreviations": [
+            "SJFT",
+            "SJT"
+        ]
+    },
+    {
+        "label": "perceptual discrimination task",
+        "abbreviations": [
+            "PDT"
+        ]
+    },
+    {
+        "label": "numerical working memory task",
+        "abbreviations": [
+            "NWM",
+            "NWM-T",
+            "NM",
+            "N-Back",
+            "WMT"
+        ]
+    },
+    {
+        "label": "associative memory encoding task",
+        "abbreviations": [
+            "AME"
+        ]
+    },
+    {
+        "label": "object rating task",
+        "abbreviations": [
+            "ORT",
+            "ORTT"
+        ]
+    },
+    {
+        "label": "social influence for food preferences task",
+        "abbreviations": [
+            "SIFPT",
+            "SIFT"
+        ]
+    },
+    {
+        "label": "complex trait judgment task",
+        "abbreviations": [
+            "CTJT",
+            "CTJ"
+        ]
+    },
+    {
+        "label": "motion discrimination task",
+        "abbreviations": [
+            "MDTa",
+            "MDT"
+        ]
+    },
+    {
+        "label": "consensus decision-making task",
+        "abbreviations": [
+            "CDMT",
+            "CDT",
+            "CD"
+        ]
+    },
+    {
+        "label": "stop signal walking task with stroop",
+        "abbreviations": [
+            "SSWTS"
+        ]
+    },
+    {
+        "label": "bistable percept paradigm",
+        "abbreviations": [
+            "BVP"
+        ]
+    },
+    {
+        "label": "manipulation of predictability",
+        "abbreviations": [
+            "MOP",
+            "MPR"
+        ]
+    },
+    {
+        "label": "audio narrative",
+        "abbreviations": [
+            "AN"
+        ]
+    },
+    {
+        "label": "pittsburgh sleep quality index",
+        "abbreviations": [
+            "PSQI"
+        ]
+    },
+    {
+        "label": "adult adhd clinical diagnostic scale",
+        "abbreviations": [
+            "ASRS",
+            "WURS-ADULT"
+        ]
+    },
+    {
+        "label": "young mania rating scale",
+        "abbreviations": [
+            "YMRS",
+            "YMRS-11"
+        ]
+    },
+    {
+        "label": "multi-class n-back task",
+        "abbreviations": [
+            "MCNBT"
+        ]
+    },
+    {
+        "label": "stop signal task with dot motion discrimination",
+        "abbreviations": [
+            "SSD",
+            "SSDM",
+            "SST-DMD"
+        ]
+    },
+    {
+        "label": "multi-object localizer task",
+        "abbreviations": [
+            "MOT",
+            "MOLT"
+        ]
+    },
+    {
+        "label": "sentence/nonword language localizer",
+        "abbreviations": [
+            "SLL"
+        ]
+    },
+    {
+        "label": "spatial working memory localizer task",
+        "abbreviations": [
+            "SWMLT",
+            "SWMT"
+        ]
+    },
+    {
+        "label": "retinotopic mapping task",
+        "abbreviations": [
+            "RTMT"
+        ]
+    },
+    {
+        "label": "hamilton psychiatric rating scale for depression",
+        "abbreviations": [
+            "HDRS-D",
+            "HAM-D"
+        ]
+    },
+    {
+        "label": "scale for the assessment of negative symptoms",
+        "abbreviations": [
+            "SANS",
+            "NAB"
+        ]
+    },
+    {
+        "label": "brief psychiatric rating scale",
+        "abbreviations": [
+            "BPES",
+            "BPRS",
+            "BPI"
+        ]
+    },
+    {
+        "label": "adult adhd self-report scale",
+        "abbreviations": [
+            "ASRS"
+        ]
+    },
+    {
+        "label": "hopkins symptom checklist",
+        "abbreviations": [
+            "HSCL",
+            "HSC"
+        ]
+    },
+    {
+        "label": "barratt impulsiveness scale",
+        "abbreviations": [
+            "BISS",
+            "BIS"
+        ]
+    },
+    {
+        "label": "dickman impulsivity inventory",
+        "abbreviations": [
+            "DII"
+        ]
+    },
+    {
+        "label": "multidimensional personality questionnaire",
+        "abbreviations": [
+            "MPQ",
+            "PAI"
+        ]
+    },
+    {
+        "label": "eysenck personality questionnaire",
+        "abbreviations": [
+            "EPQ",
+            "EPI"
+        ]
+    },
+    {
+        "label": "minnesota multiphasic personality inventory",
+        "abbreviations": [
+            "MMPI"
+        ]
+    },
+    {
+        "label": "hypomanic personality scale",
+        "abbreviations": [
+            "HPSS",
+            "HPQ"
+        ]
+    },
+    {
+        "label": "chapman magical ideation scale",
+        "abbreviations": [
+            "CMIS"
+        ]
+    },
+    {
+        "label": "temperament and character inventory",
+        "abbreviations": [
+            "TCI"
+        ]
+    },
+    {
+        "label": "scale for the assessment of positive symptoms",
+        "abbreviations": [
+            "SAPS"
+        ]
+    },
+    {
+        "label": "bickel titrator",
+        "abbreviations": [
+            "BTM",
+            "BT"
+        ]
+    },
+    {
+        "label": "single item food choice task",
+        "abbreviations": [
+            "SICFT",
+            "SIFT"
+        ]
+    },
+    {
+        "label": "two item food choice task",
+        "abbreviations": [
+            "FTFC"
+        ]
+    },
+    {
+        "label": "task switching (3x2)",
+        "abbreviations": [
+            "TS",
+            "TSW"
+        ]
+    },
+    {
+        "label": "inter-dimensional/extra-dimensional shift task",
+        "abbreviations": [
+            "IDESTT",
+            "IDEST",
+            "IDS"
+        ]
+    },
+    {
+        "label": "dimensions task",
+        "abbreviations": [
+            "DT"
+        ]
+    },
+    {
+        "label": "probabilistic selection task",
+        "abbreviations": [
+            "PST"
+        ]
+    },
+    {
+        "label": "angling risk task",
+        "abbreviations": [
+            "ART"
+        ]
+    },
+    {
+        "label": "delay discounting titration",
+        "abbreviations": [
+            "DDT"
+        ]
+    },
+    {
+        "label": "columbia card task",
+        "abbreviations": [
+            "CCT"
+        ]
+    },
+    {
+        "label": "sternberg recent probes",
+        "abbreviations": [
+            "SRP"
+        ]
+    },
+    {
+        "label": "sternberg directed forgetting",
+        "abbreviations": [
+            "SDF"
+        ]
+    },
+    {
+        "label": "dietary decisions task",
+        "abbreviations": [
+            "DDT"
+        ]
+    },
+    {
+        "label": "adaptation of marshmellow test",
+        "abbreviations": [
+            "MT"
+        ]
+    },
+    {
+        "label": "holt and laury risk titrator",
+        "abbreviations": [
+            "HLRT"
+        ]
+    },
+    {
+        "label": "cognitive reflection test",
+        "abbreviations": [
+            "CRT"
+        ]
+    },
+    {
+        "label": "roving somatosensory oddball task",
+        "abbreviations": [
+            "RSOT",
+            "RSOB"
+        ]
+    },
+    {
+        "label": "letter memory",
+        "abbreviations": [
+            "LM"
+        ]
+    },
+    {
+        "label": "dospert",
+        "abbreviations": [
+            "DP",
+            "DO"
+        ]
+    },
+    {
+        "label": "volatile bandit",
+        "abbreviations": [
+            "VB"
+        ]
+    },
+    {
+        "label": "plus-minus",
+        "abbreviations": [
+            "PMean",
+            "PM",
+            "P-M",
+            "+/-"
+        ]
+    },
+    {
+        "label": "multi-source interference task",
+        "abbreviations": [
+            "MSIT",
+            "MST",
+            "MIST"
+        ]
+    },
+    {
+        "label": "hierarchical rule task",
+        "abbreviations": [
+            "HRT"
+        ]
+    },
+    {
+        "label": "tower of london imagine",
+        "abbreviations": [
+            "ToL",
+            "LOT"
+        ]
+    },
+    {
+        "label": "multiplication task",
+        "abbreviations": [
+            "MT"
+        ]
+    },
+    {
+        "label": "shift task",
+        "abbreviations": [
+            "STT",
+            "ST"
+        ]
+    },
+    {
+        "label": "wrat-4 math computation",
+        "abbreviations": [
+            "WATM"
+        ]
+    },
+    {
+        "label": "wrat-4 word reading",
+        "abbreviations": [
+            "WRAT-4: WR",
+            "WRA",
+            "WRR"
+        ]
+    },
+    {
+        "label": "penn vocabulary test",
+        "abbreviations": [
+            "PVAT",
+            "PVTS"
+        ]
+    },
+    {
+        "label": "willingness to wait task",
+        "abbreviations": [
+            "WTWT"
+        ]
+    },
+    {
+        "label": "gm paradigm",
+        "abbreviations": [
+            "GMP",
+            "GMM",
+            "GM"
+        ]
+    },
+    {
+        "label": "penn fractal n-back",
+        "abbreviations": [
+            "PFN",
+            "PFn",
+            "N-Back",
+            "PFNBA"
+        ]
+    },
+    {
+        "label": "short penn continuous performance test-number and letter version",
+        "abbreviations": [
+            "SPCP-NLV"
+        ]
+    },
+    {
+        "label": "penn matrix reasoning test",
+        "abbreviations": [
+            "PRT"
+        ]
+    },
+    {
+        "label": "penn facial memory test delayed memory",
+        "abbreviations": [
+            "PFMT-DM"
+        ]
+    },
+    {
+        "label": "adult's penn word memory test delayed memory",
+        "abbreviations": [
+            "AWM Test Delayed Memory\\nPWMT-D"
+        ]
+    },
+    {
+        "label": "penn visual object learning test",
+        "abbreviations": [
+            "PVOLET",
+            "PVOLT",
+            "VOPT"
+        ]
+    },
+    {
+        "label": "penn emotion recognition task",
+        "abbreviations": [
+            "PERRT",
+            "PERe",
+            "PET"
+        ]
+    },
+    {
+        "label": "measured emotion differentiation test",
+        "abbreviations": [
+            "MED-T"
+        ]
+    },
+    {
+        "label": "penn\u00e2\u0080\u0099s logical reasoning test",
+        "abbreviations": [
+            "PRLRT"
+        ]
+    },
+    {
+        "label": "ataxia",
+        "abbreviations": [
+            "SCA",
+            "ATAX",
+            "SIA",
+            "SPG"
+        ]
+    },
+    {
+        "label": "penn visual object learning test delayed memory",
+        "abbreviations": [
+            "PVT-DM",
+            "PVOFLT-D"
+        ]
+    },
+    {
+        "label": "penn motor praxis",
+        "abbreviations": [
+            "PMP",
+            "PMPI"
+        ]
+    },
+    {
+        "label": "stimulus selective stop signal task",
+        "abbreviations": [
+            "SSSST"
+        ]
+    },
+    {
+        "label": "behavioral approach/inhibition systems",
+        "abbreviations": [
+            "BAS",
+            "BIS"
+        ]
+    },
+    {
+        "label": "brief self control scale",
+        "abbreviations": [
+            "BSCS"
+        ]
+    },
+    {
+        "label": "future time perspective questionnaire",
+        "abbreviations": [
+            "FTPQ"
+        ]
+    },
+    {
+        "label": "duckworth's short grit scale",
+        "abbreviations": [
+            "DSSG"
+        ]
+    },
+    {
+        "label": "ten item personality questionnaire",
+        "abbreviations": [
+            "TIPI",
+            "IIPQ",
+            "TIPQ"
+        ]
+    },
+    {
+        "label": "theories of willpower scale",
+        "abbreviations": [
+            "IUTW",
+            "IWS",
+            "PWTS"
+        ]
+    },
+    {
+        "label": "upps-p impulsivity scale",
+        "abbreviations": [
+            "UPPS-P"
+        ]
+    },
+    {
+        "label": "i7 impulsiveness and venturesomeness questionnaire",
+        "abbreviations": [
+            "IVVQ"
+        ]
+    },
+    {
+        "label": "zimbardo time perspective inventory",
+        "abbreviations": [
+            "ZTPI"
+        ]
+    },
+    {
+        "label": "self regulation questionnaire",
+        "abbreviations": [
+            "ERQ",
+            "SRQ",
+            "SRQ-15",
+            "SRS"
+        ]
+    },
+    {
+        "label": "treatment self-regulation questionnaire",
+        "abbreviations": [
+            "TRSQ",
+            "TSRQ"
+        ]
+    },
+    {
+        "label": "hidden state decision making task",
+        "abbreviations": [
+            "HSDMT",
+            "HS-DMT",
+            "HSTM",
+            "HS-DMA"
+        ]
+    },
+    {
+        "label": "eating questionnaire",
+        "abbreviations": [
+            "EQ",
+            "EQS",
+            "ERQ"
+        ]
+    },
+    {
+        "label": "five facet mindfulness questionnaire",
+        "abbreviations": [
+            "MFQ5",
+            "FFMQ"
+        ]
+    },
+    {
+        "label": "mindful attention and awareness scale",
+        "abbreviations": [
+            "MAAS"
+        ]
+    },
+    {
+        "label": "zuckerman sensation seeking scale",
+        "abbreviations": [
+            "ZSSS"
+        ]
+    },
+    {
+        "label": "selection-optimization-compensation (soc) questionnaire",
+        "abbreviations": [
+            "SOCQ"
+        ]
+    },
+    {
+        "label": "stanford leisure-time activity categorical item",
+        "abbreviations": [
+            "SLACI"
+        ]
+    },
+    {
+        "label": "moral dilemma task",
+        "abbreviations": [
+            "MDTT",
+            "MDTs",
+            "MDT"
+        ]
+    },
+    {
+        "label": "motor selective stop signal task",
+        "abbreviations": [
+            "MSSS",
+            "MSSST"
+        ]
+    },
+    {
+        "label": "emotion regulation task",
+        "abbreviations": [
+            "ERT"
+        ]
+    },
+    {
+        "label": "emotion regulation questionnaire",
+        "abbreviations": [
+            "ERQ"
+        ]
+    },
+    {
+        "label": "kirby delay discounting task",
+        "abbreviations": [
+            "KD",
+            "KDDT"
+        ]
+    },
+    {
+        "label": "birkbeck reversible sentence comprehension test",
+        "abbreviations": [
+            "BRSC"
+        ]
+    },
+    {
+        "label": "montreal cognitive assessment",
+        "abbreviations": [
+            "MoCA",
+            "MCI",
+            "MCAs"
+        ]
+    },
+    {
+        "label": "word recognition task",
+        "abbreviations": [
+            "WR",
+            "WRT"
+        ]
+    },
+    {
+        "label": "following commands",
+        "abbreviations": [
+            "FCs",
+            "FC"
+        ]
+    },
+    {
+        "label": "ideational praxis task",
+        "abbreviations": [
+            "IPT"
+        ]
+    },
+    {
+        "label": "clock drawing task",
+        "abbreviations": [
+            "CDT"
+        ]
+    },
+    {
+        "label": "orientation test",
+        "abbreviations": [
+            "OT",
+            "OTS"
+        ]
+    },
+    {
+        "label": "national adult reading test",
+        "abbreviations": [
+            "NART",
+            "NARTS"
+        ]
+    },
+    {
+        "label": "nart-r",
+        "abbreviations": [
+            "NRTRs",
+            "NRTR"
+        ]
+    },
+    {
+        "label": "american national adult reading test",
+        "abbreviations": [
+            "ANAR",
+            "ANART"
+        ]
+    },
+    {
+        "label": "eckblad and chapman's hypomanic personality scale",
+        "abbreviations": [
+            "ECHS"
+        ]
+    },
+    {
+        "label": "chapman infrequency scale",
+        "abbreviations": [
+            "CIS"
+        ]
+    },
+    {
+        "label": "chapman perceptual aberration scale",
+        "abbreviations": [
+            "CPAS"
+        ]
+    },
+    {
+        "label": "chapman social anhedonia scale",
+        "abbreviations": [
+            "CSAS"
+        ]
+    },
+    {
+        "label": "chapman physical anhedonia scale",
+        "abbreviations": [
+            "CPAS"
+        ]
+    },
+    {
+        "label": "continuous performance task",
+        "abbreviations": [
+            "CPT"
+        ]
+    },
+    {
+        "label": "vertical checkerboard",
+        "abbreviations": [
+            "VCB",
+            "VCBP"
+        ]
+    },
+    {
+        "label": "horizontal checkerboard",
+        "abbreviations": [
+            "HCB"
+        ]
+    },
+    {
+        "label": "hand side  recognition",
+        "abbreviations": [
+            "HSR"
+        ]
+    },
+    {
+        "label": "hand chirality recognition",
+        "abbreviations": [
+            "HCR",
+            "HCHR"
+        ]
+    },
+    {
+        "label": "standard localizer fmri task paradigm",
+        "abbreviations": [
+            "SLT",
+            "SOLFT",
+            "SOL"
+        ]
+    },
+    {
+        "label": "spatial localizer fmri task paradigm",
+        "abbreviations": [
+            "SLI",
+            "SLFTP",
+            "SPL"
+        ]
+    },
+    {
+        "label": "social localizer fmri task paradigm",
+        "abbreviations": [
+            "SLFP",
+            "SLFTP",
+            "SLP"
+        ]
+    },
+    {
+        "label": "emotional localizer fmri task paradigm",
+        "abbreviations": [
+            "ELFT"
+        ]
+    },
+    {
+        "label": "synatcting and semantic fmri task paradigm",
+        "abbreviations": [
+            "SSFT",
+            "SST"
+        ]
+    },
+    {
+        "label": "body image self-reflection task",
+        "abbreviations": [
+            "BISRT",
+            "BIRT"
+        ]
+    },
+    {
+        "label": "gustatory stimulation with liquid tastes or flavors",
+        "abbreviations": [
+            "GSTLL"
+        ]
+    },
+    {
+        "label": "biological motion perception (passive viewing) paradigm",
+        "abbreviations": [
+            "BMPP"
+        ]
+    },
+    {
+        "label": "route learning",
+        "abbreviations": [
+            "NLM",
+            "RL"
+        ]
+    },
+    {
+        "label": "social norm processing task",
+        "abbreviations": [
+            "SNMT",
+            "SNaP",
+            "SNPT"
+        ]
+    },
+    {
+        "label": "yellow light game",
+        "abbreviations": [
+            "YLG",
+            "YLPG"
+        ]
+    },
+    {
+        "label": "network traversal task",
+        "abbreviations": [
+            "NTT"
+        ]
+    },
+    {
+        "label": "motorphotic",
+        "abbreviations": [
+            "MOT"
+        ]
+    },
+    {
+        "label": "fictitious event ordering",
+        "abbreviations": [
+            "FEO",
+            "FEOs"
+        ]
+    },
+    {
+        "label": "episodic recombination paradigm",
+        "abbreviations": [
+            "ERP"
+        ]
+    },
+    {
+        "label": "generalization of instrumental avoidance task",
+        "abbreviations": [
+            "GIAT"
+        ]
+    },
+    {
+        "label": "error awareness task",
+        "abbreviations": [
+            "EWT",
+            "EAT"
+        ]
+    },
+    {
+        "label": "social influence on emotion task",
+        "abbreviations": [
+            "SIET"
+        ]
+    },
+    {
+        "label": "letter matching task",
+        "abbreviations": [
+            "LMT",
+            "LMS"
+        ]
+    },
+    {
+        "label": "hidden path learning task",
+        "abbreviations": [
+            "HP",
+            "HPLT"
+        ]
+    },
+    {
+        "label": "compensatory tracking task",
+        "abbreviations": [
+            "CTT",
+            "CTTT"
+        ]
+    },
+    {
+        "label": "pursuit tracking task",
+        "abbreviations": [
+            "PTT"
+        ]
+    },
+    {
+        "label": "continuous tapping task",
+        "abbreviations": [
+            "CTT"
+        ]
+    },
+    {
+        "label": "non-instrumental information seeking task",
+        "abbreviations": [
+            "NIIST"
+        ]
+    },
+    {
+        "label": "remote associates test",
+        "abbreviations": [
+            "RAT",
+            "RATs"
+        ]
+    },
+    {
+        "label": "reciprocal artwork evaluation task",
+        "abbreviations": [
+            "RAET",
+            "REET",
+            "RARET"
+        ]
+    },
+    {
+        "label": "prospective sequential decision making task",
+        "abbreviations": [
+            "PSDMT",
+            "PSTD"
+        ]
+    },
+    {
+        "label": "food viewing (passive)",
+        "abbreviations": [
+            "FPV"
+        ]
+    },
+    {
+        "label": "memory encoding task",
+        "abbreviations": [
+            "MET"
+        ]
+    },
+    {
+        "label": "self evaluation task",
+        "abbreviations": [
+            "SETT",
+            "SEBT",
+            "SET"
+        ]
+    },
+    {
+        "label": "other evaluation task",
+        "abbreviations": [
+            "OET",
+            "OMT"
+        ]
+    },
+    {
+        "label": "social decision-making task",
+        "abbreviations": [
+            "SDM-T",
+            "SDMT",
+            "SMDT"
+        ]
+    },
+    {
+        "label": "risky decision-making under social influence",
+        "abbreviations": [
+            "RSI",
+            "SIRDA"
+        ]
+    },
+    {
+        "label": "mental time travel task",
+        "abbreviations": [
+            "MTTS",
+            "WBT",
+            "MTT"
+        ]
+    },
+    {
+        "label": "pleasantness rating task",
+        "abbreviations": [
+            "PRT"
+        ]
+    },
+    {
+        "label": "enumeration task",
+        "abbreviations": [
+            "ET"
+        ]
+    },
+    {
+        "label": "visual short term memory task",
+        "abbreviations": [
+            "VST",
+            "VSTM",
+            "VSTMT"
+        ]
+    },
+    {
+        "label": "pain-matrix narrative localizer",
+        "abbreviations": [
+            "PMTNL",
+            "PNML",
+            "PMTL"
+        ]
+    },
+    {
+        "label": "movie watching task",
+        "abbreviations": [
+            "MWT",
+            "MVT"
+        ]
+    },
+    {
+        "label": "donation task",
+        "abbreviations": [
+            "DT"
+        ]
+    },
+    {
+        "label": "point subtraction aggression paradigm",
+        "abbreviations": [
+            "PSAP"
+        ]
+    },
+    {
+        "label": "facial expression observation",
+        "abbreviations": [
+            "FEOS",
+            "FEO",
+            "FES"
+        ]
+    },
+    {
+        "label": "facial expression of emotion",
+        "abbreviations": [
+            "FEE",
+            "FE"
+        ]
+    },
+    {
+        "label": "task-set learning",
+        "abbreviations": [
+            "TSL",
+            "TLS"
+        ]
+    },
+    {
+        "label": "p300 bci",
+        "abbreviations": [
+            "P300-BCI"
+        ]
+    },
+    {
+        "label": "facial expression display task",
+        "abbreviations": [
+            "FERST",
+            "FETD",
+            "FEDT"
+        ]
+    },
+    {
+        "label": "facial expression observing task",
+        "abbreviations": [
+            "FEOT"
+        ]
+    },
+    {
+        "label": "correlated bandits",
+        "abbreviations": [
+            "CB",
+            "CBM"
+        ]
+    },
+    {
+        "label": "language rule learning",
+        "abbreviations": [
+            "LLR",
+            "LRLL",
+            "LRL"
+        ]
+    },
+    {
+        "label": "thirst perception",
+        "abbreviations": [
+            "TPP"
+        ]
+    },
+    {
+        "label": "risky lotteries task",
+        "abbreviations": [
+            "RLT"
+        ]
+    },
+    {
+        "label": "value-based decision making",
+        "abbreviations": [
+            "VBDM"
+        ]
+    },
+    {
+        "label": "internal menu choice task",
+        "abbreviations": [
+            "IMCT"
+        ]
+    },
+    {
+        "label": "center of mass approximation",
+        "abbreviations": [
+            "COMA",
+            "COM"
+        ]
+    },
+    {
+        "label": "catoon (cognitive and affective theory of mind cartoon task)",
+        "abbreviations": [
+            "CATTOT"
+        ]
+    },
+    {
+        "label": "positive and negative images task",
+        "abbreviations": [
+            "PNIT",
+            "PANIMAGES"
+        ]
+    },
+    {
+        "label": "motivational go/no-go learning task",
+        "abbreviations": [
+            "M-GNG-T"
+        ]
+    },
+    {
+        "label": "narrative-based pain empathy task",
+        "abbreviations": [
+            "NBPEAT"
+        ]
+    },
+    {
+        "label": "fmri localizer for the frontotemporal language system",
+        "abbreviations": [
+            "FLAIR",
+            "FTLS"
+        ]
+    },
+    {
+        "label": "tri-modal roving stimulus paradigm",
+        "abbreviations": [
+            "TRSM"
+        ]
+    },
+    {
+        "label": "mindstrong for regulation of emotion",
+        "abbreviations": [
+            "ME",
+            "MRE"
+        ]
+    },
+    {
+        "label": "five-trial adjusting delay discounting task",
+        "abbreviations": [
+            "FADDT"
+        ]
+    },
+    {
+        "label": "go-nogo fmri paradigm",
+        "abbreviations": [
+            "GNN"
+        ]
+    },
+    {
+        "label": "kessler psychological distress scale (k6+)",
+        "abbreviations": [
+            "KDSS",
+            "K6",
+            "Kessler 6"
+        ]
+    },
+    {
+        "label": "generalized self-efficacy scale",
+        "abbreviations": [
+            "GSES"
+        ]
+    },
+    {
+        "label": "verbal interference test",
+        "abbreviations": [
+            "VIT"
+        ]
+    },
+    {
+        "label": "pittsburgh stress battery",
+        "abbreviations": [
+            "PSB"
+        ]
+    },
+    {
+        "label": "future orientation scale of the time perspective survey (child version)",
+        "abbreviations": [
+            "FTSS-CV",
+            "FOPS"
+        ]
+    },
+    {
+        "label": "parent-child coercion scale",
+        "abbreviations": [
+            "PCCS",
+            "PCES"
+        ]
+    },
+    {
+        "label": "immersive virtual reality assay for target: regulation of cognition (behavioral and self-report)",
+        "abbreviations": [
+            "IVRA",
+            "VR-Cog"
+        ]
+    },
+    {
+        "label": "daily inventory of stressful events (dise)",
+        "abbreviations": [
+            "SDE",
+            "DISE",
+            "DIS"
+        ]
+    },
+    {
+        "label": "social vs physical perception task",
+        "abbreviations": [
+            "SPPT"
+        ]
+    },
+    {
+        "label": "sides affect dysregulation scale (child-reported)",
+        "abbreviations": [
+            "SASS-CR"
+        ]
+    },
+    {
+        "label": "video-mediated affective recall",
+        "abbreviations": [
+            "VMAR"
+        ]
+    },
+    {
+        "label": "immersive virtual reality assay for target: regulation of self-reflection (behavioral and self-report)",
+        "abbreviations": [
+            "IVRV",
+            "VR-ASSAY"
+        ]
+    },
+    {
+        "label": "maze",
+        "abbreviations": [
+            "MA",
+            "MMZ"
+        ]
+    },
+    {
+        "label": "fmri facial emotion paradigm",
+        "abbreviations": [
+            "FEFEP"
+        ]
+    },
+    {
+        "label": "hierarchical task",
+        "abbreviations": [
+            "HT"
+        ]
+    },
+    {
+        "label": "relative reinforcing efficacy purchase task",
+        "abbreviations": [
+            "RERPT"
+        ]
+    },
+    {
+        "label": "emotion identification task",
+        "abbreviations": [
+            "EIDT",
+            "EI-T",
+            "EIT"
+        ]
+    },
+    {
+        "label": "go-no-go zoo task",
+        "abbreviations": [
+            "GNZT",
+            "GNGTZ"
+        ]
+    },
+    {
+        "label": "mindstrong for regulation of cognition",
+        "abbreviations": [
+            "CRTC",
+            "MSL"
+        ]
+    },
+    {
+        "label": "angling risk task \u2013 always sunny",
+        "abbreviations": [
+            "ARTAS"
+        ]
+    },
+    {
+        "label": "multidimensional personality questionnaire: control vs. impulsivity scale",
+        "abbreviations": [
+            "TPQ",
+            "TPQi"
+        ]
+    },
+    {
+        "label": "brief risk-resilience index for screening (brisc)",
+        "abbreviations": [
+            "BRIS",
+            "BRISC"
+        ]
+    },
+    {
+        "label": "internal self-efficacy task",
+        "abbreviations": [
+            "IST"
+        ]
+    },
+    {
+        "label": "consideration of future consequences scale",
+        "abbreviations": [
+            "CFCS"
+        ]
+    },
+    {
+        "label": "immersive virtual reality assay for target: regulation of emotion (behavioral and self-report)",
+        "abbreviations": [
+            "IVRE",
+            "IVRA-ER",
+            "IVRA-SR",
+            "VR-E"
+        ]
+    },
+    {
+        "label": "mindstrong for regulation of self-focused reflection",
+        "abbreviations": [
+            "MFRS",
+            "MSR"
+        ]
+    },
+    {
+        "label": "stroop-like arrows task",
+        "abbreviations": [
+            "SLAT"
+        ]
+    },
+    {
+        "label": "international physical activity questionnaire \u2013 short form (ipaq-sf)",
+        "abbreviations": [
+            "IPAQ-SF\\nIPAQ-SF\\nIPAS-F\\nIPAQSF"
+        ]
+    },
+    {
+        "label": "ecological momentary assessment of stressful events",
+        "abbreviations": [
+            "EMASSEE",
+            "EMASE"
+        ]
+    },
+    {
+        "label": "anxiety sensitivity index - 3 (asi-3)",
+        "abbreviations": [
+            "ASIS-3",
+            "ASI-3"
+        ]
+    },
+    {
+        "label": "interoceptive attentiveness fmri task",
+        "abbreviations": [
+            "IA",
+            "IAFMRT",
+            "IAT"
+        ]
+    },
+    {
+        "label": "two-stage task",
+        "abbreviations": [
+            "TST",
+            "TSTA"
+        ]
+    },
+    {
+        "label": "convex time budgets",
+        "abbreviations": [
+            "CTBs",
+            "CTB"
+        ]
+    },
+    {
+        "label": "emotion regulation strategies scale",
+        "abbreviations": [
+            "ERSS"
+        ]
+    },
+    {
+        "label": "violation-of-expectation task",
+        "abbreviations": [
+            "VOE"
+        ]
+    },
+    {
+        "label": "couples conflict task",
+        "abbreviations": [
+            "CCT"
+        ]
+    },
+    {
+        "label": "multidimensional assessment of interoceptive awareness",
+        "abbreviations": [
+            "MAIA",
+            "MAIW"
+        ]
+    },
+    {
+        "label": "pearlin mastery scale",
+        "abbreviations": [
+            "PEARL",
+            "PMS"
+        ]
+    },
+    {
+        "label": "parent-child interaction protocol",
+        "abbreviations": [
+            "PCIP"
+        ]
+    },
+    {
+        "label": "raven\u2019s progressive matrices test",
+        "abbreviations": [
+            "RPM",
+            "RPMT"
+        ]
+    },
+    {
+        "label": "risk preferences task",
+        "abbreviations": [
+            "RPT",
+            "RPTQ"
+        ]
+    },
+    {
+        "label": "cue-based expectancy paradigm combining emotion regulation task",
+        "abbreviations": [
+            "CERP-ER"
+        ]
+    },
+    {
+        "label": "positive and negative affect schedule (panas)- child version",
+        "abbreviations": [
+            "PANAS-C",
+            "PACS"
+        ]
+    },
+    {
+        "label": "nih self-efficacy scale",
+        "abbreviations": [
+            "GSES"
+        ]
+    },
+    {
+        "label": "rapid marital interaction coding system (rmics)",
+        "abbreviations": [
+            "RMIC",
+            "RMICS"
+        ]
+    },
+    {
+        "label": "couple coercion scale",
+        "abbreviations": [
+            "CCS"
+        ]
+    },
+    {
+        "label": "parent-rated stress (nih perceived stress scale)",
+        "abbreviations": [
+            "PSS-Parent"
+        ]
+    },
+    {
+        "label": "parent cognition scale",
+        "abbreviations": [
+            "PCS",
+            "PCQ"
+        ]
+    },
+    {
+        "label": "frustration in timed backwards math",
+        "abbreviations": [
+            "FTBM"
+        ]
+    },
+    {
+        "label": "future events structured interview",
+        "abbreviations": [
+            "FESI"
+        ]
+    }
+]
