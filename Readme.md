@@ -133,7 +133,7 @@ Well done - you have annotated your tabular file!
 
 ## Using the tool from the command line
 
-The following command runs the script for the annotation process if you deployed it via docker:
+The following command runs the script for the annotation process if you deployed it via docker (i.e. access is from INSIDE the docker container):
 
 Please choose the `code_system`, `response_type`and indicate the correct `instance_name` and filepaths.
 ```
@@ -143,11 +143,20 @@ docker exec -it instance_name curl -X POST "http://127.0.0.1:8000/process/?code_
 ```
 
 If you chose the local deployment you can run the tool via this command:
+
+---
+**NOTE**
+
+If you want to access the dockerized API from outside the container the command is the same as for the local deployment, but the port changes from 8000 to 9000.
+
+--- 
+
 ```
 curl -X POST "http://127.0.0.1:8000/process/?code_system=<snomed | cogatlas>&response_type=<file | json>" 
 -F "file=@<filepath-to-tsv-inside-container>.tsv" 
 -o <filepath-to-output-file-inside-container>.json
 ```
+
 
 Let's break down this again (for non-docker deployment ignore the first 3 list items):
 - `docker exec`: This command is used to execute a command in a running Docker container.
