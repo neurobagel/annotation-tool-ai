@@ -103,6 +103,30 @@ http://127.0.0.1:9000/docs
 http://127.0.0.1:8000/docs
 ```
 
+## The User-Interface
+
+If you don't want to access the tool directly through the API, but rather through a more user-friendly interface, you can set up the integrated UI locally on your machine.
+
+First, since the UI is a react application, `nodejs` and `npm` (the node package manager) need to be installed on the system:
+
+```bash
+sudo apt-get update
+sudo apt-get install nodejs
+sudo apt-get install npm
+```
+
+Second, to access the interface, the application must be started locally. This is done from the `ui-integration' directory of the repository.
+
+```bash
+cd annotation-tool-ai/ui-integration
+npm start
+```
+
+If this was successful, the terminal shows:
+
+![ui-start](docs/img/ui-start.png)
+
+and the userinterface is accessible via `http://localhost:3000`
 
 ### Explanation of parameters used
 
@@ -170,6 +194,9 @@ Let's break down this again (for non-docker deployment ignore the first 3 list i
 The `-o <filepath-to-output-file-inside-container>.json` is only necessary if `file` is chosen as `response_type` parameter.
 
 ---
+
+
+
 
 
 # Details of the codebase 
