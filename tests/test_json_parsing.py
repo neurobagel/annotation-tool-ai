@@ -6,7 +6,7 @@ from typing import Dict, Union
 
 from app.parsing.json_parsing import (
     IsAboutAge,
-    # IsAboutGroup,
+    IsAboutGroup,
     IsAboutParticipant,
     Annotations,
     IsAboutSession,
@@ -90,29 +90,29 @@ def test_participant_id(
     assert result == expected_result
 
 
-# def test_diagnosis_variable(
-#     levels_mapping_fixture: Dict[str, Dict[str, str]]
-# ) -> None:
-#     parsed_output: Dict[str, Union[str, Dict[str, str], None]] = {
-#         "TermURL": "nb:Diagnosis",
-#         "Levels": {"PD": "Parkinson's Disease", "CTRL": "Healthy Control"},
-#     }
-#     expected_result = TSVAnnotations(
-#         Description="Group variable",
-#         Levels={"PD": "Parkinson's disease", "CTRL": "Healthy Control"},
-#         Annotations=Annotations(
-#             IsAbout=IsAboutGroup(Label="Diagnosis", TermURL="nb:Diagnosis"),
-#             Levels={
-#                 "PD": {
-#                     "TermURL": "snomed:49049000",
-#                     "Label": "Parkinson's disease",
-#                 },
-#                 "CTRL": {"TermURL": "ncit:C94342", "Label": "Healthy Control"}, # noqa: E501
-#             },
-#         ),
-#     )
-#     result = process_parsed_output(parsed_output, "snomed")
-#     assert result == expected_result
+def test_diagnosis_variable(
+    levels_mapping_fixture: Dict[str, Dict[str, str]]
+) -> None:
+    parsed_output: Dict[str, Union[str, Dict[str, str], None]] = {
+        "TermURL": "nb:Diagnosis",
+        "Levels": {"PD": "Parkinson's Disease", "CTRL": "Healthy Control"},
+    }
+    expected_result = TSVAnnotations(
+        Description="Group variable",
+        Levels={"PD": "Parkinson's disease", "CTRL": "Healthy Control"},
+        Annotations=Annotations(
+            IsAbout=IsAboutGroup(Label="Diagnosis", TermURL="nb:Diagnosis"),
+            Levels={
+                "PD": {
+                    "TermURL": "snomed:49049000",
+                    "Label": "Parkinson's disease",
+                },
+                "CTRL": {"TermURL": "ncit:C94342", "Label": "Healthy Control"}, # noqa: E501
+            },
+        ),
+    )
+    result = process_parsed_output(parsed_output, "snomed")
+    assert result == expected_result
 
 
 def test_session_id(levels_mapping_fixture: Dict[str, Dict[str, str]]) -> None:

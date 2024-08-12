@@ -49,7 +49,14 @@ class Annotations(BaseModel):  # type:ignore
         IsAboutAssessmentTool,
     ]
     Identifies: Optional[str] = None
-    Levels: Optional[Dict[str, Dict[str, str]]] = None
+    Levels: Optional[Union[
+    Dict[str, List[Dict[str, str]]],
+    Dict[str, Dict[str, str]],
+    Dict[str, str],
+    Dict[str, List[str]]
+   
+     
+]] = None
     Transformation: Optional[Dict[str, str]] = None
     IsPartOf: Optional[Union[List[Dict[str, str]], Dict[str, str], str]] = None
 

@@ -11,7 +11,7 @@ from unittest.mock import MagicMock, patch  # noqa: E402
 import pytest  # noqa: E402
 from app.categorization.llm_categorization import (  # noqa: E402
     AssessmentTool,
-    # Diagnosis,
+    Diagnosis,
     llm_invocation,
 )
 from app.categorization.llm_helper import (  # noqa: E402
@@ -118,26 +118,26 @@ def test_llm_invocation_age(mock_llm_response: Any) -> None:
             assert output == expected_output
 
 
-# def test_llm_invocation_diagnosis(mock_llm_response: Any) -> None:
-#     key = "diagnosis"
-#     value = "diagnosis PD PD HC HC PD"
-#     mock_llm_response.return_value = "yes"
+def test_llm_invocation_diagnosis(mock_llm_response: Any) -> None:
+    key = "diagnosis"
+    value = "diagnosis PD PD HC HC PD"
+    mock_llm_response.return_value = "yes"
 
-#     with patch(
-#         "app.categorization.promptTemplate.PromptTemplate"
-#     ) as MockPromptTemplate:
-#         mock_chain = MagicMock()
-#         mock_chain.invoke.return_value = "yes"
-#         MockPromptTemplate.return_value.__or__.return_value = mock_chain
+    with patch(
+        "app.categorization.promptTemplate.PromptTemplate"
+    ) as MockPromptTemplate:
+        mock_chain = MagicMock()
+        mock_chain.invoke.return_value = "yes"
+        MockPromptTemplate.return_value.__or__.return_value = mock_chain
 
-#         with patch(
-#             "app.categorization.llm_categorization.DiagnosisPrompt",
-#             new=MagicMock(),
-#         ) as DiagnosisPrompt:
-#             DiagnosisPrompt.__or__.return_value = mock_chain
-#             output = Diagnosis(key, value, "snomed")
-#             expected_output = {"TermURL": "nb:Diagnosis"}
-#             assert output == expected_output
+        with patch(
+            "app.categorization.llm_categorization.DiagnosisPrompt",
+            new=MagicMock(),
+        ) as DiagnosisPrompt:
+            DiagnosisPrompt.__or__.return_value = mock_chain
+            output = Diagnosis(key, value, "snomed")
+            expected_output = {"TermURL": "nb:Diagnosis", "Levels": {"PD": ["Indication for modification of patient cognitive status", "Persistent depressive disorder", "Presenile dementia", "Uncomplicated presenile dementia", "Paranoid disorder", "Psychogenic dyspepsia", "Prion disease", "Patchy dementia", "Pallidal degeneration", "Paroxysmal dystonia", "Mania", "Parkinsonism", "Personality disorder", "Panic disorder", "Phobic disorder", "Psychologic dyspareunia", "Panic disorder without agoraphobia with severe panic attacks", "Parkinson's disease", "Psychosexual disorder", "Axis II diagnosis", "Psychotic disorder", "Disorder of basal ganglia", "Mental disorder", "Primary dysthymia"], "HC": ["Healthy Control", "Hemichorea", "Hemicephaly", "Hydrocephalus", "Hepatitis with hepatic coma", "Huntington's chorea", "Hypomyelination and congenital cataract", "Hepatic coma", "Henoch's chorea"], "diagnosis": ["left for user"]}}
+            assert output == expected_output
 
 
 def test_llm_invocation_assessment_cogatlas(mock_llm_response: Any) -> None:
