@@ -1,3 +1,4 @@
+
 from typing import Any, Dict, Optional, Union
 import json
 from langchain_community.chat_models import ChatOllama
@@ -6,21 +7,20 @@ from app.categorization.promptTemplate import (
     AssessmentToolPrompt,
     DiagnosisPrompt,
 )
-
 from app.categorization.llm_helper import SexLevel, AgeFormat, get_assessment_label,Diagnosis_Level,list_terms
 
 
 def Diagnosis(
     key: str, value: str, code_system: str
 ) -> Optional[Union[Dict[str, str], Dict[str, Any]]]:
-    # llm = ChatOllama(model="gemma")
-    # chainDiagnosis = DiagnosisPrompt | llm
-    # llm_response_Diagnosis = chainDiagnosis.invoke(
-    #     {"column": key, "content": value}
-    # )
-    # reply = str(llm_response_Diagnosis)
-    # print(reply)
-    reply='yes'
+    llm = ChatOllama(model="gemma")
+    chainDiagnosis = DiagnosisPrompt | llm
+    llm_response_Diagnosis = chainDiagnosis.invoke(
+        {"column": key, "content": value}
+    )
+    reply = str(llm_response_Diagnosis)
+    print(reply)
+    
     if "yes" in reply.lower():
         output = {"TermURL": "nb:Diagnosis", "Levels": {}}
         unique_entries=list_terms(value)
@@ -39,6 +39,7 @@ llm_file
 
     else:
         return AssessmentTool(key, value, code_system)
+
 
 
 def AssessmentTool(
@@ -89,12 +90,12 @@ def llm_invocation(
     result_dict: Dict[str, str], code_system: str
 ) -> Optional[Dict[str, str]]:
     output: Union[Dict[str, str], None]
-    # llm = ChatOllama(model="gemma")
-    # chainGeneral = GeneralPrompt | llm
+    llm = ChatOllama(model="gemma")
+    chainGeneral = GeneralPrompt | llm
     key, value = list(result_dict.items())[0]
-    # llm_response = chainGeneral.invoke({"column": key, "content": value})
-    # r = str(llm_response)
-    r="Diagnosis"
+    llm_response = chainGeneral.invoke({"column": key, "content": value})
+    print(llm_response)
+    r = str(llm_response)
     if "Participant_IDs" in r:
         output = {"TermURL": "nb:ParticipantID"}
     elif "Session_IDs" in r:

@@ -67,7 +67,7 @@ class TSVAnnotations(BaseModel):  # type:ignore
     Description: str
     #    Levels: Optional[Union[Dict[str, str],Dict[str, List[str]]]] = None
 
-    Levels: Optional[Dict[str, List[str]]] = None
+    Levels: Optional[Union[Dict[str, str],Dict[str, List[str]]] ]= None
     # Levels: Optional[Union[Dict[str,List[str]],Dict[str,str],str]]
     Annotations: Annotations
 
