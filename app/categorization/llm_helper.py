@@ -1,3 +1,4 @@
+
 from datetime import datetime
 import json
 import re
@@ -155,7 +156,7 @@ def Diagnosis_Level(unique_entries:dict,code_system: str,levels):
         if abbreviation in abbreviation_to_label:
             return abbreviation_to_label[abbreviation]
         elif abbreviation.isdigit():
-            return "some score"
+            return ["some score"]
         else:
             return ["left for user"]
         
