@@ -71,18 +71,22 @@ Let's break down the command:
 
 #### Run the container from the built image
 
+- CPU only:
+
 ```bash
-docker run -d 
--v ollama:/root/.ollama 
--v /some/local/path/output:/app/output/  
---name instance_name
--p 9000:9000 
-annotation-tool-ai
+docker run -d -v ollama:/root/.ollama -v /some/local/path/output:/app/output/  --name instance_name -p 9000:9000 annotation-tool-ai
 ```
 
-Let't break down the command:
+- Nvidia GPU ([Nvidia container toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation) has to be installed first)
+
+```bash
+docker run -d --gpus=all -v ollama:/root/.ollama -v /some/local/path/output:/app/output/  --name instance_name -p 9000:9000 annotation-tool-ai
+```
+
+Let't break down the commands:
 
 - `docker run -d`: The -d flag runs the container in the background without any output in the terminal.
+- `--gpus=all`: GPUs should be used to run the model.
 - `-v ollama:root/.ollama`: The -v flag mounts external volumes into the container. In this case the models used within the container are stored locally as well as *Docker volumes* - these are created and managed by Docker itself and is not directly accessible via the local file system.
 - `-v /path/to/some/local/folder/:/app/output/`: This is a bind mount (also indicated by the -v flag) and makes a local directory accessible to the container. Via this folder the input and output files (i.e. the `.tsv` input and `.json` output files) are passed to the container but since the directory is mounted also locally accessible. Within the container the files are located in `app/output/`. For more information about Docker volumes vs. Bind mounts see [here](https://www.geeksforgeeks.org/docker-volume-vs-bind-mount/).
 - `--name instance-name`: Here you choose a (nice) name for your container from the image we created in the step above.
