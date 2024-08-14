@@ -144,7 +144,7 @@ def are_all_digits(input_list):
         return all(element.isdigit() for element in input_list)
 
 def Diagnosis_Level(unique_entries:dict,code_system: str,levels):
-    print(unique_entries)
+    # print(unique_entries)
 
     def load_dictionary(file_path):
         with open(file_path, 'r') as file:
@@ -161,14 +161,14 @@ def Diagnosis_Level(unique_entries:dict,code_system: str,levels):
             return ["left for user"]
         
 # Path to your JSON file
-    file_path = 'app/categorization/rag_documents/abbreviation_to_labels.json'
+    file_path = '/home/atharv-vedant/annotation-tool-ai/rag_documents/abbreviation_to_labels.json'
 
 # Load the JSON data
     data = load_dictionary(file_path)
 
 
 
-    def Get_Level(unique_entries:dict):
+    def Get_Level(unique_entries:list):
         if are_all_digits(unique_entries):
             print("scores")
         else:
