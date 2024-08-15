@@ -161,7 +161,7 @@ def Diagnosis_Level(unique_entries:dict,code_system: str,levels):
             return ["left for user"]
         
 # Path to your JSON file
-    file_path = '/home/atharv-vedant/annotation-tool-ai/rag_documents/abbreviation_to_labels.json'
+    file_path = '/annotation-tool-ai/rag_documents/abbreviation_to_labels.json'
 
 # Load the JSON data
     data = load_dictionary(file_path)
