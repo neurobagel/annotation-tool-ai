@@ -1,4 +1,3 @@
-
 from typing import Dict, Union, Optional, List, Any, Callable, Mapping
 import pandas as pd
 from pydantic import BaseModel, Field
@@ -8,7 +7,6 @@ import json
 class IsAboutBase(BaseModel):  # type:ignore
     Label: str
     TermURL: str
-
 
 
 class IsAboutParticipant(IsAboutBase):
@@ -51,15 +49,16 @@ class Annotations(BaseModel):  # type:ignore
         IsAboutAssessmentTool,
     ]
     Identifies: Optional[str] = None
-   
-    Levels: Optional[Union[
-    Dict[str, List[Dict[str, str]]],
-    Dict[str, Dict[str, str]],
-    Dict[str, str],
-    Dict[str, List[str]]
-   
-     # Add this to allow for lists of strings
-]] = None
+
+    Levels: Optional[
+        Union[
+            Dict[str, List[Dict[str, str]]],
+            Dict[str, Dict[str, str]],
+            Dict[str, str],
+            Dict[str, List[str]],
+            # Add this to allow for lists of strings
+        ]
+    ] = None
     Transformation: Optional[Dict[str, str]] = None
     IsPartOf: Optional[Union[List[Dict[str, str]], Dict[str, str], str]] = None
 
@@ -68,7 +67,7 @@ class TSVAnnotations(BaseModel):  # type:ignore
     Description: str
     #    Levels: Optional[Union[Dict[str, str],Dict[str, List[str]]]] = None
 
-    Levels: Optional[Union[Dict[str, str],Dict[str, List[str]]] ]= None
+    Levels: Optional[Union[Dict[str, str], Dict[str, List[str]]]] = None
     # Levels: Optional[Union[Dict[str,List[str]],Dict[str,str],str]]
     Annotations: Annotations
 
@@ -127,7 +126,8 @@ def handle_age(parsed_output: Dict[str, Any]) -> TSVAnnotations:
 
 
 def handle_categorical(
-    parsed_output: Dict[str, Any], levels_mapping: Mapping[str,List[ Dict[str, str]]]
+    parsed_output: Dict[str, Any],
+    levels_mapping: Mapping[str, List[Dict[str, str]]],
 ) -> TSVAnnotations:
     termurl = parsed_output.get("TermURL")
 
@@ -140,24 +140,29 @@ def handle_categorical(
     else:
         raise ValueError(f"Unhandled TermURL: {termurl}")
 
-    levels = {
-    key: [levels_mapping.get(item.strip().lower(), {}) for item in value]
-    for key, value in parsed_output.get("Levels", {}).items()
-}   
-    print(''' 
+    if termurl == "nb:Diagnosis":
+        levels = {
+            key: [
+                levels_mapping.get(item.strip().lower(), {})
+                for item in (value if isinstance(value, list) else [value])
+            ]
+            for key, value in parsed_output.get("Levels", {}).items()
+        }
+    if termurl == "nb:Sex":
+        levels = {
+            key: (
+                levels_mapping.get(value[0].strip().lower(), {})
+                if isinstance(value, list)
+                else levels_mapping.get(value.strip().lower(), {})
+            )
+            for key, value in parsed_output.get("Levels", {}).items()
+        }
 
-
+    print(
+        """ 
 soething parser
-
-
-
-
-
-
-
-
-
-''')
+"""
+    ) 
     print(levels)
 
     annotations = Annotations(IsAbout=annotation_instance, Levels=levels)
@@ -227,30 +232,32 @@ def handle_assessmentTool(
     return TSVAnnotations(Description=description, Annotations=annotations)
 
 
-
 def load_levels_mapping(mapping_file: str) -> Dict[str, Dict[str, str]]:
     with open(mapping_file, "r") as file:
         mappings = json.load(file)
-        
+
     levels_mapping = {}
     for entry in mappings:
         label_key = entry.get("label", "").strip().lower()
         identifier_key = entry.get("identifier")
-        
+
         if not label_key:
             print(f"Warning: Missing or empty 'label' in entry: {entry}")
             continue
-        
+
         if not identifier_key:
             # print(f"Warning: Missing 'identifier' for label '{label_key}' in entry: {entry}")
             # Optionally, you can skip this entry or assign a default value
             identifier_key = "default_identifier"
 
-        levels_mapping[label_key] = {"TermURL": identifier_key, "Label": entry["label"]}
-    
+        levels_mapping[label_key] = {
+            "TermURL": identifier_key,
+            "Label": entry["label"],
+        }
+
     return levels_mapping
 
-
+# noqa: E501
 def load_assessmenttool_mapping(
     mapping_file: str,
 ) -> Mapping[str, Dict[str, str]]:
@@ -283,7 +290,9 @@ def process_parsed_output(
         )
     elif code_system == "snomed":
         print("Using SNOMED CT terms for assessment tool annotation.")
-        assessmenttool_mapping_file = "app/parsing/abbreviations_measurementTerms.json"
+        assessmenttool_mapping_file = (
+            "app/parsing/abbreviations_measurementTerms.json"
+        )
         assessmenttool_mapping = load_levels_mapping(
             assessmenttool_mapping_file
         )
@@ -342,29 +351,12 @@ def process_parsed_output(
 def update_json_file(
     data: Union[str, TSVAnnotations], filename: str, target_key: str
 ) -> None:
-    print('''
-          
-          
-          
-          
-          
-          
-          
-          reach
-          
-          
-          
-          
-          
-          
-          
-          
-          ''')
+    print("check reach")
     if isinstance(data, TSVAnnotations):
         data_dict = data.model_dump(exclude_none=True)
     else:
         data_dict = {"error": data}
-
+# noqa: E501
     try:
         with open(filename, "r") as file:
             file_data: Dict[str, Any] = json.load(file)

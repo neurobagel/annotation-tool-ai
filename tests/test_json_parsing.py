@@ -1,9 +1,8 @@
-
 import os
 import json
 from pathlib import Path
 import pytest
-from typing import Dict, Union , List
+from typing import Dict, Union, List
 
 from app.parsing.json_parsing import (
     IsAboutAge,
@@ -92,184 +91,163 @@ def test_participant_id(
 
 
 def test_diagnosis_variable(
-    levels_mapping_fixture: Union[Dict[str, Dict[str, str]],Dict[str, List[Dict[str, str]]]]
+    levels_mapping_fixture: Union[
+        Dict[str, Dict[str, str]], Dict[str, List[Dict[str, str]]]
+    ]
 ) -> None:
     parsed_output: Dict[str, Union[str, Dict[str, str], None]] = {
         "TermURL": "nb:Diagnosis",
-        "Levels": {      "PD": [
-        "Indication for modification of patient cognitive status",
-        "Persistent depressive disorder",
-        "Presenile dementia",
-        "Uncomplicated presenile dementia",
-        "Paranoid disorder",
-        "Psychogenic dyspepsia",
-        "Prion disease",
-        "Patchy dementia",
-        "Pallidal degeneration",
-        "Paroxysmal dystonia",
-        "Mania",
-        "Parkinsonism",
-        "Personality disorder",
-        "Panic disorder",
-        "Phobic disorder",
-        "Psychologic dyspareunia",
-        "Panic disorder without agoraphobia with severe panic attacks",
-        "Parkinson's disease",
-        "Psychosexual disorder",
-        "Axis II diagnosis",
-        "Psychotic disorder",
-        "Disorder of basal ganglia",
-        "Mental disorder",
-        "Primary dysthymia"
-      ],
-      "CTRL": [
-        "left for user"
-      ],
-      "Group": [
-        "left for user"
-      ]},
+        "Levels": {
+            "PD": [
+                "Indication for modification of patient cognitive status",
+                "Persistent depressive disorder",
+                "Presenile dementia",
+                "Uncomplicated presenile dementia",
+                "Paranoid disorder",
+                "Psychogenic dyspepsia",
+                "Prion disease",
+                "Patchy dementia",
+                "Pallidal degeneration",
+                "Paroxysmal dystonia",
+                "Mania",
+                "Parkinsonism",
+                "Personality disorder",
+                "Panic disorder",
+                "Phobic disorder",
+                "Psychologic dyspareunia",
+                "Panic disorder without agoraphobia with severe panic attacks",
+                "Parkinson's disease",
+                "Psychosexual disorder",
+                "Axis II diagnosis",
+                "Psychotic disorder",
+                "Disorder of basal ganglia",
+                "Mental disorder",
+                "Primary dysthymia",
+            ],
+            "CTRL": ["left for user"],
+            "Group": ["left for user"],
+        },
     }
     expected_result = TSVAnnotations(
         Description="Group variable",
-        Levels={      "PD": [
-        "Indication for modification of patient cognitive status",
-        "Persistent depressive disorder",
-        "Presenile dementia",
-        "Uncomplicated presenile dementia",
-        "Paranoid disorder",
-        "Psychogenic dyspepsia",
-        "Prion disease",
-        "Patchy dementia",
-        "Pallidal degeneration",
-        "Paroxysmal dystonia",
-        "Mania",
-        "Parkinsonism",
-        "Personality disorder",
-        "Panic disorder",
-        "Phobic disorder",
-        "Psychologic dyspareunia",
-        "Panic disorder without agoraphobia with severe panic attacks",
-        "Parkinson's disease",
-        "Psychosexual disorder",
-        "Axis II diagnosis",
-        "Psychotic disorder",
-        "Disorder of basal ganglia",
-        "Mental disorder",
-        "Primary dysthymia"
-      ],
-      "CTRL": [
-        "left for user"
-      ],
-      "Group": [
-        "left for user"
-      ]},
+        Levels={
+            "PD": [
+                "Indication for modification of patient cognitive status",
+                "Persistent depressive disorder",
+                "Presenile dementia",
+                "Uncomplicated presenile dementia",
+                "Paranoid disorder",
+                "Psychogenic dyspepsia",
+                "Prion disease",
+                "Patchy dementia",
+                "Pallidal degeneration",
+                "Paroxysmal dystonia",
+                "Mania",
+                "Parkinsonism",
+                "Personality disorder",
+                "Panic disorder",
+                "Phobic disorder",
+                "Psychologic dyspareunia",
+                "Panic disorder without agoraphobia with severe panic attacks",
+                "Parkinson's disease",
+                "Psychosexual disorder",
+                "Axis II diagnosis",
+                "Psychotic disorder",
+                "Disorder of basal ganglia",
+                "Mental disorder",
+                "Primary dysthymia",
+            ],
+            "CTRL": ["left for user"],
+            "Group": ["left for user"],
+        },
         Annotations=Annotations(
             IsAbout=IsAboutGroup(Label="Diagnosis", TermURL="nb:Diagnosis"),
             Levels={
-                 "PD": [
-          {
-            "TermURL": "snomed:109898005",
-            "Label": "Indication for modification of patient cognitive status"
-          },
-          {
-            "TermURL": "snomed:1153575004",
-            "Label": "Persistent depressive disorder"
-          },
-          {
-            "TermURL": "snomed:12348006",
-            "Label": "Presenile dementia"
-          },
-          {
-            "TermURL": "snomed:191451009",
-            "Label": "Uncomplicated presenile dementia"
-          },
-          {
-            "TermURL": "snomed:191667009",
-            "Label": "Paranoid disorder"
-          },
-          {
-            "TermURL": "snomed:191972002",
-            "Label": "Psychogenic dyspepsia"
-          },
-          {
-            "TermURL": "snomed:20484008",
-            "Label": "Prion disease"
-          },
-          {
-            "TermURL": "snomed:230289009",
-            "Label": "Patchy dementia"
-          },
-          {
-            "TermURL": "snomed:230302004",
-            "Label": "Pallidal degeneration"
-          },
-          {
-            "TermURL": "snomed:230310003",
-            "Label": "Paroxysmal dystonia"
-          },
-          {
-            "TermURL": "snomed:231494001",
-            "Label": "Mania"
-          },
-          {
-            "TermURL": "snomed:32798002",
-            "Label": "Parkinsonism"
-          },
-          {
-            "TermURL": "snomed:33449004",
-            "Label": "Personality disorder"
-          },
-          {
-            "TermURL": "snomed:371631005",
-            "Label": "Panic disorder"
-          },
-          {
-            "TermURL": "snomed:386810004",
-            "Label": "Phobic disorder"
-          },
-          {
-            "TermURL": "snomed:41021005",
-            "Label": "Psychologic dyspareunia"
-          },
-          {
-            "TermURL": "snomed:43150009",
-            "Label": "Panic disorder without agoraphobia with severe panic attacks"
-          },
-          {
-            "TermURL": "snomed:49049000",
-            "Label": "Parkinson's disease"
-          },
-          {
-            "TermURL": "snomed:56627002",
-            "Label": "Psychosexual disorder"
-          },
-          {
-            "TermURL": "snomed:56641006",
-            "Label": "Axis II diagnosis"
-          },
-          {
-            "TermURL": "snomed:69322001",
-            "Label": "Psychotic disorder"
-          },
-          {
-            "TermURL": "snomed:70835005",
-            "Label": "Disorder of basal ganglia"
-          },
-          {
-            "TermURL": "snomed:74732009",
-            "Label": "Mental disorder"
-          },
-          {
-            "TermURL": "snomed:83176005",
-            "Label": "Primary dysthymia"
-          }
-        ],
-        "CTRL": [
-          {}
-        ],
-        "Group": [
-          {}
-        ] # noqa: E501
+                "PD": [
+                    {
+                        "TermURL": "snomed:109898005",
+                        "Label": "Indication for modification of patient cognitive status",
+                    },
+                    {
+                        "TermURL": "snomed:1153575004",
+                        "Label": "Persistent depressive disorder",
+                    },
+                    {
+                        "TermURL": "snomed:12348006",
+                        "Label": "Presenile dementia",
+                    },
+                    {
+                        "TermURL": "snomed:191451009",
+                        "Label": "Uncomplicated presenile dementia",
+                    },
+                    {
+                        "TermURL": "snomed:191667009",
+                        "Label": "Paranoid disorder",
+                    },
+                    {
+                        "TermURL": "snomed:191972002",
+                        "Label": "Psychogenic dyspepsia",
+                    },
+                    {"TermURL": "snomed:20484008", "Label": "Prion disease"},
+                    {
+                        "TermURL": "snomed:230289009",
+                        "Label": "Patchy dementia",
+                    },
+                    {
+                        "TermURL": "snomed:230302004",
+                        "Label": "Pallidal degeneration",
+                    },
+                    {
+                        "TermURL": "snomed:230310003",
+                        "Label": "Paroxysmal dystonia",
+                    },
+                    {"TermURL": "snomed:231494001", "Label": "Mania"},
+                    {"TermURL": "snomed:32798002", "Label": "Parkinsonism"},
+                    {
+                        "TermURL": "snomed:33449004",
+                        "Label": "Personality disorder",
+                    },
+                    {"TermURL": "snomed:371631005", "Label": "Panic disorder"},
+                    {
+                        "TermURL": "snomed:386810004",
+                        "Label": "Phobic disorder",
+                    },
+                    {
+                        "TermURL": "snomed:41021005",
+                        "Label": "Psychologic dyspareunia",
+                    },
+                    {
+                        "TermURL": "snomed:43150009",
+                        "Label": "Panic disorder without agoraphobia with severe panic attacks",
+                    },
+                    {
+                        "TermURL": "snomed:49049000",
+                        "Label": "Parkinson's disease",
+                    },
+                    {
+                        "TermURL": "snomed:56627002",
+                        "Label": "Psychosexual disorder",
+                    },
+                    {
+                        "TermURL": "snomed:56641006",
+                        "Label": "Axis II diagnosis",
+                    },
+                    {
+                        "TermURL": "snomed:69322001",
+                        "Label": "Psychotic disorder",
+                    },
+                    {
+                        "TermURL": "snomed:70835005",
+                        "Label": "Disorder of basal ganglia",
+                    },
+                    {"TermURL": "snomed:74732009", "Label": "Mental disorder"},
+                    {
+                        "TermURL": "snomed:83176005",
+                        "Label": "Primary dysthymia",
+                    },
+                ],
+                "CTRL": [{}],
+                "Group": [{}],  # noqa: E501
             },
         ),
     )
