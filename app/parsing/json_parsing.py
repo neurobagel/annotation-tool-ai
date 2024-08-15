@@ -346,7 +346,6 @@ def process_parsed_output(
 def update_json_file(
     data: Union[str, TSVAnnotations], filename: str, target_key: str
 ) -> None:
-    print("check reach")
     if isinstance(data, TSVAnnotations):
         data_dict = data.model_dump(exclude_none=True)
     else:
