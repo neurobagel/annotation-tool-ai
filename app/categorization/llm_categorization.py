@@ -25,13 +25,7 @@ def Diagnosis(
         unique_entries=list_terms(key,value)
         levels={} #the empty dictionary passed to the diagnosis_level function to be filled 
         level={} # the dictionary which will become the output 
-        level = Diagnosis_Level(unique_entries, code_system,levels)
-        print(''' 
-
-llm_file
-
-''')
-        
+        level = Diagnosis_Level(unique_entries, code_system,levels)        
         output["Levels"] = level
         print(json.dumps(output))
         return output
