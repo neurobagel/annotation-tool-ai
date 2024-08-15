@@ -18,11 +18,11 @@ def Diagnosis(
         {"column": key, "content": value}
     )
     reply = str(llm_response_Diagnosis)
-    print(reply)
+    # print(reply)
     
     if "yes" in reply.lower():
         output = {"TermURL": "nb:Diagnosis", "Levels": {}}
-        unique_entries=list_terms(value)
+        unique_entries=list_terms(key,value)
         levels={} #the empty dictionary passed to the diagnosis_level function to be filled 
         level={} # the dictionary which will become the output 
         level = Diagnosis_Level(unique_entries, code_system,levels)
@@ -93,7 +93,7 @@ def llm_invocation(
     chainGeneral = GeneralPrompt | llm
     key, value = list(result_dict.items())[0]
     llm_response = chainGeneral.invoke({"column": key, "content": value})
-    print(llm_response)
+    # print(llm_response)
     r = str(llm_response)
     if "Participant_IDs" in r:
         output = {"TermURL": "nb:ParticipantID"}
