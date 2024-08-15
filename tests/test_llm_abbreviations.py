@@ -1,7 +1,7 @@
 import os
 import json
 from unittest.mock import patch, mock_open, MagicMock
-from app.categorization.rag_documents.llm_abbreviations import (
+from rag_documents.llm_abbreviations import (
     get_diagnosis_labels,
     generate_abbreviations_pdf,
     main,
