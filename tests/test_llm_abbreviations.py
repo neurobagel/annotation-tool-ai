@@ -44,7 +44,9 @@ def test_generate_abbreviations_pdf(tmp_path: str) -> None:
 
 
 @patch("rag_documents.llm_abbreviations.ChatOllama")
-@patch("rag_documents.llm_abbreviations.generate_abbreviations_pdf")
+@patch(
+    "rag_documents.llm_abbreviations.generate_abbreviations_pdf"
+)
 def test_main(
     mock_generate_pdf: MagicMock, MockChatOllama: MagicMock, tmp_path: str
 ) -> None:

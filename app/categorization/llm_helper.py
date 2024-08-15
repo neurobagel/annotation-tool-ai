@@ -1,3 +1,4 @@
+
 from datetime import datetime
 import json
 import re
@@ -111,6 +112,87 @@ def AgeFormat(result_dict: Dict[str, str], key: str) -> Dict[str, Any]:
         "Format": Fvar,
     }
     return output
+
+
+
+
+def list_terms(key, value):
+    words = value.split()
+    unique_entries = list(set(words))
+    if key in unique_entries:
+        unique_entries.remove(key)
+    print("check8.0")
+    print(unique_entries)
+    return unique_entries
+
+
+
+def is_score(input_string):
+    # Remove all whitespace
+    cleaned_string = re.sub(r'\s+', '', input_string)
+    
+    # Check if the string contains only digits
+    if cleaned_string.isdigit():
+        return True
+    
+    # Check if the string contains only one or two alphabetic characters with digits
+    alpha_count = sum(c.isalpha() for c in cleaned_string)
+    if alpha_count <= 2 and all(c.isdigit() or c.isalpha() for c in cleaned_string):
+        return True
+    
+    return False
+
+def are_all_digits(input_list):
+    # Check if all elements in the list are digit strings
+        return all(element.isdigit() for element in input_list)
+
+def Diagnosis_Level(unique_entries:dict,code_system: str,levels):
+    # print(unique_entries)
+
+    def load_dictionary(file_path):
+        with open(file_path, 'r') as file:
+            return json.load(file)
+        
+   
+    #get the list of related labels
+    def get_label_for_abbreviation(abbreviation:str, abbreviation_to_label):
+        if abbreviation in abbreviation_to_label:
+            return abbreviation_to_label[abbreviation]
+        elif abbreviation.isdigit():
+            return ["some score"]
+        else:
+            return ["left for user"]
+        
+# Path to your JSON file
+    file_path = 'app/parsing/abbreviation_to_labels.json'
+
+# Load the JSON data
+    data = load_dictionary(file_path)
+
+
+
+    def Get_Level(unique_entries:list):
+        if are_all_digits(unique_entries):
+            print("scores")
+        else:
+            for i in range (0,len(unique_entries)):
+                levelfield=get_label_for_abbreviation(unique_entries[i],data)
+                levels[unique_entries[i]] = levelfield
+        
+        
+        
+    
+    Get_Level(unique_entries)
+    print(''' 
+
+helper return
+
+
+''')
+    print(levels)
+    return levels
+
+
 
 
 def get_assessment_label(key: str, code_system: str) -> Union[str, List[str]]:
