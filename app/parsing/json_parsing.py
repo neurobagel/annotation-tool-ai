@@ -158,11 +158,6 @@ def handle_categorical(
             for key, value in parsed_output.get("Levels", {}).items()
         }
 
-    print(
-        """ 
-soething parser
-"""
-    ) 
     print(levels)
 
     annotations = Annotations(IsAbout=annotation_instance, Levels=levels)
