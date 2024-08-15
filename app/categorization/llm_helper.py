@@ -116,13 +116,14 @@ def AgeFormat(result_dict: Dict[str, str], key: str) -> Dict[str, Any]:
 
 
 
-def list_terms (value):
+def list_terms(key, value):
     words = value.split()
     unique_entries = list(set(words))
+    if key in unique_entries:
+        unique_entries.remove(key)
     print("check8.0")
     print(unique_entries)
     return unique_entries
-
 
 def is_score(input_string):
     # Remove all whitespace
