@@ -1,3 +1,4 @@
+
 from typing import Dict, Union, Optional, List, Any, Callable, Mapping
 import pandas as pd
 from pydantic import BaseModel, Field
@@ -139,10 +140,23 @@ def handle_categorical(
     else:
         raise ValueError(f"Unhandled TermURL: {termurl}")
 
-    levels = {
-    key: [levels_mapping.get(item.strip().lower(), {}) for item in value]
+    if(termurl == "nb:Diagnosis"):
+        levels = {
+    key: [
+        levels_mapping.get(item.strip().lower(), {})
+        for item in (value if isinstance(value, list) else [value])
+    ]
+        for key, value in parsed_output.get("Levels", {}).items()
+}
+    if(termurl == "nb:Sex"):
+            levels = {
+    key: levels_mapping.get(value[0].strip().lower(), {})
+    if isinstance(value, list) else levels_mapping.get(value.strip().lower(), {})
     for key, value in parsed_output.get("Levels", {}).items()
-}   
+}
+
+    
+   
     print(''' 
 
 
