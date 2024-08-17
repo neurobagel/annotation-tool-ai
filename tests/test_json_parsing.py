@@ -246,8 +246,8 @@ def test_diagnosis_variable(
                         "Label": "Primary dysthymia",
                     },
                 ],
-                "CTRL": [{}],
-                "Group": [{}],  # noqa: E501
+                "CTRL": {},
+                "Group": {},  # noqa: E501
             },
         ),
     )
