@@ -208,7 +208,8 @@ def handle_assessmentTool(
         )
 
     elif ispartof_key == "Not found":
-        annotations = Annotations(IsAbout=annotation_instance, IsPartOf=None)
+        empty_ispartof = {"TermURL": " ", "Label": " "}
+        annotations = Annotations(IsAbout=annotation_instance, IsPartOf=empty_ispartof)
 
     else:
         ispartof_key = ispartof_key.strip().lower()
@@ -325,7 +326,7 @@ def process_parsed_output(
         else:
             return "Error: TermURL is missing from the parsed output"
     elif parsed_output is None:
-        return "The column does not fit any entity in the current Neurobagel data model. Please be patient as we are working on expanding the data model for more entities :)"
+        return "he LLM does not find any suitable entity in the current Neurobagel data model. Please be patient as we are working on increasing the LLM performance and extending the data model :)"
 
 
 def update_json_file(
