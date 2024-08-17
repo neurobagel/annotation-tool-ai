@@ -230,27 +230,12 @@ def handle_assessmentTool(
 def load_levels_mapping(mapping_file: str) -> Dict[str, Dict[str, str]]:
     with open(mapping_file, "r") as file:
         mappings = json.load(file)
-
-    levels_mapping = {}
-    for entry in mappings:
-        label_key = entry.get("label", "").strip().lower()
-        identifier_key = entry.get("identifier")
-
-        if not label_key:
-            print(f"Warning: Missing or empty 'label' in entry: {entry}")
-            continue
-
-        if not identifier_key:
-            # print(f"Warning: Missing 'identifier' for label '{label_key}' in entry: {entry}")
-            # Optionally, you can skip this entry or assign a default value
-            identifier_key = "default_identifier"
-
-        levels_mapping[label_key] = {
-            "TermURL": identifier_key,
-            "Label": entry["label"],
-        }
-
-    return levels_mapping
+    return {
+        entry["label"]
+        .strip()
+        .lower(): {"TermURL": entry["identifier"], "Label": entry["label"]}
+        for entry in mappings
+    }
 
 # noqa: E501
 def load_assessmenttool_mapping(
@@ -286,7 +271,7 @@ def process_parsed_output(
     elif code_system == "snomed":
         print("Using SNOMED CT terms for assessment tool annotation.")
         assessmenttool_mapping_file = (
-            "app/parsing/abbreviations_measurementTerms.json"
+            "app/parsing/measurementTerms.json"
         )
         assessmenttool_mapping = load_levels_mapping(
             assessmenttool_mapping_file
@@ -339,8 +324,8 @@ def process_parsed_output(
                 )
         else:
             return "Error: TermURL is missing from the parsed output"
-    else:
-        return "Error: parsed_output is not a dictionary"
+    elif parsed_output is None:
+        return "The column does not fit any entity in the current Neurobagel data model. Please be patient as we are working on expanding the data model for more entities :)"
 
 
 def update_json_file(
