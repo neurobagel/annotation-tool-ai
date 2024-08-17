@@ -435,72 +435,72 @@ def test_process_files_assessment_cogatlas(mock_llm_response: Any) -> None:
             os.remove(response_file_path)
 
 
-# def test_process_files_assessment_snomed(mock_llm_response: Any) -> None:
-#     with patch(
-#         "categorization.promptTemplate.PromptTemplate"
-#     ) as MockPromptTemplate:
-#         mock_chain = MagicMock()
-#         mock_chain.invoke.return_value = "yes"
-#         MockPromptTemplate.return_value.__or__.return_value = mock_chain
+def test_process_files_assessment_snomed(mock_llm_response: Any) -> None:
+    with patch(
+        "categorization.promptTemplate.PromptTemplate"
+    ) as MockPromptTemplate:
+        mock_chain = MagicMock()
+        mock_chain.invoke.return_value = "yes"
+        MockPromptTemplate.return_value.__or__.return_value = mock_chain
 
-#         with patch(
-#             "categorization.llm_categorization.AssessmentToolPrompt",
-#             new=MagicMock(),
-#         ) as MockGeneralPrompt:
-#             MockGeneralPrompt.__or__.return_value = mock_chain
+        with patch(
+            "categorization.llm_categorization.AssessmentToolPrompt",
+            new=MagicMock(),
+        ) as MockGeneralPrompt:
+            MockGeneralPrompt.__or__.return_value = mock_chain
 
-#             # Create a temporary TSV file for testing
-#             file_path: str = "test_file.tsv"
-#             with open(file_path, "w") as f:
-#                 f.write("BDI\n18\n24\n06")
+            # Create a temporary TSV file for testing
+            file_path: str = "test_file.tsv"
+            with open(file_path, "w") as f:
+                f.write("BDI\n18\n24\n06")
 
-#             # Make the request
-#             with open(file_path, "rb") as f:
-#                 response = client.post(
-#                     "/process/",
-#                     files={"file": (file_path, f, "text/tsv")},
-#                     params={"code_system": "snomed"},
-#                 )
+            # Make the request
+            with open(file_path, "rb") as f:
+                response = client.post(
+                    "/process/",
+                    files={"file": (file_path, f, "text/tsv")},
+                    params={"code_system": "snomed"},
+                )
 
-#             # Check the response
-#             assert response.status_code == 200
-#             assert response.headers["Content-Type"] == "application/json"
+            # Check the response
+            assert response.status_code == 200
+            assert response.headers["Content-Type"] == "application/json"
 
-#             # Save the response content to a temporary file for validation
-#             response_file_path: str = "response.json"
-#             with open(response_file_path, "wb") as out_file:
-#                 out_file.write(response.content)
+            # Save the response content to a temporary file for validation
+            response_file_path: str = "response.json"
+            with open(response_file_path, "wb") as out_file:
+                out_file.write(response.content)
 
-#             # Check that the response file exists
-#             assert os.path.exists(response_file_path)
+            # Check that the response file exists
+            assert os.path.exists(response_file_path)
 
-#             # Load and verify the content of the response file
-#             with open(response_file_path) as out_file:
-#                 response_json: dict[str, Any] = json.load(out_file)
+            # Load and verify the content of the response file
+            with open(response_file_path) as out_file:
+                response_json: dict[str, Any] = json.load(out_file)
 
-#             expected_output_sex = {
-#                 "BDI": {
-#                     "Description": "Description of Assessment Tool conducted",
-#                     "Annotations": {
-#                         "IsAbout": {
-#                             "Label": "Assessment Tool",
-#                             "TermURL": "nb:Assessment",
-#                         },
-#                         "IsPartOf": {
-#                             "TermURL": "snomed:273306008",
-#                             "Label": "Beck depression inventory",
-#                         },
-#                     },
-#                 }
-#             }
+            expected_output_sex = {
+                "BDI": {
+                    "Description": "Description of Assessment Tool conducted",
+                    "Annotations": {
+                        "IsAbout": {
+                            "Label": "Assessment Tool",
+                            "TermURL": "nb:Assessment",
+                        },
+                        "IsPartOf": {
+                            "TermURL": "snomed:273306008",
+                            "Label": "Beck depression inventory",
+                        },
+                    },
+                }
+            }
 
-#             print(mock_llm_response())
-#             print(response_json)
-#             assert response_json == expected_output_sex
+            print(mock_llm_response())
+            print(response_json)
+            assert response_json == expected_output_sex
 
-#             # Clean up the temporary files
-#             os.remove(file_path)
-#             os.remove(response_file_path)
+            # Clean up the temporary files
+            os.remove(file_path)
+            os.remove(response_file_path)
 
 
 # Define mock return values for all columns
