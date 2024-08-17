@@ -146,7 +146,7 @@ def are_all_digits(input_list):
     # Check if all elements in the list are digit strings
         return all(element.isdigit() for element in input_list)
 
-def Diagnosis_Level(unique_entries:dict,code_system: str,levels):
+def Diagnosis_Level(unique_entries:dict,code_system: str):
     # print(unique_entries)
 
     def load_dictionary(file_path):
@@ -172,17 +172,20 @@ def Diagnosis_Level(unique_entries:dict,code_system: str,levels):
 
 
     def Get_Level(unique_entries:list):
+        levels = {}
         if are_all_digits(unique_entries):
             print("scores")
+            levels = {str(level): "unknown" for level in unique_entries}
+            print("levels only numbers")
+            return levels
         else:
             for i in range (0,len(unique_entries)):
                 levelfield=get_label_for_abbreviation(unique_entries[i],data)
                 levels[unique_entries[i]] = levelfield
-        
-        
+            return levels
         
     
-    Get_Level(unique_entries)
+    levels = Get_Level(unique_entries)
     print(''' 
 
 helper return
@@ -191,9 +194,6 @@ helper return
 ''')
     print(levels)
     return levels
-
-
-
 
 def get_assessment_label(key: str, code_system: str) -> Union[str, List[str]]:
     def load_dictionary(file_path: str) -> Any:
