@@ -51,13 +51,13 @@ class Annotations(BaseModel):  # type:ignore
     Identifies: Optional[str] = None
 
     Levels: Optional[
-        Union[
-            Dict[str, List[Dict[str, str]]],
-            Dict[str, Dict[str, str]],
-            Dict[str, str],
-            Dict[str, List[str]],
-            # Add this to allow for lists of strings
-        ]
+        Dict[str, Union[
+            List[Dict[str, str]],  # Detailed items
+            List[str],             # List of strings for simpler cases
+            Dict[str, str],        # Dictionary of strings for simpler cases
+            Dict[str, Dict[str, str]],  # Complex nested dictionaries
+            Dict[str, List[str]]   # List of strings in dictionary format
+        ]]
     ] = None
     Transformation: Optional[Dict[str, str]] = None
     IsPartOf: Optional[Union[List[Dict[str, str]], Dict[str, str], str]] = None
@@ -148,6 +148,12 @@ def handle_categorical(
             ]
             for key, value in parsed_output.get("Levels", {}).items()
         }
+
+        # Convert lists with a single item into a single dictionary if only one value exists
+        for key in levels:
+            if len(levels[key]) == 1:
+                levels[key] = levels[key][0]
+
     if termurl == "nb:Sex":
         levels = {
             key: (
@@ -326,7 +332,7 @@ def process_parsed_output(
         else:
             return "Error: TermURL is missing from the parsed output"
     elif parsed_output is None:
-        return "he LLM does not find any suitable entity in the current Neurobagel data model. Please be patient as we are working on increasing the LLM performance and extending the data model :)"
+        return "The LLM does not find any suitable entity in the current Neurobagel data model. Please be patient as we are working on increasing the LLM performance and extending the data model :)"
 
 
 def update_json_file(
