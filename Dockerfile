@@ -15,7 +15,7 @@ COPY ./entrypoint.sh ./
 EXPOSE 9000
 
 # Define environment variable
-ENV PORT 9000
+ENV PORT=9000
 
 # Make the entrypoint script executable
 RUN chmod +x ./entrypoint.sh
