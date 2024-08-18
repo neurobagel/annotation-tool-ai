@@ -6,7 +6,7 @@ from categorization.promptTemplate import (
     AssessmentToolPrompt,
     DiagnosisPrompt,
 )
-from categorization.llm_helper import SexLevel, AgeFormat, get_assessment_label
+from categorization.llm_helper import SexLevel, AgeFormat, get_assessment_label,Diagnosis_Level,list_terms
 
 
 def Diagnosis(
@@ -18,22 +18,19 @@ def Diagnosis(
         {"column": key, "content": value}
     )
     reply = str(llm_response_Diagnosis)
-    print(reply)
-
+    # print(reply)
+    
     if "yes" in reply.lower():
-        values = value.split()
-        unique_values = list(set(values[1:]))
-
-        # Create dictionary for Levels
-        levels_dict = {val: "" for val in unique_values}
-
-        # Create the output dictionary
-        output = {"TermURL": "nb:Diagnosis", "Levels": levels_dict}
-
+        output = {"TermURL": "nb:Diagnosis", "Levels": {}}
+        unique_entries=list_terms(key,value)
+        level = Diagnosis_Level(unique_entries, code_system)        
+        output["Levels"] = level
         print(json.dumps(output))
         return output
+
     else:
         return AssessmentTool(key, value, code_system)
+
 
 
 def AssessmentTool(
@@ -88,7 +85,7 @@ def llm_invocation(
     chainGeneral = GeneralPrompt | llm
     key, value = list(result_dict.items())[0]
     llm_response = chainGeneral.invoke({"column": key, "content": value})
-    print(llm_response)
+    # print(llm_response)
     r = str(llm_response)
     if "Participant_IDs" in r:
         output = {"TermURL": "nb:ParticipantID"}
