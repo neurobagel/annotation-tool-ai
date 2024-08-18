@@ -9,6 +9,7 @@ function FileUpload() {
   const [responseData, setResponseData] = useState(null);
   const [diagnosisOptions, setDiagnosisOptions] = useState({});
   const [selectedDiagnosis, setSelectedDiagnosis] = useState({});
+  const [filteredData, setFilteredData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -88,6 +89,36 @@ function FileUpload() {
       }
     });
     setDiagnosisOptions(diagnosisColumns);
+  };
+
+  const filterJsonData = () => {
+    if (!responseData || Object.keys(selectedDiagnosis).length === 0) return;
+
+    const filtered = { ...responseData };
+
+    Object.keys(selectedDiagnosis).forEach((columnName) => {
+      if (filtered[columnName]?.Annotations?.Levels) {
+        const levels = filtered[columnName].Annotations.Levels;
+
+        Object.keys(selectedDiagnosis[columnName]).forEach((levelKey) => {
+          const selectedValue = selectedDiagnosis[columnName][levelKey];
+          if (levels[levelKey] && selectedValue) {
+            levels[levelKey] = {
+              [selectedValue]: levels[levelKey][selectedValue],
+            };
+
+            // Update the Levels array if it exists
+            if (filtered[columnName].Levels && Array.isArray(filtered[columnName].Levels[levelKey])) {
+              filtered[columnName].Levels[levelKey] = filtered[columnName].Levels[levelKey].filter((term) =>
+                levels[levelKey][selectedValue]?.Label === term
+              );
+            }
+          }
+        });
+      }
+    });
+
+    setFilteredData(filtered);
   };
 
   useEffect(() => {
@@ -191,13 +222,22 @@ function FileUpload() {
                           ))}
                         </div>
                       ))}
+                      <div className="d-grid mt-3">
+                        <button
+                          type="button"
+                          className="btn btn-secondary"
+                          onClick={filterJsonData}
+                        >
+                          Create New JSON
+                        </button>
+                      </div>
                     </div>
                   )}
 
                   <div className="mt-4">
                     <h2 className="h5">JSON Response:</h2>
                     <pre className="bg-light p-3 rounded">
-                      {JSON.stringify(responseData, null, 2)}
+                      {JSON.stringify(filteredData || responseData, null, 2)}
                     </pre>
                   </div>
                 </>
