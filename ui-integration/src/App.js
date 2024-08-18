@@ -121,6 +121,26 @@ function FileUpload() {
     setFilteredData(filtered);
   };
 
+  const downloadJson = () => {
+    if (!filteredData) return;
+
+    const blob = new Blob([JSON.stringify(filteredData, null, 2)], { type: "application/json" });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "filtered_data.json";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+  };
+
+  const handleCreateNewJson = () => {
+    if (window.confirm("Are you sure you want to create a new JSON with the selected levels?")) {
+      filterJsonData();
+      downloadJson();
+    }
+  };
+
   useEffect(() => {
     if (responseData) {
       console.log("responseData updated:", responseData);
@@ -226,7 +246,7 @@ function FileUpload() {
                         <button
                           type="button"
                           className="btn btn-secondary"
-                          onClick={filterJsonData}
+                          onClick={handleCreateNewJson}
                         >
                           Create New JSON
                         </button>
