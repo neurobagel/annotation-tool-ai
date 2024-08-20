@@ -93,33 +93,44 @@ function FileUpload() {
 
   const filterJsonData = () => {
     if (!responseData || Object.keys(selectedDiagnosis).length === 0) return;
-
+  
     const filtered = { ...responseData };
-
+  
     Object.keys(selectedDiagnosis).forEach((columnName) => {
-      if (filtered[columnName]?.Annotations?.Levels) {
-        const levels = filtered[columnName].Annotations.Levels;
-
-        Object.keys(selectedDiagnosis[columnName]).forEach((levelKey) => {
-          const selectedValue = selectedDiagnosis[columnName][levelKey];
-          if (selectedValue === "no-match") {
-            levels[levelKey] = {}; // Set to an empty object
-          } else if (levels[levelKey] && selectedValue) {
-            levels[levelKey] = {
-              [selectedValue]: levels[levelKey][selectedValue],
-            };
-
-            if (filtered[columnName].Levels && Array.isArray(filtered[columnName].Levels[levelKey])) {
-              filtered[columnName].Levels[levelKey] = filtered[columnName].Levels[levelKey].filter((term) =>
-                levels[levelKey][selectedValue]?.Label === term
-              );
-            }
+      const selectedColumn = selectedDiagnosis[columnName];
+      if (!filtered[columnName]?.Annotations?.Levels || !selectedColumn) return;
+  
+      const levels = filtered[columnName].Annotations.Levels;
+  
+      Object.keys(selectedColumn).forEach((levelKey) => {
+        const selectedValue = selectedColumn[levelKey];
+        if (!levels[levelKey]) return;
+  
+        if (selectedValue === "no-match") {
+          delete levels[levelKey]; // Remove the key entirely
+        } else if (selectedValue) {
+          levels[levelKey] = {
+            [selectedValue]: levels[levelKey][selectedValue],
+          };
+  
+          if (filtered[columnName].Levels && Array.isArray(filtered[columnName].Levels[levelKey])) {
+            filtered[columnName].Levels[levelKey] = filtered[columnName].Levels[levelKey].filter((term) =>
+              levels[levelKey][selectedValue]?.Label === term
+            );
           }
-        });
-      }
+        }
+  
+        // Flatten the structure if only one key exists
+        if (levels[levelKey] && Object.keys(levels[levelKey]).length === 1) {
+          levels[levelKey] = levels[levelKey][Object.keys(levels[levelKey])[0]];
+        }
+      });
     });
+  
     setFilteredData(filtered);
   };
+  
+  
 
   const downloadJson = () => {
     if (!filteredData) return;
