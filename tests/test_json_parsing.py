@@ -6,7 +6,7 @@ from typing import Dict, Union, List
 
 from app.parsing.json_parsing import (
     IsAboutAge,
-    # IsAboutGroup,
+    IsAboutGroup,
     IsAboutParticipant,
     Annotations,
     IsAboutSession,
