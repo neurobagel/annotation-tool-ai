@@ -39,7 +39,7 @@ function FileUpload() {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:3005/process/",
+        "http://127.0.0.1:3003/process/",
         formData,
         {
           headers: {
@@ -102,13 +102,12 @@ function FileUpload() {
 
         Object.keys(selectedDiagnosis[columnName]).forEach((levelKey) => {
           const selectedValue = selectedDiagnosis[columnName][levelKey];
-          if (selectedValue === "no-match") {
-            levels[levelKey] = {}; // Set to an empty object
-          } else if (levels[levelKey] && selectedValue) {
+          if (levels[levelKey] && selectedValue) {
             levels[levelKey] = {
               [selectedValue]: levels[levelKey][selectedValue],
             };
 
+            // Update the Levels array if it exists
             if (filtered[columnName].Levels && Array.isArray(filtered[columnName].Levels[levelKey])) {
               filtered[columnName].Levels[levelKey] = filtered[columnName].Levels[levelKey].filter((term) =>
                 levels[levelKey][selectedValue]?.Label === term
@@ -118,6 +117,7 @@ function FileUpload() {
         });
       }
     });
+
     setFilteredData(filtered);
   };
 
@@ -217,39 +217,48 @@ function FileUpload() {
                       <h4 className="h5">Select Diagnosis Options</h4>
                       {Object.keys(diagnosisOptions).map((columnName) => (
                         <div key={columnName} className="mb-3">
-                          <h5>{columnName}</h5>
+                          <h5>{columnName} Diagnosis Levels</h5>
                           {Object.keys(diagnosisOptions[columnName]).map((levelKey) => (
                             <div key={levelKey} className="mb-3">
-                              <label className="form-label">{levelKey}</label>
+                              <label htmlFor={`${columnName}-${levelKey}Select`} className="form-label">
+                                {levelKey} Level
+                              </label>
                               <select
+                                id={`${columnName}-${levelKey}Select`}
                                 className="form-select"
-                                onChange={(e) => handleDiagnosisChange(columnName, levelKey, e.target.value)}
+                                value={selectedDiagnosis[columnName]?.[levelKey] || ""}
+                                onChange={(e) =>
+                                  handleDiagnosisChange(columnName, levelKey, e.target.value)
+                                }
                               >
-                                <option value="">Select Option</option>
+                                <option value="">Select a level</option>
                                 {diagnosisOptions[columnName][levelKey].map((option) => (
-                                  <option key={option.value} value={option.value}>{option.label}</option>
+                                  <option key={option.value} value={option.value}>
+                                    {option.label} - {option.termUrl}
+                                  </option>
                                 ))}
-                                <option value="no-match">No Matching Option</option> {/* Add this line */}
                               </select>
                             </div>
                           ))}
                         </div>
                       ))}
+                      <div className="d-grid mt-3">
+                        <button
+                          type="button"
+                          className="btn btn-secondary"
+                          onClick={handleCreateNewJson}
+                        >
+                          Create New JSON
+                        </button>
+                      </div>
                     </div>
                   )}
 
                   <div className="mt-4">
-                    <button
-                      className="btn btn-success"
-                      onClick={handleCreateNewJson}
-                    >
-                      Create New JSON
-                    </button>
-                  </div>
-
-                  <div className="mt-4">
-                    <h4 className="h5">Response Data</h4>
-                    <pre className="bg-light p-3 border">{JSON.stringify(responseData, null, 2)}</pre>
+                    <h2 className="h5">JSON Response:</h2>
+                    <pre className="bg-light p-3 rounded">
+                      {JSON.stringify(filteredData || responseData, null, 2)}
+                    </pre>
                   </div>
                 </>
               )}
