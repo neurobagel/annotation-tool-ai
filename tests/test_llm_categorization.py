@@ -11,7 +11,7 @@ from unittest.mock import MagicMock, patch  # noqa: E402
 import pytest  # noqa: E402
 from app.categorization.llm_categorization import (  # noqa: E402
     AssessmentTool,
-    # Diagnosis,
+    Diagnosis,
     llm_invocation,
 )
 from app.categorization.llm_helper import (  # noqa: E402
