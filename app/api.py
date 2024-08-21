@@ -5,7 +5,8 @@ from typing import Union
 from fastapi import FastAPI, HTTPException, Query, UploadFile, File
 from fastapi.responses import FileResponse, JSONResponse
 import os
-from fastapi.middleware.cors import CORSMiddleware
+
+
 from processing import process_file
 
 app = FastAPI(
@@ -23,15 +24,8 @@ app = FastAPI(
         (Please be patient, the magic takes a while to happen...like really a while)\n""",
 )
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=[
-        "*"
-    ],  # --> Change this to the domain of the frontend in production
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+
+
 
 
 @app.post("/process/", response_model=None)  # type: ignore
@@ -91,7 +85,10 @@ if __name__ == "__main__":
         help="Host to run the server on",
     )
     parser.add_argument(
-        "--port", type=int, default=3003, help="Port to run the server on"
+
+
+        "--port", type=int, default=9000, help="Port to run the server on"
+
     )
 
     args = parser.parse_args()

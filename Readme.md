@@ -54,7 +54,7 @@ python3 app/api.py --host 127.0.0.1 --port 9000
 
 Since the annotation tool uses ollama to run the LLM it has to be provided by the docker container.
 This is done by extending the available [ollama container](https://hub.docker.com/r/ollama/ollama)
-For this instructions it is assumed that [docker](https://www.docker.com/) is installed.
+For this instruction it is assumed that [docker](https://www.docker.com/) is installed.
 
 #### Build the image
 
@@ -92,6 +92,14 @@ Let't break down the commands:
 - `--name instance-name`: Here you choose a (nice) name for your container from the image we created in the step above.
 - `-p 9000:9000`: Mount port for API requests inside the container
 - `annotation-tool-ai`: Name of the image we create the instance of.
+
+
+
+**NOTE**
+
+If you want to access the API only from outside the container (which might be usually the case) it is not necessary to mount a directory when running the container. However, it has been kept in the command since it might be useful for debugging purposes.
+
+---
 
 ## Access the tool
 
@@ -181,20 +189,25 @@ If you chose the local deployment or you want to access the container from outsi
 ```
 curl -X POST "http://127.0.0.1:9000/process/?code_system=<snomed | cogatlas>&response_type=<file | json>" 
 -F "file=@<filepath-to-tsv-outside-container>.tsv" 
--o <filepath-to-output-file-inside-container>.json
+ This is the command you want to execute in the interactive terminal session within the container. The input file is the to-be-annotated `.tsv` file and the output file is the `.json` file.
+
+-o <filepath-to-output-file-outside-container>.json
 ```
 
 
-Let's break down this again (for non-docker deployment ignore the first 3 list items):
+Let's break down this again (for local/outside docker deployment ignore the first 3 list items):
 - `docker exec`: This command is used to execute a command in a running Docker container.
 - `-it`: Here are the `-i` and `-t` flag combined which allows for interactive terminal session. It is needed, for example, when you run commands that require input.
 - `api_test`: Name of the instance. 
-- `curl -X POST "http://127.0.0.1:9000/process/?code_system=<snomed | cogatlas>" -F "file=@<filepath-to-tsv-inside-container>.tsv" -o <filepath-to-output-file-inside-container>.json`: This is the command you want to execute in the interactive terminal session within the container. The input file is the to-be-annotated `.tsv` file and the output file is the `.json` file.
+- `curl -X POST "http://127.0.0.1:9000/process/?code_system=<snomed | cogatlas>" -F "file=@<filepath-to-tsv-inside/outside-container>.tsv" -o <filepath-to-output-file-inside/outside-container>.json`: This is the command that makes a POST request to the API. The input file is the to-be-annotated `.tsv` file and the output file is the `.json` file.
+
 
 ---
 **NOTE**
 
-The `-o <filepath-to-output-file-inside-container>.json` is only necessary if `file` is chosen as `response_type` parameter.
+
+The `-o <filepath-to-output-file-inside/outside-container>.json` is only necessary if `file` is chosen as `response_type` parameter.
+
 
 ---
 
@@ -344,7 +357,7 @@ flowchart LR
 subgraph TSV-Annotations
 Description([Description:\n set for each entity])
 Levels-Description([Levels-Description:\n used in Sex and Diagnosis,  responded by \n the LLM, mapped to the pre-defined terms \nand used for annotation in Levels-Explanation])
-	subgraph Annotations
+    subgraph Annotations
         subgraph Identifies
         identifies([used for ParticipantID \nand SessionID])
         end
@@ -356,11 +369,11 @@ Levels-Description([Levels-Description:\n used in Sex and Diagnosis,  responded 
         end
         subgraph IsPartOf
         ispartof([used for AssessmentTool,\n provides TermURL and Label\n for the Assessment Tool.])
-		end
+        end
         subgraph IsAbout
         isabout([TermURL responded by \n the LLM categorization \n serves as controller \nfor further annotation])
         end
-	end
+    end
 end
 
 style isabout fill:#f542bc

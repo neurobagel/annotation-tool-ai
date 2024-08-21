@@ -20,10 +20,16 @@ def process_file(
         try:
             input_dict = {key: value}
             llm_response = llm_invocation(input_dict, code_system)
+
+
+            print(llm_response)
+
             result = process_parsed_output(llm_response, code_system)  # type: ignore # noqa: E501
             results[key] = result
             update_json_file(result, json_file, key)
         except Exception as e:
             results[key] = {"error": str(e)}
+
+            
 
     return results
