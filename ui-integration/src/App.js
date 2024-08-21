@@ -39,7 +39,7 @@ function FileUpload() {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:9000/process/",
+        "http://127.0.0.1:3005/process/",
         formData,
         {
           headers: {
@@ -127,31 +127,8 @@ function FileUpload() {
       });
     });
   
-    // Replace numeric Levels field both inside and outside the Annotations part with "units": "Arbitrary units"
-    Object.keys(filtered).forEach((columnName) => {
-      const levels = filtered[columnName]?.Levels;
-      const annotationLevels = filtered[columnName]?.Annotations?.Levels;
-  
-      // Replace numeric Levels field outside the Annotations part
-      if (levels && Object.keys(levels).every(levelKey => /^\d+$/.test(levelKey))) {
-        delete filtered[columnName].Levels;
-        filtered[columnName].units = "Arbitrary units";
-      }
-  
-      // Replace numeric Levels field inside the Annotations part
-      if (annotationLevels) {
-        Object.keys(annotationLevels).forEach((levelKey) => {
-          if (/^\d+$/.test(levelKey)) {  // Check if the key is numeric
-            delete annotationLevels[levelKey];
-            filtered[columnName].Annotations["units"] = "Arbitrary units";
-          }
-        });
-      }
-    });
-  
     setFilteredData(filtered);
   };
-  
   
   
 
