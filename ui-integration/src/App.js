@@ -94,7 +94,7 @@ function FileUpload() {
   const filterJsonData = () => {
     if (!responseData || Object.keys(selectedDiagnosis).length === 0) return;
   
-    const filtered = { ...responseData };
+    const filtered = JSON.parse(JSON.stringify(responseData));
   
     Object.keys(selectedDiagnosis).forEach((columnName) => {
       const selectedColumn = selectedDiagnosis[columnName];
