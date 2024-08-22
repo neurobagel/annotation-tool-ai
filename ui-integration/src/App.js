@@ -155,18 +155,12 @@ function FileUpload() {
   
   
 
-  const downloadJson = () => {
-    if (!filteredData) return;
+const downloadJson = () => {
+  if (!filteredData) return;
 
-    const blob = new Blob([JSON.stringify(filteredData, null, 2)], { type: "application/json" });
-    const url = window.URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "filtered_data.json";
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-  };
+  const blob = new Blob([JSON.stringify(filteredData, null, 2)], { type: "application/json" });
+  saveAs(blob, "filtered_data.json");
+};
 
   const handleCreateNewJson = () => {
     if (window.confirm("Are you sure you want to create a new JSON with the selected levels?")) {
