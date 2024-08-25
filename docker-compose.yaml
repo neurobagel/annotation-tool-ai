@@ -5,7 +5,8 @@ services:
     container_name: annotation-tool-ai-app
     ports:
       - "9000:9000" # to check if the API is working fine 
-    # deploy: ---> Uncomment this block to deploy on the VM
+    # uncomment the following lines if you want to use GPU  
+    # deploy: 
     #   resources:
     #     reservations:
     #       devices:
