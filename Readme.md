@@ -211,6 +211,17 @@ The `-o <filepath-to-output-file-inside/outside-container>.json` is only necessa
 
 ---
 
+## Troubleshooting
+
+Sometimes the model is not available in the container. This results in empty output (only column headers are displayed).
+
+In this case you can start an interactive terminal session inside the running annotation tool container:
+```
+docker exec -it instance_name /bin/bash
+```
+
+By executing `ollama list` the current models are shown. If this section is empty you can pull the respective model using `ollama pull gemma`.
+
 # Details of the codebase 
 
 Currently the development of the tool is divided into 2 aspects: Parsing and Categorization
