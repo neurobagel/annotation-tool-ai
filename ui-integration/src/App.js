@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { saveAs } from 'file-saver';
+
 function FileUpload() {
   const [file, setFile] = useState(null);
   const [codeSystem, setCodeSystem] = useState("cogatlas");
@@ -39,7 +39,7 @@ function FileUpload() {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:9000/process/",
+        "http://127.0.0.1:3006/process/",
         formData,
         {
           headers: {
@@ -94,7 +94,7 @@ function FileUpload() {
   const filterJsonData = () => {
     if (!responseData || Object.keys(selectedDiagnosis).length === 0) return;
   
-    const filtered = JSON.parse(JSON.stringify(responseData));
+    const filtered = { ...responseData };
   
     Object.keys(selectedDiagnosis).forEach((columnName) => {
       const selectedColumn = selectedDiagnosis[columnName];
@@ -102,50 +102,49 @@ function FileUpload() {
   
       const levels = filtered[columnName].Annotations.Levels;
   
-      Object.keys(selectedColumn).forEach((levelKey) => {
-        const selectedValue = selectedColumn[levelKey];
-        if (!levels[levelKey]) return;
-  
-        if (selectedValue === "no-match") {
-          delete levels[levelKey]; // Remove the key entirely
-        } else if (selectedValue) {
-          levels[levelKey] = {
-            [selectedValue]: levels[levelKey][selectedValue],
-          };
-  
-          if (filtered[columnName].Levels && Array.isArray(filtered[columnName].Levels[levelKey])) {
-            filtered[columnName].Levels[levelKey] = filtered[columnName].Levels[levelKey].filter((term) =>
-              levels[levelKey][selectedValue]?.Label === term
-            );
-          }
+      // Process selected levels inside Annotations
+      Object.keys(levels).forEach((levelKey) => {
+        if (!selectedColumn[levelKey]) {
+          delete levels[levelKey]; // Remove unselected levels
+        } else {
+          levels[levelKey] = { [selectedColumn[levelKey]]: levels[levelKey][selectedColumn[levelKey]] };
         }
+      });
   
-        // Flatten the structure if only one key exists
-        if (levels[levelKey] && Object.keys(levels[levelKey]).length === 1) {
+      // Flatten the structure if only one key exists inside Annotations
+      Object.keys(levels).forEach((levelKey) => {
+        if (Object.keys(levels[levelKey]).length === 1) {
           levels[levelKey] = levels[levelKey][Object.keys(levels[levelKey])[0]];
         }
       });
-    });
   
-    // Replace numeric Levels field both inside and outside the Annotations part with "units": "Arbitrary units"
-    Object.keys(filtered).forEach((columnName) => {
-      const levels = filtered[columnName]?.Levels;
-      const annotationLevels = filtered[columnName]?.Annotations?.Levels;
-  
-      // Replace numeric Levels field outside the Annotations part
-      if (levels && Object.keys(levels).every(levelKey => /^\d+$/.test(levelKey))) {
-        delete filtered[columnName].Levels;
-        filtered[columnName].units = "Arbitrary units";
-      }
-  
-      // Replace numeric Levels field inside the Annotations part
-      if (annotationLevels) {
-        Object.keys(annotationLevels).forEach((levelKey) => {
-          if (/^\d+$/.test(levelKey)) {  // Check if the key is numeric
-            delete annotationLevels[levelKey];
-            filtered[columnName].Annotations["units"] = "Arbitrary units";
+      // Handle Levels outside Annotations
+      const outsideLevels = filtered[columnName].Levels;
+      if (outsideLevels) {
+        Object.keys(outsideLevels).forEach((levelKey) => {
+          if (!selectedColumn[levelKey]) {
+            delete outsideLevels[levelKey]; // Remove unselected levels
+          } else {
+            outsideLevels[levelKey] = outsideLevels[levelKey].filter((term) =>
+              levels[levelKey]?.Label === term
+            );
           }
         });
+  
+        // Replace numeric Levels field with "units": "Arbitrary units"
+        if (Object.keys(outsideLevels).every(levelKey => /^\d+$/.test(levelKey))) {
+          delete filtered[columnName].Levels;
+          filtered[columnName].units = "Arbitrary units";
+        }
+      }
+    });
+  
+    // Replace numeric Levels field inside Annotations with "units": "Arbitrary units"
+    Object.keys(filtered).forEach((columnName) => {
+      const annotationLevels = filtered[columnName]?.Annotations?.Levels;
+      if (annotationLevels && Object.keys(annotationLevels).every(levelKey => /^\d+$/.test(levelKey))) {
+        delete filtered[columnName].Annotations.Levels;
+        filtered[columnName].Annotations["units"] = "Arbitrary units";
       }
     });
   
@@ -155,12 +154,18 @@ function FileUpload() {
   
   
 
-const downloadJson = () => {
-  if (!filteredData) return;
+  const downloadJson = () => {
+    if (!filteredData) return;
 
-  const blob = new Blob([JSON.stringify(filteredData, null, 2)], { type: "application/json" });
-  saveAs(blob, "filtered_data.json");
-};
+    const blob = new Blob([JSON.stringify(filteredData, null, 2)], { type: "application/json" });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "filtered_data.json";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+  };
 
   const handleCreateNewJson = () => {
     if (window.confirm("Are you sure you want to create a new JSON with the selected levels?")) {
