@@ -213,6 +213,8 @@ The `-o <filepath-to-output-file-inside/outside-container>.json` is only necessa
 
 ## Troubleshooting
 
+- Empty JSON file is responded (only column headers)
+
 Sometimes the model is not available in the container. This results in empty output (only column headers are displayed).
 
 In this case you can start an interactive terminal session inside the running annotation tool container:
@@ -221,6 +223,11 @@ docker exec -it instance_name /bin/bash
 ```
 
 By executing `ollama list` the current models are shown. If this section is empty you can pull the respective model using `ollama pull gemma`.
+
+- UI does not work via SSH tunnel in VS-Code
+
+Because of it's own forwarding logic, port that are automatically forwarded are sometimes mapped to different ports (e.g. 9001 instead of 9000).
+In VS Code under `Ports` you can delete the automatically forwarded ports and add the "original" ports again.
 
 # Details of the codebase 
 
