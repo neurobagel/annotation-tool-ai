@@ -93,6 +93,8 @@ Let't break down the commands:
 - `-p 9000:9000`: Mount port for API requests inside the container
 - `annotation-tool-ai`: Name of the image we create the instance of.
 
+
+
 **NOTE**
 
 If you want to access the API only from outside the container (which might be usually the case) it is not necessary to mount a directory when running the container. However, it has been kept in the command since it might be useful for debugging purposes.
@@ -187,6 +189,8 @@ If you chose the local deployment or you want to access the container from outsi
 ```
 curl -X POST "http://127.0.0.1:9000/process/?code_system=<snomed | cogatlas>&response_type=<file | json>" 
 -F "file=@<filepath-to-tsv-outside-container>.tsv" 
+ This is the command you want to execute in the interactive terminal session within the container. The input file is the to-be-annotated `.tsv` file and the output file is the `.json` file.
+
 -o <filepath-to-output-file-outside-container>.json
 ```
 
@@ -197,10 +201,13 @@ Let's break down this again (for local/outside docker deployment ignore the firs
 - `api_test`: Name of the instance. 
 - `curl -X POST "http://127.0.0.1:9000/process/?code_system=<snomed | cogatlas>" -F "file=@<filepath-to-tsv-inside/outside-container>.tsv" -o <filepath-to-output-file-inside/outside-container>.json`: This is the command that makes a POST request to the API. The input file is the to-be-annotated `.tsv` file and the output file is the `.json` file.
 
+
 ---
 **NOTE**
 
+
 The `-o <filepath-to-output-file-inside/outside-container>.json` is only necessary if `file` is chosen as `response_type` parameter.
+
 
 ---
 

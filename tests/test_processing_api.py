@@ -568,6 +568,7 @@ MOCK_RESPONSES = {
 }
 
 
+
 def test_process_files_diagnosis(mock_llm_response: Any) -> None:
     with patch(
         "categorization.promptTemplate.PromptTemplate"

@@ -255,6 +255,7 @@ def test_diagnosis_variable(
     assert result == expected_result
 
 
+
 def test_session_id(levels_mapping_fixture: Dict[str, Dict[str, str]]) -> None:
     parsed_output: Dict[str, Union[str, Dict[str, str], None]] = {
         "TermURL": "nb:Session"
