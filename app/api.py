@@ -101,7 +101,7 @@ if __name__ == "__main__":
     parser.add_argument(
 
 
-        "--port", type=int, default=3006, help="Port to run the server on"
+        "--port", type=int, default=9000, help="Port to run the server on"
 
     )
 

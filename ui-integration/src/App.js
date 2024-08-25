@@ -39,7 +39,7 @@ function FileUpload() {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:3006/process/",
+        "http://127.0.0.1:9000/process/",
         formData,
         {
           headers: {
