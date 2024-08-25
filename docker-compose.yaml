@@ -1,0 +1,24 @@
+version: '3.8' 
+services:
+  backend:
+    image: annotation-tool-ai:latest  
+    container_name: annotation-tool-ai-app
+    ports:
+      - "9000:9000" # to check if the API is working fine 
+    # deploy: ---> Uncomment this block to deploy on the VM
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - capabilities: [gpu]
+    # runtime: nvidia
+    # environment:
+    #   - NVIDIA_VISIBLE_DEVICES=all
+    #   - NVIDIA_DRIVER_CAPABILITIES=all
+
+
+  frontend:
+    image: userinterface:latest  
+    container_name: userinterface
+    ports:
+      - "3000:80"  # Map port 80 inside the container to port 3000 on local machine
+
