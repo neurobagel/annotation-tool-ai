@@ -1,8 +1,8 @@
 version: '3.8' 
 services:
   backend:
-    image: annotation-tool-ai:latest
-    #image: neurobagel/annotation-tool-ai:nightly # dockerhub!!
+    #image: annotation-tool-ai:latest #Local image
+    image: neurobagel/annotation-tool-ai:nightly # Dockerhub images
     container_name: annotation-tool-ai-app
     ports:
       - "9000:9000" # to check if the API is working fine 
@@ -19,9 +19,9 @@ services:
 
 
   frontend:
-    image: userinterface:latest 
-    #image: neurobagel/annotation-tool-ai-ui:nightly # dockerhub!!
+    #image: userinterface:latest #Local image
+    image: neurobagel/annotation-tool-ai-ui:nightly # Dockerhub image
     container_name: annotation-tool-userinterface
     ports:
-      - "3000:80"  # Map port 80 inside the container to port 3000 on local machine
+      - "3000:80"  # Map port 80 inside the container to port 3000 on local machine (I could also change the nginx.conf but this is more convenient)
 
