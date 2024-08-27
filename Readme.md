@@ -56,7 +56,7 @@ Since the annotation tool uses ollama to run the LLM it has to be provided by th
 This is done by extending the available [ollama container](https://hub.docker.com/r/ollama/ollama)
 For this instruction it is assumed that [docker](https://www.docker.com/) is installed.
 
-#### Pull pre-built containers
+#### Using pre-built containers
 
 - Clone the [repository](https://github.com/neurobagel/annotation-tool-ai) or download the [Docker compose file](https://github.com/neurobagel/annotation-tool-ai/blob/main/docker-compose.yaml)
 
