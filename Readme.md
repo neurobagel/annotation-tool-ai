@@ -60,7 +60,7 @@ For this instruction it is assumed that [docker](https://www.docker.com/) is ins
 
 - Clone the [repository](https://github.com/neurobagel/annotation-tool-ai) or download the [Docker compose file](https://github.com/neurobagel/annotation-tool-ai/blob/main/docker-compose.yaml)
 
-- Run the tool by running the following command in the repo directory or where the `docker-compose.yaml` is stored.
+- Start the tool by running the following command in the repo directory or where the `docker-compose.yaml` is stored. If you want to use the tool with GPU support, make sure to uncomment the respective section in the `docker-compose.yaml`
 
 ```
 docker compose up
@@ -69,7 +69,6 @@ docker compose up
 - Access the tool via `localhost:3000`
 
 If you run the tool and it responds an empty JSON file or a Network error, please execute the steps described in the [Troubleshooting](#troubleshooting) section.
-
 
 #### Build the image from scratch
 
