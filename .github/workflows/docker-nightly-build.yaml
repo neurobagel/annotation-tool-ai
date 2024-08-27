@@ -3,7 +3,7 @@ name: build docker nightly
 on:
   push:
     branches:
-      - docker_nightly
+      - main
   workflow_dispatch:
 
 jobs:
