@@ -1,0 +1,27 @@
+version: '3.8' 
+services:
+  backend:
+    #image: annotation-tool-ai-app:latest #Local image
+    image: neurobagel/annotation-tool-ai:nightly # Dockerhub images
+    container_name: annotation-tool-ai-app
+    ports:
+      - "9000:9000" # to check if the API is working fine 
+    # uncomment the following lines if you want to use GPU  
+    # deploy: 
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - capabilities: [gpu]
+    # runtime: nvidia
+    # environment:
+    #   - NVIDIA_VISIBLE_DEVICES=all
+    #   - NVIDIA_DRIVER_CAPABILITIES=all
+
+
+  frontend:
+    #image: annotation-tool-ai-ui:latest #Local image
+    image: neurobagel/annotation-tool-ai-ui:nightly # Dockerhub image
+    container_name: annotation-tool-ai-ui
+    ports:
+      - "3000:80"  # Map port 80 inside the container to port 3000 on local machine (I could also change the nginx.conf but this is more convenient)
+
