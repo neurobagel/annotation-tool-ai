@@ -56,7 +56,22 @@ Since the annotation tool uses ollama to run the LLM it has to be provided by th
 This is done by extending the available [ollama container](https://hub.docker.com/r/ollama/ollama)
 For this instruction it is assumed that [docker](https://www.docker.com/) is installed.
 
-#### Build the image
+#### Pull pre-built containers
+
+- Clone the [repository](https://github.com/neurobagel/annotation-tool-ai) or download the [Docker compose file](https://github.com/neurobagel/annotation-tool-ai/blob/main/docker-compose.yaml)
+
+- Run the tool by running the following command in the repo directory or where the `docker-compose.yaml` is stored.
+
+```
+docker compose up
+```
+
+- Access the tool via `localhost:3000`
+
+If you run the tool and it responds an empty JSON file or a Network error, please execute the steps described in the [Troubleshooting](#troubleshooting) section.
+
+
+#### Build the image from scratch
 
 The container can be built from the dockerfile available in the repo
 
@@ -217,17 +232,26 @@ The `-o <filepath-to-output-file-inside/outside-container>.json` is only necessa
 
 Sometimes the model is not available in the container. This results in empty output (only column headers are displayed).
 
+![alt text](docs/img/trouble_no_model.png)
+
 In this case you can start an interactive terminal session inside the running annotation tool container:
 ```
-docker exec -it instance_name /bin/bash
+docker exec -it annotation-tool-ai-app /bin/bash
 ```
 
 By executing `ollama list` the current models are shown. If this section is empty you can pull the respective model using `ollama pull gemma`.
 
-- UI does not work via SSH tunnel in VS-Code
+- UI does not work via SSH tunnel in VS-Code (Network error)
 
-Because of it's own forwarding logic, port that are automatically forwarded are sometimes mapped to different ports (e.g. 9001 instead of 9000).
-In VS Code under `Ports` you can delete the automatically forwarded ports and add the "original" ports again.
+Because of it's internal forwarding logic, port that are automatically forwarded are sometimes mapped to different ports (e.g. 9001 instead of 9000).
+In VS Code under `Ports` you can delete the automatically forwarded ports and add the ports again [manually](https://code.visualstudio.com/docs/editor/port-forwarding).
+
+Additional resources:
+- [Mapping ports in docker compose](https://www.warp.dev/terminus/docker-compose-port-mapping)
+- [Publishing and forwarding ports in containers (VSCode)](https://code.visualstudio.com/docs/devcontainers/containers#_port-forwarding)
+- [Ports forwarding in remote settings (SSH)](https://code.visualstudio.com/docs/remote/ssh)
+
+
 
 # Details of the codebase 
 
