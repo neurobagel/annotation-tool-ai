@@ -33,7 +33,7 @@ jobs:
       - name: Build and push annotation-ui
         uses: docker/build-push-action@v6
         with:
-          context: .
+          context: ./ui-integration
           file: ./ui-integration/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/annotation-tool-ai-ui:nightly
